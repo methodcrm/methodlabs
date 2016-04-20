@@ -1,0 +1,1038 @@
+@import "method-base";
+
+/*general section innertable display*/
+.tbl
+{
+    display: table;
+    width: 100%;
+}
+
+.tbl-note {
+	color: $light-grey-blue-dark40 !important;
+	margin: 10px 0;
+}
+
+.tblrow
+{
+    display: table-row;
+
+}
+
+
+// .ds_sectionTable .tblrow:nth-child(even) {
+//     background-color:#f2f2f2;
+// }
+
+.tblcell
+{
+	@include box-sizing;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.tbl-fixed{
+	table-layout: fixed;
+
+	.runtimePage .mi-grid-body & {
+		//table-layout: auto;
+	}
+
+	>tbody {
+		td{
+			text-overflow:ellipsis;
+			overflow-x:hidden;
+            white-space:nowrap;
+		}
+		th{
+			text-overflow:ellipsis;
+			overflow-x:hidden;
+		}
+	}
+}
+
+
+//	vertical align middle
+.cell-center,
+.cell-pull-left,
+.cell-pull-right {
+	@extend %cell-vert-middle;
+}
+
+.cell-center { @extend %cell-align-center; }
+.cell-pull-left { @extend %cell-align-left; }
+.cell-pull-right { @extend %cell-align-right; }
+
+//	vertical align bottom
+.cell-bottom-center,
+.cell-bottom-pull-left,
+.cell-bottom-pull-right {
+	@extend %cell-vert-bottom;
+}
+
+.cell-bottom-center { @extend %cell-align-center; }
+.cell-bottom-pull-left { @extend %cell-align-left; }
+.cell-bottom-pull-right { @extend %cell-align-right; }
+
+//	vertical align top
+.cell-top-center,
+.cell-top-pull-left,
+.cell-top-pull-right {
+	@extend %cell-vert-top;
+}
+
+.cell-top-center { @extend %cell-align-center; }
+.cell-top-pull-left { @extend %cell-align-left; }
+.cell-top-pull-right { @extend %cell-align-right; }
+
+/* backgroundcolor */
+
+//	Section theme background colors
+
+.mi-cell-alert{
+	background-color:$fuschia;
+}
+.mi-cell-primary{
+	background-color:$blue;
+}
+.mi-cell-secondary {
+	background-color:$silver;
+}
+.mi-cell-navigation{
+	background-color:$grey;
+}
+.mi-cell-success {
+	background-color: $green;
+}
+.mi-cell-caution {
+	background-color:$yellow;
+}
+.mi-cell-dark-grey {
+	background-color:$gunmetal;
+}
+.mi-cell-silver {
+	background-color:$pale-grey;
+}
+.mi-cell-black{
+	background-color:$black;
+}
+.mi-cell-white{
+	background-color:$white;
+}
+
+
+/*padding*/
+
+//	Left
+.mi-cell-padding-left-1x,
+.mi-cell-padding-left {
+	@extend %mi-padding-left-1em;
+}
+.mi-cell-padding-left-2x 		{ @extend %mi-padding-left-2em; }
+.mi-cell-padding-left-regular 	{ @extend %mi-padding-left-0em; }
+
+//	Right
+.mi-cell-padding-right-1x,
+.mi-cell-padding-right 	{
+	@extend %mi-padding-right-1em;
+}
+.mi-cell-padding-right-2x 		{ @extend %mi-padding-right-2em; }
+.mi-cell-padding-right-regular  { @extend %mi-padding-right-0em; }
+
+//	Top
+.mi-cell-padding-top-1x,
+.mi-cell-padding-top {
+	@extend %mi-padding-top-1em;
+}
+.mi-cell-padding-top-2x 		{ @extend %mi-padding-top-2em; }
+.mi-cell-padding-top-regular	{ @extend %mi-padding-top-0em; }
+
+//	Bottom
+.mi-cell-padding-bottom-1x,
+.mi-cell-padding-bottom {
+	@extend %mi-padding-bottom-1em;
+}
+.mi-cell-padding-bottom-2x 		{ @extend %mi-padding-bottom-2em; }
+.mi-cell-padding-bottom-regular	{ @extend %mi-padding-bottom-0em; }
+
+
+
+/*border*/
+
+// //	Left border
+// .mi-cell-border-left-thin,
+// .mi-cell-border-left-thick {
+// 	@extend %left-border-solid;
+// }
+// .mi-cell-border-left-thin {
+// 	@extend %left-border-normal;
+// }
+// .mi-cell-border-left-thick{
+// 	@extend %left-border-4px;
+// }
+// .mi-cell-border-left-dotted{
+// 	@extend %left-border-dotted;
+// }
+
+// //	Right border
+// .mi-cell-border-right-thin,
+// .mi-cell-border-right-thick {
+// 	@extend %right-border-solid;
+// }
+// .mi-cell-border-right-thin {
+// 	@extend %right-border-normal;
+// }
+// .mi-cell-border-right-thick{
+// 	@extend %right-border-4px;
+// }
+// .mi-cell-border-right-dotted{
+// 	@extend %right-border-dotted;
+// }
+
+// //	Top border
+// .mi-cell-border-top-thin,
+// .mi-cell-border-top-thick {
+// 	@extend %top-border-solid;
+// }
+// .mi-cell-border-top-thin{
+// 	@extend %top-border-normal;
+// }
+// .mi-cell-border-top-thick{
+// 	@extend %top-border-4px;
+// }
+// .mi-cell-border-top-dotted{
+// 	@extend %top-border-dotted;
+// }
+
+// //	Bottom border
+// .mi-cell-border-bottom-thin,
+// .mi-cell-border-bottom-thick {
+// 	@extend %bottom-border-solid;
+// }
+// .mi-cell-border-bottom-thin{
+// 	@extend %bottom-border-normal;
+// }
+// .mi-cell-border-bottom-thick{
+// 	@extend %bottom-border-4px;
+// }
+// .mi-cell-border-bottom-dotted{
+// 	@extend %bottom-border-dotted;
+// }
+
+
+//	Button border sizes
+		
+	//	Top Border styles
+		
+		//	Size
+			.mi-top-border-none {
+				border-top: none !important;
+			}
+			.mi-top-border-normal {
+				border-top-width: 1px !important;
+			}
+			.mi-top-border-2px {
+				border-top-width: 2px !important;
+			}
+			.mi-top-border-4px {
+				border-top-width: 4px !important;
+			}
+			.mi-top-border-6px {
+				border-top-width: 6px !important;
+			}
+			.mi-top-border-8px {
+				border-top-width: 8px !important;
+			}
+			.mi-top-border-10px {
+				border-top-width: 10px !important;
+			}
+
+		//	Color
+			
+			.mi-top-border-color-alert {
+				border-top-color: $pink !important;
+			}
+			.mi-top-border-color-primary {
+				border-top-color: $blue !important;
+			}
+			.mi-top-border-color-grey {
+				border-top-color: $m-grey !important;
+			}
+			.mi-top-border-color-navigation {
+				border-top-color: $m-dark-blue !important;
+			}
+			.mi-top-border-color-caution {
+				border-top-color: $m-yellow !important;
+			}
+			.mi-top-border-color-success {
+				border-top-color: $m-green !important;
+			}
+			.mi-top-border-color-darkgrey {
+				border-top-color: $m-dark-grey !important;
+			}
+			.mi-top-border-color-secondary {
+				border-top-color: $app-header !important;
+			}
+			.mi-top-border-color-none {
+				border-top-color: transparent !important;
+			}
+
+		//	Style
+			
+			.mi-top-border-dashed {
+				border-top-style: dashed;
+			}
+			.mi-top-border-dotted {
+				border-top-style: dotted;
+			}
+			.mi-top-border-solid {
+				border-top-style: solid;
+			}
+			.mi-top-border-double {
+				border-top-style: double;
+			}
+
+	//	Bottom Border styles
+		
+		//	Size
+			
+			.mi-bottom-border-none {
+				border-bottom: none !important;
+			}
+			.mi-bottom-border-normal {
+				border-bottom-width: 1px !important;
+			}
+			.mi-bottom-border-2px {
+				border-bottom-width: 2px !important;
+			}
+			.mi-bottom-border-4px {
+				border-bottom-width: 4px !important;
+			}
+			.mi-bottom-border-6px {
+				border-bottom-width: 6px !important;
+			}
+			.mi-bottom-border-8px {
+				border-bottom-width: 8px !important;
+			}
+			.mi-bottom-border-10px {
+				border-bottom-width: 10px !important;
+			}
+
+		//	Color
+			
+			.mi-bottom-border-color-alert {
+				border-bottom-color: $pink !important;
+			}
+			.mi-bottom-border-color-primary {
+				border-bottom-color: $blue !important;
+			}
+			.mi-bottom-border-color-grey {
+				border-bottom-color: $m-grey !important;
+			}
+			.mi-bottom-border-color-navigation {
+				border-bottom-color: $m-dark-blue !important;
+			}
+			.mi-bottom-border-color-caution {
+				border-bottom-color: $m-yellow !important;
+			}
+			.mi-bottom-border-color-success {
+				border-bottom-color: $m-green !important;
+			}
+			.mi-bottom-border-color-darkgrey {
+				border-bottom-color: $m-dark-grey !important;
+			}
+			.bottom-button-border-color-silver {
+				border-bottom-color: $app-header !important;
+			}
+			.mi-bottom-border-color-none {
+				border-bottom-color: transparent !important;
+			}
+
+		//	Style
+
+			.mi-bottom-border-dashed {
+				border-bottom-style: dashed;
+			}
+			.mi-bottom-border-dotted {
+				border-bottom-style: dotted;
+			}
+			.mi-bottom-border-solid {
+				border-bottom-style: solid;
+			}
+			.mi-bottom-border-double {
+				border-bottom-style: double;
+			}
+
+	//	Left Border styles
+		
+		//	Size
+			
+			.mi-left-border-none {
+				border-left: none !important;
+			}
+			.mi-left-border-normal {
+				border-left-width: 1px !important;
+			}
+			.mi-left-border-2px {
+				border-left-width: 2px !important;
+			}
+			.mi-left-border-4px {
+				border-left-width: 4px !important;
+			}
+			.mi-left-boreder-6px {
+				border-left-width: 6px !important;
+			}
+			.mi-left-border-8px {
+				border-left-width: 8px !important;
+			}
+			.mi-left-border-10px {
+				border-left-width: 10px !important;
+			}
+
+		//	Color
+
+			.mi-left-border-color-alert {
+				border-left-color: $pink !important;
+			}
+			.mi-left-border-color-primary {
+				border-left-color: $blue !important;
+			}
+			.mi-left-border-color-grey {
+				border-left-color: $m-grey !important;
+			}
+			.mi-left-border-color-navigation {
+				border-left-color: $m-dark-blue !important;
+			}
+			.mi-left-border-color-caution {
+				border-left-color: $m-yellow !important;
+			}
+			.mi-left-border-color-success {
+				border-left-color: $m-green !important;
+			}
+			.mi-left-border-color-darkgrey {
+				border-left-color: $m-dark-grey !important;
+			}
+			.left-border-color-silver {
+				border-left-color: $app-header !important;
+			}
+			.mi-left-border-color-none {
+				border-left-color: transparent !important;
+			}
+
+		//	Style
+
+			.mi-left-border-dashed {
+				border-left-style: dashed;
+			}
+			.mi-left-border-dotted {
+				border-left-style: dotted;
+			}
+			.mi-left-border-solid {
+				border-left-style: solid;
+			}
+			.mi-left-border-double {
+				border-left-style: double;
+			}
+
+	//	Right Border styles
+		
+		//	Size
+			
+			.mi-right-border-none {
+				border-right: none !important;
+			}
+			.mi-right-border-normal {
+				border-right-width: 1px;
+			}
+			.mi-right-border-2px {
+				border-right-width: 2px;
+			}
+			.mi-right-border-4px {
+				border-right-width: 4px;
+			}
+			.mi-right-border-6px {
+				border-right-width: 6px;
+			}
+			.mi-right-border-8px {
+				border-right-width: 8px;
+			}
+			.mi-right-border-10px {
+				border-right-width: 10px;
+			}
+
+		//	Color
+			
+			.mi-right-border-color-alert {
+				border-right-color: $pink;
+			}
+			.mi-right-border-color-primary {
+				border-right-color: $blue;
+			}
+			.mi-right-border-color-grey {
+				border-right-color: $m-grey;
+			}
+			.mi-right-border-color-navigation {
+				border-right-color: $m-dark-blue;
+			}
+			.mi-right-border-color-caution {
+				border-right-color: $m-yellow;
+			}
+			.mi-right-border-color-success {
+				border-right-color: $m-green;
+			}
+			.mi-right-border-color-darkgrey {
+				border-right-color: $m-dark-grey;
+			}
+			.right-border-color-silver {
+				border-right-color: $app-header;
+			}
+			.mi-right-border-color-none {
+				border-right-color: transparent !important;
+			}
+
+		//	Style
+			
+			.mi-right-border-dashed {
+				border-right-style: dashed;
+			}
+			.mi-right-border-dotted {
+				border-right-style: dotted;
+			}
+			.mi-right-border-solid {
+				border-right-style: solid;
+			}
+			.mi-right-border-double {
+				border-right-style: double;
+			}
+
+//	Border Colors
+.mi-cell-border-alert{
+	border-color:$fuschia;
+}
+.mi-cell-border-primary{
+	border-color:$blue;
+}
+.mi-cell-border-secondary {
+	border-color:$silver;
+}
+.mi-cell-border-navigation{
+	border-color:$grey;
+}
+.mi-cell-border-success {
+	border-color: $green;
+}
+.mi-cell-border-caution {
+	border-color:$yellow;
+}
+.mi-cell-border-dark-grey {
+	border-color:$gunmetal;
+}
+.mi-cell-border-silver {
+	border-color:$pale-grey-border;
+}
+.mi-cell-border-black{
+	border-color:$black;
+}
+.mi-cell-border-white{
+	border-color:$white;
+}
+
+/*controls side by side*/
+.control {
+    display: inline-block;
+    vertical-align: top;
+	max-width:100%;
+}
+.controlHide{
+	display:none !important;
+}
+
+/*html editor and section  */
+
+.AdvCtrlDisabled {
+	@extend %AdvCtrlDisabled;
+}
+
+.mi-SectionHeader {
+    background-color: #FFF;
+}
+
+
+/*RP Responsive sections*/
+@include tablet-landscape-and-below {
+	.FlowTablet > .tblrow > .tblcell{
+		display:block;
+		// Commented this out as it breaks runtime screens
+		//float:left;
+		/* commenting out as discussed with Paul, we wont override fixed widths for desktop/tablet  width:auto !important;*/
+	}
+
+	.FlowTablet, .FlowMobile {
+		overflow: hidden;
+	}
+}
+
+@include mobile-only {
+	.FlowMobile > .tblrow > .tblcell,
+	.FlowTablet > .tblrow > .tblcell{
+		display:block !important;
+		width:100% !important;
+	}
+	.FlowTablet, .FlowMobile {
+		overflow: hidden;
+	}
+}
+
+.mi-section-icon-left{
+	.mi-section-collapsible{
+		float: left;
+	}
+}
+.mi-section-icon-right{
+	.mi-section-collapsible{
+		float: none;
+		display:inline-block;
+	}
+
+}
+
+.mi-section-collapsible {
+    float: right;
+	color: $silver-dark-20percent;
+	display:block;
+	margin-left: 0.5em;
+}
+
+.mi-Section {
+
+	float:left;
+	display:block;
+	// position: relative;
+	width: 100%;
+	top:0;
+	@include box-sizing;
+    /* can be style override background:$white;*/
+
+	.mi-SectionHeader {
+		font-size: $font-xlarge;
+		cursor: pointer;
+		background:$white;
+
+		.sectionHeaderCaption {
+			color: $grey;
+		}
+	}
+}
+//	Section Header Background Colors
+
+.mi-section-header-background-alert {
+	> .mi-SectionHeader {
+		background:$fuschia;
+	}
+}
+.mi-section-header-background-primary {
+	> .mi-SectionHeader {
+		background:$blue;
+	}
+}
+.mi-section-header-background-secondary {
+	> .mi-SectionHeader {
+		background:$silver;
+	}
+}
+.mi-section-header-background-navigation {
+	> .mi-SectionHeader {
+		background:$grey;
+	}
+}
+.mi-section-header-background-caution {
+	> .mi-SectionHeader {
+		background:$yellow;
+	}
+}
+.mi-section-header-background-success {
+	> .mi-SectionHeader {
+		background:$green;
+	}
+}
+.mi-section-header-background-dark-grey {
+	> .mi-SectionHeader {
+		background:$gunmetal;
+	}
+}
+.mi-section-header-background-silver {
+	> .mi-SectionHeader {
+		background:$pale-grey;
+	}
+}
+.mi-section-header-background-black {
+	> .mi-SectionHeader {
+		background:$black;
+	}
+}
+.mi-section-header-background-white {
+	> .mi-SectionHeader {
+		background:$white;
+	}
+}
+
+//	Header Icons
+
+.mi-section-header-border-none {
+
+	.mi-SectionHeader {
+		border-bottom:none !important;
+	}
+}
+//	Chevrons
+.mi-section-chevron {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f077" !important;
+				}
+			}
+			&.icon-down {
+				&:before {
+					content:"\f078" !important;
+				}
+			}
+		}
+	}
+}
+//	Double Arrows
+.mi-section-double-arrow {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f102" !important;
+				}
+			}
+			&.icon-down{
+				&:before {
+					content:"\f103" !important;
+
+				}
+			}
+		}
+	}
+}
+//	Circle Arrows
+.mi-section-circle-arrow {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f0aa" !important;
+
+				}
+			}
+			&.icon-down{
+				&:before {
+					content:"\f0ab" !important;
+
+				}
+			}
+		}
+	}
+}
+//	Circle Chevrons
+.mi-section-circle-chevron {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f139" !important;
+
+				}
+			}
+			&.icon-down{
+				&:before {
+					content:"\f13a" !important;
+
+				}
+			}
+		}
+	}
+}
+//	Angles
+.mi-section-angle-arrow {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f106" !important;
+
+				}
+			}
+			&.icon-down{
+				&:before {
+					content:"\f107" !important;
+
+				}
+			}
+		}
+	}
+}
+
+
+//	Header Icon Colors
+.mi-section-header-icon-alert {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $fuschia !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-primary {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $blue !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-secondary {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $silver !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-navigation {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $m-dark-blue !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-caution {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $yellow !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-success {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $green !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-dark-grey {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $gunmetal !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-silver {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $pale-grey-border !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-black {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $black !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-white {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $white !important;
+			}
+		}
+	}
+}
+
+// Header Title Size
+.mi-section-header-caption-font-xxxsmall{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xxxsmall;
+		}
+	}
+}
+.mi-section-header-caption-font-xxsmall{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xxsmall;
+		}
+	}
+}
+.mi-section-header-caption-font-xsmall{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xsmall;
+		}
+	}
+}
+.mi-section-header-caption-font-small{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-small;
+		}
+	}
+}
+.mi-section-header-caption-font-normal{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-normal;
+		}
+	}
+}
+.mi-section-header-caption-font-large{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-large;
+		}
+	}
+}
+.mi-section-header-caption-font-xlarge{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xlarge;
+		}
+	}
+}
+.mi-section-header-caption-font-xxlarge{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xxlarge;
+		}
+	}
+}
+.mi-section-header-caption-font-xxxlarge{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xxxlarge;
+		}
+	}
+}
+
+//	Header Caption Colors
+
+.mi-section-header-caption-alert {
+	> .mi-SectionHeader {
+		.mi-section-header-caption,
+		.mi-section-collapsible {
+			color: $fuschia;
+		}
+	}
+}
+.mi-section-header-caption-primary {
+	> .mi-SectionHeader {
+		.mi-section-header-caption,
+		.mi-section-collapsible {
+			color: $blue;
+		}
+	}
+}
+.mi-section-header-caption-secondary {
+	> .mi-SectionHeader {
+		.mi-section-header-caption,
+		.mi-section-collapsible {
+			color: $silver;
+		}
+	}
+}
+.mi-section-header-caption-navigation {
+	> .mi-SectionHeader {
+		.mi-section-header-caption,
+		.mi-section-collapsible {
+			color: $m-dark-blue;
+		}
+	}
+}
+.mi-section-header-caption-caution {
+	> .mi-SectionHeader {
+		.mi-section-header-caption ,
+		.mi-section-collapsible{
+			color: $yellow;
+		}
+	}
+}
+.mi-section-header-caption-success {
+	> .mi-SectionHeader {
+		.mi-section-header-caption,
+		.mi-section-collapsible {
+			color: $green;
+		}
+	}
+}
+.mi-section-header-caption-dark-grey {
+	> .mi-SectionHeader {
+		.mi-section-header-caption,
+		.mi-section-collapsible {
+			color: $gunmetal;
+		}
+	}
+}
+.mi-section-header-caption-silver {
+	> .mi-SectionHeader {
+		.mi-section-header-caption,
+		.mi-section-collapsible {
+			color: $pale-grey-border;
+		}
+	}
+}
+.mi-section-header-caption-black {
+	> .mi-SectionHeader {
+		.mi-section-header-caption,
+		.mi-section-collapsible {
+			color: $black;
+		}
+	}
+}
+.mi-section-header-caption-white {
+	> .mi-SectionHeader {
+		.mi-section-header-caption ,
+		.mi-section-collapsible{
+			color: $white;
+		}
+	}
+}
+
+//	Caption Text Align
+
+.mi-caption-left {
+	> .mi-SectionHeader {
+		@extend %mi-caption-text-left;
+	}
+}
+
+.mi-caption-center {
+	> .mi-SectionHeader {
+		@extend %mi-caption-text-center;
+	}
+}
+
+.mi-caption-right {
+	> .mi-SectionHeader {
+		@extend %mi-caption-text-right;
+	}
+}

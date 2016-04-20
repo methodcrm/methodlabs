@@ -1,0 +1,124 @@
+.mi-ribbon {
+
+  .slide-wrap-inner {
+    padding: 5px 0 0 1px;
+    position: relative;
+  }
+
+  .app-slide-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid $card-border;
+    margin-top: -1px;
+    margin-left: -1px;
+
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+
+    a {
+      color: $dark-grey;
+      font-size: 1.05em;
+      font-weight: 600;
+
+      .title-wrapper {
+        padding-right: 3px;
+      }
+
+      img {
+        max-width: 14px;
+        max-height: 14px;
+      }
+
+      i {
+        display: inline-block;
+        width: 30px;
+        color: $grey;
+        text-align: center;
+        font-weight: normal;
+
+        &.icon-left {
+          width: auto;
+          margin-right: 3px;
+        }
+      }
+
+      &.mi-text-link {
+        float: right;
+        color: $blue;
+      }
+    }
+  }
+
+  .app-ribbon-shelf {
+    display: none;
+    position: absolute;
+    border: 1px solid $card-border;
+    background-color: $white;
+    z-index: 20;
+    max-width: 500px;
+
+    &:before,
+    &:after {
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 9px solid #fff;
+      top: -9px;
+      content: '';
+      left: 4px;
+      margin-left: 30px;
+      position: absolute;
+    }
+
+    &:before {
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid;
+      border-bottom-color: inherit; /* Can't be included in the shorthand to work */
+      top: -10px;
+      left: 3px;
+    }
+
+    &.active-shelf {
+      display: block;
+
+    }
+
+    .mi-app-record-list {
+      padding: 10px;
+      margin: 0;
+      list-style: none;
+      min-width: 100px;
+
+      li {
+        display: block;
+        padding: 3px 0;
+        border-bottom: 1px solid $grey;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          display: block;
+          position: relative;
+          color: $dark-grey;
+
+          i:first-child {
+            display: inline-block;
+            width: 30px;
+            text-align: center;
+            vertical-align: top;
+            margin-top: 5px;  
+          }
+
+          div {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

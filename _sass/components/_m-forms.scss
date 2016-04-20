@@ -1,0 +1,1770 @@
+$form-border-color: $card-border !default;
+
+input, select, textarea {
+	height:inherit !important;
+	line-height: normal;
+	font-weight: normal !important;
+	color: $dark-grey;
+
+	&[disabled="disabled"] {
+		background: #f2f2f2;
+		color:#787779;
+		cursor:default;
+
+		&:hover {
+			background: #f2f2f2;
+			color:#787779;
+			cursor:default;
+			border: 1px solid transparent;
+		}
+	}
+}
+
+//	Designer styles for text input
+	input {
+		&[type="text"] {
+
+		//	Background colors
+        &.mi-background-grey { background-color: $m-grey !important;  }
+		&.mi-background-dark-grey { background-color: $m-dark-grey !important; }
+		&.mi-background-navigation { background-color: $m-dark-blue !important;  }
+		&.mi-background-alert { background-color: $m-red !important; }
+		&.mi-background-pink { background-color: $pink !important;  }
+		&.mi-background-purple { background-color: $m-purple !important;  }
+		&.mi-background-primary { background-color: $blue !important; }
+		&.mi-background-aqua { background-color: $aqua !important;  }
+		&.mi-background-success { background-color: $m-green !important;  }
+		&.mi-background-yellow { background-color: $m-yellow !important; }
+		&.mi-background-caution { background-color: $m-orange !important; }
+		&.mi-background-black { background-color: $black !important; }
+		&.mi-background-white { background-color: $white !important; }
+		
+		// 	Input text size
+			//	Button sizes -- font-size impacts button size.
+			&.input-font-xxxsmall 	{ font-size: $font-xxxsmall !important; }
+			&.input-font-xxsmall  	{ font-size: $font-xxsmall !important; }
+			&.input-font-xsmall     { font-size: $font-xsmall !important; }
+			//	ONLY THESE SIZES ARE GOING TO BE USED GOING FORWARD
+			&.input-font-small      { font-size: $font-small !important; }
+			&.input-font-normal    	{ font-size: $font-normal !important; }
+			&.input-font-large      { font-size: $font-large !important; }
+			&.input-font-xlarge     { font-size: $font-xlarge !important; }
+			&.input-font-xxlarge   	{ font-size: $font-xxlarge !important; }
+			&.input-font-xxxlarge  	{ font-size: $font-xxxlarge !important; }
+
+
+        &.input-text-grey { color: $m-grey !important;  }
+		&.input-text-dark-grey { color: $m-dark-grey !important; }
+		&.input-text-navigation { color: $m-dark-blue !important;  }
+		&.input-text-alert { color: $m-red !important; }
+		&.input-text-pink { color: $pink !important;  }
+		&.input-text-purple { color: $m-purple !important;  }
+		&.input-text-primary { color: $blue !important; }
+		&.input-text-aqua { color: $aqua !important;  }
+		&.input-text-success { color: $m-green !important;  }
+		&.input-text-yellow { color: $m-yellow !important; }
+		&.input-text-caution { color: $m-orange !important; }
+		&.input-text-black { color: $black !important; }
+		&.input-text-white { color: $white !important; }
+			
+		//	Input border sizes
+		
+			//	Top Border styles
+				
+				//	Size
+					&.mi-top-border-none {
+						border-top: none !important;
+					}
+					&.mi-top-border-normal {
+						border-top-width: 1px;
+					}
+					&.mi-top-border-2px {
+						border-top-width: 2px;
+					}
+					&.mi-top-border-4px {
+						border-top-width: 4px;
+					}
+					&.mi-top-border-6px {
+						border-top-width: 6px;
+					}
+					&.mi-top-border-8px {
+						border-top-width: 8px;
+					}
+					&.mi-top-border-10px {
+						border-top-width: 10px;
+					}
+
+				//	Color
+					
+					&.mi-top-border-color-alert {
+						border-top-color: $pink;
+					}
+					
+					&.mi-top-border-color-primary {
+						border-top-color: $blue;
+					}
+					
+					&.mi-top-border-color-grey {
+						border-top-color: $grey;
+					}
+					
+					&.mi-top-border-color-navigation {
+						border-top-color: $dark-blue;
+					}
+					
+					&.mi-top-border-color-caution {
+						border-top-color: $yellow;
+					}
+					
+					&.mi-top-border-color-success {
+						border-top-color: $green;
+					}
+					
+					&.mi-top-border-color-darkgrey {
+						border-top-color: $dark-grey;
+					}
+					
+					&.mi-top-border-color-silver {
+						border-top-color: $app-header;
+					}
+					
+					&.mi-top-border-color-none {
+						border-top-color: transparent !important;
+					}
+
+				//	Style
+					&.mi-top-border-dashed {
+						border-top-style: dashed;
+					}
+					&.mi-top-border-dotted {
+						border-top-style: dotted;
+					}
+					&.mi-top-border-solid {
+						border-top-style: solid;
+					}
+					&.mi-top-border-double {
+						border-top-style: double;
+					}
+
+			//	Bottom Border styles
+				
+				//	Size
+					
+					&.mi-bottom-border-none {
+						border-bottom: none !important;
+					}
+					
+					&.mi-bottom-border-normal {
+						border-bottom-width: 1px;
+					}
+					
+					&.mi-bottom-border-2px {
+						border-bottom-width: 2px;
+					}
+					
+					&.mi-bottom-border-4px {
+						border-bottom-width: 4px;
+					}
+					
+					&.mi-bottom-boreder-6px {
+						border-bottom-width: 6px;
+					}
+					
+					&.mi-bottom-border-8px {
+						border-bottom-width: 8px;
+					}
+					
+					&.mi-bottom-border-10px {
+						border-bottom-width: 10px;
+					}
+
+				//	Color
+					
+					&.mi-bottom-border-color-alert {
+						border-bottom-color: $pink;
+					}
+					
+					&.mi-bottom-border-color-primary {
+						border-bottom-color: $blue;
+					}
+					
+					&.mi-bottom-border-color-grey {
+						border-bottom-color: $grey;
+					}
+					
+					&.mi-bottom-border-color-navigation {
+						border-bottom-color: $dark-blue;
+					}
+					
+					&.mi-bottom-border-color-caution {
+						border-bottom-color: $yellow;
+					}
+					
+					&.mi-bottom-border-color-success {
+						border-bottom-color: $green;
+					}
+					
+					&.mi-bottom-border-color-darkgrey {
+						border-bottom-color: $dark-grey;
+					}
+					
+					&.bottom-button-border-color-silver {
+						border-bottom-color: $app-header;
+					}
+					
+					&.mi-bottom-border-color-none {
+						border-bottom-color: transparent !important;
+					}
+
+				//	Style
+					
+					&.mi-bottom-border-dashed {
+						border-bottom-style: dashed;
+					}					
+					&.mi-bottom-border-dotted {
+						border-bottom-style: dotted;
+					}
+					&.mi-bottom-border-solid {
+						border-bottom-style: solid;
+					}
+					&.mi-bottom-border-double {
+						border-bottom-style: double;
+					}
+
+			//	Left Border styles
+				
+				//	Size
+					
+					&.mi-left-border-none {
+						border-left: none !important;
+					}
+					
+					&.mi-left-border-normal {
+						border-left-width: 1px;
+					}
+					
+					&.mi-left-border-2px {
+						border-left-width: 2px;
+					}
+					
+					&.mi-left-border-4px {
+						border-left-width: 4px;
+					}
+					
+					&.mi-left-boreder-6px {
+						border-left-width: 6px;
+					}
+					
+					&.mi-left-border-8px {
+						border-left-width: 8px;
+					}
+					
+					&.mi-left-border-10px {
+						border-left-width: 10px;
+					}
+
+				//	Color
+					
+					&.mi-left-border-color-alert {
+						border-left-color: $pink;
+					}
+					
+					&.mi-left-border-color-primary {
+						border-left-color: $blue;
+					}
+					
+					&.mi-left-border-color-grey {
+						border-left-color: $grey;
+					}
+					
+					&.mi-left-border-color-navigation {
+						border-left-color: $dark-blue;
+					}
+					
+					&.mi-left-border-color-caution {
+						border-left-color: $yellow;
+					}
+					
+					&.mi-left-border-color-success {
+						border-left-color: $green;
+					}
+					
+					&.mi-left-border-color-darkgrey {
+						border-left-color: $dark-grey;
+					}
+					
+					&.left-border-color-silver {
+						border-left-color: $app-header;
+					}
+					
+					&.mi-left-border-color-none {
+						border-left-color: transparent !important;
+					}
+
+				//	Style
+					
+					&.mi-left-border-dashed {
+						border-left-style: dashed;
+					}					
+					&.mi-left-border-dotted {
+						border-left-style: dotted;
+					}					
+					&.mi-left-border-solid {
+						border-left-style: solid;
+					}					
+					&.mi-left-border-double {
+						border-left-style: double;
+					}
+
+			//	Right Border styles
+				
+				//	Size
+					&.mi-right-border-none {
+						border-right: none !important;
+					}
+					&.mi-right-border-normal {
+						border-right-width: 1px;
+					}
+					&.mi-right-border-2px {
+						border-right-width: 2px;
+					}
+					&.mi-right-border-4px {
+						border-right-width: 4px;
+					}
+					&.mi-right-boreder-6px {
+						border-right-width: 6px;
+					}
+					&.mi-right-border-8px {
+						border-right-width: 8px;
+					}
+					&.mi-right-border-10px {
+						border-right-width: 10px;
+					}
+
+				//	Color
+					
+					&.mi-right-border-color-alert {
+						border-right-color: $pink;
+					}
+					
+					&.mi-right-border-color-primary {
+						border-right-color: $blue;
+					}
+					
+					&.mi-right-border-color-grey {
+						border-right-color: $grey;
+					}
+					
+					&.mi-right-border-color-navigation {
+						border-right-color: $dark-blue;
+					}
+					
+					&.mi-right-border-color-caution {
+						border-right-color: $yellow;
+					}
+					
+					&.mi-right-border-color-success {
+						border-right-color: $green;
+					}
+					
+					&.mi-right-border-color-darkgrey {
+						border-right-color: $dark-grey;
+					}
+					
+					&.right-border-color-silver {
+						border-right-color: $app-header;
+					}
+
+					&.mi-right-border-color-none {
+						border-right-color: transparent !important;
+					}
+
+				//	Style
+										
+					&.mi-right-border-dashed {
+						border-right-style: dashed;
+					}
+					
+					&.mi-right-border-dotted {
+						border-right-style: dotted;
+					}
+					
+					&.mi-right-border-solid {
+						border-right-style: solid;
+					}
+					
+					&.mi-right-border-double {
+						border-right-style: double;
+					}
+			
+
+
+
+		}
+	}
+#{$text-input-selectors} {
+	@include borderRadius;
+	border: 1px solid $form-border-color;
+	color: $dark-grey;
+
+	&:focus {
+		border: 1px solid $blue;
+		border-right-width: 4px;
+	}
+}
+
+.mi-label-inProgress{
+    @include opacity(0.5);
+    zoom:1;
+    color: $grey !important;
+    &:hover{
+        cursor:default !important;
+        text-decoration: none !important;
+        color: $grey !important;
+    }
+    a{ color: $grey !important; }
+}
+
+label {
+	font-size: $base-font-size;
+	margin-bottom: 10px;
+	color: $dark-grey;
+	font-weight: 600;
+
+	&:hover {
+		cursor: pointer;
+		@include breakpoint(large) {
+			.checkmark {
+				color: $green !important;
+			}
+		}
+	}
+
+	&.mi-caption {
+	 	font-weight: 500;
+		font-size: $base-font-size !important;
+		color: $dark-grey !important;
+
+		.system-page-right-content & {
+			font-weight: 600 !important;
+		}
+	}
+
+	//	Checkbox sizes -- font-size impacts checkbox size.
+	&.font-xxxsmall 	{ 
+		font-size: $font-xxxsmall !important; 
+		span {
+			&:before {
+				font-size: $font-xxxsmall !important; 
+			}
+		}
+	}
+	&.font-xxsmall  	{ 
+		font-size: $font-xxsmall !important; 
+		span {
+			&:before {
+				font-size: $font-xxsmall !important; 	
+			}
+		}
+	}
+	&.font-xsmall     	{ 
+		font-size: $font-xsmall !important; 
+		span {
+			&:before {
+				font-size: $font-xsmall !important;
+			}
+		}
+	}
+	//	ONLY THESE SIZES ARE GOING TO BE USED GOING FORWARD
+	&.font-small      	{ 
+		font-size: $font-small !important; 
+		span {
+			&:before {
+				font-size: $font-small !important; 
+			}
+		}
+	}
+	&.font-normal    	{ 
+		font-size: $font-normal !important; 
+		span {
+			&:before {
+				font-size: $font-normal !important; 
+			}
+		}
+	}
+	&.font-large      	{ 
+		font-size: $font-large !important; 
+		span {
+			&:before {
+				font-size: $font-large !important; 
+			}
+		}
+	}
+	&.font-xlarge     	{ 
+		font-size: $font-xlarge !important; 
+		span {
+			&:before {
+				font-size: $font-xlarge !important; 
+			}
+		}
+	}
+	&.font-xxlarge   	{ 
+		font-size: $font-xxlarge !important; 
+		span {
+			&:before {
+				font-size: $font-xxlarge !important;
+			}
+		}
+	}
+	&.font-xxxlarge  	{ 
+		font-size: $font-xxxlarge !important; 
+		span {
+			&:before {
+				font-size: $font-xxxlarge !important; 
+			}
+		}
+	}
+
+	//	Colors
+
+		&.mi-checkbox-alert {
+			input[type="checkbox"]:checked + span {
+				&:before,
+				&:after {
+					color:$pink !important;
+				}
+			}
+		}
+		&.mi-checkbox-primary {
+			input[type="checkbox"]:checked + span {
+				&:before,
+				&:after {
+					color:$blue !important;
+				}
+			}
+		}
+		&.mi-checkbox-secondary,
+		&.mi-checkbox-grey {
+			input[type="checkbox"]:checked + span {
+				&:before,
+				&:after {
+					color: $grey !important;
+				}
+			}
+		}
+		&.mi-checkbox-silver {
+			input[type="checkbox"]:checked + span {
+				&:before,
+				&:after {
+					color:$app-header !important;
+				}
+			}
+		}
+		&.mi-checkbox-navigation {
+			input[type="checkbox"]:checked + span {
+				&:before,
+				&:after {
+					color:$dark-blue !important;
+				}
+			}
+		}
+		&.mi-checkbox-caution {
+			input[type="checkbox"]:checked + span {
+				&:before,
+				&:after {
+					color:$yellow !important;
+				}
+			}
+		}
+		&.mi-checkbox-success {
+			input[type="checkbox"]:checked + span {
+				&:before,
+				&:after {
+					color:$green !important;
+				}
+			}
+		}
+		&.mi-checkbox-dark-grey {
+			input[type="checkbox"]:checked + span {
+				&:before,
+				&:after {
+					color:$dark-grey !important;
+				}
+			}
+		}
+
+	//	Label colors
+		&.mi-checkbox-label-alert {
+			span + span {
+				color: $pink !important;
+			}
+		}
+		&.mi-checkbox-label-primary {
+			span + span {
+				color: $blue !important;
+			}
+		}
+		&.mi-checkbox-label-secondary,
+		&.mi-checkbox-label-grey {
+			span + span {
+				color: $grey !important;
+			}
+		}
+		&.mi-checkbox-silver {
+			span + span {
+				color: $app-header !important;
+			}
+		}
+		&.mi-checkbox-label-navigation {
+			span + span {
+				color: $dark-blue !important;
+			}
+		}
+		&.mi-checkbox-label-caution {
+			span + span {
+				color: $yellow !important;
+			}
+		}
+		&.mi-checkbox-label-success {
+			span + span {
+				color: $green !important;
+			}
+		}
+		&.mi-checkbox-label-dark-grey {
+			span + span {
+				color: $dark-grey !important;
+			}
+		}
+
+	span {
+        pointer-events: none;
+        font-weight: normal;
+		&.checkbox,
+		&.radio {
+			font-family: 'method-font','method-icon','method-icon-solid','Source Sans Pro';
+			// @include breakpoint(small only) {
+			// 	display: inline-block;
+			// }
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	input[type="checkbox"],
+	input[type="radio"],
+	input[type="checkbox"][style] {
+	    display:none !important;
+	 }
+
+	//	Checkbox Styles
+	input[type="checkbox"] + span {
+
+		&.checkmark {
+			color: $grey;
+
+			&:before {
+				@extend %mi-icon-ok;
+				display:inline-block;
+			   	padding: 1px 0 0 0;
+			   	margin-right:0.25em;
+			   	background:transparent;
+			   	font-size: $h1-size;
+			   	font-weight: bold;
+			   	line-height: 1.5;
+			   	vertical-align: middle;
+			   	min-width: 14px;
+			   	text-align: center;
+			
+			}
+
+		}
+
+		&.mi-checkbox-left:before,
+		&.mi-checkbox-right:after {
+			@extend %mi-icon-checkbox-outline-empty;
+		   	display:inline-block;
+		   	padding: 1px 0 0 0;
+		   	margin-right:0.25em;
+		   	color: $grey;
+		   	background:transparent;
+		   	font-size: $base-font-size;
+		   	line-height: 1.5;
+		   	vertical-align: middle;
+		   	min-width: 14px;
+		   	text-align: center;
+
+		   	&:hover {
+	    		cursor:pointer;
+	    	}
+
+			  #controlSettings & {
+			  	min-width: 14px !important;
+			  }
+
+			  @-moz-document url-prefix() {
+			  	#controlSettings & {
+			  		padding-top: 0 !important;
+			  	}
+			  }
+	    }
+
+	}
+	input[type="checkbox"] + span {
+		&.mi-checkbox-right:after {
+			margin-right:0em;
+			margin-left:0.25em;
+			float: right;
+		}
+	}
+	//	Disabled checkbox
+	input[type="checkbox"][disabled="disabled"] + span {
+		&.mi-checkbox-left:before,
+		&.mi-checkbox-right:after {
+			@extend %mi-icon-square-filled;
+		    display:inline-block;
+		    padding: 0;
+		    color: $card-border !important;
+		   	font-size: $base-font-size;
+		   	line-height: 1.5;
+		   	vertical-align: middle;
+			padding: 1px 0 0 0;
+
+		   	&:hover {cursor:default !important;}
+		}
+	}
+	//	Disabled checkbox checked
+	input[type="checkbox"][disabled="disabled"]:checked + span {
+		&.mi-checkbox-left:before,
+		&.mi-checkbox-right:after {
+			@extend %mi-icon-checkbox-alt;
+		    display:inline-block;
+		    padding: 0;
+		    color: $grey !important;
+		   	font-size: $base-font-size;
+		   	line-height: 1.5;
+			vertical-align: middle;
+			padding: 1px 0 0 0;
+
+		   	&:hover {cursor:default;}
+		}
+	}
+	input[type="checkbox"]:checked + span {
+		&.mi-checkbox-left:before,
+		&.mi-checkbox-right:after {
+			@extend %mi-icon-checkbox-alt;
+		    display:inline-block;
+		    padding: 0;
+		    font-size: $base-font-size;
+		   	line-height: 1.5;
+		    color: $blue;
+		    vertical-align: middle;
+			padding: 1px 0 0 0;
+		}
+		&.checkmark {
+			&:before {
+				animation: pulse 1s ease;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				color: $green;
+			}
+
+			@keyframes pulse {
+			  0% {
+			    transform: scale(1);
+			  }
+
+			  50% {
+			    transform: scale(1.5);
+			  }
+
+			  100% {
+			    transform: scale(1);
+			  }
+			}
+		}
+
+	}
+
+	//	Radio Button Styles
+	input[type="radio"] + span:before {
+
+		@extend %mi-icon-check-circle-empty;
+	   	display:inline-block;
+	   	padding: 0;
+	   	margin-right:0.25em;
+	   	color: $grey;
+	   	font-size: $base-font-size;
+	   	line-height: 1.5;
+	   	top: 2px;
+    	position: relative;
+	   	min-width: 15px;
+	   	text-align: center;
+	   	&:hover {
+	   		cursor:pointer;
+	   	}
+
+	  #controlSettings & {
+	  	min-width: 14px !important;
+	  }
+	}
+
+
+	input[type="radio"]:checked + span:before {
+		@extend %mi-icon-check-circle-full;
+	    display:inline-block;
+	    padding: 0;
+	    color: $blue;
+	}
+
+	input[type="radio"][disabled="disabled"] + span:before {
+		@extend %mi-icon-check-circle-full;
+		display:inline-block;
+	    padding: 0;
+	    margin-right: 0.25em;
+	    color: $dark-grey;
+	   	font-size: $base-font-size;
+	   	line-height: 1.5;
+	   	top: 2px;
+    	position: relative;
+	   	cursor:default !important;
+
+	   	&:hover {cursor:default !important;}
+
+		  #controlSettings & {
+		  	line-height: 1 !important;
+		  }
+	}
+
+	input[type="radio"][disabled="disabled"] + span.radio {
+		//color: $light-grey-blue-light20;
+		&:hover {cursor:default !important;}
+	}
+
+	input[type="radio"][disabled="disabled"]:checked + span.radio {
+		color: $dark-grey !important;
+	}
+
+	input[type="radio"][disabled="disabled"]:checked + span:before {
+		@extend %mi-icon-check-circle-empty;
+	    display:inline-block;
+	    padding: 0;
+	   	color: $dark-grey !important;
+	   	cursor:default !important;
+	   	top: 2px;
+    	position: relative;
+	   	 &:hover {
+	   		cursor:default !important;
+	   	}
+	}
+}
+
+
+//	CONTROL GLOBAL STYLES
+div[method_type="TGL"],
+div[method_type="DRP"],
+div[method_type="GRD"],
+div[method_type="BTN"],
+div[method_type="CAL"],
+div[method_type="CHT"],
+div[method_type="DTP"],
+div[method_type="HTM"],
+div[method_type="ICO"],
+div[method_type="RAD"],
+div[method_type="TXT"],
+div[method_type="LBL"] {
+
+	label,
+	div,
+	p,
+	h1 {
+			
+		//	Label colors for switch
+		&.mi-caption-alert,
+		&.mi-caption-pink {
+			color: $pink !important;
+		}
+		&.mi-caption-primary {
+			color: $blue !important;
+		}
+		&.mi-caption-silver {
+			color: $app-header !important;
+		}
+		&.mi-caption-navigation {
+			color: $dark-blue !important;
+		}
+		&.mi-caption-yellow {
+			color: $yellow !important;
+		}
+		&.mi-caption-success {
+			color: $green !important;
+		}
+		&.mi-caption-grey {
+			color: $grey !important;
+		}
+		&.mi-caption-gunmetal {
+			color: $dark-grey !important;
+		}
+		&.mi-caption-black {
+			color: $black !important;
+		}
+		&.mi-caption-white {
+			color: $white !important;
+		}
+		&.mi-caption-aqua {
+			color: $aqua !important;
+		}
+		&.mi-caption-orange {
+			color: $orange !important;
+		}
+		&.mi-caption-purple {
+			color: $purple !important;
+		}
+
+		//	Icon colors for text element
+
+		&.mi-icon-color-alert,
+		&.mi-icon-color-pink {
+			&:before {
+				color: $pink;
+			}
+		}
+		&.mi-icon-color-primary {
+			&:before {
+				color: $blue;
+			}
+		}
+		&.mi-icon-color-secondary {
+			&:before {
+				color: $grey;
+			}
+		}
+		&.mi-icon-color-navigation {
+			&:before {
+				color: $dark-blue;
+			}
+		}
+		&.mi-icon-color-caution {
+			&:before {
+				color: $orange;
+			}
+		}
+		&.mi-icon-color-yellow {
+			&:before {
+				color: $yellow;
+			}
+		}
+		&.mi-icon-color-success {
+			&:before {
+				color: $green;
+			}
+		}
+		&.mi-icon-color-darkgrey {
+			&:before {
+				color: $dark-grey;
+			}
+		}
+		&.mi-icon-color-silver {
+			&:before {
+				color: $app-header;
+			}
+		}
+		&.mi-icon-color-black {
+			&:before {
+				color: $black;
+			}
+		}
+		&.mi-icon-color-white {
+			&:before {
+				color: $white;
+			}
+		}
+		&.mi-icon-color-aqua {
+			&:before {
+				color: $aqua;
+			}
+		}
+		&.mi-icon-color-purple {
+			&:before {
+				color: $purple;
+			}
+		}
+
+		//	Sizes for switch label
+		&.mi-caption-font-xxxsmall 	{ font-size: $font-xxxsmall !important; }
+		&.mi-caption-font-xxsmall  	{ font-size: $font-xxsmall !important; }
+		&.mi-caption-font-xsmall     	{ font-size: $font-xsmall !important; }
+		//	ONLY THESE SIZES ARE GOING TO BE USED GOING FORWARD
+		&.mi-caption-font-small      	{ font-size: $font-small !important; }
+		&.mi-caption-font-normal    	{ font-size: $font-normal !important; }
+		&.mi-caption-font-large      	{ font-size: $font-large !important; }
+		&.mi-caption-font-xlarge     	{ font-size: $font-xlarge !important; }
+		&.mi-caption-font-xxlarge   	{ font-size: $font-xxlarge !important; }
+		&.mi-caption-font-xxxlarge  	{ font-size: $font-xxxlarge !important; }
+
+		//	Caption text alignment
+		&.mi-caption-left {
+			text-align: left;
+		}
+		&.mi-caption-right {
+			text-align: right;
+		}
+		&.mi-caption-center {
+			text-align: center;
+		}
+
+		//	Caption alignment
+		&.mi-caption-float-right {
+			float: right;
+		}
+		&.mi-caption-float-left {
+			float: left;
+		}
+
+		&.mi-text-bold {
+			font-weight: 600 !important;
+		}
+		&.mi-text-bolder {
+			font-weight: bold !important;
+		}
+	}
+}
+
+//	Text element
+div[method_type="LBL"] {
+	p,
+	h1 {
+			//&:after{
+            //    color: $body-font-color !important;
+			//}
+		//	Label colors for switch
+		&.mi-caption-grey { color: $m-grey !important; }
+		&.mi-caption-dark-grey { color: $m-dark-grey !important; }
+		&.mi-caption-navigation { color: $m-dark-blue !important; }
+		&.mi-caption-alert { color: $m-red !important; }
+		&.mi-caption-pink { color: $pink !important; }
+		&.mi-caption-purple { color: $m-purple !important; }
+		&.mi-caption-primary { color: $blue !important; }
+		&.mi-caption-aqua { color: $aqua !important; }
+		&.mi-caption-success { color: $m-green !important; }
+		&.mi-caption-yellow { color: $m-yellow !important; }
+		&.mi-caption-caution { color: $m-orange !important; }
+		&.mi-caption-black { color: $black !important; }
+		&.mi-caption-white { color: $white !important; }
+        
+   	//	Icon colors for text element
+        &.mi-icon-grey { &:before,&:after {color: $m-grey !important; }}
+		&.mi-icon-dark-grey { &:before,&:after  {color: $m-dark-grey !important; }}
+		&.mi-icon-navigation { &:before,&:after  {color: $m-dark-blue !important; }}
+		&.mi-icon-alert { &:before,&:after  {color: $m-red !important; }}
+		&.mi-icon-pink { &:before,&:after  {color: $pink !important; }}
+		&.mi-icon-purple { &:before,&:after  {color: $m-purple !important; }}
+		&.mi-icon-primary { &:before,&:after  {color: $blue !important; }}
+		&.mi-icon-aqua { &:before,&:after  {color: $aqua !important; }}
+		&.mi-icon-success { &:before,&:after  {color: $m-green !important; }}
+		&.mi-icon-yellow { &:before,&:after  {color: $m-yellow !important; }}
+		&.mi-icon-caution { &:before,&:after  {color: $m-orange !important; }}
+		&.mi-icon-black { &:before,&:after  {color: $black !important; }}
+		&.mi-icon-white { &:before,&:after  {color: $white !important; }}    
+        
+		//	Sizes for switch label
+		&.mi-caption-font-xxxsmall 	{ font-size: $font-xxxsmall !important; }
+		&.mi-caption-font-xxsmall  	{ font-size: $font-xxsmall !important; }
+		&.mi-caption-font-xsmall     	{ font-size: $font-xsmall !important; }
+		//	ONLY THESE SIZES ARE GOING TO BE USED GOING FORWARD
+		&.mi-caption-font-small      	{ font-size: $font-small !important; }
+		&.mi-caption-font-normal    	{ font-size: $font-normal !important; }
+		&.mi-caption-font-large      	{ font-size: $font-large !important; }
+		&.mi-caption-font-xlarge     	{ font-size: $font-xlarge !important; }
+		&.mi-caption-font-xxlarge   	{ font-size: $font-xxlarge !important; }
+		&.mi-caption-font-xxxlarge  	{ font-size: $font-xxxlarge !important; }
+
+		//	Caption text alignment
+			&.mi-caption-left {
+				text-align: left;
+			}
+			&.mi-caption-right {
+				text-align: right;
+			}
+			&.mi-caption-center {
+				text-align: center;
+			}
+
+            &.mi-text-left {
+				text-align: left;
+			}
+			&.mi-text-right {
+				text-align: right;
+			}
+			&.mi-text-center {
+				text-align: center;
+			}
+            &.mi-text-justify {
+				text-align: justify;
+			}
+
+
+		//	Caption alignment
+			&.mi-caption-float-right {
+				float: right;
+			}
+			&.mi-caption-float-left {
+				float: left;
+			}
+
+			&.mi-text-bold {
+				font-weight: 600 !important;
+			}
+			&.mi-text-bolder {
+				font-weight: bold !important;
+			}
+
+		//	Button border sizes
+		
+			//	Top Border styles
+				
+				//	Size
+					&.mi-top-border-none {
+						border-top: none !important;
+					}
+					&.mi-top-border-normal {
+						border-top-width: 1px !important;
+					}
+					&.mi-top-border-2px {
+						border-top-width: 2px !important;
+					}
+					&.mi-top-border-4px {
+						border-top-width: 4px !important;
+					}
+					&.mi-top-border-6px {
+						border-top-width: 6px !important;
+					}
+					&.mi-top-border-8px {
+						border-top-width: 8px !important;
+					}
+					&.mi-top-border-10px {
+						border-top-width: 10px !important;
+					}
+
+				//	Color
+					
+					&.mi-top-border-color-alert {
+						border-top-color: $pink !important;
+					}
+					&.mi-top-border-color-primary {
+						border-top-color: $blue !important;
+					}
+					&.mi-top-border-color-grey {
+						border-top-color: $grey !important;
+					}
+					&.mi-top-border-color-navigation {
+						border-top-color: $dark-blue !important;
+					}
+					&.mi-top-border-color-caution {
+						border-top-color: $yellow !important;
+					}
+					&.mi-top-border-color-success {
+						border-top-color: $green !important;
+					}
+					&.mi-top-border-color-darkgrey {
+						border-top-color: $dark-grey !important;
+					}
+					&.mi-top-border-color-secondary {
+						border-top-color: $app-header !important;
+					}
+					&.mi-top-border-color-none {
+						border-top-color: transparent !important;
+					}
+
+				//	Style
+					
+					&.mi-top-border-dashed {
+						border-top-style: dashed;
+					}
+					&.mi-top-border-dotted {
+						border-top-style: dotted;
+					}
+					&.mi-top-border-solid {
+						border-top-style: solid;
+					}
+					&.mi-top-border-double {
+						border-top-style: double;
+					}
+
+			//	Bottom Border styles
+				
+				//	Size
+					
+					&.mi-bottom-border-none {
+						border-bottom: none !important;
+					}
+					&.mi-bottom-border-normal {
+						border-bottom-width: 1px !important;
+					}
+					&.mi-bottom-border-2px {
+						border-bottom-width: 2px !important;
+					}
+					&.mi-bottom-border-4px {
+						border-bottom-width: 4px !important;
+					}
+					&.mi-bottom-border-6px {
+						border-bottom-width: 6px !important;
+					}
+					&.mi-bottom-border-8px {
+						border-bottom-width: 8px !important;
+					}
+					&.mi-bottom-border-10px {
+						border-bottom-width: 10px !important;
+					}
+
+				//	Color
+					
+					&.mi-bottom-border-color-alert {
+						border-bottom-color: $pink !important;
+					}
+					&.mi-bottom-border-color-primary {
+						border-bottom-color: $blue !important;
+					}
+					&.mi-bottom-border-color-grey {
+						border-bottom-color: $grey !important;
+					}
+					&.mi-bottom-border-color-navigation {
+						border-bottom-color: $dark-blue !important;
+					}
+					&.mi-bottom-border-color-caution {
+						border-bottom-color: $yellow !important;
+					}
+					&.mi-bottom-border-color-success {
+						border-bottom-color: $green !important;
+					}
+					&.mi-bottom-border-color-darkgrey {
+						border-bottom-color: $dark-grey !important;
+					}
+					&.bottom-button-border-color-silver {
+						border-bottom-color: $app-header !important;
+					}
+					&.mi-bottom-border-color-none {
+						border-bottom-color: transparent !important;
+					}
+
+				//	Style
+		
+					&.mi-bottom-border-dashed {
+						border-bottom-style: dashed;
+					}
+					&.mi-bottom-border-dotted {
+						border-bottom-style: dotted;
+					}
+					&.mi-bottom-border-solid {
+						border-bottom-style: solid;
+					}
+					&.mi-bottom-border-double {
+						border-bottom-style: double;
+					}
+
+			//	Left Border styles
+				
+				//	Size
+					
+					&.mi-left-border-none {
+						border-left: none !important;
+					}
+					&.mi-left-border-normal {
+						border-left-width: 1px !important;
+					}
+					&.mi-left-border-2px {
+						border-left-width: 2px !important;
+					}
+					&.mi-left-border-4px {
+						border-left-width: 4px !important;
+					}
+					&.mi-left-boreder-6px {
+						border-left-width: 6px !important;
+					}
+					&.mi-left-border-8px {
+						border-left-width: 8px !important;
+					}
+					&.mi-left-border-10px {
+						border-left-width: 10px !important;
+					}
+
+				//	Color
+		
+					&.mi-left-border-color-alert {
+						border-left-color: $pink !important;
+					}
+					&.mi-left-border-color-primary {
+						border-left-color: $blue !important;
+					}
+					&.mi-left-border-color-grey {
+						border-left-color: $grey !important;
+					}
+					&.mi-left-border-color-navigation {
+						border-left-color: $dark-blue !important;
+					}
+					&.mi-left-border-color-caution {
+						border-left-color: $yellow !important;
+					}
+					&.mi-left-border-color-success {
+						border-left-color: $green !important;
+					}
+					&.mi-left-border-color-darkgrey {
+						border-left-color: $dark-grey !important;
+					}
+					&.left-border-color-silver {
+						border-left-color: $app-header !important;
+					}
+					&.mi-left-border-color-none {
+						border-left-color: transparent !important;
+					}
+
+				//	Style
+	
+					&.mi-left-border-dashed {
+						border-left-style: dashed;
+					}
+					&.mi-left-border-dotted {
+						border-left-style: dotted;
+					}
+					&.mi-left-border-solid {
+						border-left-style: solid;
+					}
+					&.mi-left-border-double {
+						border-left-style: double;
+					}
+
+			//	Right Border styles
+				
+				//	Size
+					
+					&.mi-right-border-none {
+						border-right: none !important;
+					}
+					&.mi-right-border-normal {
+						border-right-width: 1px;
+					}
+					&.mi-right-border-2px {
+						border-right-width: 2px;
+					}
+					&.mi-right-border-4px {
+						border-right-width: 4px;
+					}
+					&.mi-right-border-6px {
+						border-right-width: 6px;
+					}
+					&.mi-right-border-8px {
+						border-right-width: 8px;
+					}
+					&.mi-right-border-10px {
+						border-right-width: 10px;
+					}
+
+				//	Color
+					
+					&.mi-right-border-color-alert {
+						border-right-color: $pink;
+					}
+					&.mi-right-border-color-primary {
+						border-right-color: $blue;
+					}
+					&.mi-right-border-color-grey {
+						border-right-color: $grey;
+					}
+					&.mi-right-border-color-navigation {
+						border-right-color: $dark-blue;
+					}
+					&.mi-right-border-color-caution {
+						border-right-color: $yellow;
+					}
+					&.mi-right-border-color-success {
+						border-right-color: $green;
+					}
+					&.mi-right-border-color-darkgrey {
+						border-right-color: $dark-grey;
+					}
+					&.right-border-color-silver {
+						border-right-color: $app-header;
+					}
+					&.mi-right-border-color-none {
+						border-right-color: transparent !important;
+					}
+
+				//	Style
+					
+					&.mi-right-border-dashed {
+						border-right-style: dashed;
+					}
+					&.mi-right-border-dotted {
+						border-right-style: dotted;
+					}
+					&.mi-right-border-solid {
+						border-right-style: solid;
+					}
+					&.mi-right-border-double {
+						border-right-style: double;
+					}
+	}
+}
+
+
+//	SWITCH STYLES | THESE ARE DESIGNER OVERRIDES
+@mixin toggleColor($background, $text: $white) {
+  &+ label {
+		background: $background;
+		color: $text;
+
+		span.on {
+			color: $text !important;
+		}
+
+		&:after {
+			border-color: $background;
+		}
+	}
+  }
+
+
+
+  div[method_type="TXT"] {
+      label {
+          width:inherit;
+      }
+   }
+
+
+
+div[method_type="TXT"],
+div[method_type="ICO"] {
+
+    label.mi-caption {
+        line-height:1em;
+        &.mi-caption-grey { color: $m-grey !important; }
+		&.mi-caption-dark-grey { color: $m-dark-grey !important; }
+		&.mi-caption-navigation { color: $m-dark-blue !important; }
+		&.mi-caption-alert { color: $m-red !important; }
+		&.mi-caption-pink { color: $pink !important; }
+		&.mi-caption-purple { color: $m-purple !important; }
+		&.mi-caption-primary { color: $blue !important; }
+		&.mi-caption-aqua { color: $aqua !important; }
+		&.mi-caption-success { color: $m-green !important; }
+		&.mi-caption-yellow { color: $m-yellow !important; }
+		&.mi-caption-caution { color: $m-orange !important; }
+		&.mi-caption-black { color: $black !important; }
+		&.mi-caption-white { color: $white !important; }
+        }
+        
+    i
+        {
+        &.mi-icon-grey { color: $m-grey !important; }
+		&.mi-icon-dark-grey { color: $m-dark-grey !important; }
+		&.mi-icon-navigation { color: $m-dark-blue !important; }
+		&.mi-icon-alert { color: $m-red !important; }
+		&.mi-icon-pink { color: $pink !important; }
+		&.mi-icon-purple { color: $m-purple !important; }
+		&.mi-icon-primary { color: $blue !important; }
+		&.mi-icon-aqua { color: $aqua !important; }
+		&.mi-icon-success { color: $m-green !important; }
+		&.mi-icon-yellow { color: $m-yellow !important; }
+		&.mi-icon-caution { color: $m-orange !important; }
+		&.mi-icon-black { color: $black !important; }
+		&.mi-icon-white { color: $white !important; }
+         
+        }
+    }
+
+
+div[method_type="TGL"] {
+
+	label.mi-caption {
+		display: inline-block;
+		position: relative;
+		margin: 0 10px 0 0;
+		vertical-align: top;
+		height: 25px;
+    line-height: 25px;
+    color: $m-dark-grey;
+
+    &.mi-caption-float-right {
+    	margin-left: 8px;
+    }
+
+    &.mi-caption-grey { color: $m-grey !important; }
+		&.mi-caption-dark-grey { color: $m-dark-grey !important; }
+		&.mi-caption-navigation { color: $m-dark-blue !important; }
+		&.mi-caption-alert { color: $m-red !important; }
+		&.mi-caption-pink { color: $pink !important; }
+		&.mi-caption-purple { color: $m-purple !important; }
+		&.mi-caption-primary { color: $blue !important; }
+		&.mi-caption-aqua { color: $aqua !important; }
+		&.mi-caption-success { color: $m-green !important; }
+		&.mi-caption-yellow { color: $m-yellow !important; }
+		&.mi-caption-caution { color: $m-orange !important; }
+		&.mi-caption-black { color: $black !important; }
+		&.mi-caption-white { color: $white !important; }
+	}
+	
+	.switch {
+		width: 60px;
+		overflow: hidden;
+
+		//	Background colors (active)
+		input:checked {
+			&.mi-toggle-dark-grey { @include toggleColor($m-dark-grey); }
+			&.mi-toggle-navigation { @include toggleColor($m-dark-blue); }
+			&.mi-toggle-alert { @include toggleColor($m-red); }
+			&.mi-toggle-pink { @include toggleColor($pink); }
+			&.mi-toggle-purple { @include toggleColor($m-purple); }
+			&.mi-toggle-primary { @include toggleColor($blue); }
+			&.mi-toggle-aqua { @include toggleColor($aqua); }
+			&.mi-toggle-success { @include toggleColor($m-green); }
+			&.mi-toggle-yellow { @include toggleColor($m-yellow, $black); }
+			&.mi-toggle-caution { @include toggleColor($m-orange); }
+			&.mi-toggle-black { @include toggleColor($black); }
+
+			&.mi-toggle-silver { @include toggleColor($grey); }
+			&.mi-toggle-gunmetal { @include toggleColor($dark-grey); }
+
+			&+ label {
+				background-color: $blue;
+
+				&::after {
+					left: 34px;
+					border-color: $blue;
+				}			
+
+				span {
+					&.on { display: block; }
+					&.off { display: none; }
+				}
+			}
+		}
+
+		label {
+			background-color: $m-grey;
+
+			&::after {
+				border-color: $m-grey;
+			}
+
+			span {
+				font-size: 14px;
+				line-height: 24px;
+				width: 100%;
+				color: $white;
+
+				&.on {
+					display: none;
+					text-indent: 10px;
+					text-align: left;
+				}
+				&.off {
+					display: block;
+					text-indent: 22px;
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+
+
+
+//	Radiobutton designer styles
+
+.input-wrapper {
+	@include flexbox;
+	@include flexjustify(space-between);
+	@include flexalignitems(center);
+}
+
+
+.mi-radiobutton-group {
+
+	ul {
+		list-style: none;
+		margin:0;
+		padding: 0;
+	}
+
+	//	Radio button designer styles
+
+		//	Checkbox sizes -- font-size impacts checkbox size.
+		&.font-xxxsmall 	{ 
+			span {
+				font-size: $font-xxxsmall !important; 
+				&:before {
+					font-size: $font-xxxsmall !important; 
+				}
+			}
+		}
+		&.font-xxsmall  	{ 
+			
+			span {
+				font-size: $font-xxsmall !important; 
+				&:before {
+					font-size: $font-xxsmall !important; 	
+				}
+			}
+		}
+		&.font-xsmall     	{ 
+			
+			span {
+				font-size: $font-xsmall !important; 
+				&:before {
+					font-size: $font-xsmall !important;
+				}
+			}
+		}
+		//	ONLY THESE SIZES ARE GOING TO BE USED GOING FORWARD
+		&.font-small      	{ 
+			span {
+				font-size: $font-small !important; 
+				&:before {
+					font-size: $font-small !important; 
+				}
+			}
+		}
+		&.font-normal    	{ 
+			span {
+				font-size: $font-normal !important; 
+				&:before {
+					font-size: $font-normal !important; 
+				}
+			}
+		}
+		&.font-large      	{ 
+			span {
+				font-size: $font-large !important; 
+				&:before {
+					font-size: $font-large !important; 
+					min-width: 15px;
+				}
+			}
+		}
+		&.font-xlarge     	{ 
+			span {
+				font-size: $font-xlarge !important; 
+				&:before {
+					font-size: $font-xlarge !important; 
+					min-width: 18px;
+				}
+			}
+		}
+		&.font-xxlarge   	{ 		
+			span {
+				font-size: $font-xxlarge !important; 
+				&:before {
+					font-size: $font-xxlarge !important;
+					min-width: 21px;
+				}
+			}
+		}
+		&.font-xxxlarge  	{ 
+			span {
+				font-size: $font-xxxlarge !important; 
+				&:before {
+					font-size: $font-xxxlarge !important; 
+					min-width: 28px;
+				}
+			}
+		}
+
+		//	Colors
+
+			&.mi-radio-alert {
+				input[type="radio"]:checked + span:before {
+					color:$pink !important;
+				}
+			}
+			&.mi-radio-primary {
+				input[type="radio"]:checked + span:before {
+					color:$blue !important;	
+				}
+			}
+			&.mi-radio-grey {
+				input[type="radio"]:checked + span:before {
+					color: $grey !important;
+				}
+			}
+			&.mi-radio-silver,
+			&.mi-radio-secondary {
+				input[type="radio"]:checked + span:before {
+					color:$app-header !important;
+				}
+			}
+			&.mi-radio-navigation {
+				input[type="radio"]:checked + span:before {
+					color:$dark-blue !important;
+				}
+			}
+			&.mi-radio-caution {
+				input[type="radio"]:checked + span:before {
+					color:$yellow !important;
+				}
+			}
+			&.mi-radio-success {
+				input[type="radio"]:checked + span:before {
+					color:$green !important;
+				}
+			}
+			&.mi-radio-dark-grey {
+				input[type="radio"]:checked + span:before {
+					color:$dark-grey !important;
+				}
+			}
+}
+
+
+.error {
+	label,
+	.errorMessages {
+		color: $red;
+	}
+
+	.errorMessages {
+		margin-bottom: 10px;
+	}
+
+	input,
+	select,
+	textarea,
+	.mi-dropdown {
+		border-color: $red;
+	}
+}
+
+/*	Runtime Styles For Form Elements
+====================================================*/
+//	Runtime styles
+//	For Radio/Checkbox/Toggles Etc.
+
+.mi-radiobutton-group {
+	ul {
+		display: inline-block;
+		position:relative;
+		list-style: none;
+		margin:0;
+		padding: 0;
+		left:0;
+		width: 100%;
+
+		li {
+			display:block;
+			position: relative;
+
+			//	Horizontal Style
+			&.rad-horizontal {
+				display: inline-block;
+				margin-right: 0.25em;
+			}
+
+			//	Vertical Style
+			&.rad-vertical {
+				display: block;
+				margin-bottom: 0.25em;
+				clear:both;
+			}
+		}
+
+	}
+}

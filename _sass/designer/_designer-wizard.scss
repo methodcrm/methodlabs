@@ -1,0 +1,172 @@
+/* Grid Column Wizard */
+
+
+
+.mi-wizard-column-select {
+
+	//	Columns Start
+
+		-webkit-column-count:4; /* Chrome, Safari, Opera */
+		-moz-column-count:4; /* Firefox */
+		column-count:4;
+
+
+	@include tablet-landscape-and-below {
+		-webkit-column-count:3; /* Chrome, Safari, Opera */
+		-moz-column-count:3; /* Firefox */
+		column-count:3;
+		margin-bottom: 2.5em;
+	}
+	
+	@include tablet-portrait-and-below {
+		-webkit-column-count:2; /* Chrome, Safari, Opera */
+		-moz-column-count:2; /* Firefox */
+		column-count:2;
+		margin-bottom: 2em;
+	}
+	// -webkit-column-gap:40px; /* Chrome, Safari, Opera */
+	// -moz-column-gap:40px; /* Firefox */
+	// column-gap:40px;
+
+	// -webkit-column-rule:4px outset #ff00ff; /* Chrome, Safari, Opera */
+	// -moz-column-rule:4px outset #ff00ff; /* Firefox */
+	// column-rule:4px outset #ff00ff;
+
+	//	Columns END ^
+
+	//	Individual elements
+
+	.regFieldName {
+	    width:93%;
+	    background-color: $pale-grey;
+	    padding: 8px 5px 4px 7px;
+	    border: 1px solid $pale-grey-border;
+	    cursor: pointer;
+	    margin-bottom:0.25em;
+	    display: inline-block;
+
+	    @include tablet-landscape-and-below {
+	    	margin-bottom: 0.3em !important;
+	    	padding: 6px 5px 6px 7px;
+	    }
+
+		@include tablet-portrait-and-below {
+			margin-bottom: 0.3em !important;
+		}
+	    .insertChkSpan{
+		    width: 7%;
+		    display: none;
+		    font-size: 16px;
+		}
+
+		&.insertChkMult{
+		    padding: 7px 5px 0 7px;
+		    @include tablet-landscape-and-below {
+		    	padding: 6px 5px 6px 7px;
+		    }
+
+		    .insertTextSpan {
+		    	text-indent: 10px;
+		    }
+		}
+
+		.insertIconSpan{
+		    width: 10%;
+		    float: right;
+		    font-size: 16px;
+		    @include tablet-landscape-and-below {
+		    	position:relative;
+		    	top:0.25em;
+		    }
+		}
+
+		.insertTextSpan{
+		    display: inline-block;
+		    width:83%;
+		    overflow: hidden;
+		    white-space:nowrap; 
+		    text-overflow: ellipsis;
+		    font-size: 14px;
+		    @include tablet-landscape-and-below {
+		    	line-height: 2;
+		    }
+		}
+	}
+
+	.insertChkAll{
+	    display:inline-block;
+	    position: static;
+	    top: -2px;
+
+	    @include tablet-landscape-and-below {
+	    	top:0 !important;
+	    	margin-right:2px;
+	    }
+	}
+}
+
+//	Search Filter starts here
+
+	.mi-wizard-filter {
+	
+		width:auto !important;
+
+		.mi-form-search-header {
+			float: left;
+			width:100%;
+			clear: both;
+			.dd-search-header {
+				text-align: right;
+				max-width: 22em !important;
+				width: 100% !important;
+				float: right;
+				.dd-search-box-inner {
+					@include box-sizing;
+					border:3px solid $pale-grey-border !important;
+					background: $white !important;
+					color:$grey !important;
+					padding:0em !important;
+					margin:10px 10px 10px 0 !important;
+					font-size: 1.1em !important;
+					position: relative;
+
+					&:before {
+						content:"\e7eb" !important;
+						font-family: "method-icon";
+						position: absolute !important;
+						top:0.4em !important;
+						right:0.25em !important; 
+						margin-right: 0.14em;
+					}
+
+					.dd-search-input {
+						width:88% !important;
+						border:none !important;
+						font-size: $font-small !important;
+						background: $white !important;
+						color:$grey !important;
+						float: none !important;
+						font-weight: normal !important;
+						margin:0 0 1px 0 !important;
+						@include borderRadius(0 !important);
+						@include placeholder {
+							font-style: italic !important;
+							color:$grey !important;
+							opacity: 1 !important;
+						}
+						padding: 0.3em 0 0.3em 0.55em !important;
+
+						&:focus {
+							outline:none;
+						}
+						&:before {
+							content: "" !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+//	Search filter END ^

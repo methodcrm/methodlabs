@@ -1,0 +1,289 @@
+//  Method mixins
+
+//  Border radius
+@mixin borderRadius($radius:1px) {
+	-webkit-border-radius: 	$radius;
+	-moz-border-radius: 	  $radius;
+	border-radius: 			    $radius;
+}
+
+//  Box Sizing
+@mixin boxSizing($type:"border") {
+	/* Acceptable values are border, content, and padding - content is the default W3C model */
+	box-sizing: #{$type}-box;
+	-webkit-box-sizing: #{$type}-box;
+	-moz-box-sizing: #{$type}-box;
+	-ms-box-sizing: #{$type}-box;
+}
+
+//  Placeholder text for inputs
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      @content;
+      opacity: 0.75;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        @content;
+        opacity: 0.75;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+//  Flexbox mixins
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin flexalign($val) {
+  -ms-flex-align: $val;
+  -webkit-align-items: $val;
+  -webkit-box-align: $val;
+  align-items: $val;
+}
+
+@mixin flexjustify($val) {
+  -webkit-justify-content: $val;
+  -moz-justify-content: $val;
+  justify-content: $val;
+}
+
+@mixin flexdirection($val) {
+  -webkit-flex-direction: $val;
+  -moz-flex-direction: $val;
+  flex-direction: $val;
+}
+
+
+@mixin flexalignitems($val) {
+  -webkit-align-items: $val;
+  -moz-align-items: $val;
+  align-items: $val;
+}
+
+@mixin flexalignself($val) {
+  -webkit-align-self: $val;
+  -moz-align-self: $val;
+  align-self: $val;
+}
+
+@mixin flexflow($val) {
+  -webkit-box-flow: $val;
+  -ms-flex-flow: $val;
+  -webkit-flex-flow: $val;
+  flex-flow: $val;
+}
+
+@mixin flexorder($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin flexbasis($value: auto){
+  -webkit-flex-basis: $value;
+  -moz-flex-basis: $value;
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
+
+@mixin flexgrow($int: 0) {
+  -webkit-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -moz-flex-grow: $int;
+  -ms-flex-positive: $int;
+  flex-grow: $int;
+}
+
+@mixin flexshrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -moz-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+// Transform
+@mixin transform($type) {
+  -webkit-transform: $type;
+  -moz-transform: $type;
+  -o-transform:  $type;
+  transform: $type;
+}
+
+//  Transitions
+@mixin transition($transition-property, $transition-duration, $method) {
+    -webkit-transition: $transition-property $transition-duration $method;
+    -moz-transition: $transition-property $transition-duration $method;
+    -ms-transition: $transition-property $transition-duration $method;
+    -o-transition: $transition-property $transition-duration $method;
+    transition: $transition-property $transition-duration $method;
+}
+
+// Foundation for Apps
+//
+// Mixins
+// ------
+// The framework comes with a number of mixins that help you easily create common small components,
+// like triangles and menu icons.
+
+/// CSS Triangle
+/// Creates a CSS triangle, which can be used for dropdown arrows, popup tails, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the triangle to an existing element.
+///
+/// @param {number} $triangle-size - Width of the triangle.
+/// @param {color} $triangle-color - Color of the triangle.
+/// @param {keyword} $triangle-direction - Direction the triangle points. Can be `top`, `right`, `bottom`, or `left`.
+@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset $triangle-size;
+  @if ($triangle-direction == top) {
+    border-color: $triangle-color transparent transparent transparent;
+    border-top-style: solid;
+  }
+  @if ($triangle-direction == bottom) {
+    border-color: transparent transparent $triangle-color transparent;
+    border-bottom-style: solid;
+  }
+  @if ($triangle-direction == left) {
+    border-color: transparent transparent transparent $triangle-color;
+    border-left-style: solid;
+  }
+  @if ($triangle-direction == right) {
+    border-color: transparent $triangle-color transparent transparent;
+    border-right-style: solid;
+  }
+}
+
+// @mixins
+//
+/// Hamburger
+/// Creates a three-line menu icon, affectionately referred to as the "hamburger icon".
+///
+/// @param {number} $width - Width of the icon, in rem units.
+/// @param {number|boolean} $left - Left offset of the icon. Set to `false` to center the icon horizontally.
+/// @param {number|boolean} $top - Top offset of the icon. Set to `false` to center the icon vertically.
+/// @param {number} $thickness - Height of each line in the icon.
+/// @param {number} $gap - Amount of space between each line.
+/// @param {color} $color - Color of the lines.
+/// @param {color} $hover-color - Color of the lines on hover.
+@mixin hamburger($width, $left, $top, $thickness, $gap, $color, $hover-color, $offcanvas) {
+  span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0;
+
+    @if $offcanvas {
+      @if $top {
+        top: $top;
+      }
+      @else {
+        top: 50%;
+        margin-top: -$width/2;
+      }
+      @if $left {
+        left: $left;
+      }
+      @else {
+        left: ($tabbar-menu-icon-width - $width)/2;
+      }
+    }
+    @else {
+      top: 50%;
+      margin-top: -$width/2;
+      #{$opposite-direction}: $topbar-link-padding;
+    }
+
+    box-shadow:
+      0 0px 0 $thickness $color,
+      0 $gap + $thickness 0 $thickness $color,
+      0 (2 * $gap + 2*$thickness) 0 $thickness $color;
+    width: $width;
+  }
+  span:hover:after {
+    box-shadow:
+      0 0px 0 $thickness $hover-color,
+      0 $gap + $thickness 0 $thickness $hover-color,
+      0 (2 * $gap + 2*$thickness) 0 $thickness $hover-color;
+  }
+}
+
+/// Clearfix
+/// Uses the micro clearfix hack popularized by Nicolas Gallagher. Include this mixin on a container if its children are all floated, to give the container a proper height.
+///
+/// @see http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clearfix {
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+
+/// Invisible Element
+/// Makes an element visually hidden, but accessible.
+///
+/// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/// Invisible Element Off
+/// Reverses the CSS output by the `element-invisible()` mixin.
+@mixin element-invisible-off {
+  position: static !important;
+  height: auto;
+  width: auto;
+  overflow: visible;
+  clip: auto;
+}
+
+$text-input-selectors: 'input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea';
+
+
+@mixin box-shadow($val) {
+  -webkit-box-shadow:$val;
+  -moz-box-shadow:$val;
+  box-shadow:$val;
+}
+
+// Opacity 
+@mixin opacity ( $value: 0.5 ) {
+  opacity: $value;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=" $value * 100 " )';
+  filter: alpha(opacity= $value * 100 );
+  zoom: 1;
+}
+

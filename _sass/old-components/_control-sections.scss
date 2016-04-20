@@ -1,0 +1,734 @@
+/*general section innertable display*/
+.tbl
+{
+    display: table;
+    width: 100%;
+}
+
+.tbl-note {
+	color: $light-grey-blue-dark40 !important;
+	margin: 10px 0;
+}
+
+.tblrow
+{
+    display: table-row;
+
+}
+
+
+// .ds_sectionTable .tblrow:nth-child(even) {
+//     background-color:#f2f2f2;
+// }
+
+.tblcell
+{
+	@include box-sizing;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.tbl-fixed{
+	table-layout: fixed;
+
+	>tbody {
+		td{
+			text-overflow:ellipsis;
+			overflow-x:hidden;
+		}
+		th{
+			text-overflow:ellipsis;
+			overflow-x:hidden;
+		}
+	}
+}
+
+
+//	vertical align middle
+.cell-center,
+.cell-pull-left,
+.cell-pull-right {
+	@extend %cell-vert-middle;
+}
+
+.cell-center { @extend %cell-align-center; }
+.cell-pull-left { @extend %cell-align-left; }
+.cell-pull-right { @extend %cell-align-right; }
+
+//	vertical align bottom
+.cell-bottom-center,
+.cell-bottom-pull-left,
+.cell-bottom-pull-right {
+	@extend %cell-vert-bottom;
+}
+
+.cell-bottom-center { @extend %cell-align-center; }
+.cell-bottom-pull-left { @extend %cell-align-left; }
+.cell-bottom-pull-right { @extend %cell-align-right; }
+
+//	vertical align top
+.cell-top-center,
+.cell-top-pull-left,
+.cell-top-pull-right {
+	@extend %cell-vert-top;
+}
+
+.cell-top-center { @extend %cell-align-center; }
+.cell-top-pull-left { @extend %cell-align-left; }
+.cell-top-pull-right { @extend %cell-align-right; }
+
+/* backgroundcolor */
+
+//	Section theme background colors
+
+.mi-cell-alert{
+	background-color:$fuschia;
+}
+.mi-cell-primary{
+	background-color:$blue;
+}
+.mi-cell-secondary {
+	background-color:$silver;
+}
+.mi-cell-navigation{
+	background-color:$grey;
+}
+.mi-cell-success {
+	background-color: $green;
+}
+.mi-cell-caution {
+	background-color:$yellow;
+}
+.mi-cell-dark-grey {
+	background-color:$gunmetal;
+}
+.mi-cell-silver {
+	background-color:$pale-grey;
+}
+.mi-cell-black{
+	background-color:$black;
+}
+.mi-cell-white{
+	background-color:$white;
+}
+
+
+/*padding*/
+
+//	Left
+.mi-cell-padding-left-1x,
+.mi-cell-padding-left {
+	@extend %mi-padding-left-1em;
+}
+.mi-cell-padding-left-2x 		{ @extend %mi-padding-left-2em; }
+.mi-cell-padding-left-regular 	{ @extend %mi-padding-left-0em; }
+
+//	Right
+.mi-cell-padding-right-1x,
+.mi-cell-padding-right 	{
+	@extend %mi-padding-right-1em;
+}
+.mi-cell-padding-right-2x 		{ @extend %mi-padding-right-2em; }
+.mi-cell-padding-right-regular  { @extend %mi-padding-right-0em; }
+
+//	Top
+.mi-cell-padding-top-1x,
+.mi-cell-padding-top {
+	@extend %mi-padding-top-1em;
+}
+.mi-cell-padding-top-2x 		{ @extend %mi-padding-top-2em; }
+.mi-cell-padding-top-regular	{ @extend %mi-padding-top-0em; }
+
+//	Bottom
+.mi-cell-padding-bottom-1x,
+.mi-cell-padding-bottom {
+	@extend %mi-padding-bottom-1em;
+}
+.mi-cell-padding-bottom-2x 		{ @extend %mi-padding-bottom-2em; }
+.mi-cell-padding-bottom-regular	{ @extend %mi-padding-bottom-0em; }
+
+
+
+/*border*/
+
+//	Left border
+.mi-cell-border-left-thin,
+.mi-cell-border-left-thick {
+	@extend %left-border-solid;
+}
+.mi-cell-border-left-thin {
+	@extend %left-border-normal;
+}
+.mi-cell-border-left-thick{
+	@extend %left-border-4px;
+}
+.mi-cell-border-left-dotted{
+	@extend %left-border-dotted;
+}
+
+//	Right border
+.mi-cell-border-right-thin,
+.mi-cell-border-right-thick {
+	@extend %right-border-solid;
+}
+.mi-cell-border-right-thin {
+	@extend %right-border-normal;
+}
+.mi-cell-border-right-thick{
+	@extend %right-border-4px;
+}
+.mi-cell-border-right-dotted{
+	@extend %right-border-dotted;
+}
+
+//	Top border
+.mi-cell-border-top-thin,
+.mi-cell-border-top-thick {
+	@extend %top-border-solid;
+}
+.mi-cell-border-top-thin{
+	@extend %top-border-normal;
+}
+.mi-cell-border-top-thick{
+	@extend %top-border-4px;
+}
+.mi-cell-border-top-dotted{
+	@extend %top-border-dotted;
+}
+
+//	Bottom border
+.mi-cell-border-bottom-thin,
+.mi-cell-border-bottom-thick {
+	@extend %bottom-border-solid;
+}
+.mi-cell-border-bottom-thin{
+	@extend %bottom-border-normal;
+}
+.mi-cell-border-bottom-thick{
+	@extend %bottom-border-4px;
+}
+.mi-cell-border-bottom-dotted{
+	@extend %bottom-border-dotted;
+}
+
+//	Border Colors
+.mi-cell-border-alert{
+	border-color:$fuschia;
+}
+.mi-cell-border-primary{
+	border-color:$blue;
+}
+.mi-cell-border-secondary {
+	border-color:$silver;
+}
+.mi-cell-border-navigation{
+	border-color:$grey;
+}
+.mi-cell-border-success {
+	border-color: $green;
+}
+.mi-cell-border-caution {
+	border-color:$yellow;
+}
+.mi-cell-border-dark-grey {
+	border-color:$gunmetal;
+}
+.mi-cell-border-silver {
+	border-color:$pale-grey-border;
+}
+.mi-cell-border-black{
+	border-color:$black;
+}
+.mi-cell-border-white{
+	border-color:$white;
+}
+
+/*controls side by side*/
+.control {
+    display: inline-block;
+    vertical-align: top;
+	max-width:100%;
+}
+.controlHide{
+	display:none !important;
+}
+
+/*html editor and section  */
+
+.AdvCtrlDisabled {
+	@extend %AdvCtrlDisabled;
+}
+
+.mi-SectionHeader {
+    background-color: #FFF;
+}
+
+
+/*RP Responsive sections*/
+@include tablet-landscape-and-below {
+	.FlowTablet > .tblrow > .tblcell{
+		display:block;
+		float:left;
+		/* commenting out as discussed with Paul, we wont override fixed widths for desktop/tablet  width:auto !important;*/
+	}
+
+	.FlowTablet, .FlowMobile {
+		overflow: hidden;
+	}
+}
+
+@include mobile-only {
+	.FlowMobile > .tblrow > .tblcell,
+	.FlowTablet > .tblrow > .tblcell{
+		display:block !important;
+		width:100% !important;
+	}
+	.FlowTablet, .FlowMobile {
+		overflow: hidden;
+	}
+}
+
+.mi-section-icon-left{
+	.mi-section-collapsible{
+		float: left;
+	}
+}
+.mi-section-icon-right{
+	.mi-section-collapsible{
+		float: none;
+		display:inline-block;
+	}
+
+}
+
+.mi-section-collapsible {
+    float: right;
+	color: $silver-dark-20percent;
+	display:block;
+	margin-left: 0.5em;
+}
+
+.mi-Section {
+
+	float:left;
+	display:block;
+	// position: relative;
+	width: 100%;
+	top:0;
+	@include box-sizing;
+    /* can be style override background:$white;*/
+
+	.mi-SectionHeader {
+		font-size: $font-xlarge;
+		cursor: pointer;
+		background:$white;
+
+		.sectionHeaderCaption {
+			color: $grey;
+		}
+	}
+}
+//	Section Header Background Colors
+
+.mi-section-header-background-alert {
+	> .mi-SectionHeader {
+		background:$fuschia;
+	}
+}
+.mi-section-header-background-primary {
+	> .mi-SectionHeader {
+		background:$blue;
+	}
+}
+.mi-section-header-background-secondary {
+	> .mi-SectionHeader {
+		background:$silver;
+	}
+}
+.mi-section-header-background-navigation {
+	> .mi-SectionHeader {
+		background:$grey;
+	}
+}
+.mi-section-header-background-caution {
+	> .mi-SectionHeader {
+		background:$yellow;
+	}
+}
+.mi-section-header-background-success {
+	> .mi-SectionHeader {
+		background:$green;
+	}
+}
+.mi-section-header-background-dark-grey {
+	> .mi-SectionHeader {
+		background:$gunmetal;
+	}
+}
+.mi-section-header-background-silver {
+	> .mi-SectionHeader {
+		background:$pale-grey;
+	}
+}
+.mi-section-header-background-black {
+	> .mi-SectionHeader {
+		background:$black;
+	}
+}
+.mi-section-header-background-white {
+	> .mi-SectionHeader {
+		background:$white;
+	}
+}
+
+//	Header Icons
+
+.mi-section-header-border-none {
+
+	.mi-SectionHeader {
+		border-bottom:none !important;
+	}
+}
+//	Chevrons
+.mi-section-chevron {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f077" !important;
+				}
+			}
+			&.icon-down {
+				&:before {
+					content:"\f078" !important;
+				}
+			}
+		}
+	}
+}
+//	Double Arrows
+.mi-section-double-arrow {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f102" !important;
+				}
+			}
+			&.icon-down{
+				&:before {
+					content:"\f103" !important;
+
+				}
+			}
+		}
+	}
+}
+//	Circle Arrows
+.mi-section-circle-arrow {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f0aa" !important;
+
+				}
+			}
+			&.icon-down{
+				&:before {
+					content:"\f0ab" !important;
+
+				}
+			}
+		}
+	}
+}
+//	Circle Chevrons
+.mi-section-circle-chevron {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f139" !important;
+
+				}
+			}
+			&.icon-down{
+				&:before {
+					content:"\f13a" !important;
+
+				}
+			}
+		}
+	}
+}
+//	Angles
+.mi-section-angle-arrow {
+	.mi-section-collapsible {
+		i {
+			&.icon-up{
+				&:before {
+					content:"\f106" !important;
+
+				}
+			}
+			&.icon-down{
+				&:before {
+					content:"\f107" !important;
+
+				}
+			}
+		}
+	}
+}
+
+
+//	Header Icon Colors
+.mi-section-header-icon-alert {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $fuschia !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-primary {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $blue !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-secondary {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $silver !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-navigation {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $grey !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-caution {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $yellow !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-success {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $green !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-dark-grey {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $gunmetal !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-silver {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $pale-grey-border !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-black {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $black !important;
+			}
+		}
+	}
+}
+.mi-section-header-icon-white {
+	>.mi-SectionHeader {
+		.mi-section-collapsible {
+			i {
+				color: $white !important;
+			}
+		}
+	}
+}
+
+// Header Title Size
+.mi-section-header-caption-font-xxxsmall{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xxxsmall;
+		}
+	}
+}
+.mi-section-header-caption-font-xxsmall{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xxsmall;
+		}
+	}
+}
+.mi-section-header-caption-font-xsmall{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xsmall;
+		}
+	}
+}
+.mi-section-header-caption-font-small{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-small;
+		}
+	}
+}
+.mi-section-header-caption-font-normal{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-normal;
+		}
+	}
+}
+.mi-section-header-caption-font-large{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-large;
+		}
+	}
+}
+.mi-section-header-caption-font-xlarge{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xlarge;
+		}
+	}
+}
+.mi-section-header-caption-font-xxlarge{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xxlarge;
+		}
+	}
+}
+.mi-section-header-caption-font-xxxlarge{
+	> .mi-SectionHeader {
+		.mi-section-header-caption, .mi-section-collapsible{
+			font-size: $font-xxxlarge;
+		}
+	}
+}
+
+//	Header Caption Colors
+
+.mi-section-header-caption-alert {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $fuschia;
+		}
+	}
+}
+.mi-section-header-caption-primary {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $blue;
+		}
+	}
+}
+.mi-section-header-caption-secondary {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $silver;
+		}
+	}
+}
+.mi-section-header-caption-navigation {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $grey;
+		}
+	}
+}
+.mi-section-header-caption-caution {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $yellow;
+		}
+	}
+}
+.mi-section-header-caption-success {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $green;
+		}
+	}
+}
+.mi-section-header-caption-dark-grey {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $gunmetal;
+		}
+	}
+}
+.mi-section-header-caption-silver {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $pale-grey-border;
+		}
+	}
+}
+.mi-section-header-caption-black {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $black;
+		}
+	}
+}
+.mi-section-header-caption-white {
+	> .mi-SectionHeader {
+		.mi-section-header-caption {
+			color: $white;
+		}
+	}
+}
+
+//	Caption Text Align
+
+.mi-caption-left {
+	> .mi-SectionHeader {
+		@extend %mi-caption-text-left;
+	}
+}
+
+.mi-caption-center {
+	> .mi-SectionHeader {
+		@extend %mi-caption-text-center;
+	}
+}
+
+.mi-caption-right {
+	> .mi-SectionHeader {
+		@extend %mi-caption-text-right;
+	}
+}

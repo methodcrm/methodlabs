@@ -1,0 +1,361 @@
+
+.header-wrapper, %header-wrapper {
+
+	.grid-filter-container {
+		@media only screen and (min-device-width: 414px) and (max-device-width: 414px) and (orientation: portrait){ 
+			margin: 0 0 0.5rem !important;
+		}
+	}
+
+	.mi-grid-lookup {
+		@include boxSizing;
+		@include flexbox;
+		@include flexjustify(space-between);
+		@include flexalignitems(center);
+		width: 100%;
+		@include breakpoint(small only) {
+			display: block;
+			padding: 0 10px;
+
+			.system-page-right-content & {
+				padding: 0 !important;
+				width:100%;
+			}
+		}
+		.mobilePreview & {
+			display: block;
+			padding: 0 10px;
+
+			.system-page-right-content & {
+				padding: 0 !important;
+				width:100%;
+			}
+		}
+
+		//	IPHONE 6 + 
+		@media only screen and (min-device-width: 414px) and (max-device-width: 414px) and (orientation: portrait){ 
+			display:block;
+			padding: 0 10px;
+
+			.system-page-right-content & {
+				padding: 0 !important;
+				width:100%;
+			}
+		}
+
+		//	IPHONE 6
+		@media only screen and (min-device-width: 375px) and (max-device-width: 375px) and (orientation: portrait){ 
+			display:block;
+			padding: 0 10px;
+			width:100%;
+
+			.system-page-right-content & {
+				padding: 0 !important;
+				width:100%;
+			}
+		}
+
+		.mi-grid-lookup-cell {
+
+			&:empty {
+				display: none;
+			}
+
+			//	Slide toggle wrapper
+			&:nth-of-type(3) {
+
+				width: auto !important;
+				padding:0 !important;
+				vertical-align: middle !important;
+				text-align: left;
+				float: left;
+
+			}
+
+			.mi-grid-lookup-list {
+				&:empty {
+					display: none;
+				}
+
+				.mi-dropdown {
+					margin: 0 !important;
+				}
+			}
+
+			&:first-child {
+				
+				width: auto !important;
+
+				@include breakpoint(small only) {
+					@include flex(0 0 100%);
+					width: 100%;
+				}
+				.mobilePreview & {
+					@include flex(0 0 100%);
+					width: 100%;
+				}
+				//	IPHONE 6 +
+				@media only screen and (min-device-width: 414px) and (max-device-width: 414px) and (orientation: portrait){ 
+					@include flex(0 0 100%);
+					width: 100%;
+				}
+
+				@include breakpoint(large) {
+					width: inherit !important; 
+				}
+
+				button {
+					&.mi-dropdown {
+						@include breakpoint(large) {
+							max-width: 300px;
+							width:100%;
+						}
+					}
+				}
+			}
+			
+			//	Search box styling
+			&:nth-child(2) {
+			//	width: auto !important;
+				// text-align: right !important;
+				// float: right;
+				// width:80%;
+			}
+
+			&:nth-child(3) {
+				width:5% !important;
+				vertical-align: top;
+				padding-top: 0.15em;
+
+				
+			}
+
+			&:last-of-type {
+				width: 5% !important;
+
+				i {
+					
+				}
+			}
+
+
+			//	Appended class name for search box container
+			//	This is new searchbox overrides for width and structure
+			//	Search button is now included inside the search-box-inner
+
+			&.search-box {
+
+				
+				text-align: right;
+				margin-right:0.5rem;
+
+				@media only screen and (min-device-width: 414px) and (max-device-width: 414px) and (orientation: portrait){ 
+					margin-right:0;
+				}
+				@media only screen and (min-device-width: 375px) and (max-device-width: 375px) and (orientation: portrait){ 
+					margin-right:0;
+				}
+
+				@include breakpoint(small only) {
+					margin-top: 10px;
+					margin-right:0;
+				}
+				.mobilePreview & {
+					margin-top: 10px;
+					margin-right:0;
+				}
+				
+				@include breakpoint(large) {
+					max-width: 480px;
+					width:100%;
+				}
+
+
+				.search-inner-wrap {
+					@include flexbox;
+					@include flexjustify(space-between);
+				}
+
+				//	Inner wrapper for the search input, search icon and close icon(s)
+
+				.searchbar-inner {
+					//@extend %search-box-inner;
+					@include boxSizing;
+					@include flexbox;
+					@include flexjustify(space-between);
+					
+					@include flexalignitems(center);
+					width: 100%;
+
+					&:before {
+						content: "" !important;
+						display: none !important;
+					}
+
+			        float: none !important;
+			        text-align: right;
+			        border: 1px solid $card-border !important;
+			        margin:0 !important;
+					//	Search input field
+
+					.left-wrapper {
+						@include flex(1 1 auto);
+						@include flexalignself(stretch);
+						display: block;
+					    overflow: hidden;
+					    padding:7.5px;
+					}
+
+			        input[type="search"] {
+			           
+			            border:none !important;
+			            // width:100% !important;
+			            background: transparent;
+			            // max-width: 95% !important;
+						margin:0 !important;
+			            padding:0 !important;
+			            padding-right: 0 !important;
+			            overflow: hidden;
+			            // height: 2em !important;
+			            width: 100%;
+						float: none;
+						line-height: $base-line-height;
+
+			            @include placeholder {
+			                color: $grey;
+			                font-weight: normal;
+			            }
+					}
+
+					//	Inner close button for mobile portrait view [X].
+					
+					button {
+						float: right;
+						margin: 0;
+						line-height: 1.34 !important; 	
+
+
+
+					}
+
+					p {
+
+						&.mi-closebutton-inner {
+							display: none;
+						}
+					}
+		        }
+			
+				//	Search button
+
+				.mi-grid-lookup-button-simple {
+					@include borderRadius(0 1px 1px 0);
+					margin: 0;
+					padding: 10px 20px !important;
+					min-width: 0 !important;
+					font-weight: 600;
+					min-width: 0 !important;
+					
+				}
+
+				.advanced-search-button {
+					@include flex(1 0 auto);
+					display: inline-block;
+					width: auto;
+					vertical-align: middle;
+					padding:7.5px;
+					font-size: 12px;
+					font-weight: normal;
+					color: $blue;
+
+					.adv-inner, 
+					.adv-string {
+						font-size: 12px !important;
+					}
+					
+					i {
+						font-size: 10px;
+						margin-left: 5px;
+					}
+					
+					&:hover {
+						cursor: pointer;
+					}
+
+					&.advanced-open {
+						h5 {
+							
+						}
+						&.mi-icon-advanced-search {
+							&:after {
+								top: 5px;
+								position: relative;
+							}
+						}
+					}
+				}
+
+				h5 {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+
+			.mi-grid-lookup-button-simple, %mi-grid-lookup-button-simple {
+				height:auto !important;
+				margin: 0.3em 0.5em;
+				padding: 0.5em 1em !important;
+				width: auto;
+				display: inline-block;
+			}
+
+			.onoffswitch-inner {
+	            width: 200%; margin-left: -100%;
+	            -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+	            -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+	        
+	            &:before,
+	            &:after {
+
+	                float: left; 
+	                width: 50%; 
+	                height: 30px; 
+	                padding: 0; 
+	                line-height: 30px;
+	                font-size: 14px; 
+	                color: $white;
+	                @include boxSizing;
+
+	            }
+
+	            &:before {
+	                content: attr(data-on);
+	                padding-left: 10px;
+	                background-color: $grey; color: $white;
+	                text-align: left;
+	            }
+
+	            &:after {
+	                content: attr(data-off);
+	                padding-right: 10px;
+	                background-color: $dark-blue; 
+	                color: $white;
+	                text-align: right;
+	            }
+	        }
+		}
+
+		//	Search panel open styles
+
+		.conjunction {
+
+			.using {
+				
+				.icon-move,.icon-trash {
+					color: lighten($grey,10%) !important;
+				}
+			}
+		}
+	}
+}
+@import "m-grid-advanced-search";

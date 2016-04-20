@@ -1,0 +1,111 @@
+.error-page {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  min-width: 400px;
+  width: 100%;
+  padding-top: 40px;
+
+  .error-container {
+    @include flexbox();
+    @include flexalign(center);
+    // display: block;
+    border: 1px solid $border-color;
+    padding: 2em 1em;
+
+    .error-logo {
+      @include flex(1);
+      text-align: center;
+
+      div {
+        font-size: 2.5em;
+        color: $dark-blue;
+      }
+    }
+
+    .error-message {
+      @include flex(1);
+      padding: 10px 20px;
+      border-left: 1px solid $black;
+
+      h1, h3 {
+        color: $blue !important;
+        margin-bottom: 0;
+      }
+
+      h4 {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .error-options {
+    text-align: center;
+    margin-top: 20px;
+
+    h4 {
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .error-lists {
+      @include flexbox();
+      @include flexalign(center);
+
+      ul {
+        @include flex(1);
+        margin: 0 0 0 80px;
+        padding: 0;
+        list-style: none;
+        list-style-type: none;
+        text-align: left;
+
+        li {
+          margin-bottom: 1em;
+          display: block;
+
+          a {
+            color: $blue;
+            outline: none;
+
+            i {
+              font-size: 0.8em;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@include breakpoint(small only) {
+  .error-page {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+
+    .error-container {
+      @include flexdirection(column);
+      border: 0;
+      padding: 0;
+
+      .error-logo {
+        text-align: left;
+      }
+
+      .error-message {
+        border: 0;
+      }
+    }
+
+    .error-options {
+      .error-lists {
+        ul {
+          margin: 0 0 0 10px;
+        }
+      }
+    }
+  }
+}

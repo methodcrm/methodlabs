@@ -1,0 +1,924 @@
+
+.system-page {
+	padding: 0;
+	
+	ul {
+		@include boxSizing;
+		list-style: none;
+		padding: 0;
+		margin:0;
+	}
+}
+
+.content-inner {
+	height: 100vh;
+
+	@media only screen and (min-device-width: 800px) and (max-device-width: 800px) {
+		left:80px;
+	}
+
+	@media only screen and (min-width: 800px) and (max-width: 800px) {
+		left: 80px;
+	}
+
+	&.system-page-inner {
+		
+		// @include boxSizing;
+		// @include flexbox;
+		// @include flexjustify(flex-start);
+		// //@include flexalignitems(stretch);
+
+		// margin-left: 0;
+		// margin-right: 0;
+		// overflow-x: hidden;
+
+			@include breakpoint(small) {
+				height: 100%;
+				overflow-y: auto;
+				// height: 100vh !important;
+
+		// 	&> div {
+		// 		@include flex(0 0 100%);
+		// 		padding: 0 1rem 1rem;
+		// 	} 
+			}
+
+		@include breakpoint(small only) {
+	    overflow: hidden;
+		}
+
+
+		.prefs-mobile-container {
+			@include breakpoint(small only) {
+				left:0;
+				overflow-x: hidden;
+				height:100%;
+
+				.mi-app-info-wrapper { left: 0; }
+				.system-page-right-content { left: 100%; }
+				
+				&.slide-in {
+					.mi-app-info-wrapper { transition: 0.5s; left: 0; }
+					.system-page-right-content { transition: 0.5s; left: 100%; }
+				}
+
+				&.slide-out {
+					.mi-app-info-wrapper { transition: 0.5s; left: -100%; }
+					.system-page-right-content { transition: 0.5s; left: 0; }
+				}
+			}
+		}
+
+		.mi-app-outer {
+			padding: 0 20px;
+		}
+
+		.mi-app-info-wrapper {
+			padding: 20px 0;
+
+			@include breakpoint(small only) {
+				padding: 20px 0 60px 0;
+			}
+			@include breakpoint(small_ls only) {
+				padding: 20px 0 70px 0;
+			}
+
+			&.preferences {
+				padding-top: 27px;
+			}
+			// @include boxSizing;
+			// padding: 16px 20px;
+			// max-width: 240px;
+			// width: 100%;
+			// border-right: 1px solid $right-panel-border;
+			// position: fixed;
+			// top:60px;
+			// bottom: 0;
+			// overflow-y: auto;
+
+			// @include breakpoint(small only) {
+			// 	//min-width: 320px;
+			// 	max-width: 414px;
+			// 	width:100%;
+			// }
+
+			.app-info-header {
+				@include boxSizing;
+				@include flexbox;
+				@include flex(0 0 auto);
+				@include flexjustify(flex-start);
+				@include flexalignitems(center);
+				position: relative;
+				//top: rem-calc(20px);
+				padding: 25px 0 22px;
+				border-bottom: 1px solid $right-panel-border;
+				margin-bottom: 20px;
+
+				@include breakpoint(small only) {
+					top:0;
+				}
+
+				&.manage-apps {
+					padding: 31px 0 20px;
+					margin-bottom: 8px;
+				}
+				img {
+					margin-right: rem-calc(5px);
+				}
+				.app-icon {
+					@include borderRadius(rem-calc(90px));
+					@include flexbox;
+					@include flexjustify(center);
+					@include flexalignitems(center);
+
+					width: rem-calc(40px);
+					//height: rem-calc(40px);
+					margin-right: rem-calc(10px);
+					color: $white !important;
+
+					&.app-finance {
+						background-color: $blue;
+					}
+				}
+
+				h3 {
+					@include borderRadius(rem-calc(90px));
+				    @include flexbox;
+			      	@include flexjustify(center);
+			      	@include flexalignitems(center);
+			     	@include flex(0 0 40px);
+
+			      	width: 40px;
+			      	height: 40px;
+			      	font-size: $h1-size !important;
+			      	margin-right: rem-calc(10px);
+			      	color: $grey !important;
+
+			      	&.app-finance {
+			        	background-color: $blue;
+			        	color: $white !important;
+			      	}
+				}
+
+				hgroup {
+					max-width:225px;
+					width:100%;
+					overflow: hidden;
+    				text-overflow: ellipsis;
+					h5 {
+						margin:0;
+						max-width: 225px;
+						width:100%;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						color: $h-color;
+						white-space: nowrap;
+
+						@include breakpoint(small only) {
+							width:260px;
+						}
+
+						.manage-apps & {
+							max-width: 130px;
+						}
+					}
+					p {
+						color: $darkest-blue !important;
+					}
+				}
+			}
+
+			ul {
+				
+				margin:0;
+				padding: 0;
+				display: inline-block;
+				width: 100%;
+
+				.preferences & {
+					padding: 20px 0 0;
+				}
+
+				@include breakpoint(small only) {
+					padding: 0;
+				}
+
+				li {
+					@include boxSizing;
+					@include flexbox;
+					@include flex(0 0 auto);
+					@include flexjustify(flex-start);
+					@include flexalignitems(center);
+					height: 40px;
+					line-height: 40px;
+					
+					div {
+						width: 100%;
+
+						&.tooltip {
+							width: auto;
+
+							> div {
+								width: auto;
+							}
+						}
+					}
+
+					a {
+						color: $list-color;
+						font-weight: 600;
+						display: block;
+						width: 100%;
+
+					}
+
+					&:hover,
+					&.active {				     
+						cursor: pointer;
+						a {
+							color: $list-hover;
+						}
+					}
+
+					&.disabled {
+						display: block;
+						width: 100%;
+						color: $gray-dark;
+
+						.mi-icon-info-sign {
+							display: inline-block;
+							float: right;    						
+  						margin-top: 12px;
+  						margin-right: 2px;
+						}
+					}
+				}
+			}
+		}
+
+		.system-page-right-content {
+			border-left: 1px solid $right-panel-border;
+			padding: 0 20px;
+			@include breakpoint(small portrait landscape) {
+			    top: auto;
+			    box-shadow: none;
+			    left: 0;
+			    width: 100%;
+			    padding-bottom: 125px;
+			}
+
+			@include breakpoint(small_ls landscape) {
+			    top: 0 !important;
+			}
+
+			&.system-page-with-cards {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+
+				.content-header {
+					margin: 0 20px 20px !important;
+				}
+
+				h2 {
+					margin: 0 0.5rem;
+				}
+			}
+
+			// padding: 0 20px;
+			// position: relative;
+			// background: $white;
+			
+			// @include breakpoint(medium) {
+			// 	left: 240px;
+			// }
+			// @include breakpoint(small only) {
+			// 	@include flex(0 0 auto);
+			// 	@include boxSizing;
+			// 	min-width: 320px;
+			// 	width:100%;
+			// }
+			// @include breakpoint(small_ls only) {
+			// 	left: 236px;
+			// 	min-width: 330px;
+			// 	flex: 0;
+			// }
+			// @include breakpoint(medium only) {
+			// 	min-width: 431px;
+			// 	max-width: 525px;
+			// 	width: 100%;
+			// } 
+			// @include breakpoint(medium_ls only) {
+			// 	min-width: 529px;
+			// 	max-width: 704px;
+			// 	width: 100%;
+			// }
+			// @include breakpoint(large) {
+			// 	max-width: 930px;
+			// 	width: 100%;
+			// }
+			// @include breakpoint(375) {
+			// 	left: 375px;
+			// }
+
+			fieldset {
+				padding: 0 0 20px 0;
+				
+				h2 {
+					//padding: 0 1rem;
+					margin-bottom: 20px;
+				}
+
+				img {
+					@include boxSizing;
+					border: 1px solid $right-panel-border;
+					height: auto;
+				}
+
+				.grid-content {
+					padding-left: 0;
+					@include breakpoint(small only) {
+						padding: 0;
+					}
+					@include breakpoint(small_ls only) {
+						padding: 0;
+					}
+
+					&.inline-form-element {
+						padding-left: 1rem !important;
+						@include breakpoint(small only) {
+							padding-left: 0 !important;
+						}
+						@include breakpoint(small_ls only) {
+							padding-left: 0 !important;
+
+							&.first-value {
+								padding-right: 1rem !important;
+							}
+						}
+					}
+
+					&.grid-content-icon {
+						overflow-y: visible;
+					}
+				}
+
+				.account-connect {
+					// @include boxSizing;
+					// @include flexbox;
+					// @include flexjustify(space-between);
+					@include flexalignitems(center);
+					// padding: 20px 0 16px 0;
+					// width:100%;
+
+					.account-email {
+						span {
+							color: $grey;
+							&:before {
+								font-weight: 600;
+							}
+
+							&.active {
+								font-weight: 600;
+								color:$green;
+							}
+						}
+					}
+
+					p {
+						color: $grey;						
+					}
+
+					@include breakpoint(small small_ls only) {
+						.account-email {
+							padding: 15px 0 0;
+							text-align: left;
+						}
+					}
+
+					@include breakpoint(medium) {
+						.account-email {
+							padding: 0;
+							text-align: center;
+						}
+					}
+				}
+
+				.inline-form-container {
+					@include flexjustify(space-between);
+
+					@include breakpoint(xlarge) {
+						@include flexjustify(flex-start);
+					}
+
+                    @include breakpoint(small_ls down) {
+                        @include flexdirection(column);
+                    }
+
+					.inline-form-element {
+						@include flexbasis(0);
+						@include flex(1);
+
+						@include breakpoint(medium down) {
+							@include flex(1 1 auto);
+						}
+
+                        @include breakpoint(small_ls down) {
+                            display: block;
+                            width: 100%;
+                            @include flex(1 1 auto);
+                        }
+					}
+				}
+			}
+
+			section {
+				&.filter-section {
+					@extend %basic-table;
+					margin-bottom: 20px;
+
+					header {
+						@extend %basic-table-thead;
+					}
+
+					.filter-body {
+						@include boxSizing;
+						padding: 20px;
+
+						p {
+							color: $list-hover;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+
+			div {
+				&.sync-conflict-element {
+					@include flexbox;
+					@include flexjustify(flex-start);
+					@include flexalignitems(center);
+				}
+			}
+
+			p {
+				margin: 10px 0;
+			}
+			
+			.system-body {
+				min-height: 250px;
+			
+				.top-paragraph {
+					margin-bottom: 20px;
+				}
+
+				@include breakpoint(medium) {
+					.select-user-dropdown {
+						display: inline-block;
+						width: 250px;
+						margin-left: 10px;
+					}
+				}
+
+				.quickBooks-list {
+					border: 0;
+					margin-bottom: 15px;
+
+					tr, td {
+						border-bottom: 0;
+					}
+
+					td, th {
+						padding: 5px;
+						text-align: left;
+					}
+
+					td {
+						label, input {
+							margin-bottom: 0;
+						}
+
+						&:first-child {
+							text-align: right;
+						}
+					}
+				}
+				
+				ul {
+
+					list-style: none;
+					margin:0;
+					padding:0;
+					
+					//	Manage App user permissions
+					&.bundle-list {
+						> li {
+							@include boxSizing;
+							padding:20px;
+							border: 1px solid $card-border;
+							margin-bottom: 20px;
+
+							header {
+								hgroup {
+									@include boxSizing;
+									@include flexbox;
+									@include flexjustify(space-between);
+
+									span {
+										@include flexbox;
+										@include flex(auto);
+										@include flexjustify(flex-start);
+										@include flexalignitems(center);
+
+										label {
+											margin-right: 10px;
+											margin-bottom: 5px;
+										}
+									}
+
+									label {
+										display: inline;
+									}
+								}
+
+								.costs {
+									font-weight: 600;
+								}
+							}
+						}
+
+						&.ismobile {
+							li {
+								padding: 0px;
+
+								header {
+									padding: 10px;
+
+									h3 {
+										@include flex(4);
+										white-space: nowrap;
+										text-overflow: ellipsis;
+										overflow: hidden;
+									}
+
+									button {
+										text-align: right;
+									}
+								}
+							}
+						}
+					}
+
+					li {
+						//	Delete page manage apps
+						ul {
+							li {
+								margin:10px 5px;
+							}
+						}
+					}
+				}
+
+				//	Permissions Grid: Replace when grid styles are complete
+				table {
+					@include boxSizing;
+					border: 1px solid $card-border;
+					width:100%;
+
+					thead {
+						@include boxSizing;
+						color: $grid-head-font;
+						background: $app-header;
+						border-bottom: 1px solid $card-border;
+
+						th {
+							padding: 20px 0;
+							text-align: center;
+
+							&:first-of-type {
+								padding-left: 20px;
+								text-align: left;
+							}
+							// &:last-of-type {
+							// 	padding-right: 20px;
+							// }
+						}
+					}
+
+					tr {
+						border-bottom: 1px solid $card-border;
+						td {
+							@include boxSizing;
+							padding: 20px;
+							// &:first-of-type {
+							// 	padding-left: 20px;
+							// }
+							// &:last-of-type {
+							// 	padding-right: 20px;
+							// }
+						}
+					}
+				}
+
+				.edit-user-info {
+					p {
+						font-weight: 600;
+					}
+
+					span {
+						display: inline-block;
+						max-width:125px;
+						width:100%;
+					}
+
+					a {
+						font-weight: normal;
+					}
+
+					@include breakpoint(small only) {
+						a {
+							display: block;
+						}						
+					}
+				}
+
+				.section-indent {
+					padding-left: 35px;
+				}
+
+				footer {
+					margin-left: auto; // This clears the element to the right=hand side
+
+					table {
+						border: none !important;
+						tr {
+							border: none !important;
+						}
+						td {
+							text-align: right;
+							padding: 10px;
+							border: none !important;
+						}
+					}
+				}
+			}
+
+			.footer-nav {
+				@extend %footer-nav;
+			}
+
+			// Expression builder
+			.mi-expression-builder-table-row {
+				margin: 10px 0;
+
+				&.first-row {
+					.mi-expression-builder-table-cell {
+						&.text-box {
+							@include breakpoint(medium only)  {
+								@include flex(50%);
+							}
+							@include breakpoint(medium_ls only)  {
+								@include flex(50%);
+							}
+						}
+					}
+				}
+			}
+			.mi-expression-builder-table-cell {
+				
+				padding-left: 0;
+
+				@include breakpoint(small_ls only) {
+					padding: 0;
+				}
+
+				@include breakpoint(small only) {
+					padding: 0;
+				}
+
+				&:empty{
+					display: none;
+				}
+
+
+				//	IPAD Portrait
+				@include breakpoint(medium only) {
+					@include flexbox;
+					@include flexjustify(flex-start);
+					@include flexalignitems(flex-start);
+					@include flex(25%);
+					@include flexflow(column);
+					
+					
+					&.text-box {
+						@include flex(0 2 auto);
+					}
+
+					&:last-of-type {
+						padding-right: 0;
+						@include flexalignself(flex-start);	
+					}
+
+					select, input {
+						margin-bottom: 0;
+						.value & {
+							margin-bottom: 0;							
+						}
+
+					}
+					.value {
+						width: 100%;
+					}
+
+				}
+				// IPAD Landscape
+				@include breakpoint(medium_ls only) {
+					@include flexbox;
+					@include flexjustify(flex-start);
+					@include flexalignitems(flex-start);
+					@include flex(25%);
+					@include flexflow(column);
+					padding-left: 0;
+					
+					&.text-box {
+						@include flex(0 2 auto);
+					}
+
+					&:last-of-type {
+						padding-right: 0;
+						@include flexalignself(flex-start);	
+					}
+
+					select, input {
+						margin-bottom: 0;
+						.value & {
+							margin-bottom: 0;							
+						}
+
+					}
+					.value {
+						width: 100%;
+					}
+
+				}
+
+				.actionFlags {
+					@include breakpoint(medium only) {
+						button {
+							padding: 0;
+							margin: 7px;
+						}
+					}
+					@include breakpoint(medium_ls only) {
+						button {
+							padding: 0;
+							margin: 7px;
+						}
+					}
+					@include breakpoint(medium down) {
+						text-align:right;
+					}
+				}
+
+				label {
+					@include breakpoint(medium only portrait) {
+						@include flexalignself(flex-start);
+					}
+					&.blank-label{
+						@include breakpoint(small_ls only) {
+							display: none;
+						}
+						@include breakpoint(small only) {
+							display: none;
+						}
+					}
+				}
+			}
+
+			.mi-expression-builder-table-header-group {
+				button {
+					&.mi-icon-delete {
+						display: none;
+					}
+				}
+				
+				padding: 0;
+				
+			}
+
+			.mi-expression-builder-table-row-group {
+				padding:0;
+			}
+
+			.manage-apps-wrapper {
+				overflow: inherit;
+			}
+		}
+	}
+}
+
+.runtime-page-inner {
+	display: block;
+	height: auto;
+	bottom:0;
+	padding-bottom: 60px;
+}
+
+.runtimePage {
+	@include flexbasis;
+	@include flex(0 0 100%);
+}
+
+@include breakpoint(small_ls down) {
+	.runtime-page-inner {
+		display: block;
+		height: 100vh;
+		width: 100%;
+		padding-bottom: 80px;
+	}
+	.runtimePage {
+		position: relative;
+		display: block;
+		height: 100vh;
+		width: 100%;
+	}
+}
+
+.trialMessageLink {
+	display: block;
+	text-align: right;
+}
+
+.permission-container {
+	display: block;
+	width: 100%;
+}
+
+.permission-app-list-mobile {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 1px solid $card-border;
+
+	&.minimize {
+		border-width: 1px 0 0 0;
+
+		li {
+			margin: -1px 0 0 0 !important;
+			padding: 0.25em !important;
+		}
+	}
+
+	li {
+		display: block;
+		padding: 0.5em;
+		border-bottom: 1px solid $card-border;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		h6 {
+			i {
+				float: right;
+    		margin-top: 3px;
+    		margin-right: 3px;
+			}
+		}
+	}
+}
+
+.dashboard-cards {
+  display: block;
+  width: 100%;
+
+	&.mobile-move-cards {
+		h2 {
+			padding: rem-calc(10px 20px);
+		}
+
+		ul {
+			margin: rem-calc(0 20px) !important;
+
+			li {
+				padding: 0 !important;
+				margin: rem-calc(10px 0) !important;
+			}
+		}
+	}
+
+	&.mobile-move-cards,
+	.app-collapse {
+		.m-card, .m-card-header {
+	    margin-bottom: 0;
+		}
+
+		.m-card-section {
+			padding: 0;
+		}
+
+		.m-card-body, 
+		.m-card-footer {
+			display: none;
+		}
+	}
+}

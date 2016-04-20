@@ -1,0 +1,829 @@
+//	Dashboard, Manage Apps, Subscription cards
+.card-wrapper {
+	
+	padding: rem-calc(20px 19px 20px 20px);
+
+	.manage-apps-wrapper & {
+		@include breakpoint(small only) {
+			padding: rem-calc(20px);
+		}
+		// @include breakpoint(small only landscape) {
+		// 	padding: rem-calc(20px 0);
+		// }
+	}
+
+	&.label {
+		padding: rem-calc(0 20px);
+		background: transparent;
+	}
+}
+
+
+.m-card {
+	@include borderRadius;
+	@include card-container (
+		$background: #fff,
+		$border: 1px solid $card-border,
+		$padding: 0,
+		$shadow: 0 0 0 rgba(#fff, 0)
+	);
+	border-top: 2px solid $blue;
+	position:relative;
+	overflow: visible;
+
+	.app-updating & {
+		border-top: 2px solid $m-grey;
+	}
+
+	&.card-collapse,
+	.app-collapse & {
+		hr {
+			&.m-card-border {
+				display: none;
+			}
+		}
+	}
+
+	.m-card-section {
+		padding:0;
+	}
+	.m-card-disabled {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 2;
+		background: $white;
+		opacity: 0;
+		cursor: move;
+	}
+
+	tile-context {
+		position: absolute;
+		right: 0;
+	}
+
+	.m-card-header {
+		@include boxSizing;
+		@include flexbox;
+		@include flex(0 0 auto);
+		@include flexjustify(space-between);
+		@include flexalignitems(center);
+		height: 60px;
+
+		.m-card-header-title {
+			//@include flex(1);
+			width: 90%;
+
+			span {
+				@include flexbox;
+				@include flexalignitems(center);
+				width:100%;
+				color: $card-title;
+				height: 60px;
+				padding: 0 20px;
+			}
+
+			a {
+				span {
+					height: auto;
+					padding: 0 10px 0 0;
+					width: auto;
+				}
+
+				&.user-tile-header {
+					padding: 10px 20px;
+					width: 100%;
+					display: block;
+				}
+			}
+		}
+
+		hgroup {
+			max-width: 500px;
+			a {
+				//max-width: 95%;
+				@include flexbox;
+				@include flexalignitems(center);
+				width:100%;
+				color: $card-title;
+				font-weight: 600;
+				height: 60px;
+				padding: 0 20px;
+
+				h3 {
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;					
+				}
+			}
+		}
+
+		h3 {
+			//max-width: 95%;
+			width:100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			line-height: 1.4em;
+
+			a {
+				@include flexbox;
+				@include flexalignitems(center);
+				color: $card-title;
+				padding: 20px;
+
+			}
+
+			&.mi-icon-star-outline {
+				&:before {
+					margin-right: 10px;
+				}
+			}
+
+			span {
+				font-size: 16px !important; 
+			}
+		}
+
+
+		.sub-menu-link {
+			@include boxSizing;
+			font-size: $h3-size;
+			color: $m-grey;
+			width: 40px;
+			padding: 10px 0;
+			text-align: center;
+
+			.app-updating & {
+				display: none;
+			}
+		}
+	}
+
+	tile-body {
+		width: 100%;
+	}
+
+	.m-card-body {
+		@include boxSizing;
+		@include flexbox;
+		@include flex(0 0 auto);
+		@include flexjustify(flex-start);
+		@include flexalignitems(flex-start);
+		padding:0;
+
+		&.ma-card-body {
+			min-height: rem-calc(95px);
+			@include flexjustify(center);
+			@include flexdirection(column);
+
+			p {
+				margin: 0 0 10px 0 !important;
+				min-height: 0;
+				max-height: 64px;
+
+				span {
+					font-weight: 600;
+				}
+			}
+		}
+
+		tile-body {
+			width: 100%;
+		}
+
+		.card-screen-body {
+			display: block;
+			min-height: 104px;
+
+			p {
+				min-height: 0;
+				margin: 0 0 10px !important;
+			}
+
+		}
+
+		a, div {
+			display: inherit;
+			@include boxSizing;
+			@include flexbox;
+		}
+
+		a, div {
+			padding: 10px 20px;
+		}
+
+		.related-app-body {
+			padding: 10px 20px 30px;
+		}
+
+		.body-wrap {
+			display: inherit;
+			@include boxSizing;
+			// padding: 10px 20px;
+
+			p {
+				&:nth-child(2) {
+					margin-bottom: 0 !important;
+				}
+			}
+		}
+
+		h5 {
+			// @include boxSizing;
+			@include borderRadius(rem-calc(80px));
+		    @include flexbox;
+		    @include flexjustify(center);
+		    @include flexalignitems(center);
+		    @include flexbasis;
+		    @include flexshrink(0);
+			
+		    font-size: $h1-size;
+		    margin:0;
+		    margin-right: rem-calc(10px);
+		    color: $white !important;
+		    background: $blue;
+		    width:60px;
+		    height:60px;
+
+		    .app-updating & {
+		    	background: $m-grey !important;
+		    }
+		    
+		}
+
+		p {
+			line-height: 1.2;
+			color: $dark-grey;
+			width:100%;
+			margin-bottom: 10px;
+			min-height: 64px;
+			max-height: 64px;
+			display: block; /* Fallback for non-webkit */
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+	  		-webkit-box-orient: vertical;
+	  		overflow: hidden;
+	  		text-overflow: ellipsis;
+
+	  		&.redirected {
+	  			color: $red;
+	  			max-width: 370px;
+	  			display: block;
+	  			white-space: nowrap;
+	  		}
+		}
+	}
+
+	.m-card-footer {
+		@include boxSizing;
+		@include flexbox;
+		@include flex(0 0 auto);
+		@include flexjustify(space-between);
+		@include flexalignitems(center);
+		@include flexdirection(column);
+		//padding: 20px 0 0;
+		height:60px;
+		position: relative;
+		width: 100%;
+
+		hr {
+			&.m-card-border {
+				border-color: $card-border;
+				margin: 0 20px;
+				display: block;
+				width:90%;
+			}
+		}
+
+		div {
+			@include flexgrow(1);
+			min-width:50%;
+
+			&:empty {
+				display: none;
+			}			
+
+			&:first-of-type {
+				.app-updating & {
+					visibility: hidden;
+				}
+			}
+		}
+
+		tile-footer-left {
+			position: absolute;
+			left:0;
+			right:50%;
+			p {
+				margin:0 !important;
+			}
+		}
+		tile-footer-right {
+			position: absolute;
+			right:0;
+			left: 50%;
+			p {
+				margin:0 !important;
+			}
+		}
+
+         .snapshot-text {
+            // @include breakpoint(small) {
+            //     max-width: 75px;
+            // }
+
+            // @include breakpoint(medium) {
+            //     max-width: 100px;
+            // }
+
+            // @include breakpoint(large) {
+            //     max-width: 150px;
+            // }
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+		p {
+			
+			&.snapshot {
+				text-transform: uppercase;
+				font-weight: 600;
+				color: $dark-grey;
+				text-align: right;
+				
+                a, span {
+					color: $dark-grey;
+
+					&.snap-right {
+						@include flexjustify(flex-end);
+						@include flexalignitems(flex-end);
+					}
+
+				}
+
+
+			}
+			&.app-pricing {
+				color: $blue;
+				cursor: pointer;
+				white-space: nowrap;
+
+				span {
+					@include flexbox;
+					@include flexalignitems(flex-end);
+
+					color: $blue;
+					font-weight: 600;
+					line-height: 1.5;
+					padding: 20px;
+				}
+
+				a {
+					span {
+						padding: 0;
+					}
+				}
+			}
+
+			a, span.snap-right {
+				@include flexbox;
+				@include flexalignitems(flex-end);
+
+				color: $blue;
+				font-weight: 600;
+				line-height: 1.5;
+				padding: 20px;
+				&:before,
+				i {
+					// font-size: $h4-size;
+					padding-right: 5px;
+					line-height: 1.3;
+				}
+
+				&.mi-icon-plus,
+				&.icon-plus {
+					&:before {
+						content: "\e783" !important;
+					}
+				}
+
+				span {
+					&:before {
+						line-height: 1.4;
+					}
+					&.mi-icon-plus,
+					&.icon-plus {
+						&:before {
+							content: "\e783" !important;
+						}
+					}
+				}
+			}
+
+			span {
+				&:hover {
+					cursor: pointer;
+				}
+				&.snap-right {
+					color: $dark-grey !important;
+					@include flexbox;
+				}
+				&:first-of-type {
+					display: inline-table;
+					margin-right: 5px;
+				}
+				&:last-of-type {
+					
+					margin-right: 0;
+				}
+
+				&.app-update {
+					display: flex;
+
+					span {
+						&:first-of-type {
+							display: inline;
+						}
+					}
+				}
+
+			}
+		}
+
+		a {
+			position: relative;
+			width: 100%;
+			height:100%;
+
+			&.card-footer-link {
+				color: $blue;
+				font-weight: 600;
+			}
+		}
+	}
+
+	// CARD COLOR THEMES
+
+		&.pink {
+			border-top-color: $pink !important;
+
+			.m-card-header {
+				//	Link hover color of submenu
+				.sub-menu {
+					li {
+						&:hover {
+							a {
+								color: $pink !important;
+							}
+						}
+					}
+				}	
+			}
+			.m-card-body {
+				//	Circle icon background color
+				h5 {
+					background: $pink !important;
+				}
+			}
+			.m-card-footer {
+				p {
+					&.snapshot {
+						a {
+							color: $dark-grey !important;
+						}
+					}
+				}
+
+				a {
+					color: $pink !important;
+				}
+			}
+		}
+		&.blue {
+			border-top-color: $blue !important;
+
+			.m-card-header {
+				//	Link hover color of submenu
+				.sub-menu {
+					li {
+						&:hover {
+							a {
+								color: $blue !important;
+							}
+						}
+					}
+				}	
+			}
+			.m-card-body {
+				//	Circle icon background color
+				h5 {
+					background: $blue !important;
+				}
+			}
+			.m-card-footer {
+				p {
+					&.snapshot {
+						a {
+							color: $dark-grey !important;
+						}
+					}
+				}
+
+				a {
+					color: $blue !important;
+				}
+			}
+		}
+		&.aqua {
+			border-top-color: $aqua !important;
+
+			.m-card-header {
+				//	Link hover color of submenu
+				.sub-menu {
+					li {
+						&:hover {
+							a {
+								color: $aqua !important;
+							}
+						}
+					}
+				}	
+			}
+			.m-card-body {
+				//	Circle icon background color
+				h5 {
+					background: $aqua !important;
+				}
+			}
+			.m-card-footer {
+				p {
+					&.snapshot {
+						a {
+							color: $dark-grey !important;
+						}
+					}
+				}
+
+				a {
+					color: $aqua !important;
+				}
+			}
+		}
+		&.purple {
+			border-top-color: $purple !important;
+
+			.m-card-header {
+				//	Link hover color of submenu
+				.sub-menu {
+					li {
+						&:hover {
+							a {
+								color: $purple !important;
+							}
+						}
+					}
+				}	
+			}
+			.m-card-body {
+				//	Circle icon background color
+				h5 {
+					background: $purple !important;
+				}
+			}
+			.m-card-footer {
+				p {
+					&.snapshot {
+						a {
+							color: $dark-grey !important;
+						}
+					}
+				}
+
+				a {
+					color: $purple !important;
+				}
+			}
+		}
+		&.green {
+			border-top-color: $green !important;
+
+			.m-card-header {
+				//	Link hover color of submenu
+				.sub-menu {
+					li {
+						&:hover {
+							a {
+								color: $green !important;
+							}
+						}
+					}
+				}	
+			}
+			.m-card-body {
+				//	Circle icon background color
+				h5 {
+					background: $green !important;
+				}
+			}
+			.m-card-footer {
+				p {
+					&.snapshot {
+						a {
+							color: $dark-grey !important;
+						}
+					}
+				}
+
+				a {
+					color: $green !important;
+				}
+			}
+		}
+		&.red {
+			border-top-color: $red !important;
+
+			.m-card-header {
+				//	Link hover color of submenu
+				.sub-menu {
+					li {
+						&:hover {
+							a {
+								color: $red !important;
+							}
+						}
+					}
+				}	
+			}
+			.m-card-body {
+				//	Circle icon background color
+				h5 {
+					background: $red !important;
+				}
+			}
+			.m-card-footer {
+				p {
+					&.snapshot {
+						a {
+							color: $dark-grey !important;
+						}
+					}
+				}
+
+				a {
+					color: $red !important;
+				}
+			}
+		}
+		&.yellow {
+			border-top-color: $yellow !important;
+
+			.m-card-header {
+				//	Link hover color of submenu
+				.sub-menu {
+					li {
+						&:hover {
+							a {
+								color: $yellow !important;
+							}
+						}
+					}
+				}	
+			}
+			.m-card-body {
+				//	Circle icon background color
+				h5 {
+					background: $yellow !important;
+				}
+			}
+			.m-card-footer {
+				p {
+					&.snapshot {
+						a {
+							color: $dark-grey !important;
+						}
+					}
+				}
+
+				a {
+					color: $yellow !important;
+				}
+			}
+		}
+		&.orange {
+			border-top-color: $orange !important;
+
+			.m-card-header {
+				//	Link hover color of submenu
+				.sub-menu {
+					li {
+						&:hover {
+							a {
+								color: $orange !important;
+							}
+						}
+					}
+				}	
+			}
+			.m-card-body {
+				//	Circle icon background color
+				h5 {
+					background: $orange !important;
+				}
+			}
+			.m-card-footer {
+				p {
+					&.snapshot {
+						a {
+							color: $dark-grey !important;
+						}
+					}
+				}
+
+				a {
+					color: $orange !important;
+				}
+			}
+		}
+
+	//	Collapsed card styles
+	&.card-collapse {
+
+		&:hover {
+			cursor:pointer;
+		}
+
+		.m-card-section {
+			padding: 0;
+		}
+		.m-card-header {
+			margin:0;
+		}
+	}
+}
+
+//	Empty card with link (dotted line)
+.card-item {
+  @include boxSizing;
+  padding:20px;
+  border: 1px dashed $m-grey;
+  color: $blue;
+  background: $white;
+  font-weight: 600;
+
+	.manage-apps-wrapper &,
+	&.add-user {
+		min-height: 60px;
+		padding: 23px 20px;
+	}
+
+	.user-summary & {
+		min-height: 63px;
+	}
+
+	&.m-card-section {
+		// @include flexbox;
+		// @include flexjustify(center);
+		// @include flexalignitems(center);
+		min-height: rem-calc(217px);
+
+		&.m-card-screens {
+			min-height: rem-calc(227px);  		
+		}
+	}
+
+	&.customizer-button {
+		min-height: rem-calc(124px);
+	}
+
+	a {
+		display: inline-block;
+		width: 100%;
+		text-align:center;
+	}
+
+	&:hover {
+		background: #f9f9f9;
+		cursor: pointer;
+	}
+}
+
+
+//	IE 11 Card description fix
+html[data-useragent*="Trident/7.0"] {
+	.m-card-body {
+		display: block;
+
+		p {
+			max-width: 450px !important;
+			width: 100% !important;
+		}
+	}
+}

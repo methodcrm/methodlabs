@@ -1,0 +1,425 @@
+@import "../designer/method-base";
+
+%app-loader {
+	position: relative;
+	bottom:0;
+	left:0;
+	right:0;
+	margin-top:36px;
+	//height:40px;
+	background: $white;
+	@include box-sizing;
+	padding: 2px 5px;
+	border:1px solid $card-border;
+
+
+	p {
+		color:$grey;
+		width: 75%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		@extend %font-small;
+
+		&.file-done {
+			margin: 5px auto 0 auto;
+		}
+
+		a {
+			color: $blue;
+			text-decoration: underline;
+		}
+	}
+
+	.cancel-app-loader {
+		position: absolute;
+		background: transparent !important;
+		top: 5px;
+		right: 0;
+		border:0 !important;
+		height: auto !important;
+		font-size:calc(#{$font-small} - 1px);
+		// @include opacity(0.2);
+	}
+
+	.cancel-app-loader {
+		&.file-done {
+			top: 7px !important;
+		}
+	}
+
+	.progress {
+		@include box-sizing;
+		height: 3px;
+		width: 100%;
+		display: inline-block;
+		background: $card-border;
+		vertical-align: top;
+		margin-bottom: 5px;
+		float: left;
+
+		.progress-bar {
+			display: inline-block;
+			height: 3px;
+			background: $blue;
+			float: left;
+		}
+	}
+}
+
+.select-account {
+	.file-upload-container {
+		z-index: auto !important;
+	}
+}
+
+.file-upload-container {
+	width: 216px;
+	min-height: 36px;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	z-index:98;
+	button,
+	input,
+	ul {
+		position: absolute;
+	}
+
+	ul {
+		z-index: 9999;
+	}
+
+	input {
+		width: 144px;
+		left: 0;
+		z-index: 1;
+		padding: 0.36em !important;
+		margin: 0 !important;
+		min-height: 36px !important;
+	}
+
+	button {
+
+		@include box-sizing;
+		height: 36px;
+		margin:0 !important;
+
+		&.add-file-button {
+
+			&.large {
+				width: 180px;
+				left:0;
+				top: 0;
+				z-index: 2;
+				line-height: 1;
+
+				&:before {
+					content: "Upload File";
+				}
+			}
+			&.small {
+				min-width: 36px !important;
+				max-width: 36px !important;
+				width: 36px !important;
+				right: 36px;
+				top:0;
+				padding: 0 !important;
+			}
+		}
+
+		&.file-drop-down {
+      min-width: 1rem;
+			right: 0;
+			top: 0;
+			width: 36px;
+			padding: 0 !important;
+			border: none;
+			border-left: 1px solid $silver !important;
+
+			&:hover,
+			&.active {
+				background: $silver-dark-20percent;
+			}
+		}
+	}
+
+	.app-loader {
+		@extend %app-loader;
+	}
+
+	&.image-upload {
+		width: auto;
+		display: inline-block;
+		position: relative;
+
+		img {
+			min-width: 100%;
+			width: 100%;
+			height:100%;
+		}
+
+		.inner-image-upload {
+			//height: 144px;
+
+			//background:$white;
+			border: 2px solid $silver-light-10percent;
+			@include box-sizing;
+
+			img[style="width: 75px;"] {
+				&~ ul{
+					left: 52%;
+				}
+
+				&~ div {
+					&.app-loader {
+						min-width: 150px;
+					}
+				}
+			}
+
+			&.mi-icon-user-male {
+				&:before {
+					@extend %font-gigantic;
+					line-height: 1.5;
+					color: $silver-light-10percent;
+				}
+			}
+
+			&.with-image {
+				border:none !important;
+
+				//	On desktop user hovers over image and controls will appear
+				&:hover {
+					button {
+						@include desktop-and-up {
+							display: block;
+						}
+					}
+				}
+
+				button {
+					max-width: 36px;
+					min-width: 36px;
+					background-color: $blue !important;
+					border: 0 !important;
+
+					&:before {
+						color: $white !important;
+						font-size: $font-large;
+						font-size:calc(#{$font-large} - 1px);
+					}
+					@include desktop-and-up {
+						display: none;
+					}
+					&.button-clicked {
+						@include desktop-and-up {
+							display: block;
+						}
+					}
+				}
+			}
+
+			.overlay {
+				background:$white;
+				@include opacity(0.6);
+				z-index: 1;
+				position: absolute;
+				top: 0;
+				left:0;
+				right:0;
+				bottom:0;
+			}
+		}
+
+		button {
+			height:36px;
+			width:36px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding:0 !important;
+			background: $silver-light-10percent !important;
+			border: 1px solid $silver-light-10percent !important;
+		}
+
+		.app-loader {
+			width: 75%;
+			text-align: left;
+			display: inline-block;
+			vertical-align: middle;
+			z-index: 5;
+			position: absolute;
+			top: 50%;
+			left:50%;
+			margin-top: -18px;
+			margin-left: -37.5%;
+
+			button {
+				width: auto !important;
+			}
+		}
+
+		.file-upload-list {
+			@extend %font-small;
+		}
+	}
+
+	.loader {
+		svg {
+			width: 40px !important;
+			height: 40px !important;
+		}
+	}
+	//	wrapped in the designer container
+	.designer-file-upload &,
+	.designer-pic-upload & {
+		@include boxSizing;
+		@include flexbox;
+		@include flexjustify(center);
+		@include flexalignitems(center);
+		width: 100%;
+		min-height: 36px;
+		position: relative;
+		vertical-align: top;
+		z-index:500;
+
+		.file-drop-down {
+			max-width: 36px;
+			min-width: 36px;
+		}
+
+		.add-file-button {
+			&.large {
+				width: 205px;
+			}
+			&.small {
+				width: 36px;
+				max-width: 36px;
+				min-width: 36px;
+			}
+		}
+
+		.from-web {
+			width: 169px;
+			padding: 0.56em !important;
+		}
+	}
+
+	.designer-pic-upload & {
+		.add-file-button {
+			&.large {
+				width: 193px;
+			}
+		}
+		.from-web {
+			width: 156px;
+		}
+	}
+}
+
+.file-upload-list {
+	top: 36px;
+	//left:0;
+	min-width: 150px;
+	// max-width: 216px;
+	right:0;
+	margin:0;
+	border: 1px solid $card-border;
+	background: $white;
+	@include box-sizing;
+
+
+	&.hide {
+		display: none;
+	}
+
+	&.show {
+		display: table;
+		width: 100%;
+		margin-top:-1px;
+		z-index: 10000 !important;
+	}
+
+	li {
+		@include box-sizing;
+		height: 36px;
+		width: 100%;
+		display: table-row;
+
+		a {
+			@include box-sizing;
+			color: $grey;
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			padding-left: 10px;
+			text-align: left;
+
+			&:hover {
+				color: $white;
+				background: $blue;
+			}
+
+			// &.remove-image {
+			// 	background: $pink;
+			// 	color: $white;
+			// }
+		}
+	}
+}
+
+div[method_type="FIL"] {
+	.file-upload-wrapper {
+		position: relative;
+	}
+}
+
+
+// Single file link
+.mi-file {
+	i {
+		color: $blue;
+	}
+	label {
+		color: $blue;
+		text-decoration: underline;
+	}
+}
+
+.image-outer {
+  position: relative;
+
+	.app-loader {
+		@extend %app-loader;
+		@include box-sizing;
+		min-width: 200px;
+		width: 100%;
+		position: absolute !important;
+		z-index: 5001;
+	}
+}
+
+.company-logo-upload {
+
+	.image-outer {
+
+		min-width: 200px;
+	    position: relative;
+	    width: 100%;
+
+		.app-loader {
+			@extend %app-loader;
+			min-width: auto !important;
+			width: auto !important;
+			position: absolute !important;
+			z-index: 5001;
+			max-width: 200px;
+    	margin: 0 auto;
+		}
+
+		.file-upload-list {
+			max-width: 216px;
+		}
+	}
+}

@@ -1,0 +1,207 @@
+.m-modal, .modal {
+	@include flexbox;
+	@include flexjustify(center);
+	@include flexalignitems(center);
+	@include flexdirection(column);
+	padding: rem-calc(20px);
+	width: auto !important;
+	
+	@include breakpoint(small) {
+
+		height: auto !important;
+		position: absolute;
+		top: 0;
+		left:0;
+		right:0;
+		bottom: 0;
+		z-index: 10000;
+		.small >& {
+			max-width: 100% !important;
+		}	
+	}
+
+	@include breakpoint(small_ls only) {
+
+		height: auto !important;
+		position: absolute;
+		top: 0;
+		left:0;
+		right:0;
+		bottom: 0;
+		z-index: 10000;
+		.small >& {
+			max-width: 100% !important;
+		}	
+	}
+
+	@include breakpoint(medium) {
+		position: relative;
+		top: auto;
+		bottom: auto;
+		max-width: 450px !important;
+		.small >& {
+			max-width: 450px !important;
+		}	
+
+	}
+
+	@include box-shadow(0px 1px 5px rgba(35,34,32,0.25));
+	&:focus {
+		outline: none !important;
+	}
+	background: $white;
+
+	&.designer-message-modal {
+		display: block !important;
+	}
+
+	.modal-header,
+	.modal-body,
+	.modal-footer {
+		@include boxSizing;
+		@include flexbox;
+		@include flexalignitems(center);
+		padding: 20px;
+
+		#deleteScreenConfirmModal & {
+			@include breakpoint(small small_ls only) {
+				width: 100%;
+			}
+		}
+	}
+
+	.modal-header {
+		@include flexjustify(space-between);
+		border-bottom: 1px solid $card-border;
+		padding: rem-calc(0 0 20px 0);
+		width: 100%;
+
+		h1,h2 {
+			margin:0;
+		}
+
+		.close-button,
+		button {
+			position: relative;
+			top: 0;
+			right:0;
+
+			&.blank {
+				color: $dark-grey !important;
+				font-weight: 600;
+			}
+		}
+	}
+
+	.modal-body {
+		
+		min-height: 150px;
+		overflow-y: auto;
+		padding: 0;
+		width: 100%;
+	    //display: block;
+
+		@include breakpoint(small) {
+			@include flexbox;
+			@include flex(1);
+		}
+
+		@include breakpoint(medium) {
+			@include flex(auto);
+			width: 100% !important;
+		}
+
+    	&.mi-widget-content {
+			// max-height: 300px;
+	    	overflow-y: auto;
+	    	height:100%;
+	    	padding: 0;
+	    	display: block;
+    	}
+
+		&.column {
+			@include flexdirection(column);
+			@include flexjustify(flex-start);
+			@include flexalignitems(flex-start);
+			
+			//	Share screen layout
+
+			.link-container {
+				width: 100%;
+			}
+			.share-wrapper {
+				@include flexbox;
+				@include flexjustify(space-between);
+				@include flexalignitems(center);
+				width: 100%;
+
+				input {
+					margin: 0 20px 0 0;
+				}
+			}
+		}
+
+		#deleteScreenConfirmModal & {
+			@include breakpoint(small only) {
+				@include flexgrow(1);
+			}
+		}
+	}
+
+	div {
+		&.mi-widget-content {
+			min-height: 0;
+			max-height: none;
+	    	overflow-y: auto;
+    	}
+	}
+	p {
+		&.modal-body {
+			&.mi-widget-content {
+				@include flexbox;
+				min-height: 150px !important;
+				//max-height: 300px !important;
+			}
+		}
+	}
+
+	//	Note section override
+	#internalNoteTable {
+		border-spacing: 0 !important;
+		padding:0;
+		margin-bottom: 76px;
+
+		label {
+			margin-bottom: 0 !important;
+		}
+
+		input {
+			margin-bottom:0 !important;
+
+		}
+	}
+
+	.modal-footer {
+		@include flexjustify(flex-end);
+		border-top: 1px solid $card-border;
+		padding: rem-calc(20px 0 0 0);
+		width: 100%;
+	}
+}
+
+//	Overlay 
+
+.#{$modal-overlay-class} {
+	&.visible {
+		display: block;
+	}
+	&.is-active {
+		@include breakpoint(medium only) {
+			left: 193px;
+		}
+		@include breakpoint(medium_ls only) {
+			left: 317px;
+		}
+	}
+}
+

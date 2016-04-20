@@ -1,0 +1,723 @@
+.mi-dialog,
+.m-modal {
+	
+	max-width: 1024px;
+	width: 100% !important;
+	//	Add "whatever" blue link
+
+	.mi-add-link, %mi-add-link {
+		color: $blue;
+		margin-left: 20px;
+		cursor: default;
+
+		&:hover {
+			color: $blue-light-10percent;
+			cursor:pointer;
+		}
+	} // "whatever" blue link END ^
+	
+	&.mi-dialog-visible {
+		visibility: visible !important;
+	}
+
+	//	Regular Dialog Box
+	&.mi-regular, %mi-regular {
+		// max-width:60% !important;
+		// max-height:60% !important;
+	
+		
+		@include tablet-landscape-and-below {
+			//position: fixed !important;
+			position:absolute !important;
+			top:0 !important;
+			left:0 !important;
+			bottom:0 !important;
+			right:0 !important;
+			width:100% !important;
+			height:100% !important;
+			overflow-x: hidden !important; //	 This is a hack to stop ipad keyboard from destroying page layout on focus.
+		}
+
+		@include mobile-only {
+			top: 45px !important;
+		}
+
+		.mi-dialog-titlebar, %mi-dialog-titlebar {
+
+			@include tablet-landscape-and-below {
+				width:100%;
+				float:left;
+				position:relative;
+			}
+
+			@include mobile-only {
+				padding:0.5em;
+			}
+
+			span {
+				color: $grey !important;
+				text-align: center;
+			}
+
+			.mi-dlgButton {
+				@include tablet-only {
+					right:3em;
+					color: $grey !important;
+				}
+			}
+		}
+
+		// .mi-dialog-content {
+		// 	overflow-y: auto !important;
+		// 	position:absolute !important;
+		// 	top:0;
+		// 	left:0;
+		// 	right:0;
+		// 	bottom:0;
+		// }
+
+		.mi-dialog-content, %mi-dialog-content {
+			overflow-y: auto !important;
+			&[style]{
+				@include tablet-landscape-and-below {
+					height: auto !important;
+				}
+			}
+
+			&.mi-grid-columns {
+				width:100% !important;
+				margin:0 !important;
+				padding: 0 !important;
+
+				@include tablet-landscape-and-below {
+					width:100% !important;
+					height:100% !important;
+					overflow: visible !important;
+					top: 63px;
+				}
+
+				@include mobile-portrait-only {
+					top:46px; 
+				}
+
+				.itemInner {
+					margin:0 !important;
+					position:absolute;
+					top:30px;
+					bottom:0;
+					right:0;
+					left:0;
+
+					.tblcell {
+						th {
+							padding: 1px 10px 0 10px;
+						}
+					}
+
+					.propertiesPanel {
+						h6 {
+							margin-top:5px;
+						}
+					}
+				}
+			}
+
+			.itemInner, %itemInner {
+				@include tablet-landscape-and-below {
+					margin:1.76em 0 0 0 !important;
+					width:100% !important;
+					height:100% !important;
+				}
+				
+				.tblcell {
+					@include mobile-only {
+						display:block !important;
+					}
+
+				}
+
+				#gridTableListDiv {
+					
+					background: $drk-gunmetal !important;
+
+					select {
+						@include mobile-only {
+							width:100%;
+							margin: 0.5em 0;
+						}
+					}
+				}
+
+				.pm-grid-column-table th,
+				.sectionHeader {
+					background: $gunmetal !important;
+				}
+				
+				.pm-grid-column-table th {
+					input {
+						&[class="mi-button"] {
+							&:after {
+								content:"mi-button-primary";
+							}
+						}
+					}
+				}
+
+				.sectionHeader {
+					@include tablet-only {
+						height: 41px !important;
+					}
+					h6 {
+						@include tablet-only {
+							margin: 0.5em 0;	
+						}		
+					}
+				}
+			}
+
+			#propertiesContent {
+				@include mobile-only {
+					padding:1em 0.313em;
+				}
+			}
+		}
+
+		.mi-dialog-buttonpane, %mi-dialog-buttonpane {
+			width:100%;
+			
+			button {
+
+				@include mobile-portrait-only {
+					&[style]{width:auto;}
+					&.mi-button-criteria-clear,
+					&.mi-button-criteria-cancel {
+					
+						width:45.2% !important;
+						float: left;
+						margin-right:0 !important;
+						margin-left:0.65em !important;
+						
+					}
+					&.mi-button-primary {
+						width:94%;
+					}
+				}
+			}
+			@include tablet-landscape-and-below {
+				position:fixed;
+				bottom:0;
+				border-top: 1px solid $pale-grey-border;
+			}
+
+			@include iphone6 {
+				position: fixed;
+				bottom:0;
+				height:100px;
+			}
+
+			.mi-dialog-buttonset, %mi-dialog-buttonset {
+				@include tablet-only {
+					margin-right: 2em;
+				}
+
+				@include mobile-only {
+					margin-right:0.5em;
+				}
+
+				@include mobile-portrait-only {
+					float: none;
+					margin-right:0;
+					width: 100%;
+				}
+				button {
+					
+
+					@include mobile-portrait-only {
+						&[style]{width:auto;}
+						&.mi-button-criteria-clear,
+						&.mi-button-criteria-cancel {
+						
+							width:45.2% !important;
+							float: left;
+							margin-right:0 !important;
+							margin-left:0.65em !important;
+							
+						}
+						&.mi-button-primary {
+							width:94%;
+						}
+					}
+				}
+			}
+		}
+
+		#internalNoteTable {
+			
+			@include tablet-only {
+				background:transparent !important;
+				position:relative !important;
+			}
+		}
+	}
+	
+	//	Wizard Dialog(s)
+	&.mi-wizard {
+		@extend %mi-regular;
+
+		@include tablet-landscape-and-below {
+			top:0 !important;
+			left:0 !important;
+			bottom:0 !important;
+			right:0 !important;
+			width:100% !important;
+		}
+		
+		// @include 
+
+		.mi-dialog-titlebar {
+			background: $pale-grey !important;
+
+
+			@include tablet-landscape-and-below {
+				width:100%;
+				float:left;
+				position:relative;
+			}
+
+			@include mobile-only {
+				padding:0.5em;
+			}
+
+			span {
+				color: $grey !important;
+				text-align: center;
+			}
+
+			.mi-dlgButton {
+				@include tablet-only {
+					right:3em;
+					color: $grey !important;
+				}
+			}
+		}
+
+		.mi-dialog-content, %mi-dialog-content {
+			overflow: auto;
+			&[style]{
+				height: auto !important;
+			}
+			@include tablet-landscape-and-below {
+				width: 100% !important;
+				margin:0 !important;
+				padding: 0 0 1.563em 0 !important;
+				float:left !important;
+				height:auto !important;
+				width:100% !important;
+				overflow: visible;
+				position:relative;
+			}
+
+			.itemInner, %itemInner {
+				@include tablet-landscape-and-below {
+					margin:1.76em 0 0 0 !important;
+					width:100% !important;
+					height:100% !important;
+				}
+				
+				.tblcell {
+					@include mobile-only {
+						display:block !important;
+					}
+				}
+
+				#gridTableListDiv {
+					
+					background: $drk-gunmetal !important;
+
+					select {
+						@include mobile-only {
+							width:100%;
+							margin: 0.5em 0;
+						}
+					}
+				}
+
+				.pm-grid-column-table th,
+				.sectionHeader {
+					background: $gunmetal !important;
+				}
+				
+				.pm-grid-column-table th {
+					input {
+						&[class="mi-button"] {
+							&:after {
+								content:"mi-button-primary";
+							}
+						}
+					}
+				}
+
+				.sectionHeader {
+					@include tablet-only {
+						height: 41px !important;
+					}
+					h6 {
+						@include tablet-only {
+							margin: 0.5em 0;	
+						}
+					}
+				}
+			}
+
+			#propertiesContent {
+				@include mobile-only {
+					padding:1em 0.313em;
+				}
+			}
+
+			.mi-uploadwizard {
+
+				h4 {
+					@include mobile-portrait-only {
+						text-align: center;
+					}
+				}
+
+				.tbl {
+					border-collapse: collapse;
+					background: $white;
+					@include tablet-landscape-and-below {
+						padding-bottom:3em;
+					}
+
+					@include mobile-portrait-only {
+						padding-bottom:10em;
+					}
+				}
+
+				.tbl,
+				.tblrow {
+					@include tablet-landscape-and-below {
+						display: block;
+					}
+				}
+				
+				.tblrow {
+					border-bottom: 1px solid $pale-grey-border;
+					.tblcell {
+						vertical-align: middle !important;
+						padding: 1em 0;
+
+						&.uw-radio {
+							width: 4em !important;
+							text-align: center;
+							@include tablet-landscape-and-below {
+								width: 2em !important;
+								padding:0 0.75em !important;
+							}
+						}
+
+						&.uw-thumb {
+							width:9.375em;
+							text-align: center;
+							
+							@include mobile-only {
+								width:3em;
+								img {
+									width:100%;
+								}
+							}
+						}
+
+						&.uw-title {
+							@include mobile-only {
+								padding-left: 1em;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.mi-dialog-buttonpane, %mi-dialog-buttonpane {
+			background: $pale-grey !important;
+			width:100%;
+			padding:0 !important;
+
+			button {
+				margin:0.5em;
+
+				@include mobile-portrait-only {
+					width:94%;
+				}
+			}
+			@include tablet-landscape-and-below {
+				position:fixed;
+				bottom:0;
+				
+			}
+
+			.mi-dialog-buttonset, %mi-dialog-buttonset {
+				@include tablet-only {
+					margin-right: 2em;
+				}
+
+				@include mobile-only {
+					margin-right:0.5em;
+				}
+
+				@include mobile-portrait-only {
+					float: none;
+					margin-right:0;
+					width: 100%;
+				}
+			}
+		}
+
+		#internalNoteTable {
+			
+			@include tablet-only {
+				background:transparent !important;
+				position:relative !important;
+			}
+		}
+	}
+
+	&.mi-alert {
+		.mi-dialog-titlebar {
+			&.mi-alert {
+				display: block !important;
+			}
+		}
+	}
+	
+	//	Error Dialog(s)
+	.mi-ErrorDialog {
+		.error-container {
+			p {
+				margin: 0.25em !important;
+			}
+
+			.error-moreinfo-link {
+				margin: 0.5em 0 !important;
+				font-weight: bold;
+				color: $grey;
+
+				i {
+					font-weight: bold !important;
+				}
+			}
+
+			.error-moreinfo-container {
+				margin: 0.2em 0;
+				@include box-sizing;
+				padding: 0.2em;
+				background: $pale-grey !important;
+				color: $grey !important;
+
+				.error-reference {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	
+	//	Portal Navigation "Wizard" ("You're a wizard 'arry.")
+	
+	.mi-dialog-content {
+		@extend %mi-dialog-content;
+    width: 100%;
+		overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 !important;
+    height: 100%;
+
+    .mi-nav-wizard-wrapper {
+    	width: 100%;
+    	height: 100%;
+    	padding-bottom: 10px;
+    }
+	
+		.mi-nav-wizard {
+
+			@include box-sizing;
+			padding:1em;
+			
+			position:relative;
+			@include transition(left, 0.3s, ease-in-out);
+			&[style] {
+				display: block !important;
+				left: 100%;
+			}
+
+			&.slide-forward {
+				left:0;
+			}
+
+			h5,h4 {
+				color: $dark-grey !important;
+
+				&.link-title {
+					font-size: 1.5em !important;
+    			padding: 0 0.5em;
+				}
+			}
+
+			.mi-add-link {
+				@extend %mi-add-link;
+				margin: 1em 0 20px 0 !important;
+				float: left;
+			}
+
+			.mp-menu, %mp-menu {
+
+				@include box-sizing;
+				background: $app-header;
+				border: 1px solid $card-border;
+				float: left;
+				width: 100%;
+				padding: 0.5em;
+				margin: 0.25em 0;
+				line-height: 1.5;
+				
+
+				p {
+					float:left;
+					display:inline;
+					color: $grey;
+					margin-right: 1em;
+					&:hover {
+						cursor:pointer;
+					}
+
+					@include mobile-portrait-only {
+						width: 150px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+					}
+				}
+
+				.mp-edit-menu, %mp-edit-menu {
+					float: left;
+					font-size: $font-normal;
+					@include opacity;
+					color:$dark-grey;
+
+					&:hover {
+						cursor:pointer;
+					}
+					&:before {
+						content: "\e7e8";
+						font-size: $font-normal;
+						font-family: "method-icon";
+						margin-right: 5px;
+					}
+					span {
+						padding-left: 0.25em;
+
+						@include mobile-portrait-only {
+							display: none;
+						}
+
+					}
+				}
+				.mp-delete-menu, %mp-delete-menu {
+					float: right;
+					&:hover {
+						cursor:pointer;
+					}
+
+					span {
+						display: none;
+					}
+
+					&:before {
+						content:"\e7e1";
+						color: $dark-grey;
+						font-size: $font-normal;
+						font-family: "method-icon";
+					}
+				}
+			}
+
+			.mp-menu-link-wrapper {
+				float: left;
+				max-width: 30em;
+				width:100%;
+
+				select {
+					width:100%;
+					
+					&.icon-select {
+						margin-bottom:0.5em;
+					}
+
+				}
+
+				.web-input {
+					margin-top: 1em;
+				}
+			}
+
+			.mp-menu-edit-placeholder {
+				float: left;
+				max-width:100%;
+				width:100%;
+
+				.mp-menu-caption, select {
+					float: left;
+					max-width: 30em;
+					width:100%;
+				}
+
+				.mp-edit-body-html {
+					clear: both;
+				}
+
+				ul {
+					list-style: none;
+					padding:0;
+					margin: 0.5em 0;
+
+					li {
+						@extend %mp-menu;
+
+						.mp-handle {
+							float:left;
+							width:100%;
+							line-height: 1.5em;
+
+							&:hover {
+								cursor: move;
+							}
+
+							.mp-edit-link {
+								@extend %mp-edit-menu;
+
+							}
+							.mp-delete-link {
+								@extend %mp-delete-menu;
+							}
+
+							.mp-add-sublink {
+								@extend %mi-add-link;
+								float: left;
+								min-height: 22px;
+								line-height: 1.9em;
+							}
+
+						}
+
+						ul {
+							li {
+								background:$border-color;
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

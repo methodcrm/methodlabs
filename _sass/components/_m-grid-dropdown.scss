@@ -1,0 +1,477 @@
+/*////////////////////////////////GRID PROPERTY MANAGER//////////////////////////*/
+
+#gridPropertiesWindow {
+  color: black;
+  overflow-x: hidden;
+  padding-top: 20px;
+  //width: 100% !important;
+}
+
+#gridPropMainPage, #gridPropAddCols, #gridActionEditor, #gridExprBuilder {
+  position: relative;
+}
+
+#gridColsDiv, #gridColProps {
+  display: inline-table;
+}
+
+#gridColsDiv {
+  width: 25%;
+}
+
+#gridColProps {
+  width: 73%;
+}
+
+#gridColsHeader {
+  font-size: 20px;
+}
+
+#gridColPropsHeader {
+  font-size: 20px;
+  margin-left: 20px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 30em;
+  display: inline-block;
+}
+
+#gridColsTable {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  width: 100%;
+  margin-top: 15px;
+  border: none;
+  .grid-column-selected td {
+    background-color: #E9EDF1;
+    // border-top: solid 1px #D4D4D4;
+    // border-bottom: solid 1px  #D4D4D4;
+    // &:first-child {
+    //   border-left: solid 1px #D4D4D4;
+    // }
+    // &:nth-child(3) {
+    //   border-right: solid 1px #D4D4D4;
+    // }
+    // &:nth-child(4) {
+    //   border-right: none;
+    //   border-top: none;
+    //   border-bottom: none;
+    //   background-color: #fff;
+    // }
+    border: 1px solid $card-border;
+  }
+  td {
+    @include boxSizing;
+    @include flexbox;
+    @include flexjustify(space-between);
+    @include flexalignitems(center);
+    padding: 10px;
+    width: 100%;
+    border-bottom: none;
+  }
+  .gridColTr {
+    cursor: pointer;
+    width: 100%;
+  }
+  i {
+    color: #8f9192;
+  }
+  .grid-column-caption {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 10em;
+    display: inline-block;
+  }
+  .grid-column-delete {
+    font-size: 18px;
+    position: relative;
+  }
+  .grid-column-move {
+    font-size: 20px;
+    cursor: move;
+    i:hover {
+      color: #58BEFF;
+    }
+  }
+  .grid-column-arrow {
+    i:hover {
+      color: #58BEFF;
+    }
+    display: none;
+  }
+}
+
+#addGridColumn {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #58BEFF;
+  cursor: pointer;
+}
+
+#addGridColumnText {
+  margin-left: 3px;
+}
+
+#numericFormat {
+  width: 100%;
+  td {
+    &:nth-child(2) { 
+      width: 100% !important;
+    }
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+#gridColPropsTable {
+  border-collapse: separate;
+  border-spacing: 2px;
+  width: 100%;
+  margin: 15px 0 0 15px;
+  border: none;
+  td {
+    vertical-align: top;
+    padding: 5px;
+    border-bottom: 0;
+    &:first-child {
+      width: 20%;
+    }
+    &:nth-child(2), &:nth-child(3) {
+      width: 40%;
+    }
+  }
+  label {
+    position: relative;
+    top: 4px;
+    padding-left: 1px;
+
+    &:empty {
+      display: none;
+    }
+  }
+  #gridIcon button {
+    // height: 26px;
+    width: 100%;
+    position: relative;
+    // top: -9px;
+    background-color: initial;
+    i {
+      float: left;
+      margin-left: 5px;
+      &.icon-caret-down {
+        float: right;
+      }
+    }
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #gridColPropsTable #gridIcon button {
+    // position: relative;
+    // top: -10px;
+  }
+}
+
+#gridColProps {
+  .gridColumnAdv {
+    @include boxSizing;
+    margin: 20px 0 0 0;
+    border: 1px solid #D4D4D4;
+    padding: 20px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .editorHeader {
+    // height: 20px;
+    padding-left: 6px;
+  }
+  #exprPlaceholder {
+    margin: 20px 0 15px 6px;
+    font-size: 16px;
+    span {
+      width: 96%;
+      word-break: break-all;
+      display: inline-block;
+    }
+  }
+  .gridExtSpanText {
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30em;
+    display: inline-block;
+  }
+  .gridExtSpan {
+    font-size: 28px;
+    float: right;
+    position: relative;
+    top: -9px;
+
+    .font-xsmall {
+      font-size: 18px;
+    }
+  }
+  .advItem {
+    font-size: 16px;
+  }
+}
+
+#gridColumnActs .advItem {
+  margin-top: 10px;
+}
+
+#actionTitleBar {
+  #backToColumnList, #backColumnList, #backColumnListExpr {
+    float: left;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    cursor: pointer;
+  }
+  #backToColumnList i, #backColumnList i, #backColumnListExpr i {
+    position: relative;
+    top: 1px;
+    right: 3px;
+  }
+}
+
+#gridPropAddCols {
+  .advColDiv label {
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  margin: 20px 0 0 40px;
+  width: 94%;
+  padding-bottom: 20px;
+}
+
+.advColHeader {
+  margin: 20px 0;
+}
+
+#gridPropAddCols {
+  .advColDiv {
+    padding: 7px;
+    /*background: #fff;*/
+    background-color: #E9EDF1;
+    border: 1px solid #D4D4D4;
+    border-color: #D4D4D4 #D4D4D4 #BCBCBC;
+    width: 98%;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    &.insertChkMult {
+      padding: 7px 7px 2px 7px;
+    }
+    i:hover {
+      color: #ce4538;
+    }
+  }
+  .advTextHeader {
+    color: #3EA4EF;
+    display: inline-block;
+    width: 20%;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  .advFieldText {
+    display: inline-block;
+    width: 70%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    position: relative;
+    bottom: -2px;
+  }
+}
+
+#addMultCols {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #58BEFF;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  right: 1%;
+  top: -13px;
+}
+
+#regularFieldsDiv {
+  overflow-y: auto;
+  clear: both;
+}
+
+#regularFieldsTable {
+  border-collapse: collapse;
+  border-spacing: 2px;
+  width: 100%;
+  .regFieldTd {
+    width: 25%;
+  }
+  .regFieldName {
+    width: 93%;
+    background-color: #E9EDF1;
+    padding: 8px 5px 4px 7px;
+    border: 1px solid #C6C6C6;
+    cursor: pointer;
+  }
+  div.insertChkMult {
+    padding: 7px 5px 0 7px;
+  }
+}
+
+#gridPropAddCols .advChk {
+  display: none;
+
+  &:before {
+    padding-left: 1px;
+  }
+}
+
+#regularFieldsTable .insertChkSpan {
+  width: 7%;
+  display: none;
+  font-size: 16px;
+}
+
+#gridPropAddCols .insertChkAll {
+  display: inline-block;
+  position: static;
+  top: -2px;
+}
+
+#regularFieldsTable {
+  .regFieldName .insertIconSpan {
+    width: 10%;
+    float: right;
+    font-size: 16px;
+  }
+  .insertTextSpan {
+    display: inline-block;
+    width: 83%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+  }
+}
+
+#gridColActs {
+  margin: 0 30px 30px 30px;
+  border: none;
+  padding: 10px 10px 20px 10px;
+  overflow-x: hidden;
+}
+
+#gridExprBuilder {
+  margin: 0px 30px 30px 30px;
+  border: none;
+  padding: 10px;
+  overflow-x: hidden;
+}
+
+#regularFieldsDiv {
+  .multFieldColumn {
+    label {
+      display: inline-block;
+      width: 7%;
+    }
+  }
+
+  .fieldColumn {
+    label {
+      display: none;
+    }
+
+    &.ui-screen-hidden {
+      display: none;
+    }
+  }
+}
+
+/*////////////////////////////////CALENDAR WIZARD///////////////////////////////*/
+
+#CalendarWizard {
+    padding-top: 0;
+}
+
+#calendarMainPage, #calendarExprBuilder {
+  position: relative;
+}
+
+#calendarMainPage {
+  padding: 20px 0 20px 60px;
+}
+
+#calendarWizardTable {
+  border-collapse: separate;
+  border-spacing: 0 5px;    
+  td {
+    padding: 0;
+    &:first-child {
+      width: 24%;
+    }
+    &:nth-child(2), &:nth-child(3) {
+      width: 38%;
+    }
+  }
+}
+
+#calendarMainPage {
+  .chooseStep {
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  .chooseStepLbl {
+    margin-left: 0;
+    font-weight: bold;
+  }
+  label.checkbox {
+    margin-left: 3px;
+    font-size: 0.8em;
+  }
+  a.calendarExpr {
+      font-weight: 600;
+  }
+  a:before {
+      padding-right: 10px;
+      line-height: 36px;
+      vertical-align: middle;
+  }
+}
+
+#calendarWizardTable {
+  input, select, button {
+    width: 100%;
+    height: 25px;
+    font-size: 14px;
+  }
+  .mi-button {
+    margin: 0;
+    padding: 3px;
+  }
+}
+
+#calendarExprBuilder {
+  margin: 10px 30px 30px 30px;
+  border: none;
+  padding: 10px;
+  overflow-x: hidden;
+}
+
+#backCalendarExpr {
+  float: left;
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  cursor: pointer;
+  color: #3EA4EF;
+}

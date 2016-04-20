@@ -1,0 +1,42 @@
+.mi-taglist {
+  display: block;
+  padding: 2px;
+  border: 1px solid $card-border;
+  width: 100%;
+
+  &.border-none 
+   {
+      border:0
+   }
+
+  .mi-grid-body & {
+    border: 0;
+  }
+
+  .mi-taglist-selected {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+
+    li {
+      @include borderRadius(2px);
+      display: inline-block;
+      margin: 2px;
+      background-color: $blue;
+      color: $white;
+      padding: 3px 5px;
+      float: left;
+      font-size: 0.9em;
+    }
+  }
+
+  .mi-taglist-menu {
+    display: inline-block;
+    float: left;
+    padding: 5px 10px !important;
+    color: $dark-grey !important;
+  }
+}

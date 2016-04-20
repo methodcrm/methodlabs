@@ -1,0 +1,238 @@
+$mobile-portrait: 20.000em;
+$mobile-portrait-scrollbar: 19.250em;
+$mobile-middle-ground: 35em; //	In-between size for mobile browsers
+$mobile-landscape-scrollbar: 34.750em;
+$mobile-landscape: 35.5em; 	// old width was 34.750em
+$small-tablet-portrait-min: 35.563em;
+$small-tablet-portrait-max: 37.500em;
+$nexus-portrait: 37.688em;
+$small-tablet-landscape: 64.000em; 
+$tablet-portrait: 48.000em;
+$tablet-landscape: 64.000em;
+$desktop: 76.500em;
+$desktop-large: 114.000em;
+
+// Both portrait and landscape
+@mixin mobile-only {
+	@media (max-width : $nexus-portrait) {
+		@content;
+	}
+}
+
+@mixin iphone6 {
+	@media (max-width: $nexus-portrait) and (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin iphone6-landscape {
+	@media (max-width: $tablet-portrait) and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin mobile-portrait-with-scrollbars {
+	@media only screen and (min-width : $mobile-portrait-scrollbar) and (max-width : $mobile-portrait) {
+		@content;
+	}
+}
+
+@mixin mobile-portrait-with-scrollbars-only {
+	@media (min-width : $mobile-portrait-scrollbar) {
+		@content;
+	}
+}
+
+// Everything up to and including the portrait width of the phone
+// Since it's the smallest query it doesn't need a min
+@mixin mobile-portrait-only {
+	@media (max-width : $mobile-portrait) {
+		@content;
+	}
+}
+ 
+// Everything up to and including the mobile portrait
+@mixin mobile-portrait-and-below {
+	@media (max-width : $mobile-portrait) {
+		@content;
+	}
+}
+ 
+// Everything above and including the mobile portrait
+@mixin mobile-portrait-and-up {
+	@media (min-width : $mobile-portrait + 0.063em) {
+		@content;
+	}
+}
+ 
+// Everthing larger than a portrait mobile up until mobile landscape
+@mixin mobile-landscape-only {
+	@media only screen and (min-width : $mobile-portrait + 0.063em) and (max-width : $nexus-portrait) {
+		@content;
+	}
+}
+
+@mixin mobile-landscape-alone {
+	@media only screen and (min-width : $mobile-middle-ground + 0.063em) and (max-width : $nexus-portrait) {
+		@content;
+	}
+}
+ 
+// Everything up to and including the mobile landscape width
+@mixin mobile-landscape-and-below {
+	@media only screen and (max-width : $nexus-portrait) {
+		@content;
+	}
+}
+
+@mixin mobile-middle-only {
+	@media only screen and (min-width : $mobile-portrait + 0.063em) and (max-width : $mobile-middle-ground){
+		@content;
+	}
+}
+
+// Everything above and including the mobile landscape width
+@mixin mobile-landscape-and-up {
+	@media only screen and (min-width : $nexus-portrait + 0.063em) {
+		@content;
+	}
+}
+ 
+// Small Tablet and Nexus
+
+@mixin small-tablet-only {
+	@media only screen and (min-width:$small-tablet-portrait-min) and (max-width: $small-tablet-landscape) {
+		@content;
+	}
+}
+
+@mixin small-tablet-portrait-only {
+	@media only screen and (min-width: $nexus-portrait + 0.063em) and (max-width: $small-tablet-portrait-min) {
+		@content;
+	}
+}
+
+@mixin small-tablet-portrait-and-up {
+	@media only screen and (min-width : $small-tablet-portrait-min) {
+		@content;
+	}
+}
+
+@mixin small-tablet-portrait-and-below {
+	@media only screen and (max-width : $small-tablet-portrait-max ) {
+		@content;
+	}
+}
+
+@mixin small-tablet-landscape-only {
+	@media only screen and (min-width: $small-tablet-portrait-max + 0.063em) and (max-width: $small-tablet-landscape) {
+		@content;
+	}
+}
+
+@mixin small-tablet-landscape-and-up {
+	@media only screen and (min-width : $small-tablet-portrait-max + 0.063em) {
+		@content;
+	}
+}
+
+@mixin small-tablet-landscape-and-below {
+	@media only screen and (max-width : $small-tablet-landscape) {
+		@content;
+	}
+}
+
+
+@mixin small-tablet-only {
+	@media (max-width: $small-tablet-landscape) {
+		@content;
+	}
+}
+
+
+// Both the portrait and landscape width of the tablet
+// Larger than a landscape mobile but less than or equal to a landscape tablet
+@mixin tablet-only {
+	@media only screen and (min-width : $nexus-portrait + 0.063em) and (max-width : $tablet-landscape) {
+		@content;
+	}
+}
+ 
+// Everything larger than mobile landscape up until the portrait width of the tablet
+@mixin tablet-portrait-only {
+	@media only screen and (min-width : $nexus-portrait + 0.063em) and (max-width : $tablet-portrait) and (orientation: portrait) {
+		@content;
+	}
+}
+ 
+// Everything below and including the portrait width of the tablet
+@mixin tablet-portrait-and-below {
+	@media only screen and (max-width : $tablet-portrait) {
+		@content;
+	}
+}
+ 
+// Everything above and including the portrait width of the tablet
+@mixin tablet-portrait-and-up {
+	@media only screen and (min-width : $nexus-portrait + 0.063em) {
+		@content;
+	}
+}
+ 
+// Larger than portrait but less than or equal to the landscape width
+@mixin tablet-landscape-only {
+	@media only screen and (min-width : $tablet-portrait + 0.063em) and (max-width : $tablet-landscape) and (orientation: landscape) {
+		@content;
+	}
+}
+ 
+// Up to and including the tablet landscape
+@mixin tablet-landscape-and-below {
+	@media only screen and (max-width : $tablet-landscape) {
+		@content;
+	}
+}
+ 
+// Everything larger than portrait tablet
+@mixin tablet-landscape-and-up {
+	@media only screen and (min-width : $tablet-portrait + 0.063em) {
+		@content;
+	}
+}
+ 
+// Everything larger than a landscape tablet
+@mixin desktop-and-up {
+	@media only screen and (min-width : $tablet-landscape + 0.063em) {
+		@content;
+	}
+}
+ 
+// Everything below and including the desktop 
+@mixin desktop-and-below {
+	@media only screen and (max-width : $desktop) {
+		@content;
+	}
+}
+ 
+// Everything larger than a landscape tablet but less than or equal to the desktop
+@mixin desktop-only {
+	@media only screen and (min-width : $tablet-landscape + 0.063em) and (max-width : $desktop) {
+		@content;
+	}
+}
+ 
+// Retina screens have a 1.5 pixel ratio, not 2
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+		@content;
+	}
+}
+
+
+// 	tablet ONLY and up
+
+@mixin tablet-only-and-up {
+	@media only screen and(min-width : $small-tablet-portrait-max + 0.063em) {
+		@content;
+	}
+}

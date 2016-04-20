@@ -1,0 +1,362 @@
+.mi-context-menu {
+    // Trigger button
+    .menu-trigger {
+        @include boxSizing;
+        background: transparent;
+        border: 0;
+        font-size: $h3-size;
+        color: $m-grey;
+        width: 60px;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        display: block;
+        z-index: 10;
+    }
+
+    .sub-menu-popup {
+        @include boxSizing;
+        @include borderRadius;
+        position: absolute;
+        border: 1px solid $card-border;
+        padding: rem-calc(10px 20px);
+        background: $white;
+        width: rem-calc(160px);
+        overflow: visible;
+        top: 60px;
+        right: -16px;
+        z-index: 11;
+
+        &.sub-menu-top {
+            top: auto;
+
+            @include breakpoint(small small_ls portrait) {
+                bottom: 50px;
+                right: -5px;
+            }
+
+            @include breakpoint(large) {
+                bottom: 75px;
+            }
+
+            &:after {
+                bottom: -9px;
+                border-top: 9px solid $white;
+                border-bottom: none;
+                top: auto;
+                margin-left: 36px;
+            }
+
+            &:before {
+                border-top: 10px solid;
+                border-bottom: none;
+                bottom: -10px;
+                top: auto;
+                margin-left: 35px;
+                border-top-color: $card-border;
+            }
+        }
+        
+        //  This style is only used for context menus wrapped in .pref-context-wrap
+        .pref-context-wrap & {
+            top: 50px;
+            min-width: 300px;
+            left: 0;
+
+            &:before {
+                margin-left: 19px;
+                left: 0;
+            }
+
+            ul {
+                display: inline-block;
+            }
+
+            &:before,
+            &:after {
+              border-left: 9px solid transparent;
+              border-right: 9px solid transparent;
+              border-bottom: 9px solid #fff;
+              top: -8px;
+              content: '';
+              left: 50%;
+              margin-left: 24px;
+              position: absolute;
+            }
+
+            &:after {
+                
+                border-bottom: 9px solid $white;
+                border-top: none;
+                left:-3px;
+            }
+
+            &:before {
+                border-top: none;
+                border-bottom-color: $card-border;
+                top:-9px;
+                left: -3px;
+            }
+
+            @include breakpoint(small only) {
+                left: -160px;
+
+                &:before {
+                    margin-left: 30px;
+                    left: 50%;
+                }
+
+                &:after {
+                    left: 50%;
+                    margin-left: 31px;
+                }
+            }
+
+            @include breakpoint(small_ls only) {
+                left: -160px;
+
+                &:before {
+                    margin-left: 30px;
+                    left: 50%;
+                }
+
+                &:after {
+                    left: 50%;
+                    margin-left: 31px;
+                }
+            }
+
+            ul {
+                li {
+                    display: block;
+
+                    a {
+                        display: inline;
+                        //margin-left: 5px;
+                        color: $blue;
+                    }
+                }
+            }
+        }
+
+        &:before,
+        &:after {
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-bottom: 9px solid #fff;
+            top: -9px;
+            content: '';
+            left: 50%;
+            margin-left: 24px;
+            position: absolute;
+        }
+
+        &:before {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid;
+            border-bottom-color: inherit; /* Can't be included in the shorthand to work */
+            top: -10px;
+            margin-left: 23px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+
+            li {
+                @include boxSizing;
+                @include flexbox;
+                @include flex(0 0 auto);
+                @include flexjustify(flex-start);
+                @include flexalignitems(center);
+                height: rem-calc(40px);
+
+                a {
+                    display: block;
+                    color: $list-color;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                &:hover {
+                    a {
+                        color: $list-hover;
+                    }
+                }
+
+                &.disabled {
+                    display: block;
+                    width: 100%;
+                    color: $gray-dark;
+                    line-height: rem-calc(40px);
+
+                    .mi-icon-info-sign {
+                        display: inline-block;
+                        float: right;
+                        margin-top: rem-calc(13px);
+                    }
+                }
+            }
+        }
+        // Card formatting options
+        .card-options {
+            width: 100%;
+            margin: 10px 0 15px;
+
+            li {
+                display: inline-block !important;
+                width: 33%;
+                text-align: center;
+                padding: 0 !important;
+                float: left;
+                height: 1rem !important;
+
+                &:first-child {
+                    text-align: left !important;
+                }
+
+                &:nth-child(2) {
+                    width: 34%;
+                }
+
+                &:last-child {
+                    text-align: right !important;
+                }
+
+                button {
+                    &:hover {
+                        border: none !important;
+                    }
+                }
+            }
+        }
+        // Color Options
+        ul.colors {
+            @include flexbox;
+            @include flexjustify(space-around);
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            position: absolute;
+            left: -1px;
+            right: -1px;
+            border: 1px solid $card-border;
+            border-top: 0;
+            z-index: 2;
+
+            li {
+                @include boxSizing;
+                @include flex(auto);
+                width: 38px;
+                height: 38px;
+                // margin:2px;
+                // padding: 10px;
+                // border: 1px transparent;
+                &:hover {
+                    cursor: pointer;
+                }
+                // &.active {
+                //   border: 1px solid $dark-grey;
+                // }
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &.pink {
+                    background: $pink;
+                }
+
+                &.blue {
+                    background: $blue;
+                }
+
+                &.aqua {
+                    background: $aqua;
+                }
+
+                &.purple {
+                    background: $purple;
+                }
+
+                &.red {
+                    background: $red;
+                }
+
+                &.green {
+                    background: $green;
+                }
+
+                &.yellow {
+                    background: $yellow;
+                }
+
+                &.orange {
+                    background: $orange;
+                }
+            }
+        }
+
+        button {
+            &.blank {
+                color: $m-grey;
+
+                &:hover {
+                    background: transparent;
+                }
+
+                &.pink {
+                    &:before {
+                        color: $pink;
+                    }
+                }
+
+                &.blue {
+                    &:before {
+                        color: $blue;
+                    }
+                }
+
+                &.green {
+                    &:before {
+                        color: $green;
+                    }
+                }
+
+                &.purple {
+                    &:before {
+                        color: $purple;
+                    }
+                }
+
+                &.red {
+                    &:before {
+                        color: $red;
+                    }
+                }
+
+                &.aqua {
+                    &:before {
+                        color: $aqua;
+                    }
+                }
+
+                &.yellow {
+                    &:before {
+                        color: $yellow;
+                    }
+                }
+
+                &.orange {
+                    &:before {
+                        color: $orange;
+                    }
+                }
+            }
+        }
+    }
+}

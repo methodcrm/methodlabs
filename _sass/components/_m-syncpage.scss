@@ -1,0 +1,131 @@
+.sync-page {
+  padding-bottom: 50px;
+
+  .grid-block {
+      @include breakpoint(medium down) {
+        margin:0;
+      }
+    }
+
+  h2 {
+    margin: 20px 0 0;
+  }
+
+  .sync-steps {
+    margin-top:10px;
+
+    .grid-content {
+      padding: 0 20px;
+      text-align: center;
+      
+      @include breakpoint(small) {
+        border-right: none;
+      }
+
+      @include breakpoint(medium) {
+        margin: 0 6px;
+        border-right: 1px solid $card-border;
+      }
+      
+      .step-inner {
+        min-height: 60px;
+
+        ul {
+          list-style: initial;
+          list-style-type: disc;
+        } 
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      .mi-icon-background-circle {
+        @include borderRadius(50%);
+        display: block;
+        width: 125px;
+        height: 125px;
+        text-align: center;
+        background-color: $blue;
+        margin: 0 auto 20px;
+
+        &.install {
+          background-color: $orange;
+        }
+
+        &.connect {
+          background-color: $green;
+        }
+
+        i {
+          font-size: 70px;
+          line-height: 125px;
+          color: $white;
+        }
+      }
+
+      h2 {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        text-align: left;
+        color: $h-color;
+        min-height: 100px;
+      }
+
+      p {
+        padding: 0 10px;
+      }
+
+      .five-star {
+        //margin: 30px 0 20px;
+
+        i {
+          display: inline-block;
+          font-size: 14px;
+          color: $dark-blue;
+        }
+      }
+    }
+  }
+
+  .help-header {
+    margin: 20px 0;
+  }
+  .sync-info-box {
+    border: 1px solid $card-border;
+    padding: 10px 10px 0;
+    margin-bottom: 20px;
+    //min-height: 130px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    margin-bottom: 20px;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  h5 {
+    color: $dark-grey;
+    font-weight: 600;
+  }
+
+  p {
+    padding-bottom: rem-calc(10);
+  }
+
+}

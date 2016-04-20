@@ -1,0 +1,83 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+$foundation-version: '1.1.0';
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+@import 'vendor/normalize';
+// Helpers
+@import "foundation-apps/helpers/functions";
+@import "foundation-apps/helpers/mixins";
+@import "foundation-apps/helpers/breakpoints";
+@import "foundation-apps/helpers/images";
+@import "helpers/global";
+@import "helpers/mixins";
+@import "helpers/utility";
+
+// Components
+@import "settings";
+@import "foundation-apps/components/iconic";
+@import "foundation-apps/components/action-sheet";
+@import "foundation-apps/components/block-list";
+@import "foundation-apps/components/card";
+@import "foundation-apps/components/extras";
+@import "foundation-apps/components/forms";
+@import "foundation-apps/components/grid";
+@import "foundation-apps/components/title-bar";
+@import "foundation-apps/components/label";
+@import "foundation-apps/components/list";
+@import "foundation-apps/components/menu-bar";
+@import "foundation-apps/components/modal";
+@import "foundation-apps/components/motion";
+@import "foundation-apps/components/notification";
+@import "foundation-apps/components/off-canvas";
+@import "foundation-apps/components/popup";
+@import "foundation-apps/components/switch";
+@import "foundation-apps/components/tabs";
+@import "foundation-apps/components/accordion";
+@import "foundation-apps/components/typography";
+@import "foundation-apps/components/utilities";
+@import "components/m-grid-dropdown";
+@import "components/placeholders";
+@import "components/m-buttons";
+@import "components/m-forms";
+@import "components/m-modal";
+@import "components/m-table";
+@import "components/tooltip";
+@import "components/m-grid";
+@import "components/m-datepicker";
+@import "components/m-htmleditor";
+@import "components/m-notifications";
+@import "components/m-appribbon";
+@import "components/password-validation";
+@import "components/m-errors";
+@import "components/m-taglist";
+@import "components/m-picture";
+@import "components/m-syncpage";
+@import "components/m-context-menu";
+@import "components/m-dropdown";
+
+//  Original runtime widget styles -- remove as necessary
+@import "old-components/placeholders";
+@import "old-components/control-dropdown";
+@import "old-components/control-file-upload";
+@import "old-components/portal-nav";
+@import "old-components/control-calendar";
+@import "old-components/control-file-upload";
+@import "old-components/action-editor-manager";
+@import "old-components/new-action-editor";
+@import "old-components/control-label";
+@import "old-components/control-payment";
+@import "old-components/control-sections";
+
+  //  Method Overrides
+
+@import "components/method-overrides";
+@import "components/system-pages";
+@import "base/syntax-highlighting";
+@import "layout/styleguide";
+@import "utils/helpers";
+@import "styleguide";
+

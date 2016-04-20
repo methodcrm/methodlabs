@@ -1,0 +1,2304 @@
+@import "../designer/colors";
+
+/* Portal Navigation Styles */
+.guest-content, .mi-designer-preview, .mi-Section {
+  //  Control container
+  div[method_type=PNV]{
+    display: block !important;
+    max-width: 100%;
+    width:100%;
+    vertical-align: top;
+    background: $white;
+    z-index: 1200;
+
+    &.fixed {
+      position: fixed;
+      top:0;
+    }
+
+    
+    //  Outer nav wrapper
+    .nav-wrapper {
+      width:100%;
+      float: left;
+      position: relative;
+      margin:1em 0;
+      padding:0;
+      background: $grey;
+      
+      //  links floated to the right hand side
+      .np-right-hand-links {
+      
+        float:right;
+        //width:275px;
+        font-weight: normal;
+        margin-right:0.75em;
+        @include breakpoint(medium down) {
+          width: 100%;
+          border-top: 1px solid $white;
+          margin-right: 0;
+          display: none;
+        }
+
+      
+        //  Manage accounts Menu items
+
+        .action-manage {
+          @include breakpoint(medium down) {
+            padding-right: 1.25em;
+          }
+          &.open {
+            background: $grey-light-10percent;
+          }
+        }
+
+        // Manage sub menu
+        .np-manage-menu {
+
+          position: absolute;
+          top: 2.1em;
+          right: 0;
+          width: 18em;
+          background: $grey;
+          z-index: 100;
+
+          @include breakpoint(medium down) {
+            position: relative;
+            top: 0;
+            float: left;
+            width:100%; 
+          }
+
+          &.accountAuth {
+            
+            .manageList {
+
+              li {
+                @include boxSizing;
+                padding: 0.75em;
+
+                &.back-btn {
+                  display: block !important;
+                  margin-bottom: 0 !important;
+                  padding-left: 0;
+
+                  a {
+                    width:100%;
+                    height:100%;
+                    display: block;
+                    padding: 0.5em;
+
+                    i {
+                      display: inline-block;
+                      margin-right: 0.25em;
+                    }
+                  }
+                }
+
+                &.mi-ItemList {
+                  ul {
+                    &.list-items {
+                      @include breakpoint(medium down) {
+                        display: none !important;
+                      }
+                    }
+                  }
+                
+                }
+
+                &.heading {
+                  font-size: 1.25em;
+                  color: $white;
+                  padding-top:0 !important;
+                  padding-bottom:0 !important;
+                }
+              }
+            }
+
+            
+            .manage-auth {
+              .mi-textbox {
+                width: 100% !important;
+              }
+              .mi-button {
+                width:100%;
+                margin:0 !important; 
+              }
+            }
+          }
+
+          ul {
+            &.manageList {
+              list-style: none;
+              padding:0;
+              margin:0;
+              float: left;
+
+              @include breakpoint(medium down) {
+                width: 100%;
+              }
+
+              > li {
+                width:100%;
+                float: left;
+
+                &:first-of-type {
+                  margin-bottom: 1em !important;
+                }
+
+                a {
+                  color: $white !important; 
+                }
+
+
+                // Back Btn
+
+                &.back-btn {
+                  display: none;
+
+                }
+
+                &.mi-ItemList {
+                
+                  // Sub Menu
+
+                  ul { 
+
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                    float: left;
+
+                    &.list-items {
+                      @include breakpoint(medium down) {
+                        display: block !important;
+                      }
+
+                      a[title*="Switch Account"] {
+                        
+                        &:after {
+                          @extend %mi-icon-chevron-down;
+                          font-family: "method-font";
+                          position: absolute;
+                          right:0.5em;
+                          @include breakpoint(medium down) {
+                            right: 1.25em;
+                          }
+                        }
+                      
+                      }
+
+                      .accountsOpen {
+                        a[title*="Switch Account"] {
+                        
+                          &:after {
+                            @extend %mi-icon-chevron-right;
+                            font-family: "method-font";
+                            position: absolute;
+                            right:0.5em;
+
+                            @include breakpoint(medium down) {
+                              right: 1.25em;
+                            }
+                          }
+                        
+                        }
+                      }
+                    }
+
+                    
+
+                    li {
+                      margin:0 !important;
+                      float: left;
+                      width: 100%;
+
+                      &:hover {
+                        background: $grey-light-10percent;
+                      }
+                      
+                      a {
+                        color: $white;  
+                        display: block;
+                        width: 100%;
+                      }
+                      
+                      ul {
+                        li {
+                          i {
+                            float: right;
+                            @include breakpoint(medium down) {
+                              margin-right: 1em;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
+        a, .np-link-spacer {
+          float: left;
+          display: inline;
+          position: relative;
+          color: $white;
+        }
+
+        .np-link-spacer {
+          display: inline-block;
+          @include boxSizing;
+          padding-top: 0.41em;
+          margin:0 !important;
+        }
+
+        a {
+          margin: 0;
+          @include boxSizing;
+          padding: 0.45em 0.5em !important;
+          
+          &.action-manage {
+            @include breakpoint(medium down) {
+              width:100%;
+              padding-left: 1em;
+            }
+
+            i {
+              @include breakpoint(medium down) {
+                float: right;
+              }
+            }
+          }
+          .manageAccounts {
+
+            &:before {
+              content: "Manage Accounts";
+            }
+
+            // @include breakpoint(medium down) {
+            //  &:before {
+            //    font-family: "method-font" !important;
+            //    content: "\e60e";
+            //  }
+                
+            // }
+          }
+
+          &.np-nav-signout {
+            top: 0 !important;
+            right:0 !important;
+            i, span {
+              color:$white !important;
+              margin:0;
+            }
+          
+            span {
+              &.signOut {
+                &:before {
+                  content: 'Sign Out';
+                }
+
+                display: inline-block !important;
+                vertical-align: middle;
+              }
+            }
+
+            i {
+              margin-right:0.25em;
+              @include breakpoint(medium down) {
+                margin:0;
+              }
+            }
+          } 
+
+        }
+
+
+        .np-link-spacer {
+          margin: 0.2em 0.25em 0 0.75em;
+          display: block;
+          width:1px;
+          background: $white;
+          line-height: 1.93;
+          @include breakpoint(medium down) {
+            display:none !important;
+          }
+        }
+
+      }
+      
+      .np-ul-wrapper {
+    
+        //  Responsive menu icon
+
+        > i {
+
+          display: none;
+
+          &:hover {
+            cursor:pointer;
+          }
+
+          @include breakpoint(medium down) {
+            display: block;
+            float: left;
+            @include boxSizing;
+            padding: 0.5em;
+            color:$white;
+          }
+        }
+        
+        &:hover, &.nav-active {
+          
+          @include breakpoint(medium down) {
+
+            float: left;
+            overflow: visible;
+            width: 100%;
+            position: relative;
+            z-index: 1000;
+            top:0;
+            //margin-top: -2em;
+
+            .nav {
+              float: left;
+              display:block;
+              width:100%;
+              position: relative;
+              height:100%;
+      
+
+                li:not(.selected), .mi-button-manage {
+                  display:block;
+                  background: $grey;
+                  width:100%;
+                  position: relative;
+
+                  // &:hover {
+                  //  background: $grey-light-10percent;
+                  // }
+                  a {
+                    text-align: left;
+                    padding-left:1em;
+
+                    &[href] {
+                      &:before {
+                        @include breakpoint(small only) {
+                          content:"";
+                        }
+                      } 
+                    }
+                  }
+
+                  ul {
+                    display: none;
+                  
+                  }
+
+                  // .click-arrow {
+                  //  float: right;
+                  //  margin:0.5em;
+                  //  color: $white;
+                    
+                  // }
+                  
+                }
+              
+
+              li:not(.selected) {
+                  display: block;
+                  width:100%;
+                &.subnav-container {
+
+                  &:before {
+                    content:"\e63b";
+                    font-family:"method-font";
+                    position: absolute;
+                    float: left;
+                    top:0;
+                    right:0.3em;
+                    @include boxSizing;
+                    padding: 0.5em 1em 0.5em 0;
+                    color: $white;
+                  }
+                  &.active {
+
+                    &:before {
+                      content:"\e642";
+                      font-family:"method-font";
+                      position: absolute;
+                    }
+                  
+                    ul {
+                      display: block;
+                      position: relative;
+                      width: 100%;
+                      float: left;
+                      background: $grey-light-10percent;
+
+                      li {
+                        display: block;
+                        @include boxSizing;
+                        width: 100%;
+                        border-bottom: 1px solid $grey;
+
+                        &:last-of-type {
+                          border:none;
+                        }
+
+
+                        a {
+                          overflow: hidden;
+                          text-overflow:ellipsis;
+                          white-space: nowrap;
+                        }
+                      }
+                    }
+
+                  }
+                  
+                }
+              }
+
+              .mi-button-manage {
+                padding-left:1em;
+                background: $grey-dark-10percent;
+                border-top:2px solid $grey-dark-10percent;
+                &:hover {
+                  background: $grey-dark-20percent;
+                }
+              }
+
+              .np-right-hand-links {
+                display: block;
+
+                a {
+                  > i {
+                    font-size: $font-small !important;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+        
+        //  Nav
+        .nav {
+          list-style: none;
+          margin-right:100px;
+          width: 100%;
+          padding:0;
+          margin:0;
+
+          line-height: 1.4;
+          @include breakpoint(small only) {
+            display:none; 
+          }
+          
+
+        
+        //  Nav link containers
+          > li {
+            
+            float: left;
+            margin: 0;
+            padding:0;
+
+            a {
+              position: relative;
+              outline: none;
+
+              i {
+                position: relative;
+                top: 2px;
+                margin-right: 4px;
+              }
+            }
+
+             
+            a.selected {
+              background: $grey-light-10percent;
+            }
+              
+            
+            //  Responsive styles
+            @include breakpoint(medium down) {
+              width: 100%;
+              display: none;
+
+              // &.selected {
+              //  display: block;
+              //  background: $grey-light-10percent;
+              //  color: $blue;
+
+              //  > a {
+
+              //    img,i {
+              //      display: none;
+              //    }
+              //  }
+              // }
+            }
+            
+            //  Links
+            a {
+              display: block;
+              width:100%;
+              height:100%;
+              color: $white;
+              text-decoration: none;
+              @include boxSizing;
+              padding:0.5em 1em;
+              margin:0;
+
+              &:hover {
+                background: $grey-light-10percent;
+              }
+              
+              //  Responsive styles
+              @include breakpoint(medium down) {
+                width: 100%;
+                padding:0.45em 1em 0.45em 0;
+                text-align: center;
+              }
+
+              i {
+                font-size: $font-small !important;
+              }
+
+            }
+
+            //  Sublink(s)
+
+            ul {
+              display: none;
+              list-style: none;
+              padding:0;
+              margin:0;
+            }
+
+            &:hover {
+              background: $grey-light-10percent;
+               ul {
+                display: block;
+                position: absolute;
+
+                background: $grey-light-10percent;
+                width: 100%;
+                left: 0;
+                right: 0;
+                float: left;
+
+                li {
+                  float: left;
+                  a {
+                    &:hover {
+                      background: $grey-light-20percent;
+                      color:$white;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .mi-button-manage {
+            float: right;
+            display: inline;
+            position: relative;
+            color: $white !important;
+            margin: 0;
+            @include boxSizing;
+            padding: 0.5em;
+            right:0;
+            @include breakpoint(medium down) {
+              display: none;
+            }
+            
+          }
+        }
+
+
+      }
+
+      
+      .np-screen-name {
+        display: none;
+        @include breakpoint(medium down) {
+          display:inline-block;
+          position: absolute;
+          color:$white;
+          left:50%;
+          //  Centering Nav title
+          transform:translate(-50%,25%);
+          -ms-transform:translate(-50%,25%);
+          -webkit-transform:translate(-50%,25%);
+        }
+          @include breakpoint(small) {
+              padding: .125em 1em;
+
+        
+        }
+      }
+    }
+
+  //  Themes START
+
+    //  Primary (Blue)
+    &.np-background-primary { 
+      .nav-wrapper {
+        background: $blue;
+        
+        //  links floated to the right hand side
+        .np-right-hand-links {
+
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $blue-light-10percent;
+            }
+          }
+
+          .np-manage-menu {
+            background: $blue;
+
+            &.accountAuth {
+              
+              .manage-auth {
+                .mi-button {
+                  background: $blue-light-10percent;
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+                list-style: none;
+                padding:0;
+                margin:0;
+                float: left;
+
+                @include breakpoint(medium down) {
+                  width: 100%;
+                }
+
+                > li {
+                  width:100%;
+                  float: left;
+
+                  &:first-of-type {
+                    margin-bottom: 1em !important;
+                  }
+
+                  a {
+                    color: $white !important; 
+                  }
+
+
+                  // Back Btn
+
+                  &.back-btn {
+                    display: none;
+
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+
+                        &:hover {
+                          background: $blue-light-10percent;
+                        }
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .np-link-spacer {
+            margin: 0.2em 0.25em 0 0.25em;
+            display: block;
+            width:1px;
+            background: $white;
+            line-height: 1.7;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+          
+          &:hover, 
+          &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {
+                
+                li:not(.selected), .mi-button-manage {
+                  background: $blue;
+                }
+                
+
+                li:not(.selected) {
+
+                  &.subnav-container {
+
+                    &.active {
+
+                      ul {
+
+                        background: $blue-light-10percent;
+
+                        li {
+                          border-bottom: 1px solid $blue;
+                        }
+                      }
+
+                    }
+                    
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $blue-dark-10percent;
+                  border-top:2px solid $blue-dark-10percent;
+                  &:hover {
+                    background: $blue-dark-20percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+            //  Nav link containers
+            > li {
+
+              &.selected {
+                > a {
+                  background: $blue-light-10percent;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $white;
+
+                &:hover {
+                  background: $blue-light-10percent;
+                }
+              }
+
+              //  Sublink(s)
+              &:hover {
+                background: $blue-light-10percent;
+                 ul {
+                  background: $blue-light-10percent;
+                  li {
+                    a {
+                      &:hover {
+                        background: $blue-light-20percent;
+                        color:$white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $white !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$white;
+        }
+      }
+    }
+    //  Primary END ^
+
+    //  Secondary (Silver)
+    &.np-background-secondary { 
+      .nav-wrapper {
+        background: $silver;
+        
+        //  links floated to the right hand side
+        .np-right-hand-links {
+
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $silver-light-10percent;
+            }
+          }
+
+          .np-manage-menu {
+            background: $silver;
+
+            &.accountAuth {
+              
+              .manage-auth {
+                .mi-button {
+                  background: $silver-light-10percent;
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+                list-style: none;
+                padding:0;
+                margin:0;
+                float: left;
+
+                @include breakpoint(medium down) {
+                  width: 100%;
+                }
+
+                > li {
+                  width:100%;
+                  float: left;
+
+                  &:first-of-type {
+                    margin-bottom: 1em !important;
+                  }
+
+                  a {
+                    color: $white !important; 
+                  }
+
+
+                  // Back Btn
+
+                  &.back-btn {
+                    display: none;
+
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+
+                        &:hover {
+                          background: $silver-light-10percent;
+                        }
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .np-link-spacer {
+            margin: 0.2em 0.25em 0 0.25em;
+            display: block;
+            width:1px;
+            background: $white;
+            line-height: 1.7;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+          
+          &:hover, 
+          &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {
+                
+                li:not(.selected), .mi-button-manage {
+                  background: $silver;
+                }
+                
+
+                li:not(.selected) {
+
+                  &.subnav-container {
+
+                    &.active {
+
+                      ul {
+
+                        background: $silver-light-10percent;
+
+                        li {
+                          border-bottom: 1px solid $silver;
+                        }
+                      }
+
+                    }
+                    
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $silver-dark-10percent;
+                  border-top:2px solid $silver-dark-10percent;
+                  &:hover {
+                    background: $silver-dark-20percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+            //  Nav link containers
+            > li {
+
+              &.selected {
+                > a {
+                  background: $silver-light-10percent;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $white;
+
+                &:hover {
+                  background: $silver-light-10percent;
+                }
+              }
+
+              //  Sublink(s)
+              &:hover {
+                background: $silver-light-10percent;
+                 ul {
+                  background: $silver-light-10percent;
+                  li {
+                    a {
+                      &:hover {
+                        background: $silver-light-20percent;
+                        color:$white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $white !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$white;
+        }
+      }
+    }
+    //  Secondary END ^
+
+    //  Alert (Fuschia)
+    &.np-background-alert { 
+      .nav-wrapper {
+        background: $fuschia;
+        
+        //  links floated to the right hand side
+        .np-right-hand-links {
+
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $fuschia-light-10percent;
+            }
+          }
+
+          .np-manage-menu {
+            background: $fuschia;
+
+            &.accountAuth {
+              
+              .manage-auth {
+                .mi-button {
+                  background: $fuschia-light-10percent;
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+                list-style: none;
+                padding:0;
+                margin:0;
+                float: left;
+
+                @include breakpoint(medium down) {
+                  width: 100%;
+                }
+
+                > li {
+                  width:100%;
+                  float: left;
+
+                  &:first-of-type {
+                    margin-bottom: 1em !important;
+                  }
+
+                  a {
+                    color: $white !important; 
+                  }
+
+
+                  // Back Btn
+
+                  &.back-btn {
+                    display: none;
+
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+
+                        &:hover {
+                          background: $fuschia-light-10percent;
+                        }
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .np-link-spacer {
+            margin: 0.2em 0.25em 0 0.25em;
+            display: block;
+            width:1px;
+            background: $white;
+            line-height: 1.7;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+          
+          &:hover, 
+          &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {
+                
+                li:not(.selected), .mi-button-manage {
+                  background: $fuschia;
+                }
+                
+
+                li:not(.selected) {
+
+                  &.subnav-container {
+
+                    &.active {
+
+                      ul {
+
+                        background: $fuschia-light-10percent;
+
+                        li {
+                          border-bottom: 1px solid $fuschia;
+                        }
+                      }
+
+                    }
+                    
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $fuschia-dark-10percent;
+                  border-top:2px solid $fuschia-dark-10percent;
+                  &:hover {
+                    background: $fuschia-dark-20percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+            //  Nav link containers
+            > li {
+
+              &.selected {
+                > a {
+                  background: $fuschia-light-10percent;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $white;
+
+                &:hover {
+                  background: $fuschia-light-10percent;
+                }
+              }
+
+              //  Sublink(s)
+              &:hover {
+                background: $fuschia-light-10percent;
+                 ul {
+                  background: $fuschia-light-10percent;
+                  li {
+                    a {
+                      &:hover {
+                        background: $fuschia-light-20percent;
+                        color:$white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $white !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$white;
+        }
+      }
+    }
+    //  Alert END ^
+
+    //  Navigation (Same as default)
+    &.np-background-navigation {
+      .nav-wrapper {
+        background: $grey;
+        
+        //  links floated to the right hand side
+        .np-right-hand-links {
+
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $grey-light-10percent;
+            }
+          }
+
+          .np-manage-menu {
+            background: $grey;
+
+            &.accountAuth {
+              
+              .manage-auth {
+                .mi-button {
+                  background: $grey-light-10percent;
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+                list-style: none;
+                padding:0;
+                margin:0;
+                float: left;
+
+                @include breakpoint(medium down) {
+                  width: 100%;
+                }
+
+                > li {
+                  width:100%;
+                  float: left;
+
+                  &:first-of-type {
+                    margin-bottom: 1em !important;
+                  }
+
+                  a {
+                    color: $white !important; 
+                  }
+
+
+                  // Back Btn
+
+                  &.back-btn {
+                    display: none;
+
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+
+                        &:hover {
+                          background: $grey-light-10percent;
+                        }
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .np-link-spacer {
+            margin: 0.2em 0.25em 0 0.25em;
+            display: block;
+            width:1px;
+            background: $white;
+            line-height: 1.7;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+          
+          &:hover, 
+          &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {
+                
+                li:not(.selected), .mi-button-manage {
+                  background: $grey;
+                }
+                
+
+                li:not(.selected) {
+
+                  &.subnav-container {
+
+                    &.active {
+
+                      ul {
+
+                        background: $grey-light-10percent;
+
+                        li {
+                          border-bottom: 1px solid $grey;
+                        }
+                      }
+
+                    }
+                    
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $grey-dark-10percent;
+                  border-top:2px solid $grey-dark-10percent;
+                  &:hover {
+                    background: $grey-dark-20percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+            //  Nav link containers
+            > li {
+
+              &.selected {
+                > a {
+                  background: $grey-light-10percent;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $white;
+
+                &:hover {
+                  background: $grey-light-10percent;
+                }
+              }
+
+              //  Sublink(s)
+              &:hover {
+                background: $grey-light-10percent;
+                 ul {
+                  background: $grey-light-10percent;
+                  li {
+                    a {
+                      &:hover {
+                        background: $grey-light-20percent;
+                        color:$white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $white !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$white;
+        }
+      }
+    }
+    //  Navigation END ^
+
+    //  Caution (Yellow)
+    &.np-background-caution {
+      .nav-wrapper {
+        background: $yellow;
+        
+        //  links floated to the right hand side
+        .np-right-hand-links {
+
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $yellow-light-10percent;
+              color: $yellow-dark-10percent;
+            }
+          }
+
+          .np-manage-menu {
+            background: $yellow;
+
+            &.accountAuth {
+              
+              .manage-auth {
+                .mi-button {
+                  background: $yellow-light-10percent;
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+                list-style: none;
+                padding:0;
+                margin:0;
+                float: left;
+
+                @include breakpoint(medium down) {
+                  width: 100%;
+                }
+
+                > li {
+                  width:100%;
+                  float: left;
+
+                  &:first-of-type {
+                    margin-bottom: 1em !important;
+                  }
+
+                  a {
+                    color: $white !important; 
+
+                  }
+
+
+                  // Back Btn
+
+                  &.back-btn {
+                    display: none;
+
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+                        &:hover {
+                          background: $yellow-light-10percent;
+                          //color: $yellow-dark-10percent !important;
+                          a {
+                            color: $yellow-dark-10percent !important;
+                          }
+                        }
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .np-link-spacer {
+            margin: 0.2em 0.25em 0 0.25em;
+            display: block;
+            width:1px;
+            background: $yellow-dark-10percent;
+            line-height: 1.7;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+          
+          &:hover, 
+          &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {
+                
+                li:not(.selected), .mi-button-manage {
+                  background: $yellow;
+                }
+                
+
+                li:not(.selected) {
+
+                  &.subnav-container {
+
+                    &.active {
+
+                      ul {
+
+                        background: $yellow-light-10percent;
+
+                        li {
+                          border-bottom: 1px solid $yellow;
+                        }
+                      }
+
+                    }
+                    
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $yellow-dark-10percent;
+                  border-top:2px solid $yellow-dark-10percent;
+                  &:hover {
+                    background: $yellow-dark-20percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+            //  Nav link containers
+            > li {
+
+              &.selected {
+                > a {
+                  background: $yellow-light-10percent;
+                  color: $yellow-dark-10percent;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $white;
+
+                &:hover {
+                  background: $yellow-light-10percent;
+                  color: $yellow-dark-10percent;
+                }
+              }
+
+              //  Sublink(s)
+              &:hover {
+                background: $yellow-light-10percent;
+                 ul {
+                  background: $yellow-light-10percent;
+                  li {
+                    a {
+                      color:$yellow-dark-10percent;
+                      &:hover {
+                        background: $yellow-light-20percent;
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $yellow-dark-10percent !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$yellow-dark-10percent;
+        }
+      }
+    }
+    //  Caution END ^
+
+    //  Success (Green)
+    &.np-background-success {
+      .nav-wrapper {
+        background: $green;
+        
+        //  links floated to the right hand side
+        .np-right-hand-links {
+
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $green-light-10percent;
+            }
+          }
+
+          .np-manage-menu {
+            background: $green;
+
+            &.accountAuth {
+              
+              .manage-auth {
+                .mi-button {
+                  background: $green-light-10percent;
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+                list-style: none;
+                padding:0;
+                margin:0;
+                float: left;
+
+                @include breakpoint(medium down) {
+                  width: 100%;
+                }
+
+                > li {
+                  width:100%;
+                  float: left;
+
+                  &:first-of-type {
+                    margin-bottom: 1em !important;
+                  }
+
+                  a {
+                    color: $white !important; 
+                  }
+
+
+                  // Back Btn
+
+                  &.back-btn {
+                    display: none;
+
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+
+                        &:hover {
+                          background: $green-light-10percent;
+                        }
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .np-link-spacer {
+            margin: 0.2em 0.25em 0 0.25em;
+            display: block;
+            width:1px;
+            background: $white;
+            line-height: 1.7;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+          
+          &:hover, 
+          &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {
+                
+                li:not(.selected), .mi-button-manage {
+                  background: $green;
+                }
+                
+
+                li:not(.selected) {
+
+                  &.subnav-container {
+
+                    &.active {
+
+                      ul {
+
+                        background: $green-light-10percent;
+
+                        li {
+                          border-bottom: 1px solid $green;
+                        }
+                      }
+
+                    }
+                    
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $green-dark-10percent;
+                  border-top:2px solid $green-dark-10percent;
+                  &:hover {
+                    background: $green-dark-20percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+            //  Nav link containers
+            > li {
+
+              &.selected {
+                > a {
+                  background: $green-light-10percent;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $white;
+
+                &:hover {
+                  background: $green-light-10percent;
+                }
+              }
+
+              //  Sublink(s)
+              &:hover {
+                background: $green-light-10percent;
+                 ul {
+                  background: $green-light-10percent;
+                  li {
+                    a {
+                      &:hover {
+                        background: $green-light-20percent;
+                        color:$white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $white !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$white;
+        }
+      }
+    }
+    //  Success END ^
+
+    //  Gunmetal (Dark Grey)
+    &.np-background-gunmetal {
+      .nav-wrapper {
+        background: $gunmetal;
+        
+        //  links floated to the right hand side
+        .np-right-hand-links {
+
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $gunmetal-light-10percent;
+            }
+          }
+
+          .np-manage-menu {
+            background: $gunmetal;
+
+            &.accountAuth {
+              
+              .manage-auth {
+                .mi-button {
+                  background: $gunmetal-light-10percent;
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+                list-style: none;
+                padding:0;
+                margin:0;
+                float: left;
+
+                @include breakpoint(medium down) {
+                  width: 100%;
+                }
+
+                > li {
+                  width:100%;
+                  float: left;
+
+                  &:first-of-type {
+                    margin-bottom: 1em !important;
+                  }
+
+                  a {
+                    color: $white !important; 
+                  }
+
+
+                  // Back Btn
+
+                  &.back-btn {
+                    display: none;
+
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+
+                        &:hover {
+                          background: $gunmetal-light-10percent;
+                        }
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .np-link-spacer {
+            margin: 0.2em 0.25em 0 0.25em;
+            display: block;
+            width:1px;
+            background: $white;
+            line-height: 1.7;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+          
+          &:hover, 
+          &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {
+                
+                li:not(.selected), .mi-button-manage {
+                  background: $gunmetal;
+                }
+                
+
+                li:not(.selected) {
+
+                  &.subnav-container {
+
+                    &.active {
+
+                      ul {
+
+                        background: $gunmetal-light-10percent;
+
+                        li {
+                          border-bottom: 1px solid $gunmetal;
+                        }
+                      }
+
+                    }
+                    
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $gunmetal-dark-10percent;
+                  border-top:2px solid $gunmetal-dark-10percent;
+                  &:hover {
+                    background: $gunmetal-dark-20percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+            //  Nav link containers
+            > li {
+
+              &.selected {
+                > a {
+                  background: $gunmetal-light-10percent;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $white;
+
+                &:hover {
+                  background: $gunmetal-light-10percent;
+                }
+              }
+
+              //  Sublink(s)
+              &:hover {
+                background: $gunmetal-light-10percent;
+                 ul {
+                  background: $gunmetal-light-10percent;
+                  li {
+                    a {
+                      &:hover {
+                        background: $gunmetal-light-20percent;
+                        color:$white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $white !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$white;
+        }
+      }
+    }
+    //  Gunmetal END ^
+
+    //  Silver (Pale grey)
+    &.np-background-silver {
+      .nav-wrapper {
+        background: $pale-grey;
+
+        //  links floated to the right hand side
+        .np-right-hand-links {
+          @include breakpoint(medium down) {
+            border-top: 1px solid $pale-grey-border;
+          }
+
+        
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $pale-grey-hover;
+            }
+          }
+
+          .np-manage-menu {
+            background: $pale-grey;
+
+            &.accountAuth {
+              
+              .manageList {
+
+                li {
+                  &.heading {
+                    color: $grey;
+                  }
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+                
+                > li {
+                  
+                  a {
+                    color: $grey !important;  
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+                        
+                        &:hover {
+                          background: $pale-grey-hover;
+                        }
+                        
+                        a {
+                          color: $grey; 
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+
+          a, 
+          .np-link-spacer {
+            color: $grey;
+          }
+
+          a {
+
+            &.np-nav-signout {
+              i, span {
+                color:$grey !important;
+              }
+            } 
+          }
+
+          .np-link-spacer {
+            background: $grey;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+      
+          //  Responsive menu icon
+
+          > i {
+
+            @include breakpoint(medium down) {
+              color:$grey;
+            }
+          }
+          
+          &:hover, &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {      
+
+                li:not(.selected), .mi-button-manage {
+                  background: $pale-grey;
+                }
+                
+                li:not(.selected) {
+                  &.subnav-container {
+                    &:before {
+                      color: $grey;
+                    }
+                    &.active {
+                      
+                      ul {
+                        background: $pale-grey-hover;
+
+                        li {
+                          border-bottom: 1px solid $pale-grey-border;
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $pale-grey-drk-10percent;
+                  border-top:2px solid $pale-grey-drk-10percent;
+                  &:hover {
+                    background: $pale-grey-drk-20percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+          //  Nav link containers
+            > li {
+              &.selected {
+                > a {
+                  background: $pale-grey-hover;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $grey;
+                &:hover {
+                  background: $pale-grey-hover;
+                }
+              }
+
+              //  Sublink(s)
+
+              &:hover {
+                background: $pale-grey-hover;
+                 ul {
+                  background: $pale-grey-hover;
+                  li {
+                    a {
+                      &:hover {
+                        background: $pale-grey;
+                        color:$grey;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $grey !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$grey;
+        }
+      }
+    }
+    //  Silver END ^
+
+    //  Black
+
+    &.np-background-black {
+      .nav-wrapper {
+        background: $black;
+        
+        //  links floated to the right hand side
+        .np-right-hand-links {
+
+          //  Manage accounts Menu items
+
+          .action-manage {
+            &.open {
+              background: $black-light-10percent;
+            }
+          }
+
+          .np-manage-menu {
+            background: $black;
+
+            &.accountAuth {
+              
+              .manage-auth {
+                .mi-button {
+                  background: $black-light-10percent;
+                }
+              }
+            }
+
+            ul {
+              &.manageList {
+
+                > li {
+
+                  a {
+                    color: $white !important; 
+                  }
+
+                  &.mi-ItemList {
+                  
+                    // Sub Menu
+
+                    ul { 
+
+                      li {
+
+                        &:hover {
+                          background: $black-light-10percent;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .np-link-spacer {
+            background: $white;
+          }
+
+        }
+        
+        .np-ul-wrapper {
+          
+          &:hover, 
+          &.nav-active {
+            
+            @include breakpoint(medium down) {
+
+              .nav {
+                
+                li:not(.selected), 
+                .mi-button-manage {
+                  background: $black;
+                }
+                
+
+                li:not(.selected) {
+
+                  &.subnav-container {
+
+                    &.active {
+
+                      ul {
+
+                        background: $black-light-10percent;
+
+                        li {
+                          border-bottom: 1px solid $black;
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .mi-button-manage {
+                  background: $black;
+                  border-top:2px solid $black;
+                  &:hover {
+                    background: $black-light-10percent;
+                  }
+                }
+              }
+            }
+          }
+          
+          //  Nav
+          .nav {
+
+            //  Nav link containers
+            > li {
+
+              &.selected {
+                > a {
+                  background: $black-light-10percent;
+                }
+              }
+              
+              //  Links
+              a {
+                color: $white;
+
+                &:hover {
+                  background: $black-light-10percent;
+                }
+              }
+
+              //  Sublink(s)
+              &:hover {
+                background: $black-light-10percent;
+                 ul {
+                  background: $black-light-10percent;
+                  li {
+                    a {
+                      &:hover {
+                        background: $black-light-20percent;
+                        color:$white;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .mi-button-manage {
+              color: $white !important;
+            }
+          }
+        }
+
+        .np-screen-name {
+          color:$white;
+        }
+      }
+    }
+
+    //  Black END ^
+
+  }
+}

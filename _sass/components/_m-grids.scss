@@ -1,0 +1,17 @@
+[method_type="GRD"] {
+
+	.mi-grid-body {
+		@include boxSizing;
+	    @include flexbox;
+	    @include flexjustify(flex-start);
+	    @include flexalignitems(center);
+		border: 1px solid $card-border;
+		width: 100%;
+
+		table {
+			
+			width: 100%;
+			
+		}
+	}	
+}

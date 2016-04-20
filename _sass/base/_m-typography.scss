@@ -1,0 +1,4114 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic);
+@import "../designer/colors";
+
+h1,h2,h3,h4 { color: $h-color !important; }
+
+//	Header sizing
+h1 {font-size: $h1-size !important;}
+h2 {font-size: $h2-size !important;}
+h3 {font-size: $h3-size !important;}
+h4 {font-size: $h4-size !important;}
+
+//	Global font sizes
+
+.font-gigantic 		{ @extend %font-gigantic; } 	// 8em
+.font-epic   		{ @extend %font-epic }
+.font-icon-large    { @extend %font-icon-large; } 		// 3em
+.font-xxxlarge 		{ @extend %font-xxxlarge; } 	// 2em	
+.font-xxlarge 		{ @extend %font-xxlarge; }  	// 1.75em
+.font-xlarge 		{ @extend %font-xlarge; line-height: calc(1.5 - 0.55); } 		// 1.5em
+.font-large 		{ @extend %font-large; line-height: calc(1.5 - 0.5); } 		// 1.4em
+.font-medium		{ @extend %font-medium; line-height: inherit; } 		// 1.3em
+.font-normal 		{ @extend %font-normal; line-height: inherit; } 		// 1em
+.font-small 		{ @extend %font-small; line-height: calc(1.5 + 0.1); } 		// 0.875em
+.font-xsmall 		{ @extend %font-xsmall; line-height: calc(1.5 + 0.4); } 		// 0.75em
+.font-xxsmall 		{ @extend %font-xxsmall; } 		// 0.50em
+.font-xxxsmall 		{ @extend %font-xxxsmall; } 	// 0.25em
+
+// Generic Reusable Colors for Controls
+
+.mi-color-alert { color:$red !important; }
+.mi-color-primary { color:$blue !important; }
+.mi-color-navigation { color:$dark-blue !important; }
+.mi-color-lightblue { color: lighten($blue,10%) !important; }
+.mi-color-purple { color: $purple !important; }
+.mi-color-orange { color: $orange !important; }
+.mi-color-caution { color: $yellow !important; }
+.mi-color-turquoise { color: $aqua !important; }
+.mi-color-success { color: $green !important; }
+.mi-color-darkgrey  { color: $dark-grey !important; }
+.mi-color-secondary  { color: $grey !important; }
+.mi-color-silver  { color: lighten($grey,10%) !important; }
+.mi-color-black { color: $black !important; }
+.mi-color-white { color: $white !important; }
+
+//	Font icons
+
+@font-face {
+	font-family: 'method-font';
+	src:url('/fonts/method/method-font.eot?-vwo24p');
+	src:url('/fonts/method/method-font.woff?-vwo24p') format('woff'),
+  		url('/fonts/method/method-font.svg?-vwo24p#method-font') format('svg'),
+		url('/fonts/method/method-font.eot?#iefix-vwo24p') format('embedded-opentype'),
+  		url('/fonts/method/method-font.ttf?-vwo24p') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'method-icon';
+	src:url('/fonts/method/method-icon.eot?-tcsqpr');
+	src:url('/fonts/method/method-icon.woff?-tcsqpr') format('woff'),
+		url('/fonts/method/method-icon.svg?-tcsqpr#method-icon') format('svg'),
+		url('/fonts/method/method-icon.eot?#iefix-tcsqpr') format('embedded-opentype'),
+		url('/fonts/method/method-icon.ttf?-tcsqpr') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'method-icon-solid';
+	src:url('/fonts/method/method-icon-solid.eot?1w6jil');
+	src:url('/fonts/method/method-icon-solid.woff?1w6jil') format('woff'),
+		url('/fonts/method/method-icon-solid.svg?1w6jil#method-icon-solid') format('svg'),
+		url('/fonts/method/method-icon-solid.eot?#iefix1w6jil') format('embedded-opentype'),
+		url('/fonts/method/method-icon-solid.ttf?1w6jil') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="mi-icon-"], [class*=" mi-icon-"], [class^="icon-"], [class*=" icon-"] {
+	font-family: 'method-font','method-icon','method-icon-solid','Source Sans Pro';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	text-rendering: auto;
+
+}
+
+//	Method font
+.mi-icon-square-filled {
+	&:before {
+		@extend %mi-icon-square-filled;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-square-filled;
+		}
+	}
+}
+.mi-icon-circle-empty {
+	&:before {
+		@extend %mi-icon-circle-empty;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-circle-empty;
+		}
+	}
+}
+.mi-icon-circle-full {
+	&:before {
+		@extend %mi-icon-circle-full;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-circle-full;
+		}
+	}
+}
+.mi-icon-divider {
+	&:before {
+		@extend %mi-icon-divider;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-divider;
+		}
+	}
+}
+.mi-icon-search-circle {
+	&:before {
+		@extend %mi-icon-search-circle;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-search-circle;
+		}
+	}
+}
+.mi-icon-logo {
+	&:before {
+		@extend %mi-icon-logo;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-logo;
+		}
+	}
+}
+.mi-icon-m {
+	&:before {
+		@extend %mi-icon-m;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-m;
+		}
+	}
+}
+.mi-icon-quickbooks {
+	&:before {
+		@extend %mi-icon-quickbooks;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-quickbooks;
+		}
+	}
+}
+
+
+//	Method icon solid
+
+.mi-icon-caret-down {
+	&:before {
+		@extend %mi-icon-caret-down;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-caret-down;
+		}
+	}
+}
+.mi-icon-caret-left {
+	&:before {
+		@extend %mi-icon-caret-left;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-caret-left;
+		}
+	}
+}
+.mi-icon-caret-right {
+	&:before {
+		@extend %mi-icon-caret-right;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-caret-right;
+		}
+	}
+}
+.mi-icon-caret-up {
+	&:before {
+		@extend %mi-icon-caret-up;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-caret-up;
+		}
+	}
+}
+.mi-icon-box-plus-alt,
+.mi-icon-box-plus-solid {
+	&:before {
+		@extend %mi-icon-box-plus-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-box-plus-alt;
+		}
+	}
+}
+.mi-icon-circle-plus-alt {
+	&:before {
+		@extend %mi-icon-circle-plus-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-circle-plus-alt;
+		}
+	}
+}
+.mi-icon-box-minus-alt,
+.mi-icon-box-minus-solid {
+	&:before {
+		@extend %mi-icon-box-minus-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-box-minus-alt;
+		}
+	}
+}
+.mi-icon-circle-minus-alt {
+	&:before {
+		@extend %mi-icon-circle-minus-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-circle-minus-alt;
+		}
+	}
+}
+.mi-icon-caution-solid {
+	&:before {
+		@extend %mi-icon-caution-solid;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-caution-solid;
+		}
+	}
+}
+.mi-icon-star-solid {
+	&:before {
+		@extend %mi-icon-star-solid;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-star-solid;
+		}
+	}
+}
+.mi-icon-navigation-show-more {
+	&:before {
+		@extend %mi-icon-navigation-show-more;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-navigation-show-more;
+		}
+	}
+}
+.mi-icon-check-box-empty {
+	&:before {
+		@extend %mi-icon-check-box-empty;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-check-box-empty;
+		}
+	}
+}
+.mi-icon-check-circle-full {
+	&:before {
+		@extend %mi-icon-check-circle-full;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-check-circle-full;
+		}
+	}
+}
+.mi-icon-check-circle-empty {
+	&:before {
+		@extend %mi-icon-check-circle-empty;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-check-circle-empty;
+		}
+	}
+}
+.mi-icon-checkbox-alt {
+	&:before {
+		@extend %mi-icon-checkbox-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-checkbox-alt;
+		}
+	}
+}
+.mi-icon-checkbox-circle-alt {
+	&:before {
+		@extend %mi-icon-checkbox-circle-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-checkbox-circle-alt;
+		}
+	}
+}
+.mi-icon-color-drop {
+	&:before {
+		@extend %mi-icon-color-drop;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display: none;
+		}
+		&:after {
+			@extend %mi-icon-color-drop;
+		}
+	}
+}
+
+.mi-icon-check-2 {
+	&:before {
+    	@extend %mi-icon-check-2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display: none;
+		}
+		&:after {
+			@extend %mi-icon-check-2;
+		}
+	}
+}
+
+.dashboard-check {
+	&:before {
+		@extend %mi-icon-check-2;
+	}
+	&:after {
+		@extend %mi-icon-check-box-empty;
+	}
+}
+
+//	Method icon outline
+
+.mi-icon-facebook-alt {
+	&:before {
+		@extend %mi-icon-facebook-alt;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-facebook-alt;
+		}
+	}
+}
+.mi-icon-google-plus {
+	&:before {
+		@extend %mi-icon-google-plus;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-google-plus;
+		}
+	}
+}
+.mi-icon-google-plus-alt {
+	&:before {
+		@extend %mi-icon-google-plus-alt;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-google-plus-alt;
+		}
+	}
+}
+.mi-icon-linkedin-alt {
+	&:before {
+		@extend %mi-icon-linkedin-alt;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-linkedin-alt;
+		}
+	}
+}
+.mi-icon-twitter-alt {
+	&:before {
+		@extend %mi-icon-twitter-alt;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-twitter-alt;
+		}
+	}
+}
+.mi-icon-facebook {
+	&:before {
+		@extend %mi-icon-facebook;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-facebook;
+		}
+	}
+}
+.mi-icon-linkedin {
+	&:before {
+		@extend %mi-icon-linkedin;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-linkedin;
+		}
+	}
+}
+.mi-icon-twitter {
+	&:before {
+		@extend %mi-icon-twitter;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-twitter;
+		}
+	}
+}
+.mi-icon-collapse {
+	&:before {
+		@extend %mi-icon-collapse;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-collapse;
+		}
+	}
+}
+.mi-icon-collapse-alt {
+	&:before {
+		@extend %mi-icon-collapse-alt;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-collapse-alt;
+		}
+	}
+}
+.mi-icon-arrow-box-down-right-1 {
+	&:before {
+		@extend %mi-icon-arrow-box-down-right-1;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-box-down-right-1;
+		}
+	}
+}
+.mi-icon-expand {
+	&:before {
+		@extend %mi-icon-expand;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-expand;
+		}
+	}
+}
+.mi-icon-expand-alt {
+	&:before {
+		@extend %mi-icon-expand-alt;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-expand-alt;
+		}
+	}
+}
+.mi-icon-arrow-circle-down {
+	&:before {
+		@extend %mi-icon-arrow-circle-down;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-circle-down;
+		}
+	}
+}
+.mi-icon-arrow-circle-left {
+	&:before {
+		@extend %mi-icon-arrow-circle-left;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-circle-left;
+		}
+	}
+}
+.mi-icon-arrow-circle-right {
+	&:before {
+		@extend %mi-icon-arrow-circle-right;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-circle-right;
+		}
+	}
+}
+.mi-icon-arrow-circle-up {
+	&:before {
+		@extend %mi-icon-arrow-circle-up;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-circle-up;
+		}
+	}
+}
+.mi-icon-arrow-down {
+	&:before {
+		@extend %mi-icon-arrow-down;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-down;
+		}
+	}
+}
+.mi-icon-chevron-down {
+	&:before {
+		@extend %mi-icon-chevron-down;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-chevron-down;
+		}
+	}
+}
+.mi-icon-arrow-left {
+	&:before {
+		@extend %mi-icon-arrow-left;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-left;
+		}
+	}
+}
+.mi-icon-double-chevron-left {
+	&:before {
+		@extend %mi-icon-double-chevron-left;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-double-chevron-left;
+		}
+	}
+}
+.mi-icon-chevron-left,
+.icon-chevron-left {
+	&:before {
+		@extend %mi-icon-chevron-left;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-chevron-left;
+		}
+	}
+}
+.mi-icon-arrow-right {
+	&:before {
+		@extend %mi-icon-arrow-right;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-right;
+		}
+	}
+}
+.mi-icon-double-chevron-right {
+	&:before {
+		@extend %mi-icon-double-chevron-right;	
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-double-chevron-right;
+		}
+	}
+}
+.mi-icon-chevron-right {
+	&:before {
+		@extend %mi-icon-chevron-right;
+	}
+	&.Right {
+		&:before {
+			content: "";
+		}
+		&:after {
+			@extend %mi-icon-chevron-right;
+		}
+	}
+}
+.mi-icon-arrow-up {
+	&:before {
+		@extend %mi-icon-arrow-up;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-arrow-up;
+		}
+	}
+}
+.mi-icon-chevron-up {
+	&:before {
+		@extend %mi-icon-chevron-up;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-chevron-up;
+		}
+	}
+}
+.mi-icon-payment-terms {
+	&:before {
+		@extend %mi-icon-payment-terms;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-payment-terms;
+		}
+	}
+}
+.mi-icon-estimate2,
+.mi-icon-estimate {
+	&:before {
+		@extend %mi-icon-estimate2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-estimate2;
+		}
+	}
+}
+.mi-icon-folder-open {
+	&:before {
+		@extend %mi-icon-folder-open;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-folder-open;
+		}
+	}
+}
+.mi-icon-folder-close {
+	&:before {
+		@extend %mi-icon-folder-close;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-folder-close;
+		}
+	}
+}
+.mi-icon-apps-drawer-open {
+	&:before {
+		@extend %mi-icon-apps-drawer-open;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-apps-drawer-open;
+		}
+	}
+}
+.mi-icon-apps-drawer-inverted-open {
+	&:before {
+		@extend %mi-icon-apps-drawer-inverted-open;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-apps-drawer-inverted-open;
+		}
+	}
+}
+.mi-icon-apps-drawer-closed {
+	&:before {
+		@extend %mi-icon-apps-drawer-closed;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-apps-drawer-closed;
+		}
+	}
+}
+.mi-icon-apps-drawer-inverted-closed {
+	&:before {
+		@extend %mi-icon-apps-drawer-inverted-closed;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-apps-drawer-inverted-closed;
+		}
+	}
+}
+.mi-icon-copy {
+	&:before {
+		@extend %mi-icon-copy;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-copy;
+		}
+	}
+}
+.mi-icon-credit-memo {
+	&:before {
+		@extend %mi-icon-credit-memo;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-credit-memo;
+		}
+	}
+}
+.mi-icon-file {
+	&:before {
+		@extend %mi-icon-file;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-file;
+		}
+	}
+}
+.mi-icon-file-text {
+	&:before {
+		@extend %mi-icon-file-text;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-file-text;
+		}
+	}
+}
+.mi-icon-ticket {
+	&:before {
+		@extend %mi-icon-ticket;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-ticket;
+		}
+	}
+}
+.mi-icon-coffee {
+	&:before {
+		@extend %mi-icon-coffee;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-coffee;
+		}
+	}
+}
+.mi-icon-permissions {
+	&:before {
+		@extend %mi-icon-permissions;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-permissions;
+		}
+	}
+}
+.mi-icon-opportunity,
+.mi-icon-code {
+	&:before {
+		@extend %mi-icon-opportunity;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-opportunity;
+		}
+	}
+}
+.mi-icon-button {
+	&:before {
+		@extend %mi-icon-navbar;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-navbar;
+		}
+	}
+}
+.mi-icon-icon {
+	&:before {
+		@extend %mi-icon-icon;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-icon;
+		}
+	}
+}
+.mi-icon-bullseye {
+	&:before {
+		@extend %mi-icon-bullseye;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-bullseye;
+		}
+	}
+}
+.mi-icon-tools-wrench-screwdriver {
+	&:before {
+		@extend %mi-icon-tools-wrench-screwdriver;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-tools-wrench-screwdriver;
+		}
+	}
+}
+.mi-icon-alien-2 {
+	&:before {
+		@extend %mi-icon-alien-2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-alien-2;
+		}
+	}
+}
+.mi-icon-R2D2 {
+	&:before {
+		@extend %mi-icon-R2D2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-R2D2;
+		}
+	}
+}
+.mi-icon-plane {
+	&:before {
+		@extend %mi-icon-plane;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-plane;
+		}
+	}
+}
+.mi-icon-portal-nav {
+	&:before {
+		@extend %mi-icon-portal-nav;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-portal-nav;
+		}
+	}
+}
+.mi-icon-cab {
+	&:before {
+		@extend %mi-icon-cab;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cab;
+		}
+	}
+}
+.mi-icon-soccer-ball {
+	&:before {
+		@extend %mi-icon-soccer-ball;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-soccer-ball;
+		}
+	}
+}
+.mi-icon-tree-big-1,
+.mi-icon-tree {
+	&:before {
+		@extend %mi-icon-tree-big-1;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-tree-big-1;
+		}
+	}
+}
+.mi-icon-institute {
+	&:before {
+		@extend %mi-icon-institute;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-institute;
+		}
+	}
+}
+.mi-icon-building {
+	&:before {
+		@extend %mi-icon-building;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-building;
+		}
+	}
+}
+.mi-icon-building-alt {
+	&:before {
+		@extend %mi-icon-building-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-building-alt;
+		}
+	}
+}
+.mi-icon-globe {
+	&:before {
+		@extend %mi-icon-globe;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-globe;
+		}
+	}
+}
+.mi-icon-home {
+	&:before {
+		@extend %mi-icon-home;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-home;
+		}
+	}
+}
+.mi-icon-location-arrow {
+	&:before {
+		@extend %mi-icon-location-arrow;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-location-arrow;
+		}
+	}
+}
+.mi-icon-align-center {
+	&:before {
+		@extend %mi-icon-align-center;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-align-center;
+		}
+	}
+}
+.mi-icon-align-justify {
+	&:before {
+		@extend %mi-icon-align-justify;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-align-justify;
+		}
+	}
+}
+.mi-icon-align-left {
+	&:before {
+		@extend %mi-icon-align-left;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-align-left;
+		}
+	}
+}
+.mi-icon-align-right {
+	&:before {
+		@extend %mi-icon-align-right;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-align-right;
+		}
+	}
+}
+.mi-icon-border-none {
+	&:before {
+		@extend %mi-icon-border-none;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-border-none;
+		}
+	}
+}
+.mi-icon-button-group {
+	&:before {
+		@extend %mi-icon-button-group;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-button-group;
+		}
+	}
+}
+.mi-icon-button {
+	&:before {
+		@extend %mi-icon-button;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-button;
+		}
+	}
+}
+.mi-icon-dropdown {
+	&:before {
+		@extend %mi-icon-dropdown;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-dropdown;
+		}
+	}
+}
+.mi-icon-bold {
+	&:before {
+		@extend %mi-icon-bold;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-bold;
+		}
+	}
+}
+.mi-icon-italic {
+	&:before {
+		@extend %mi-icon-italic;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-italic;
+		}
+	}
+}
+.mi-icon-list-ul {
+	&:before {
+		@extend %mi-icon-list-ul;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-list-ul;
+		}
+	}
+}
+.mi-icon-list-ol {
+	&:before {
+		@extend %mi-icon-list-ol;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-list-ol;
+		}
+	}
+}
+.mi-icon-paragraph-two-columns {
+	&:before {
+		@extend %mi-icon-paragraph-two-columns;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-paragraph-two-columns;
+		}
+	}
+}
+.mi-icon-text-width {
+	&:before {
+		@extend %mi-icon-text-width;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-text-width;
+		}
+	}
+}
+.mi-icon-text-input {
+	&:before {
+		@extend %mi-icon-text-input;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-text-input;
+		}
+	}
+}
+.mi-icon-text {
+	&:before {
+		@extend %mi-icon-text;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-text;
+		}
+	}
+}
+.mi-icon-underline {
+	&:before {
+		@extend %mi-icon-underline;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-underline;
+		}
+	}
+}
+.mi-icon-window-2 {
+	&:before {
+		@extend %mi-icon-window-2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-window-2;
+		}
+	}
+}
+.mi-icon-add-screen {
+	&:before {
+		@extend %mi-icon-add-screen;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-add-screen;
+		}
+	}
+}
+.mi-icon-marketplace {
+	&:before {
+		@extend %mi-icon-window-application-1;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-window-application-1;
+		}
+	}
+}
+.mi-icon-section {
+	&:before {
+		@extend %mi-icon-section;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-section;
+		}
+	}
+}
+.mi-icon-email-template {
+	&:before {
+		@extend %mi-icon-email-template;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-email-template;
+		}
+	}
+}
+.mi-icon-window-cash-04 {
+	&:before {
+		@extend %mi-icon-window-cash-04;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-window-cash-04;
+		}
+	}
+}
+.mi-icon-redirect-screen {
+	&:before {
+		@extend %mi-icon-redirect-screen;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-redirect-screen;
+		}
+	}
+}
+.mi-icon-external-link {
+	&:before {
+		@extend %mi-icon-external-link;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-external-link;
+		}
+	}
+}
+.mi-icon-screen-version-number {
+	&:before {
+		@extend %mi-icon-screen-version-number;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-screen-version-number;
+		}
+	}
+}
+.mi-icon-screen {
+	&:before {
+		@extend %mi-icon-customize;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-customize;
+		}
+	}
+}
+.mi-icon-screens {
+	&:before {
+		@extend %mi-icon-screens;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-screens;
+		}
+	}
+}
+.mi-icon-dashboard {
+	&:before {
+		@extend %mi-icon-dashboard;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-dashboard;
+		}
+	}
+}
+.mi-icon-code-css {
+	&:before {
+		@extend %mi-icon-code-css;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-code-css;
+		}
+	}
+}
+.mi-icon-code-html {
+	&:before {
+		@extend %mi-icon-code-html;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-code-html;
+		}
+	}
+}
+.mi-icon-bitcoin {
+	&:before {
+		@extend %mi-icon-bitcoin;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-bitcoin;
+		}
+	}
+}
+.mi-icon-opportunities {
+	&:before {
+		@extend %mi-icon-opportunities;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-opportunities;
+		}
+	}
+}
+.mi-icon-usd {
+	&:before {
+		@extend %mi-icon-usd;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-usd;
+		}
+	}
+}
+.mi-icon-euro {
+	&:before {
+		@extend %mi-icon-euro;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-euro;
+		}
+	}
+}
+.mi-icon-pound {
+	&:before {
+		@extend %mi-icon-pound;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pound;
+		}
+	}
+}
+.mi-icon-yen {
+	&:before {
+		@extend %mi-icon-yen;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-yen;
+		}
+	}
+}
+.mi-icon-dollar-bill {
+	&:before {
+		@extend %mi-icon-dollar-bill;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-dollar-bill;
+		}
+	}
+}
+.mi-icon-cheque {
+	&:before {
+		@extend %mi-icon-cheque;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cheque;
+		}
+	}
+}
+.mi-icon-checks {
+	&:before {
+		@extend %mi-icon-checks;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-checks;
+		}
+	}
+}
+.mi-icon-paymentgateways_v2 {
+	&:before {
+		@extend %mi-icon-paymentgateways_v2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-paymentgateways_v2;
+		}
+	}
+}
+.mi-icon-paymentgateways {
+	&:before {
+		@extend %mi-icon-paymentgateways;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-paymentgateways;
+		}
+	}
+}
+.mi-icon-box-2 {
+	&:before {
+		@extend %mi-icon-box-2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-box-2;
+		}
+	}
+}
+.mi-icon-box-modular-belt {
+	&:before {
+		@extend %mi-icon-box-modular-belt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-box-modular-belt;
+		}
+	}
+}
+.mi-icon-crate-trolley {
+	&:before {
+		@extend %mi-icon-crate-trolley;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-crate-trolley;
+		}
+	}
+}
+.mi-icon-truck {
+	&:before {
+		@extend %mi-icon-truck;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-truck;
+		}
+	}
+}
+.mi-icon-pack-accounting-workflow {
+	&:before {
+		@extend %mi-icon-pack-accounting-workflow;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pack-accounting-workflow;
+		}
+	}
+}
+.mi-icon-calculator {
+	&:before {
+		@extend %mi-icon-calculator;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-calculator;
+		}
+	}
+}
+.mi-icon-bar-chart {
+	&:before {
+		@extend %mi-icon-bar-chart;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-bar-chart;
+		}
+	}
+}
+.mi-icon-pie-chart {
+	&:before {
+		@extend %mi-icon-pie-chart;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pie-chart;
+		}
+	}
+}
+.mi-icon-invoice {
+	&:before {
+		@extend %mi-icon-invoice;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-invoice;
+		}
+	}
+}
+.mi-icon-archive {
+	&:before {
+		@extend %mi-icon-archive;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-archive;
+		}
+	}
+}
+.mi-icon-pack-sales-pipeline,
+.mi-icon-sales-pipeline {
+	&:before {
+		@extend %mi-icon-pack-sales-pipeline;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pack-sales-pipeline;
+		}
+	}
+}
+.mi-icon-receipts {
+	&:before {
+		@extend %mi-icon-receipts;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-receipts;
+		}
+	}
+}
+.mi-icon-payments {
+	&:before {
+		@extend %mi-icon-payments;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-payments;
+		}
+	}
+}
+.mi-icon-camera {
+	&:before {
+		@extend %mi-icon-camera;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-camera;
+		}
+	}
+}
+.mi-icon-picture {
+	&:before {
+		@extend %mi-icon-picture;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-picture;
+		}
+	}
+}
+.mi-icon-picture-alt {
+	&:before {
+		@extend %mi-icon-picture-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-picture-alt;
+		}
+	}
+}
+.mi-icon-date-picker-v2,
+.mi-icon-date-picker {
+	&:before {
+		@extend %mi-icon-date-picker-v2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-date-picker-v2;
+		}
+	}
+}
+.mi-icon-items-shelf {
+	&:before {
+		@extend %mi-icon-items-shelf;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-items-shelf;
+		}
+	}
+}
+.mi-icon-items-shelf-rpg {
+	&:before {
+		@extend %mi-icon-items-shelf-rpg;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-items-shelf-rpg;
+		}
+	}
+}
+.mi-icon-activities {
+	&:before {
+		@extend %mi-icon-activities;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-activities;
+		}
+	}
+}
+.mi-icon-rotate-left {
+	&:before {
+		@extend %mi-icon-rotate-left;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-rotate-left;
+		}
+	}
+}
+.mi-icon-rotate-right {
+	&:before {
+		@extend %mi-icon-rotate-right;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-rotate-right;
+		}
+	}
+}
+.mi-icon-grid {
+	&:before {
+		@extend %mi-icon-grid;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-grid;
+		}
+	}
+}
+.mi-icon-currently-open,
+.mi-icon-currently_open {
+	&:before {
+		@extend %mi-icon-currently-open;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-currently-open;
+		}
+	}
+}
+.mi-icon-layers {
+	&:before {
+		@extend %mi-icon-layers;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-layers;
+		}
+	}
+}
+.mi-icon-measuring-tool,
+.mi-icon-customizeslide {
+	&:before {
+		@extend %mi-icon-measuring-tool;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-measuring-tool;
+		}
+	}
+}
+.mi-icon-origami-paper-bird {
+	&:before {
+		@extend %mi-icon-origami-paper-bird;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-origami-paper-bird;
+		}
+	}
+}
+.mi-icon-customize {
+	&:before {
+		@extend %mi-icon-customize;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-customize;
+		}
+	}
+}
+.mi-icon-app-ribbon {
+	&:before {
+		@extend %mi-icon-app-ribbon;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-app-ribbon;
+		}
+	}
+}
+.mi-icon-tag {
+	&:before {
+		@extend %mi-icon-tag;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-tag;
+		}
+	}
+}
+.mi-icon-bookmark {
+	&:before {
+		@extend %mi-icon-bookmark;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-bookmark;
+		}
+	}
+}
+.mi-icon-app-ribbon_v3 {
+	&:before {
+		@extend %mi-icon-app-ribbon_v3;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-app-ribbon_v3;
+		}
+	}
+}
+.mi-icon-random {
+	&:before {
+		@extend %mi-icon-random;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-random;
+		}
+	}
+}
+.mi-icon-infinity {
+	&:before {
+		@extend %mi-icon-infinity;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-infinity;
+		}
+	}
+}
+.mi-icon-redirect {
+	&:before {
+		@extend %mi-icon-redirect;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-redirect;
+		}
+	}
+}
+.mi-icon-plus {
+	&:before {
+		@extend %mi-icon-plus;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-plus;
+		}
+	}
+}
+.mi-icon-box-plus {
+	&:before {
+		@extend %mi-icon-box-plus;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-box-plus;
+		}
+	}
+}
+.mi-icon-circle-plus {
+	&:before {
+		@extend %mi-icon-circle-plus;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-circle-plus;
+		}
+	}
+}
+.mi-icon-plus,
+.icon-plus {
+	&:before {
+		@extend %mi-icon-plus;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-plus;
+		}
+	}
+}
+.mi-icon-remove {
+	&:before {
+		@extend %mi-icon-remove;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-remove;
+		}
+	}
+}
+.mi-icon-close {
+	&:before {
+		@extend %mi-icon-close;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-close;
+		}
+	}
+}
+.mi-icon-small-remove {
+	&:before {
+		@extend %mi-icon-small-remove;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-small-remove;
+		}
+	}
+}
+.mi-icon-minus {
+	&:before {
+		@extend %mi-icon-minus;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-minus;
+		}
+	}
+}
+.mi-icon-box-minus {
+	&:before {
+		@extend %mi-icon-box-minus;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-box-minus;
+		}
+	}
+}
+.mi-icon-circle-minus {
+	&:before {
+		@extend %mi-icon-circle-minus;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-circle-minus;
+		}
+	}
+}
+.mi-icon-db-table {
+	&:before {
+		@extend %mi-icon-db-table;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-db-table;
+		}
+	}
+}
+.mi-icon-refresh {
+	&:before {
+		@extend %mi-icon-synchronize-3;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-synchronize-3;
+		}
+	}
+}
+.mi-icon-redo {
+	&:before {
+		@extend %mi-icon-redo;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-redo;
+		}
+	}
+}
+.mi-icon-undo {
+	&:before {
+		@extend %mi-icon-undo;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-undo;
+		}
+	}
+}
+.mi-icon-cloud-download,
+.mi-icon-cloud-install {
+	&:before {
+		@extend %mi-icon-cloud-download;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cloud-download;
+		}
+	}
+}
+.mi-icon-cloud-refresh {
+	&:before {
+		@extend %mi-icon-cloud-refresh;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cloud-refresh;
+		}
+	}
+}
+.mi-icon-cloud-setting,
+.mi-icon-manage,
+.mi-icon-cloud-manage-apps_v1 {
+	&:before {
+		@extend %mi-icon-cloud-setting;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cloud-setting;
+		}
+	}
+}
+.mi-icon-cloud-transfer,
+.mi-icon-cloud-sync {
+	&:before {
+		@extend %mi-icon-cloud-transfer;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cloud-transfer;
+		}
+	}
+}
+.mi-icon-cloud-upload-home {
+	&:before {
+		@extend %mi-icon-cloud-upload-home;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cloud-upload-home;
+		}
+	}
+}
+.mi-icon-cloud-upload,
+.mi-icon-cloud-save {
+	&:before {
+		@extend %mi-icon-cloud-upload;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cloud-upload;
+		}
+	}
+}
+.mi-icon-cloud {
+	&:before {
+		@extend %mi-icon-cloud;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cloud;
+		}
+	}
+}
+.mi-icon-show-more {
+	&:before {
+		@extend %mi-icon-show-more;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-show-more;
+		}
+	}
+}
+.mi-icon-question {
+	&:before {
+		@extend %mi-icon-question;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-question;
+		}
+	}
+}
+.mi-icon-info-sign {
+	&:before {
+		@extend %mi-icon-info-sign;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-info-sign;
+		}
+	}
+}
+.mi-icon-caution-knockout {
+	&:before {
+		@extend %mi-icon-caution-knockout;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-caution-knockout;
+		}
+	}
+}
+.mi-icon-rss {
+	&:before {
+		@extend %mi-icon-rss;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-rss;
+		}
+	}
+}
+.mi-icon-rss-feed_v2 {
+	&:before {
+		@extend %mi-icon-rss-feed_v2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-rss-feed_v2;
+		}
+	}
+}
+.mi-icon-flag_square {
+	&:before {
+		@extend %mi-icon-flag-square;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-flag-square;
+		}
+	}
+}
+.mi-icon-flag_triangle {
+	&:before {
+		@extend %mi-icon-flag-triangle;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-flag-triangle;
+		}
+	}
+}
+.mi-icon-gift {
+	&:before {
+		@extend %mi-icon-gift;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-gift;
+		}
+	}
+}
+.mi-icon-star-outline {
+	&:before {
+		@extend %mi-icon-star-outline;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-star-outline;
+		}
+	}
+}
+.mi-icon-trophy {
+	&:before {
+		@extend %mi-icon-trophy;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-trophy;
+		}
+	}
+}
+.mi-icon-class-category {
+	&:before {
+		@extend %mi-icon-class-category;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-class-category;
+		}
+	}
+}
+.mi-icon-cases {
+	&:before {
+		@extend %mi-icon-cases;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cases;
+		}
+	}
+}
+.mi-icon-filter {
+	&:before {
+		@extend %mi-icon-filter;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-filter;
+		}
+	}
+}
+.mi-icon-versions {
+	&:before {
+		@extend %mi-icon-versions;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-versions;
+		}
+	}
+}
+.mi-icon-columns {
+	&:before {
+		@extend %mi-icon-columns;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-columns;
+		}
+	}
+}
+.mi-icon-accordion {
+	&:before {
+		@extend %mi-icon-accordion;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-accordion;
+		}
+	}
+}
+.mi-icon-tab-group {
+	&:before {
+		@extend %mi-icon-tab-group;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-tab-group;
+		}
+	}
+}
+.mi-icon-integers {
+	&:before {
+		@extend %mi-icon-integers;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-integers;
+		}
+	}
+}
+.mi-icon-navigation-drawer-2 {
+	&:before {
+		@extend %mi-icon-navigation-drawer-2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-navigation-drawer-2;
+		}
+	}
+}
+.mi-icon-move {
+	&:before {
+		@extend %mi-icon-move;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-move;
+		}
+	}
+}
+.mi-icon-navbar {
+	&:before {
+		@extend %mi-icon-portal-nav;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-portal-nav;
+		}
+	}
+}
+.mi-icon-pack-service-support {
+	&:before {
+		@extend %mi-icon-pack-service-support;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pack-service-support;
+		}
+	}
+}
+.mi-icon-tablet-ipad-2,
+.mi-icon-tablet-portrait {
+	&:before {
+		@extend %mi-icon-tablet-ipad-2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-tablet-ipad-2;
+		}
+	}
+}
+.mi-icon-tablet-landscape {
+	&:before {
+		@extend %mi-icon-tablet-landscape;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-tablet-landscape;
+		}
+	}
+}
+.mi-icon-smartphone-landscape {
+	&:before {
+		@extend %mi-icon-smartphone-landscape;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-smartphone-landscape;
+		}
+	}
+}
+.mi-icon-smartphone-portrait {
+	&:before {
+		@extend %mi-icon-smartphone-portrait;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-smartphone-portrait;
+		}
+	}
+}
+.mi-icon-pager {
+	&:before {
+		@extend %mi-icon-pager;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pager;
+		}
+	}
+}
+.mi-icon-fax {
+	&:before {
+		@extend %mi-icon-fax;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-fax;
+		}
+	}
+}
+.mi-icon-phone {
+	&:before {
+		@extend %mi-icon-phone;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-phone;
+		}
+	}
+}
+.mi-icon-desktop,
+.mi-icon-computer { 
+	&:before {
+		@extend %mi-icon-desktop ;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-desktop ;
+		}
+	}
+}
+.mi-icon-laptop {
+	&:before {
+		@extend %mi-icon-laptop;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-laptop;
+		}
+	}
+}
+.mi-icon-save {
+	&:before {
+		@extend %mi-icon-save;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-save;
+		}
+	}
+}
+.mi-icon-save-alt {
+	&:before {
+		@extend %mi-icon-save-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-save-alt;
+		}
+	}
+}
+.mi-icon-estimate3 {
+	&:before {
+		@extend %mi-icon-estimate3;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-estimate3;
+		}
+	}
+}
+// .mi-icon-estimate {
+// 	&:before {
+	// @extend %mi-icon-estimate;
+	// }
+
+	// &.Right {
+	// 	&:before {
+	// 		content: " ";
+	//display:none;
+	// 	}
+	// 	&:after {
+	// 		@extend %mi-icon-estimate;
+	// 	}
+	// }
+// }
+.mi-icon-bubble-chat-typing-1 {
+	&:before {
+		@extend %mi-icon-bubble-chat-typing-1;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-bubble-chat-typing-1;
+		}
+	}
+}
+.mi-icon-bubble-chat-typing-3 {
+	&:before {
+		@extend %mi-icon-bubble-chat-typing-3;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-bubble-chat-typing-3;
+		}
+	}
+}
+.mi-icon-chat-double-bubble {
+	&:before {
+		@extend %mi-icon-chat-double-bubble;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-chat-double-bubble;
+		}
+	}
+}
+.mi-icon-chat-double-bubble-round {
+	&:before {
+		@extend %mi-icon-chat-double-bubble-round;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-chat-double-bubble-round;
+		}
+	}
+}
+.mi-icon-male-chat {
+	&:before {
+		@extend %mi-icon-male-chat;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-male-chat;
+		}
+	}
+}
+.mi-icon-female-chat {
+	&:before {
+		@extend %mi-icon-female-chat;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-female-chat;
+		}
+	}
+}
+.mi-icon-salesrep-male {
+	&:before {
+		@extend %mi-icon-salesrep-male;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-salesrep-male;
+		}
+	}
+}
+.mi-icon-edu {
+	&:before {
+		@extend %mi-icon-edu;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-edu;
+		}
+	}
+}
+.mi-icon-salesrep-female {
+	&:before {
+		@extend %mi-icon-salesrep-female;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-salesrep-female;
+		}
+	}
+}
+.mi-icon-person-remove-2 {
+	&:before {
+		@extend %mi-icon-person-remove-2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-person-remove-2;
+		}
+	}
+}
+.mi-icon-user-female {
+	&:before {
+		@extend %mi-icon-user-female;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-user-female;
+		}
+	}
+}
+.mi-icon-account-female {
+	&:before {
+		@extend %mi-icon-account-female;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-account-female;
+		}
+	}
+}
+.mi-icon-user-male {
+	&:before {
+		@extend %mi-icon-user-male;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-user-male;
+		}
+	}
+}
+.mi-icon-account-male {
+	&:before {
+		@extend %mi-icon-account-male;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-account-male;
+		}
+	}
+}
+.mi-icon-customer-management {
+	&:before {
+		@extend %mi-icon-customer-management;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-customer-management;
+		}
+	}
+}
+.mi-icon-account-group-4 {
+	&:before {
+		@extend %mi-icon-account-group-4;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-account-group-4;
+		}
+	}
+}
+.mi-icon-contacts {
+	&:before {
+		@extend %mi-icon-contacts;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-contacts;
+		}
+	}
+}
+.mi-icon-id-card-double {
+	&:before {
+		@extend %mi-icon-id-card-double;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-id-card-double;
+		}
+	}
+}
+.mi-icon-phone-book-1 {
+	&:before {
+		@extend %mi-icon-phone-book-1;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-phone-book-1;
+		}
+	}
+}
+.mi-icon-bills {
+	&:before {
+		@extend %mi-icon-bills;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-bills;
+		}
+	}
+}
+.mi-icon-paper-plane {
+	&:before {
+		@extend %mi-icon-paper-plane;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-paper-plane;
+		}
+	}
+}
+.mi-icon-email {
+	&:before {
+		@extend %mi-icon-email;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-email;
+		}
+	}
+}
+.mi-icon-recurring-date {
+	&:before {
+		@extend %mi-icon-recurring-date;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-recurring-date;
+		}
+	}
+}
+.mi-icon-notifications {
+	&:before {
+		@extend %mi-icon-notifications;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-notifications;
+		}
+	}
+}
+.mi-icon-calendar {
+	&:before {
+		@extend %mi-icon-calendar;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-calendar;
+		}
+	}
+}
+.mi-icon-clock {
+	&:before {
+		@extend %mi-icon-clock;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-clock;
+		}
+	}
+}
+.mi-icon-recently-viewed {
+	&:before {
+		@extend %mi-icon-recently-viewed;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-recently-viewed;
+		}
+	}
+}
+.mi-recent-viewed-active {
+	font-family: 'method-font','method-icon','method-icon-solid','Source Sans Pro';
+	position: relative;
+    &:before {
+    	@extend %mi-icon-recently-viewed;
+    }
+    
+    &:after {
+    	@extend %mi-icon-circle-full;
+    	color: $green;
+    	font-size: 8px;
+    	position: absolute;
+    	top: 5px;
+    	right:5px;
+    }
+}
+.mi-icon-timer {
+	&:before {
+		@extend %mi-icon-timer;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-timer;
+		}
+	}
+}
+.mi-icon-logout-alt {
+	&:before {
+		@extend %mi-icon-logout-alt;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-logout-alt;
+		}
+	}
+}
+.mi-icon-logout {
+	&:before {
+		@extend %mi-icon-logout;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-logout;
+		}
+	}
+}
+.mi-icon-radio-buttons {
+	&:before {
+		@extend %mi-icon-radio-buttons;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-radio-buttons;
+		}
+	}
+}
+.mi-icon-set-status {
+	&:before {
+		@extend %mi-icon-set-status;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-set-status;
+		}
+	}
+}
+.mi-icon-cog {
+	&:before {
+		@extend %mi-icon-cog;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-cog;
+		}
+	}
+}
+.mi-icon-adjust {
+	&:before {
+		@extend %mi-icon-adjust;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-adjust;
+		}
+	}
+}
+.mi-icon-slide-toggle,
+.mi-icon-toggle {
+	&:before {
+		@extend %mi-icon-slide-toggle;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-slide-toggle;
+		}
+	}
+}
+.mi-icon-square {
+	&:before {
+		@extend %mi-icon-square;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-square;
+		}
+	}
+}
+.mi-icon-checkbox-outline-empty {
+	&:before {
+		@extend %mi-icon-checkbox-outline-empty;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-checkbox-outline-empty;
+		}
+	}
+}
+.mi-icon-ok {
+	&:before {
+		@extend %mi-icon-ok;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-ok;
+		}
+	}
+}
+.mi-icon-checkbox {
+	&:before {
+		@extend %mi-icon-checkbox;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-checkbox;
+		}
+	}
+}
+.mi-icon-square-checkmark {
+	&:before {
+		@extend %mi-icon-square-checkmark;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-square-checkmark;
+		}
+	}
+}
+.mi-icon-circle-checkmark {
+	&:before {
+		@extend %mi-icon-circle-checkmark;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-circle-checkmark;
+		}
+	}
+}
+.mi-icon-decimals {
+	&:before {
+		@extend %mi-icon-decimals;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-decimals;
+		}
+	}
+}
+.mi-icon-pushpin-horizontal-pinned {
+	&:before {
+		@extend %mi-icon-pushpin-horizontal-pinned;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pushpin-horizontal-pinned;
+		}
+	}
+}
+.mi-icon-pushpin-vertical-pinned {
+	&:before {
+		@extend %mi-icon-pushpin-vertical-pinned;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pushpin-vertical-pinned;
+		}
+	}
+}
+.mi-icon-pushpin-horizontal {
+	&:before {
+		@extend %mi-icon-pushpin-horizontal;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pushpin-horizontal;
+		}
+	}
+}
+.mi-icon-pushpin-vertical {
+	&:before {
+		@extend %mi-icon-pushpin-vertical;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pushpin-vertical;
+		}
+	}
+}
+.mi-icon-delete {
+	&:before {
+		@extend %mi-icon-delete;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-delete;
+		}
+	}
+}
+.mi-icon-circle-x {
+	&:before {
+		@extend %mi-icon-circle-x;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-circle-x;
+		}
+	}
+}
+.mi-icon-lightning {
+	&:before {
+		@extend %mi-icon-lightning;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-lightning;
+		}
+	}
+}
+.mi-icon-flash-2 {
+	&:before {
+		@extend %mi-icon-flash-2;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-flash-2;
+		}
+	}
+}
+.mi-icon-hide-visible {
+	&:before {
+		@extend %mi-icon-hide-visible;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-hide-visible;
+		}
+	}
+}
+.mi-icon-link {
+	&:before {
+		@extend %mi-icon-link;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-link;
+		}
+	}
+}
+.mi-icon-attachment {
+	&:before {
+		@extend %mi-icon-attachment;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-attachment;
+		}
+	}
+}
+.mi-icon-edit {
+	&:before {
+		@extend %mi-icon-edit;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-edit;
+		}
+	}
+}
+.mi-icon-pin-1 {
+	&:before {
+		@extend %mi-icon-pin-1;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-pin-1;
+		}
+	}
+}
+.mi-icon-printer {
+	&:before {
+		@extend %mi-icon-printer;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-printer;
+		}
+	}
+}
+.mi-icon-search {
+	&:before {
+		@extend %mi-icon-search;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-search;
+		}
+	}
+}
+.mi-icon-zoom-in {
+	&:before {
+		@extend %mi-icon-zoom-in;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-zoom-in;
+		}
+	}
+}
+.mi-icon-zoom-out {
+	&:before {
+		@extend %mi-icon-zoom-out;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-zoom-out;
+		}
+	}
+}
+.mi-icon-loop-infinite-1 {
+	&:before {
+		@extend %mi-icon-infinity;
+	}
+	&.Right {
+		&:before {
+			content: " ";
+			display:none;
+		}
+		&:after {
+			@extend %mi-icon-infinity;
+		}
+	}
+}
+.mi-icon-warning-sign {
+    &:before {
+    	@extend %mi-icon-warning-sign;
+    }
+    &.Right {
+    	&:before {
+    		content: " ";
+    		display:none;
+    	}
+    	&:after {
+    		@extend %mi-icon-warning-sign;
+    	}
+    }
+}
+.mi-icon-arrow-triple-right {
+    &:before {
+    	@extend %mi-icon-arrow-triple-right;
+    }
+    &.Right {
+    	&:before {
+    		content: " ";
+    		display:none;
+    	}
+    	&:after {
+    		@extend %mi-icon-arrow-triple-right;
+    	}
+    }
+}
+.mi-icon-truck-dump {
+    &:before {
+    	@extend %mi-icon-truck-dump;
+    }
+    &.Right {
+    	&:before {
+    		content: " ";
+    		display:none;
+    	}
+    	&:after {
+    		@extend %mi-icon-truck-dump;
+    	}
+    }
+}
+
+
+@import "../old-components/font-awesome-blanks";

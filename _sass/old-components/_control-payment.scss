@@ -1,0 +1,1059 @@
+@import "../designer/method-base";
+@import "../designer/colors";
+
+.field-validation-error {
+  font-size: $font-xsmall !important;
+  float: left;
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: normal;
+  color: $fuschia;
+}
+
+/*/////////////////////////////////////////CARD LIST///////////////////////////////////////*/
+
+#cardList, #cardManager {
+  position: relative;
+  color: #34495e;
+}
+
+#cardList #aboutGateway {
+  border: 1px dashed #d6d6d6;
+  padding: 10px;
+}
+
+#paymentGatewayPlugin {
+  overflow-x: hidden;
+  width: 94% !important;
+  padding-bottom: 10px;
+}
+
+#cardList {
+  #cardTable {
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+    width: 98%;
+    margin-left: 30px;
+
+    @include mobile-portrait-only {
+      border-spacing: 0 5px !important;
+      width: 98%;
+      margin-left: 0 !important;
+    }
+
+  }
+  #activeDivChk {
+    float: right;
+    label.checkbox {
+      font-size: 18px !important;
+      margin: 0 .4em !important;
+    }
+  }
+  #cardTable {
+    .cardInvisible.cardHide {
+      display: none;
+    }
+    th {
+      text-align: left;
+    }
+    .cardEdit {
+      margin-left: 12px;
+    }
+    .cardActive {
+      margin-left: 30px;
+    }
+    .cardCompany {
+      margin-left: 17px;
+    }
+    td {
+      @include mobile-only {
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+      }
+      &:first-child, &:nth-child(2), &:nth-child(3) {
+        width: 30%;
+        @include mobile-portrait-only {
+          max-width: 75px !important;
+        }
+        @include iphone6 {
+          max-width: 80px;
+        }
+      }
+      &:nth-child(4) {
+        width: 10%;
+        @include mobile-portrait-only {
+          max-width: 75px !important;
+        }
+        @include iphone6 {
+          max-width: 80px;
+        }
+      }
+    }
+  }
+}
+
+#cardTitleBar {
+  border: none !important;
+  background: whitesmoke;
+  padding: .8em 0 .8em .6em !important;
+  @include box-sizing;
+
+  @include mobile-only {
+    padding: 0.5em !important;
+  }
+  .mi-dialog-title {
+    text-align: center;
+  }
+}
+
+#cardButtonPane {
+  background: whitesmoke;
+  padding: .1em 1.6em .1em .4em;
+
+  &.mi-dialog-buttonpane {
+    @include mobile-only {
+      height: auto;
+    }
+  }
+
+  .mi-dialog-buttonset {
+    @include mobile-only {
+      text-align: right;
+    }
+
+    button {
+      @include mobile-only {
+        margin-right: 1.25em !important;
+      }
+    }
+  }
+
+  #saveCard {
+    display: none;
+  }
+}
+
+#cardTitleBar #backCardList {
+  float: left;
+  position: absolute;
+  left: 30px;
+  top: 16px;
+  cursor: pointer;
+  color: #3EA4EF;
+  &:hover {
+    color: #58BEFF;
+  }
+  i {
+    position: relative;
+    top: 1px;
+    right: 3px;
+  }
+
+  @include mobile-portrait-only {
+    display: none;
+  }
+  @include iphone6 {
+    display: none;
+  }
+}
+
+#cardList {
+  .helpSpan {
+    @include box-sizing;
+    font-style: italic;
+    font-weight: normal;
+    width: 92%;
+    font-size: 13px;
+    margin: 10px 0 20px 30px;
+
+    @include mobile-only {
+      width: 100% !important;
+      margin: 10px 0 20px 0 !important;
+    }
+  }
+  #createCard {
+    color: #4888EF;
+    margin: 15px 0 0 35px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 91%;
+
+    @include mobile-only {
+      margin: 15px 0 0 0 !important;
+    }
+  }
+  #createCardLink {
+    margin-left: 5px;
+  }
+  #cardTable {
+    @include mobile-only {
+      margin-left: 0 !important;
+    }
+
+    th {
+
+      @include mobile-portrait-only {
+        font-size: 12px;
+      }
+
+      @include iphone6 {
+        font-size: 12px;
+      }
+    }
+
+    .cardList {
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .cardName {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .cardEdit i {
+      color: #8f9192;
+      &:hover {
+        color: #6fcc28;
+      }
+    }
+  }
+
+  .checkbox-container {
+    margin: 0 !important;
+
+    &#activeDivChk {
+
+      @include mobile-only {
+        float: none !important;
+      }
+
+      label.checkbox {
+        position: relative;
+        bottom: -5px;
+        font-size: 20px;
+
+        @include mobile-only {
+          margin: 0 !important;
+        }
+
+        @include mobile-portrait-only {
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}
+
+/*/////////////////////////////////////////CARD MANAGER///////////////////////////////////////*/
+
+#cardManager {
+  #aboutPSIGateway {
+    border: 1px dashed #d6d6d6;
+    padding: 10px;
+  }
+  a {
+    &.learn {
+      color: #4888EF;
+      text-decoration: none;
+      font-style: normal;
+      outline: none !important;
+      &:visited {
+        color: #4888EF;
+        text-decoration: none;
+        font-style: normal;
+        outline: none !important;
+      }
+    }
+    &:active {
+      color: #4888EF;
+      text-decoration: none;
+      font-style: normal;
+      outline: none !important;
+    }
+  }
+  padding: 10px 0 20px 40px;
+
+  @include mobile-only {
+    padding: 10px 0 20px;
+  }
+  .helpSpan {
+    font-style: italic;
+    font-weight: normal;
+    width: 93%;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  #cardManagerTable {
+    .cardHideTr {
+      display: none;
+    }
+    td {
+      &:first-child {
+        width: 35%;
+      }
+      &:nth-child(2) {
+        width: 60%;
+      }
+      &:nth-child(3) {
+        width: 5%;
+      }
+    }
+    border-collapse: collapse;
+    width: 100%;
+  }
+}
+
+#cardManagerTable td {
+  padding: 5px;
+}
+
+#cardManager #cardManagerTable {
+  select, input {
+    width: 100%;
+    font-size: 14px;
+    height: 25px;
+  }
+}
+
+#cardManagerDiv {
+  #cardLbl1Extra {
+    font-size: 11px;
+    font-style: italic;
+    display: block;
+    line-height: 12px;
+  }
+  #cardLbl1, #cardLbl3 {
+    display: block;
+  }
+  #spanIsSim, #spanOverridePostURL {
+    font-size: 11px;
+    font-style: italic;
+    line-height: 14px;
+    margin-left: 5px;
+    position: relative;
+    top: -3px;
+  }
+  #cardManagerTable {
+    #divCurrencyCode {
+      display: inline-block;
+      width: 50%;
+      float: right;
+      text-align: center;
+    }
+    #currencyCode {
+      width: 50%;
+    }
+  }
+  #cardMngrTr10 .checkbox, #cardMngrTr11 .checkbox {
+    position: relative;
+    top: 5px;
+  }
+  #cardMngrTr12 {
+    .checkbox {
+      position: relative;
+      top: 5px;
+    }
+    td {
+      vertical-align: top;
+      padding: 0 5px;
+    }
+  }
+  #cardMngrTr11 td, #cardMngrTr10 td {
+    vertical-align: top;
+    padding: 0 5px;
+  }
+}
+
+#cardLbl11 {
+  position: relative;
+  top: 5px;
+}
+
+#cardLbl12 {
+  position: relative;
+  top: 10px;
+}
+
+#cardManagerDiv #cardTicket {
+  color: #4888EF;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 11px;
+  font-style: italic;
+  display: block;
+  line-height: 12px;
+}
+
+
+//  Credit card icons
+
+.cc-list {
+  @include box-sizing;
+  @include flexbox;
+  justify-content: center;
+  align-content: space-between;
+  width: 100%;
+
+  .credit-card {
+    width: 40px;
+    height: 30px;
+    flex: auto;
+
+    &.cc-visa {
+      background: url(../img/cc-visa.svg) 0 no-repeat;
+      background-size: 100%;
+    }
+    &.cc-mastercard {
+      background: url(../img/cc-mastercard.svg) 0 no-repeat;
+      background-size: 100%;
+    }
+    &.cc-discover {
+      background: url(../img/cc-discover.svg) 0 no-repeat;
+      background-size: 100%;
+    }
+    &.cc-amex {
+      background: url(../img/cc-amex.svg) 0 no-repeat;
+      background-size: 100%;
+    }
+  }
+}
+
+.mi-normal-form-div {
+  display: block;
+  position: relative;
+  clear: both;
+
+  &.cc-expiry,
+   &.cvn {
+    float: left;
+    clear: none;
+
+    &:last-of-type {
+      float: right !important;
+    }
+  }
+
+  &.cc-expiry {
+    width: 45%;
+  }
+
+  &.cvn {
+    width: 25%;
+  }
+
+  .field-validation-error {
+    float: none !important;
+    display: block;
+    width: auto !important;
+    clear: both !important;
+  }
+
+}
+
+fieldset.expiry,
+fieldset.mi-normal-form-div {
+  margin: 0;
+  padding: 0;
+
+  .field-validation-error {
+    float: none !important;
+    display: block;
+    width: auto !important;
+    clear: both !important;
+  }
+}
+
+.cc-cvn {
+  background: url(../img/cc-cvn.svg) 0 no-repeat;
+  background-size: 100%;
+  float: left;
+  width: 40px;
+  height:40px;
+  margin: 30px 0 0 10px;
+}
+
+//  Themes
+
+
+div[method_type=PAY] {
+  &.payup {
+    min-width: 325.5px;
+    @include mobile-portrait-only {
+      min-width: 290px !important;
+    }
+  }
+
+  //  Padding
+  &.mi-pay-form-padding-top-regular    {  @extend %mi-padding-top-0em; }
+  &.mi-pay-form-padding-top-1x         {  @extend %mi-padding-top-1em; }
+  &.mi-pay-form-padding-top-2x         {  @extend %mi-padding-top-2em; }
+
+  &.mi-pay-form-padding-bottom-regular {  @extend %mi-padding-bottom-0em;  }
+  &.mi-pay-form-padding-bottom-1x      {  @extend %mi-padding-bottom-1em;  }
+  &.mi-pay-form-padding-bottom-2x      {  @extend %mi-padding-bottom-2em;  }
+
+  &.mi-pay-form-padding-left-regular   {  @extend %mi-padding-left-0em;  }
+  &.mi-pay-form-padding-left-1x        {  @extend %mi-padding-left-1em;  }
+  &.mi-pay-form-padding-left-2x        {  @extend %mi-padding-left-2em;  }
+
+  &.mi-pay-form-padding-right-regular  {  @extend %mi-padding-right-0em;  }
+  &.mi-pay-form-padding-right-1x       {  @extend %mi-padding-right-1em;  }
+  &.mi-pay-form-padding-right-2x       {  @extend %mi-padding-right-2em;  }
+
+  //  Border size
+  &.mi-pay-form-top-border-normal   { @extend %top-border-normal; }
+  &.mi-pay-form-top-border-2px      { @extend %top-border-2px; }
+  &.mi-pay-form-top-border-4px      { @extend %top-border-4px; }
+  &.mi-pay-form-top-border-6px      { @extend %top-border-6px; }
+  &.mi-pay-form-top-border-8px      { @extend %top-border-8px; }
+  &.mi-pay-form-top-border-10px     { @extend %top-border-10px; }
+
+  &.mi-pay-form-bottom-border-normal  { @extend %bottom-border-normal; }
+  &.mi-pay-form-bottom-border-2px     { @extend %bottom-border-2px; }
+  &.mi-pay-form-bottom-border-4px     { @extend %bottom-border-4px; }
+  &.mi-pay-form-bottom-border-6px     { @extend %bottom-border-6px; }
+  &.mi-pay-form-bottom-border-8px     { @extend %bottom-border-8px; }
+  &.mi-pay-form-bottom-border-10px    { @extend %bottom-border-10px; }
+
+  &.mi-pay-form-left-border-normal    { @extend %left-border-normal; }
+  &.mi-pay-form-left-border-2px       { @extend %left-border-2px; }
+  &.mi-pay-form-left-border-4px       { @extend %left-border-4px; }
+  &.mi-pay-form-left-border-6px       { @extend %left-border-6px; }
+  &.mi-pay-form-left-border-8px       { @extend %left-border-8px; }
+  &.mi-pay-form-left-border-10px      { @extend %left-border-10px; }
+
+  &.mi-pay-form-right-border-normal  { @extend %right-border-normal; }
+  &.mi-pay-form-right-border-2px     { @extend %right-border-2px; }
+  &.mi-pay-form-right-border-4px     { @extend %right-border-4px; }
+  &.mi-pay-form-right-border-6px     { @extend %right-border-6px; }
+  &.mi-pay-form-right-border-8px     { @extend %right-border-8px; }
+  &.mi-pay-form-right-border-10px    { @extend %right-border-10px; }
+
+  //  Border colors
+
+  //  Bottom
+  &.mi-pay-form-bottom-border-color-alert       { @extend %bottom-border-color-alert; }
+  &.mi-pay-form-bottom-border-color-primary     { @extend %bottom-border-color-primary; }
+  &.mi-pay-form-bottom-border-color-secondary   { @extend %bottom-border-color-secondary; }
+  &.mi-pay-form-bottom-border-color-success     { @extend %bottom-border-color-success; }
+  &.mi-pay-form-bottom-border-color-navigation  { @extend %bottom-border-color-navigation; }
+  &.mi-pay-form-bottom-border-color-caution     { @extend %bottom-border-color-caution; }
+  &.mi-pay-form-bottom-border-color-darkgrey    { @extend %bottom-border-color-darkgrey; }
+  &.mi-pay-form-bottom-border-color-silver      { @extend %bottom-border-color-silver; }
+
+  //  Top
+  &.mi-pay-form-top-border-color-alert       { @extend %top-border-color-alert; }
+  &.mi-pay-form-top-border-color-primary     { @extend %top-border-color-primary; }
+  &.mi-pay-form-top-border-color-secondary   { @extend %top-border-color-secondary; }
+  &.mi-pay-form-top-border-color-success     { @extend %top-border-color-success; }
+  &.mi-pay-form-top-border-color-navigation  { @extend %top-border-color-navigation; }
+  &.mi-pay-form-top-border-color-caution     { @extend %top-border-color-caution; }
+  &.mi-pay-form-top-border-color-darkgrey    { @extend %top-border-color-darkgrey; }
+  &.mi-pay-form-top-border-color-silver      { @extend %top-border-color-silver; }
+
+  //  Left
+  &.mi-pay-form-left-border-color-alert       { @extend %left-border-color-alert; }
+  &.mi-pay-form-left-border-color-primary     { @extend %left-border-color-primary; }
+  &.mi-pay-form-left-border-color-secondary   { @extend %left-border-color-secondary; }
+  &.mi-pay-form-left-border-color-success     { @extend %left-border-color-success; }
+  &.mi-pay-form-left-border-color-navigation  { @extend %left-border-color-navigation; }
+  &.mi-pay-form-left-border-color-caution     { @extend %left-border-color-caution; }
+  &.mi-pay-form-left-border-color-darkgrey    { @extend %left-border-color-darkgrey; }
+  &.mi-pay-form-left-border-color-silver      { @extend %left-border-color-silver; }
+
+  //  Right
+  &.mi-pay-form-right-border-color-alert       { @extend %right-border-color-alert; }
+  &.mi-pay-form-right-border-color-primary     { @extend %right-border-color-primary; }
+  &.mi-pay-form-right-border-color-secondary   { @extend %right-border-color-secondary; }
+  &.mi-pay-form-right-border-color-success     { @extend %right-border-color-success; }
+  &.mi-pay-form-right-border-color-navigation  { @extend %right-border-color-navigation; }
+  &.mi-pay-form-right-border-color-caution     { @extend %right-border-color-caution; }
+  &.mi-pay-form-right-border-color-darkgrey    { @extend %right-border-color-darkgrey; }
+  &.mi-pay-form-right-border-color-silver      { @extend %right-border-color-silver; }
+
+  //  Border styles
+
+  //  Bottom
+  &.mi-pay-form-bottom-border-solid   { @extend %bottom-border-solid; }
+  &.mi-pay-form-bottom-border-double  { @extend %bottom-border-double; }
+  &.mi-pay-form-bottom-border-dashed  { @extend %bottom-border-dashed; }
+  &.mi-pay-form-bottom-border-dotted  { @extend %bottom-border-dotted; }
+
+  //  Top
+  &.mi-pay-form-top-border-solid   { @extend %top-border-solid; }
+  &.mi-pay-form-top-border-double  { @extend %top-border-double; }
+  &.mi-pay-form-top-border-dashed  { @extend %top-border-dashed; }
+  &.mi-pay-form-top-border-dotted  { @extend %top-border-dotted; }
+
+  //  Left
+  &.mi-pay-form-left-border-solid   { @extend %left-border-solid; }
+  &.mi-pay-form-left-border-double  { @extend %left-border-double; }
+  &.mi-pay-form-left-border-dashed  { @extend %left-border-dashed; }
+  &.mi-pay-form-left-border-dotted  { @extend %left-border-dotted; }
+
+  // Right
+  &.mi-pay-form-right-border-solid   { @extend %right-border-solid; }
+  &.mi-pay-form-right-border-double  { @extend %right-border-double; }
+  &.mi-pay-form-right-border-dashed  { @extend %right-border-dashed; }
+  &.mi-pay-form-right-border-dotted  { @extend %right-border-dotted; }
+
+  //  Form caption styles
+
+  //  Caption colors
+  &.mi-pay-caption-alert {
+    h4 { color: $fuschia !important; }
+  }
+  &.mi-pay-caption-primary {
+    h4 { color: $blue !important; }
+  }
+  &.mi-pay-caption-secondary {
+    h4 { color: $silver !important; }
+  }
+  &.mi-pay-caption-navigation {
+    h4 { color: $grey !important; }
+  }
+  &.mi-pay-caption-caution {
+    h4 { color: $yellow !important; }
+  }
+  &.mi-pay-caption-success {
+    h4 { color: $green !important; }
+  }
+  &.mi-pay-caption-gunmetal {
+    h4 { color: $gunmetal !important; }
+  }
+  &.mi-pay-caption-silver {
+    h4 { color: $pale-grey !important; }
+  }
+  &.mi-pay-caption-black {
+    h4 { color: $black !important; }
+  }
+  &.mi-pay-caption-white {
+    h4 { color: $white !important; }
+  }
+
+  //  Caption sizes
+  &.mi-pay-caption-font-xxxsmall {
+    h4 { font-size: $font-xxxsmall !important; }
+  }
+  &.mi-pay-caption-font-xxsmall {
+    h4 { font-size: $font-xxsmall !important; }
+  }
+  &.mi-pay-caption-font-xsmall {
+    h4 { font-size: $font-xsmall !important; }
+  }
+  &.mi-pay-caption-font-small {
+    h4 { font-size: $font-small !important; }
+  }
+  &.mi-pay-caption-font-large {
+    h4 { font-size: $font-large !important; }
+  }
+  &.mi-pay-caption-font-xlarge {
+    h4 { font-size: $font-xlarge !important; }
+  }
+  &.mi-pay-caption-font-xxlarge {
+    h4 { font-size: $font-xxlarge !important; }
+  }
+  &.mi-pay-caption-font-xxxlarge {
+    h4 { font-size: $font-xxxlarge !important; }
+  }
+
+  //  Caption alignment
+  &.mi-pay-caption-left {
+    h4 { text-align: left !important; }
+  }
+  &.mi-pay-caption-center {
+    h4 { text-align: center !important; }
+  }
+  &.mi-pay-caption-right {
+    h4 { text-align: right !important; }
+  }
+
+  //  Textbox styles:
+
+  //  Background
+  &.mi-pay-textbox-background-alert {
+    input[type=text] { background: $fuschia !important; }
+  }
+  &.mi-pay-textbox-background-primary {
+    input[type=text] { background: $blue !important; }
+  }
+  &.mi-pay-textbox-background-secondary {
+    input[type=text] { background: $silver !important; }
+  }
+  &.mi-pay-textbox-background-navigation {
+    input[type=text] { background: $grey !important; }
+  }
+  &.mi-pay-textbox-background-caution {
+    input[type=text] { background: $yellow !important; }
+  }
+  &.mi-pay-textbox-background-success {
+    input[type=text] { background: $green !important; }
+  }
+  &.mi-pay-textbox-background-dark-grey {
+    input[type=text] { background: $gunmetal !important; }
+  }
+  &.mi-pay-textbox-background-silver {
+    input[type=text] { background: $pale-grey !important; }
+  }
+  &.mi-pay-textbox-background-black {
+    input[type=text] { background: $black !important; }
+  }
+  &.mi-pay-textbox-background-white {
+    input[type=text] { background: $white !important; }
+  }
+
+  //  Text colors
+  &.mi-pay-textbox-text-alert {
+    input[type=text] { color: $fuschia !important; }
+  }
+  &.mi-pay-textbox-text-primary {
+    input[type=text] { color: $blue !important; }
+  }
+  &.mi-pay-textbox-text-secondary {
+    input[type=text] { color: $silver !important; }
+  }
+  &.mi-pay-textbox-text-navigation  {
+    input[type=text] { color: $grey !important; }
+  }
+  &.mi-pay-textbox-text-caution {
+    input[type=text] { color: $yellow !important; }
+  }
+  &.mi-pay-textbox-text-success {
+    input[type=text] { color: $green !important; }
+  }
+  &.mi-pay-textbox-text-dark-grey {
+    input[type=text] { color: $gunmetal !important; }
+  }
+  &.mi-pay-textbox-text-silver {
+    input[type=text] { color: $pale-grey !important; }
+  }
+  &.mi-pay-textbox-text-black {
+    input[type=text] { color: $black !important; }
+  }
+  &.mi-pay-textbox-text-white {
+    input[type=text] { color: $white !important; }
+  }
+
+  //  Textbox text size
+  &.mi-pay-textbox-font-xxxsmall {
+    input[type=text] { font-size: $font-xxxsmall !important; }
+  }
+  &.mi-pay-textbox-font-xxsmall {
+    input[type=text] { font-size: $font-xxsmall !important; }
+  }
+  &.mi-pay-textbox-font-xsmall {
+    input[type=text] { font-size: $font-xsmall !important; }
+  }
+  &.mi-pay-textbox-font-small {
+    input[type=text] { font-size: $font-small !important; }
+  }
+  &.mi-pay-textbox-font-large {
+    input[type=text] { font-size: $font-large !important; }
+  }
+  &.mi-pay-textbox-font-xlarge {
+    input[type=text] { font-size: $font-xlarge !important; }
+  }
+  &.mi-pay-textbox-font-xxlarge {
+    input[type=text] { font-size: $font-xxlarge !important; }
+  }
+  &.mi-pay-textbox-font-xxxlarge {
+    input[type=text] { font-size: $font-xxxlarge !important; }
+  }
+
+  //  Top border color
+  &.mi-pay-textbox-top-border-color-alert {
+    input[type=text] { @extend %top-border-color-alert; }
+  }
+  &.mi-pay-textbox-top-border-color-primary {
+    input[type=text] { @extend %top-border-color-primary; }
+  }
+  &.mi-pay-textbox-top-border-color-secondary {
+    input[type=text] { @extend %top-border-color-secondary; }
+  }
+  &.mi-pay-textbox-top-border-color-success {
+    input[type=text] { @extend %top-border-color-success; }
+  }
+  &.mi-pay-textbox-top-border-color-navigation {
+    input[type=text] { @extend %top-border-color-navigation; }
+  }
+  &.mi-pay-textbox-top-border-color-caution {
+    input[type=text] { @extend %top-border-color-caution; }
+  }
+  &.mi-pay-textbox-top-border-color-darkgrey {
+    input[type=text] { @extend %top-border-color-darkgrey; }
+  }
+  &.mi-pay-textbox-top-border-color-silver {
+    input[type=text] { @extend %top-border-color-silver; }
+  }
+
+  //  Top border size
+  &.mi-pay-textbox-top-border-normal   {
+    input[type=text] { @extend %top-border-normal; }
+  }
+  &.mi-pay-textbox-top-border-2px      {
+    input[type=text] { @extend %top-border-2px; }
+  }
+  &.mi-pay-textbox-top-border-4px      {
+    input[type=text] { @extend %top-border-4px; }
+  }
+  &.mi-pay-textbox-top-border-6px      {
+    input[type=text] { @extend %top-border-6px; }
+  }
+  &.mi-pay-textbox-top-border-8px      {
+    input[type=text] { @extend %top-border-8px; }
+  }
+  &.mi-pay-textbox-top-border-10px     {
+    input[type=text] { @extend %top-border-10px; }
+  }
+
+  //  Top border style
+  &.mi-pay-textbox-top-border-solid   {
+    input[type=text] { @extend %top-border-solid; }
+  }
+  &.mi-pay-textbox-top-border-double  {
+    input[type=text] { @extend %top-border-double; }
+  }
+  &.mi-pay-textbox-top-border-dashed  {
+    input[type=text] { @extend %top-border-dashed; }
+  }
+  &.mi-pay-textbox-top-border-dotted  {
+    input[type=text] { @extend %top-border-dotted; }
+  }
+
+    //  Bottom border color
+  &.mi-pay-textbox-bottom-border-color-alert       {
+    input[type=text] { @extend %bottom-border-color-alert; }
+  }
+  &.mi-pay-textbox-bottom-border-color-primary     {
+    input[type=text] { @extend %bottom-border-color-primary; }
+  }
+  &.mi-pay-textbox-bottom-border-color-secondary   {
+    input[type=text] { @extend %bottom-border-color-secondary; }
+  }
+  &.mi-pay-textbox-bottom-border-color-success     {
+    input[type=text] { @extend %bottom-border-color-success; }
+  }
+  &.mi-pay-textbox-bottom-border-color-navigation  {
+    input[type=text] { @extend %bottom-border-color-navigation; }
+  }
+  &.mi-pay-textbox-bottom-border-color-caution     {
+    input[type=text] { @extend %bottom-border-color-caution; }
+  }
+  &.mi-pay-textbox-bottom-border-color-darkgrey    {
+    input[type=text] { @extend %bottom-border-color-darkgrey; }
+  }
+  &.mi-pay-textbox-bottom-border-color-silver      {
+    input[type=text] { @extend %bottom-border-color-silver; }
+  }
+
+  //  Bottom border size
+  &.mi-pay-textbox-bottom-border-normal   {
+    input[type=text] { @extend %bottom-border-normal; }
+  }
+  &.mi-pay-textbox-bottom-border-2px      {
+    input[type=text] { @extend %bottom-border-2px; }
+  }
+  &.mi-pay-textbox-bottom-border-4px      {
+    input[type=text] { @extend %bottom-border-4px; }
+  }
+  &.mi-pay-textbox-bottom-border-6px      {
+    input[type=text] { @extend %bottom-border-6px; }
+  }
+  &.mi-pay-textbox-bottom-border-8px      {
+    input[type=text] { @extend %bottom-border-8px; }
+  }
+  &.mi-pay-textbox-bottom-border-10px     {
+    input[type=text] { @extend %bottom-border-10px; }
+  }
+
+  //  Bottom border style
+  &.mi-pay-textbox-bottom-border-solid   {
+    input[type=text] { @extend %bottom-border-solid; }
+  }
+  &.mi-pay-textbox-bottom-border-double  {
+    input[type=text] { @extend %bottom-border-double; }
+  }
+  &.mi-pay-textbox-bottom-border-dashed  {
+    input[type=text] { @extend %bottom-border-dashed; }
+  }
+  &.mi-pay-textbox-bottom-border-dotted  {
+    input[type=text] { @extend %bottom-border-dotted; }
+  }
+
+      //  Left border color
+  &.mi-pay-textbox-left-border-color-alert       {
+    input[type=text] { @extend %left-border-color-alert; }
+  }
+  &.mi-pay-textbox-left-border-color-primary     {
+    input[type=text] { @extend %left-border-color-primary; }
+  }
+  &.mi-pay-textbox-left-border-color-secondary   {
+    input[type=text] { @extend %left-border-color-secondary; }
+  }
+  &.mi-pay-textbox-left-border-color-success     {
+    input[type=text] { @extend %left-border-color-success; }
+  }
+  &.mi-pay-textbox-left-border-color-navigation  {
+    input[type=text] { @extend %left-border-color-navigation; }
+  }
+  &.mi-pay-textbox-left-border-color-caution     {
+    input[type=text] { @extend %left-border-color-caution; }
+  }
+  &.mi-pay-textbox-left-border-color-darkgrey    {
+    input[type=text] { @extend %left-border-color-darkgrey; }
+  }
+  &.mi-pay-textbox-left-border-color-silver      {
+    input[type=text] { @extend %left-border-color-silver; }
+  }
+
+  //  Left border size
+  &.mi-pay-textbox-left-border-normal   {
+    input[type=text] { @extend %left-border-normal; }
+  }
+  &.mi-pay-textbox-left-border-2px      {
+    input[type=text] { @extend %left-border-2px; }
+  }
+  &.mi-pay-textbox-left-border-4px      {
+    input[type=text] { @extend %left-border-4px; }
+  }
+  &.mi-pay-textbox-left-border-6px      {
+    input[type=text] { @extend %left-border-6px; }
+  }
+  &.mi-pay-textbox-left-border-8px      {
+    input[type=text] { @extend %left-border-8px; }
+  }
+  &.mi-pay-textbox-left-border-10px     {
+    input[type=text] { @extend %left-border-10px; }
+  }
+
+  //  Left border style
+  &.mi-pay-textbox-left-border-solid   {
+    input[type=text] { @extend %left-border-solid; }
+  }
+  &.mi-pay-textbox-left-border-double  {
+    input[type=text] { @extend %left-border-double; }
+  }
+  &.mi-pay-textbox-left-border-dashed  {
+    input[type=text] { @extend %left-border-dashed; }
+  }
+  &.mi-pay-textbox-left-border-dotted  {
+    input[type=text] { @extend %left-border-dotted; }
+  }
+
+      //  Right border color
+  &.mi-pay-textbox-right-border-color-alert       {
+    input[type=text] { @extend %right-border-color-alert; }
+  }
+  &.mi-pay-textbox-right-border-color-primary     {
+    input[type=text] { @extend %right-border-color-primary; }
+  }
+  &.mi-pay-textbox-right-border-color-secondary   {
+    input[type=text] { @extend %right-border-color-secondary; }
+  }
+  &.mi-pay-textbox-right-border-color-success     {
+    input[type=text] { @extend %right-border-color-success; }
+  }
+  &.mi-pay-textbox-right-border-color-navigation  {
+    input[type=text] { @extend %right-border-color-navigation; }
+  }
+  &.mi-pay-textbox-right-border-color-caution     {
+    input[type=text] { @extend %right-border-color-caution; }
+  }
+  &.mi-pay-textbox-right-border-color-darkgrey    {
+    input[type=text] { @extend %right-border-color-darkgrey; }
+  }
+  &.mi-pay-textbox-right-border-color-silver      {
+    input[type=text] { @extend %right-border-color-silver; }
+  }
+
+  //  Right border size
+  &.mi-pay-textbox-right-border-normal   {
+    input[type=text] { @extend %right-border-normal; }
+  }
+  &.mi-pay-textbox-right-border-2px      {
+    input[type=text] { @extend %right-border-2px; }
+  }
+  &.mi-pay-textbox-right-border-4px      {
+    input[type=text] { @extend %right-border-4px; }
+  }
+  &.mi-pay-textbox-right-border-6px      {
+    input[type=text] { @extend %right-border-6px; }
+  }
+  &.mi-pay-textbox-right-border-8px      {
+    input[type=text] { @extend %right-border-8px; }
+  }
+  &.mi-pay-textbox-right-border-10px     {
+    input[type=text] { @extend %right-border-10px; }
+  }
+
+  //  Right border style
+  &.mi-pay-textbox-right-border-solid   {
+    input[type=text] { @extend %right-border-solid; }
+  }
+  &.mi-pay-textbox-right-border-double  {
+    input[type=text] { @extend %right-border-double; }
+  }
+  &.mi-pay-textbox-right-border-dashed  {
+    input[type=text] { @extend %right-border-dashed; }
+  }
+  &.mi-pay-textbox-right-border-dotted  {
+    input[type=text] { @extend %right-border-dotted; }
+  }
+
+  //  Labels
+  &.mi-pay-label-alert {
+    label { color: $fuschia !important; }
+  }
+    &.mi-pay-label-primary {
+    label { color: $blue !important; }
+  }
+  &.mi-pay-label-secondary {
+    label { color: $silver !important; }
+  }
+  &.mi-pay-label-navigation {
+    label { color: $grey !important; }
+  }
+  &.mi-pay-label-caution {
+    label { color: $yellow !important; }
+  }
+  &.mi-pay-label-success {
+    label { color: $green !important; }
+  }
+  &.mi-pay-label-gunmetal {
+    label { color: $gunmetal !important; }
+  }
+  &.mi-pay-label-silver {
+    label { color: $pale-grey !important; }
+  }
+  &.mi-pay-label-black {
+    label { color: $black !important; }
+  }
+  &.mi-pay-label-white {
+    label { color: $white !important; }
+  }
+  &.mi-pay-label-font-xxxsmall {
+    label { font-size: $font-xxxsmall; }
+  }
+  &.mi-pay-label-font-xxsmall {
+    label { font-size: $font-xxsmall; }
+  }
+  &.mi-pay-label-font-xsmall {
+    label { font-size: $font-xsmall; }
+  }
+  &.mi-pay-label-font-small {
+    label { font-size: $font-small; }
+  }
+  &.mi-pay-label-font-large {
+    label { font-size: $font-large; }
+  }
+  &.mi-pay-label-font-xlarge {
+    label { font-size: $font-xlarge; }
+  }
+  &.mi-pay-label-font-xxlarge {
+    label { font-size: $font-xxlarge; }
+  }
+  &.mi-pay-label-font-xxxlarge {
+    label { font-size: $font-xxxlarge; }
+  }
+
+}

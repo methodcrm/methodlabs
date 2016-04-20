@@ -1,0 +1,313 @@
+//  Font colors
+$m-darkest-blue: #2B3E51;
+$m-dark-grey:  #787779;
+
+//  Primary colors
+$m-dark-blue:  #1A3048;
+$pink:  #DF3261;
+$m-grey:  #A1ACB4;
+$blue:  #5D9DD5;
+$aqua:  #6AC6B7;
+
+//  Secondary colors
+$m-purple:  #955BA5;
+$m-green:  #4FBA6F;
+$m-red:  #E43C38;
+$m-yellow:  #FED204;
+$m-orange:  #F99C23;
+$white: #FFF;
+$black: #000;
+$nav-hover: #5C98C6;
+
+//  'M' icon background color
+$m-bg: #162A3D;
+
+//  Header colors
+$app-header: #F7F9FB;
+$border-color: #E4EAF1;
+$icon-color: darken(#BDC3C7,10%);
+
+//  Right panel colors
+$right-panel: #F7F9FB;
+$right-panel-border: #E4EAF0;
+$h-color: $m-darkest-blue;
+$list-color: $m-dark-grey;
+$list-hover: #5D9DD5;
+
+//  Card colors
+$card-border: #D7DEE2;
+$card-title: #2B3E51;
+
+//  Button colors
+$oauth: #F6F5F5;
+$oauth-hover: #EDEBEB;
+
+//  Table / Grid colors
+$grid-head-font: #5D9DD5;
+
+
+//	Quickbooks
+$quickbooks : #2ca01c;
+
+$black-light-10percent : lighten($black,10%);
+$black-light-20percent : lighten($black,20%);
+$black-light-30percent : lighten($black,30%);
+$black-light-40percent : lighten($black,40%);
+$black-light-50percent : lighten($black,50%);
+
+$donor: #1FC1BC;
+
+// Dashboard colors
+$ice-blue : #d9eeff;
+$glacier-blue: #eef6fd;
+$app-deep-blue : #6694ba;
+$border-blue: #91b2cd;
+$pale-grey: #e9edf1;
+$pale-grey-drk-10percent: #D0D4D8;
+$pale-grey-drk-20percent: #B6BABE;
+$pale-grey-drk-30percent: #9DA1A5;
+$pale-grey-drk-40percent: #83878B;
+$pale-grey-hover : #dce2e8;
+$pale-grey-border : #b6c5d3;
+$rating-gold : #fbb600;
+
+//	Older stuff
+$sub-nav-blue : #8ab3d1;
+$app-block-blue :#cfe8fb;
+$app-block-drkblue : #81abcb;
+
+
+$drk-grey 	 : $m-dark-grey;
+$defaultText : $m-dark-grey; 			// Default blue grey
+
+$grey 		 : $m-grey;				// Default blue grey
+
+$grey-light-10percent : lighten($m-grey, 10%);
+$grey-light-20percent : lighten($m-grey, 20%);
+$grey-light-30percent : lighten($m-grey, 30%);
+$grey-light-40percent : lighten($m-grey, 40%);
+$grey-light-50percent : lighten($m-grey, 50%);
+
+$grey-dark-10percent : darken($m-grey, 10%);
+$grey-dark-20percent : darken($m-grey, 20%);
+$grey-dark-30percent : darken($m-grey, 30%);
+
+//	Red
+
+$fuschia : $pink;
+
+$fuschia-light-10percent : lighten($pink,10%);
+$fuschia-light-20percent : lighten($pink,20%);
+$fuschia-light-30percent : lighten($pink,30%);
+$fuschia-light-40percent : lighten($pink,40%);
+$fuschia-light-50percent : lighten($pink,50%);
+
+$fuschia-dark-10percent : darken($pink,10%);
+$fuschia-dark-20percent : darken($pink,20%);
+$fuschia-dark-30percent : darken($pink,30%);
+$fuschia-dark-40percent : darken($pink,40%);
+$fuschia-dark-50percent : darken($pink,50%);
+
+// teal - TODO - add % lightens
+$teal : $aqua;
+
+$teal-light-10percent : lighten($aqua,10%);
+$teal-light-20percent : lighten($aqua,20%);
+$teal-light-30percent : lighten($aqua,30%);
+$teal-light-40percent : lighten($aqua,40%);
+$teal-light-50percent : lighten($aqua,50%);
+
+$teal-dark-10percent : darken($aqua,10%);
+$teal-dark-20percent : darken($aqua,20%);
+$teal-dark-30percent : darken($aqua,30%);
+$teal-dark-40percent : darken($aqua,40%);
+$teal-dark-50percent : darken($aqua,50%);
+
+//	Blues
+
+$blue : $blue;
+
+$blue-light-10percent : lighten($blue, 10%);
+$blue-light-20percent : lighten($blue, 20%);
+$blue-light-30percent : lighten($blue, 30%);
+$blue-light-40percent : lighten($blue, 40%);
+$blue-light-50percent : lighten($blue, 50%);
+
+$blue-dark-10percent : darken($blue, 10%);
+$blue-dark-20percent : darken($blue, 20%);
+$blue-dark-30percent : darken($blue, 30%);
+$blue-dark-40percent : darken($blue, 40%);
+$blue-dark-50percent : darken($blue, 50%);
+
+// Light Blue
+
+$light-blue : $blue-light-10percent;
+
+$light-blue-10percent : $blue-light-10percent;
+$light-blue-20percent : $blue-light-20percent;
+$light-blue-30percent : $blue-light-30percent;
+$light-blue-40percent : $blue-light-40percent;
+$light-blue-50percent : $blue-light-50percent;
+
+$light-blue-dark-10percent : #1B7FC2;
+$light-blue-dark-20percent : #0165A8;
+$light-blue-dark-30percent : #004C8F;
+$light-blue-dark-40percent : #003275;
+
+//	Silver - Really grey
+
+$silver : $m-grey;
+
+$silver-light-10percent : lighten($m-grey, 10%);
+$silver-light-20percent : lighten($m-grey, 20%);
+$silver-light-30percent : lighten($m-grey, 30%);
+
+$silver-dark-10percent : darken($m-grey, 10%);
+$silver-dark-20percent : darken($m-grey, 20%);
+$silver-dark-30percent : darken($m-grey, 30%);
+$silver-dark-40percent : darken($m-grey, 40%);
+$silver-dark-50percent : darken($m-grey, 50%);
+
+//	AppHeader - Really silver
+
+$true-silver : $app-header;
+
+$true-silver-light-10percent : lighten($app-header, 10%);
+$true-silver-light-20percent : lighten($app-header, 20%);
+$true-silver-light-30percent : lighten($app-header, 30%);
+
+$true-silver-dark-10percent : darken($app-header, 10%);
+$true-silver-dark-20percent : darken($app-header, 20%);
+$true-silver-dark-30percent : darken($app-header, 30%);
+$true-silver-dark-40percent : darken($app-header, 40%);
+$true-silver-dark-50percent : darken($app-header, 50%);
+
+//	Gunmetal
+
+$gunmetal : $m-dark-grey;
+
+$gunmetal-light-10percent : lighten($m-dark-grey, 10%);
+$gunmetal-light-20percent : lighten($m-dark-grey, 20%);
+$gunmetal-light-30percent : lighten($m-dark-grey, 30%);
+
+$gunmetal-dark-10percent : darken($m-dark-grey, 10%);
+$gunmetal-dark-20percent : darken($m-dark-grey, 20%);
+$gunmetal-dark-30percent : darken($m-dark-grey, 30%);
+$gunmetal-dark-40percent : darken($m-dark-grey, 40%);
+$gunmetal-dark-50percent : darken($m-dark-grey, 50%);
+
+// 	Content boxes
+//	Edit screens etc.
+
+$light-grey-blue : #e7eaec;
+
+$light-grey-blue-light10: lighten($light-grey-blue, 10%);
+$light-grey-blue-light20: lighten($light-grey-blue, 20%);
+$light-grey-blue-light30: lighten($light-grey-blue, 30%);
+
+$light-grey-blue-dark10: darken($light-grey-blue, 10%);
+$light-grey-blue-dark20: darken($light-grey-blue, 30%);
+$light-grey-blue-dark30: darken($light-grey-blue, 30%);
+$light-grey-blue-dark40: darken($light-grey-blue, 40%);
+$light-grey-blue-dark50: darken($light-grey-blue, 50%);
+
+$drk-silver  : $silver-dark-10percent;
+$drkr-silver : $silver-dark-20percent;
+
+$drk-gunmetal :$gunmetal-dark-10percent;
+
+
+// Purple
+
+$purple : $m-purple;
+
+$purple-light-10percent : #D84FF7;
+$purple-light-20percent : #F168FF;
+$purple-light-30percent : #FF82FF;
+$purple-light-40percent : #FF9BFF;
+$purple-light-50percent : #FFB4FF;
+
+$purple-dark-10percent : #A51CC4;
+$purple-dark-20percent : #8B02AA;
+$purple-dark-30percent : #720091;
+$purple-dark-40percent : #580077;
+
+
+// Turquoise
+
+$turquoise : #34E0C2;
+
+$turquoise-light-10percent : #4EFADC;
+$turquoise-light-20percent : #67FFF5;
+$turquoise-light-30percent : #81FFFF;
+$turquoise-light-40percent : #9AFFFF;
+$turquoise-light-50percent : #B3FFFF;
+
+$turquoise-dark-10percent : #1BC7A9;
+$turquoise-dark-20percent : #01AD8F;
+$turquoise-dark-30percent : #009476;
+$turquoise-dark-40percent : #007A5C;
+
+//	Green
+
+$green : #1ABC9C;
+
+$green-light-10percent : #34D6B6;
+$green-light-20percent : #4DEFCF;
+$green-light-30percent : #67FFE9;
+$green-light-40percent : #80FFFF;
+$green-light-50percent : #99FFFF;
+
+$green-dark-10percent : #01A383;
+$green-dark-20percent : #008969;
+$green-dark-30percent : #007050;
+$green-dark-40percent : #005636;
+
+
+// Light Green
+
+$light-green : #2ECC71;
+
+$light-green-light-10percent : #48E68B;
+$light-green-light-20percent : #61FFA4;
+$light-green-light-30percent : #7BFFBE;
+$light-green-light-40percent : #94FFD7;
+$light-green-light-50percent : #ADFFF0;
+
+$light-green-dark-10percent : #15B358;
+$light-green-dark-20percent : #00993E;
+$light-green-dark-30percent : #008025;
+$light-green-dark-40percent : #00660B;
+$light-green-dark-50percent : #004D00;
+
+// Yellow
+
+$yellow : #F1D52F;
+
+$yellow-light-10percent : #FFEF49;
+$yellow-light-20percent : #FFFF62;
+$yellow-light-30percent : #FFFF7C;
+$yellow-light-40percent : #FFFF95;
+$yellow-light-50percent : #FFFFAE;
+
+$yellow-dark-10percent : #D8BC16;
+$yellow-dark-20percent : #BEA200;
+$yellow-dark-30percent : #A58900;
+$yellow-dark-40percent : #8B6F00;
+
+
+// Orange
+
+
+$orange : #faa32f;
+
+$orange-light-10percent : #FFBD49;
+$orange-light-20percent : #FFD662;
+$orange-light-30percent : #FFF07C;
+$orange-light-40percent : #FFFF95;
+$orange-light-50percent : #FFFFAE;
+
+$orange-dark-10percent : #E18A16;
+$orange-dark-20percent : #C77000;
+$orange-dark-30percent : #AE5700;
+$orange-dark-40percent : #943D00;

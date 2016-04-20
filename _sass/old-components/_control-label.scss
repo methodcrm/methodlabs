@@ -1,0 +1,121 @@
+/* TEXT/LABEL */
+/* this is to have 3 text objects beside eachother appear readable */
+div[method_type=LBL] p,
+div[method_type=LBL] h1,
+div[method_type=LBL] h3,
+div[method_type=LBL] h4,
+div[method_type=LBL] h5
+{
+  margin-right:.40em;
+}
+
+div[method_type=LBL] {
+
+  p, h1 {
+    &.mi-label {
+      margin-left:0 !important;
+
+      &.Left {
+        margin-right: 4px;
+
+        &:before {
+          margin-right: 4px;
+        }
+      }
+      &.Right {
+        float: right;
+        margin-left: 4px;
+
+        &:after {
+          margin-left: 4px;
+        }
+      }
+        &.mi-caption-grey { color: $m-grey !important; a{ color:inherit !important} }
+		&.mi-caption-dark-grey { color: $m-dark-grey !important;  a{ color:inherit !important}}
+		&.mi-caption-navigation { color: $m-dark-blue !important; a{ color:inherit !important}}
+		&.mi-caption-alert { color: $m-red !important;  a{ color:inherit !important}}
+		&.mi-caption-pink { color: $pink !important;  a{ color:inherit !important}}
+		&.mi-caption-purple { color: $m-purple !important;  a{ color:inherit !important}}
+		&.mi-caption-primary { color: $blue !important;  a{ color:inherit !important}}
+		&.mi-caption-aqua { color: $aqua !important;  a{ color:inherit !important}}
+		&.mi-caption-success { color: $m-green !important;  a{ color:inherit !important}}
+		&.mi-caption-yellow { color: $m-yellow !important;  a{ color:inherit !important}}
+		&.mi-caption-caution { color: $m-orange !important;  a{ color:inherit !important}}
+		&.mi-caption-black { color: $black !important;  a{ color:inherit !important}}
+		&.mi-caption-white { color: $white !important;  a{ color:inherit !important}}
+
+      a
+       {
+        color: $blue;
+      }
+
+      a,
+      &:after {
+        -webkit-font-smoothing: auto !important;
+        -moz-osx-font-smoothing: auto !important;
+      }
+    }
+
+    a{
+      color: $blue;
+    }
+
+      a,
+    &:after {
+      -webkit-font-smoothing: auto !important;
+      -moz-osx-font-smoothing: auto !important;
+    }
+
+    &.mi-icon-color-alert {
+      i {
+        color: $fuschia !important;
+      }
+    }
+    &.mi-icon-color-primary {
+      i {
+        color: $blue !important;
+      }
+    }
+    &.mi-icon-color-secondary {
+      i {
+        color: $silver !important;
+      }
+    }
+    &.mi-icon-color-navigation {
+      i {
+        color: $grey !important;
+      }
+    }
+    &.mi-icon-color-caution {
+      i {
+        color: $yellow !important;
+      }
+    }
+    &.mi-icon-color-success {
+      i {
+        color: $green !important;
+      }
+    }
+    &.mi-icon-color-darkgrey {
+      i {
+        color: $gunmetal !important;
+      }
+    }
+    &.mi-icon-color-silver {
+      i {
+        color: $pale-grey !important;
+      }
+    }
+    &.mi-icon-color-black {
+      i {
+        color: $black !important;
+      }
+    }
+    &.mi-icon-color-white {
+      i {
+        color: $white !important;
+      }
+    }
+  }
+
+}

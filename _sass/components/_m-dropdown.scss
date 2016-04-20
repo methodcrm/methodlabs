@@ -1,0 +1,555 @@
+div[method_type="DRP"] {
+  .mi-caption {
+    display: block !important;
+    line-height: 1em;
+  }
+}
+
+.mi-autocomplete {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 0 1rem 0;
+
+  .mi-autocomplete-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    input.mi-autocomplete-input-sim[disabled="disabled"] {
+      border-color: #ccc !important;
+      background-color: $white;
+      opacity: 1;
+      color: $black;
+    }
+
+    input {
+      display: block;
+      padding-right: 35px;
+      width: 100%;
+      height: 34px !important;
+      margin-bottom: 0;
+    }
+
+    input[readonly] {
+      background: $white;
+      cursor: pointer;
+    }
+
+    i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-align: center;
+      vertical-align: middle;
+      width: 35px;
+      height: 100%;
+      // top: 14px;
+      // right: 10px;
+      z-index: 1;
+      font-size: 12px;
+      cursor: pointer;
+      color: $dark-grey;
+
+      &:before{ 
+        position: relative;
+        top: 12px;
+      }
+    }
+  }
+
+  .mi-autocomplete-results {
+    display: none;
+    position: absolute;
+    margin-top: 1px;
+    width: 100%;
+    border: 1px solid $card-border;
+    background: $white;
+    z-index: 10;
+    max-height: 250px;
+    min-width: 180px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 5000;
+    -webkit-overflow-scrolling: touch;
+
+    &.open {
+      display: block;
+    }
+
+    .add-item {
+      color: $blue;
+      display: block;
+      padding: 10px;
+      text-align: right;
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    .loading {
+      display: block;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      border-top: 1px solid $card-border;
+    }
+
+    ul {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      list-style-type: none;
+
+      li {
+        color: $dark-grey;
+        padding: 0 10px;
+
+        &.hidden {
+          display: none;
+        }
+
+        &:first-child div {
+          border-top: 0 !important;
+        }
+        &:last-child div {
+          border-bottom: 0 !important;
+        }
+
+        &:hover,
+        &.active,
+        &.selected {
+          color: $white !important;
+          background-color: $blue;
+
+          div {
+            color: $white !important;
+
+            &.divider {
+              border-top: 1px solid $blue;
+            }
+
+            small {
+              color: $white !important;
+            }
+          }
+        }
+
+        &.active.ui-li-has-icon,
+        &.selected.ui-li-has-icon {
+          i.ui-li-icon.mi-icon-square-filled.icon-swatch {
+            color: $dark-grey;
+          }
+        }
+
+        &.selected2 {
+          color: $white !important;
+          background-color: $card-border;
+
+          div {
+            color: $white !important;
+
+            &.divider {
+              border-top: 1px solid $card-border;
+            }
+
+            small {
+              color: $white !important;
+            }
+          }
+        }
+
+        div {
+          display: block;
+          padding: 5px 0;
+          cursor: pointer;
+          color: $dark-grey;
+          text-align: left;
+          min-height: 22px;
+
+          .mi-autocomplte-list-label {
+            padding: 0;
+          }
+
+          &.divider {
+            border-top: 1px solid $card-border;
+          }
+
+          small {
+            display: block;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    &.has-custom-row-click {
+      ul li div.divider {
+        border-top: 1px solid $card-border !important;
+      }
+    }
+  }
+}
+
+// Text Colors
+.mi-autocomplete-text-grey { 
+  &.icon-swatch { color: $grey }
+  input { color: $grey; } 
+  ul li { 
+    color: $grey !important; 
+    div { color: $grey !important; } 
+  }
+}
+.mi-autocomplete-text-darkgrey { 
+  &.icon-swatch { color: $dark-grey }
+  input { color: $dark-grey; } 
+  ul li { 
+    color: $dark-grey !important; 
+    div { color: $dark-grey !important; } 
+  }
+}
+.mi-autocomplete-text-navigation { 
+  &.icon-swatch { color: $dark-blue }
+  input { color: $dark-blue; } 
+  ul li { 
+    color: $dark-blue !important; 
+    div { color: $dark-blue !important; } 
+  }
+}
+.mi-autocomplete-text-alert { 
+  &.icon-swatch { color: $red }
+  input { color: $red; } 
+  ul li { 
+    color: $red !important; 
+    div { color: $red !important; } 
+  }
+}
+.mi-autocomplete-text-pink { 
+  &.icon-swatch { color: $pink }
+  input { color: $pink; } 
+  ul li { 
+    color: $pink !important; 
+    div { color: $pink !important; } 
+  }
+}
+.mi-autocomplete-text-purple { 
+  &.icon-swatch { color: $purple }
+  input { color: $purple; } 
+  ul li { 
+    color: $purple !important; 
+    div { color: $purple !important; } 
+  }
+}
+.mi-autocomplete-text-primary { 
+  &.icon-swatch { color: $list-hover }
+  input { color: $list-hover; } 
+  ul li { 
+    color: $list-hover !important; 
+    div { color: $list-hover !important; } 
+  }
+}
+.mi-autocomplete-text-aqua { 
+  &.icon-swatch { color: $aqua }
+  input { color: $aqua; } 
+  ul li { 
+    color: $aqua !important; 
+    div { color: $aqua !important; } 
+  }
+}
+.mi-autocomplete-text-success { 
+  &.icon-swatch { color: $green }
+  input { color: $green; } 
+  ul li { 
+    color: $green !important; 
+    div { color: $green !important; } 
+  }
+}
+.mi-autocomplete-text-yellow { 
+  &.icon-swatch { color: $yellow }
+  input { color: $yellow; } 
+  ul li { 
+    color: $yellow !important; 
+    div { color: $yellow !important; } 
+  }
+}
+.mi-autocomplete-text-caution { 
+  &.icon-swatch { color: $orange }
+  input { color: $orange; } 
+  ul li { 
+    color: $orange !important; 
+    div { color: $orange !important; } 
+  }
+}
+.mi-autocomplete-text-black { 
+  &.icon-swatch { color: $black }
+  input { color: $black; } 
+  ul li { 
+    color: $black !important; 
+    div { color: $black !important; } 
+  }
+}
+.mi-autocomplete-text-white { 
+  &.icon-swatch { color: $white; border: 1px dashed $grey; }
+  input { color: $white; } 
+  ul li { 
+    background-color: $dark-grey;
+    color: $white !important; 
+    div { color: $white !important; } 
+  }
+}
+
+// Background Colors
+.mi-autocomplete-bkgrnd-grey { 
+  &.icon-swatch { color: $grey }
+  input { background-color: $grey; } 
+}
+.mi-autocomplete-bkgrnd-darkgrey { 
+  &.icon-swatch { color: $dark-grey }
+  input { background-color: $dark-grey; } 
+}
+.mi-autocomplete-bkgrnd-navigation { 
+  &.icon-swatch { color: $dark-blue }
+  input { background-color: $dark-blue; } 
+}
+.mi-autocomplete-bkgrnd-alert { 
+  &.icon-swatch { color: $red }
+  input { background-color: $red; } 
+}
+.mi-autocomplete-bkgrnd-pink { 
+  &.icon-swatch { color: $pink }
+  input { background-color: $pink; } 
+}
+.mi-autocomplete-bkgrnd-purple { 
+  &.icon-swatch { color: $purple }
+  input { background-color: $purple; } 
+}
+.mi-autocomplete-bkgrnd-primary { 
+  &.icon-swatch { color: $list-hover }
+  input { background-color: $list-hover; } 
+}
+.mi-autocomplete-bkgrnd-aqua { 
+  &.icon-swatch { color: $aqua }
+  input { background-color: $aqua; } 
+}
+.mi-autocomplete-bkgrnd-success { 
+  &.icon-swatch { color: $green }
+  input { background-color: $green; } 
+}
+.mi-autocomplete-bkgrnd-yellow { 
+  &.icon-swatch { color: $yellow }
+  input { background-color: $yellow; } 
+}
+.mi-autocomplete-bkgrnd-caution { 
+  &.icon-swatch { color: $orange }
+  input { background-color: $orange; } 
+}
+.mi-autocomplete-bkgrnd-black { 
+  &.icon-swatch { color: $black }
+  input { background-color: $black; } 
+}
+.mi-autocomplete-bkgrnd-white { 
+  &.icon-swatch { color: $white; border: 1px dashed $grey; }
+  input { background-color: $white; } 
+}
+
+.mi-autocomplete-mobile-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $white;
+  z-index: 19000;
+
+  &.open {
+    display: block;
+  }
+
+  .mi-autocomplete-mobile-wrapper {
+    display: block;
+    position: relative;
+    height: 100%;
+
+    .mi-autocomplete-mobile-header {
+      position: relative;
+      display: block;
+      height: 44px;
+      border-bottom: 1px solid $card-border;
+
+      h1 {
+        display: block;
+        text-align: center;
+        margin: 0 60px;
+        padding: 0;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1.4em !important;
+        color: $darkest-blue;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      button {
+        position: absolute;
+        top: 10px;
+        left: 5px;
+      }
+    }
+
+    .mi-autocomplete-mobile-search {
+      position: relative;
+      border-bottom: 1px solid $card-border;
+
+      input {
+        display: block;
+        width: 100%;
+        border: 0;
+        padding-right: 30px;
+        margin-bottom: 0;
+
+        &:focus {
+          border: 0;
+        }
+      }
+
+      i {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+      }
+    }
+
+    .mi-autocomplete-mobile-results {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .mi-autocomplete-mobile-custom-row {
+        display: block;
+        text-align: right;
+        padding: 8px;
+        color: $blue;
+        font-size: 14px;
+        border-bottom: 1px solid $card-border;
+      }
+
+      .loading {
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid $card-border;
+      }
+
+      ul {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 80px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: $white;
+        margin: 0;
+        -webkit-overflow-scrolling: touch;
+        list-style: none;
+        list-style-type: none;
+
+        &.has-loader {
+          top: 35px;
+        }
+
+        &.has-custom-row-click {
+          top: 31px;
+
+          &.has-loader {
+            top: 66px;
+          }
+        }
+
+        li {
+          color: $dark-grey;
+          padding: 0 10px;
+
+          &.hidden {
+            display: none;
+          }
+
+          &:last-child div {
+            border-bottom: 0 !important;
+          }
+
+          &.active,
+          &.selected {
+            color: $white !important;
+            background-color: $blue;
+
+            div {
+              color: $white !important;
+
+              &.divider {
+                border-bottom: 1px solid $blue;
+              }
+
+              small {
+                color: $white !important;
+              }
+            }
+          }
+
+          &.selected2 {
+            color: $white !important;
+            background-color: $card-border;
+
+            div {
+              color: $white !important;
+
+              &.divider {
+                border-bottom: 1px solid $card-border;
+              }
+
+              small {
+                color: $white !important;
+              }
+            }
+          }
+
+          div {
+            display: block;
+            padding: 5px 0;
+            cursor: pointer;
+            color: $dark-grey;
+
+            .mi-autocomplte-list-label {
+              padding: 0;
+            }
+
+            &.divider {
+              border-bottom: 1px solid $card-border;
+            }
+
+            small {
+              display: block;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mi-autocomplete-results ul li.ui-li-has-icon,
+.mi-autocomplete-mobile-results ul li.ui-li-has-icon {
+  .icon-left {
+    float: left;
+    margin-right: 5px;
+  }
+}

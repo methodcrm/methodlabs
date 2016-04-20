@@ -1,0 +1,27 @@
+
+<form action="/search" method="get">
+    <input type="text" id="search-query" class="search-box" name="q" placeholder="Search" autocomplete="off">
+</form>
+<!-- Search Form END ^^ -->
+
+<section id="search-results" class="search-results" style="display: none;"> 
+	{% raw %}
+		<script id="search-results-template" type="text/mustache">
+			{{#entries}}
+				
+			    <article>
+			    	<h3>
+			        	<a href="{{url}}">{{title}}</a>
+			      	</h3>
+			      	{{#is_post}}
+			      		<ul class="tag-list">
+			        		{{#tags}}<li>{{.}} </li>{{/tags}}
+			      		</ul>
+			      	{{/is_post}}
+			    </article>
+			   
+		  	{{/entries}}
+		</script>
+	{% endraw %}
+</section>
+<!-- Search results container END ^^ -->

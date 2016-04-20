@@ -1,0 +1,29 @@
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon.ico and apple-touch-icon.png in root directory -->
+        <link rel="stylesheet" href="/css/foundation.css" media="screen">
+    </head>
+    <body>
+        <div class="grid-frame">
+            <div class="grid-block large-16">
+                <aside class="grid-content nav-bar medium-2">
+                    {% include nav.html nav=site.data.menu %}
+                </aside>
+                <section class="grid-content medium-14">
+                    <header class="small-16 medium-16 large-16 style-header">
+                        {% include search.html %} 
+                    </header>
+                    {{ content }}
+                </section>
+            </div>
+        </div>
+        {% include scripts.html %}
+    </body>
+</html>

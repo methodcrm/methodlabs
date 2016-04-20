@@ -1,0 +1,2257 @@
+@import "m-grid-search";
+
+.mi-external-links .control {
+    display: block;
+}
+
+//  This is where all the grid magic happens
+
+.mi-input-label {
+    font-size: 1.2em;
+}
+
+.mi-caption {
+    @extend %mi-caption;
+    font-size:1.2em;
+}
+
+[method_type="GRD"][style="width:100%;"] {
+    .searchbar-inner {
+        @include breakpoint(large) {
+            width: 50% !important;
+        } 
+    }
+}
+
+
+
+.mi-grid {
+
+    width:100%;
+	@include boxSizing;
+    @include borderRadius;
+    background:$white;
+    float:left;
+    //border:1px solid $grey;
+    color:$grey;
+    position:relative;
+    //padding: 0.15em 0.5em 0.5em 0.5em !important;
+    @include breakpoint(medium) {
+        margin-bottom:1em;
+    }
+
+    @include breakpoint(small only) { float:none; }
+    .mobilePreview & { float: none; }
+
+    //  Preferences container 
+
+    .system-page-right-content & {
+        min-height: 250px;
+    }
+
+    &:after {
+        @include breakpoint(small only) {
+           content: "";
+            display: block;
+            height: 0; 
+            clear: both; 
+        }
+        .mobilePreview & {
+           content: "";
+            display: block;
+            height: 0; 
+            clear: both; 
+        }
+    }
+
+    
+
+    //  Form elements
+    .mi-grid-page-input {
+        //@extend .mi-textbox !optional;
+        //width: 3em !important;
+        text-align:center;
+        float:none !important;
+        display:inline-block; //RP Ticket#698 need to hide this sometimes with inline display none, used to be !important;
+        margin: 0.25em !important;
+        max-width: 70px;
+        @include breakpoint(small only) {
+            width: 2.5em;
+            padding-left: 0;
+            padding-right:0;
+        }
+        .mobilePreview & {
+            width: 2.5em;
+            padding-left: 0;
+            padding-right:0;
+        }
+    }
+
+    //  Borders
+
+    &.mi-grid-left-border-dashed  { @extend %left-border-dashed; }
+    &.mi-grid-left-border-dotted  { @extend %left-border-dotted; }
+    &.mi-grid-left-border-solid   { @extend %left-border-solid; }
+    &.mi-grid-left-border-double  { @extend %left-border-double; }
+    &.mi-grid-left-border-none    { @extend %left-border-none; }
+
+    &.mi-grid-right-border-dashed     { @extend %right-border-dashed; }
+    &.mi-grid-right-border-dotted     { @extend %right-border-dotted; }
+    &.mi-grid-right-border-solid      { @extend %right-border-solid; }
+    &.mi-grid-right-border-double     { @extend %right-border-double; }
+    &.mi-grid-right-border-none       { @extend %right-border-none; }
+
+    &.mi-grid-top-border-dotted   { @extend %top-border-dotted; }
+    &.mi-grid-top-border-solid    { @extend %top-border-solid; }
+    &.mi-grid-top-border-double   { @extend %top-border-double; }
+    &.mi-grid-top-border-none     { @extend %top-border-none; }
+
+    &.mi-grid-bottom-border-dashed    { @extend %bottom-border-dashed; }
+    &.mi-grid-bottom-border-dotted    { @extend %bottom-border-dotted; }
+    &.mi-grid-bottom-border-solid     { @extend %bottom-border-solid; }
+    &.mi-grid-bottom-border-double    { @extend %bottom-border-double; }
+    &.mi-grid-bottom-border-none      { @extend %bottom-border-none; }
+
+
+    //  Border width
+        
+    &.mi-grid-left-border-10px    { @extend %left-border-10px; }
+    &.mi-grid-left-border-8px     { @extend %left-border-8px; }
+    &.mi-grid-left-border-6px     { @extend %left-border-6px; }
+    &.mi-grid-left-border-4px     { @extend %left-border-4px; }
+    &.mi-grid-left-border-2px     { @extend %left-border-2px; }
+    &.mi-grid-left-border-normal  { @extend %left-border-normal; }
+
+    &.mi-grid-right-border-10px       { @extend %right-border-10px; }
+    &.mi-grid-right-border-8px        { @extend %right-border-8px; }
+    &.mi-grid-right-border-6px        { @extend %right-border-6px; }
+    &.mi-grid-right-border-4px        { @extend %right-border-4px; }
+    &.mi-grid-right-border-2px        { @extend %right-border-2px; }
+    &.mi-grid-right-border-normal     { @extend %right-border-normal; }
+
+    &.mi-grid-top-border-10px         { @extend %top-border-10px; }
+    &.mi-grid-top-border-8px          { @extend %top-border-8px; }
+    &.mi-grid-top-border-6px          { @extend %top-border-6px; }
+    &.mi-grid-top-border-4px          { @extend %top-border-4px; }
+    &.mi-grid-top-border-2px          { @extend %top-border-2px; }
+    &.mi-grid-top-border-normal       { @extend %top-border-normal; }
+
+    &.mi-grid-bottom-border-10px      { @extend %bottom-border-10px; }
+    &.mi-grid-bottom-border-8px       { @extend %bottom-border-8px; }
+    &.mi-grid-bottom-border-6px       { @extend %bottom-border-6px; }
+    &.mi-grid-bottom-border-4px       { @extend %bottom-border-4px; }
+    &.mi-grid-bottom-border-2px       { @extend %bottom-border-2px; }
+    &.mi-grid-bottom-border-normal    { @extend %bottom-border-normal; }
+
+    //  Border color
+
+    &.mi-grid-top-border-color-alert          { @extend %top-border-color-alert; }
+    &.mi-grid-left-border-color-alert         { @extend %left-border-color-alert; }
+    &.mi-grid-right-border-color-alert        { @extend %right-border-color-alert; }
+    &.mi-grid-bottom-border-color-alert       { @extend %bottom-border-color-alert; }
+
+    &.mi-grid-top-border-color-primary        { @extend %top-border-color-primary; }
+    &.mi-grid-left-border-color-primary       { @extend %left-border-color-primary; }
+    &.mi-grid-right-border-color-primary      { @extend %right-border-color-primary; }
+    &.mi-grid-bottom-border-color-primary     { @extend %bottom-border-color-primary; }
+
+    &.mi-grid-top-border-color-secondary      { @extend %top-border-color-secondary; }
+    &.mi-grid-left-border-color-secondary     { @extend %left-border-color-secondary; }
+    &.mi-grid-right-border-color-secondary    { @extend %right-border-color-secondary; }
+    &.mi-grid-bottom-border-color-secondary   { @extend %bottom-border-color-secondary; }
+
+    &.mi-grid-top-border-color-navigation     { @extend %top-border-color-navigation; }
+    &.mi-grid-left-border-color-navigation    { @extend %left-border-color-navigation; }
+    &.mi-grid-right-border-color-navigation   { @extend %right-border-color-navigation; }
+    &.mi-grid-bottom-border-color-navigation  { @extend %bottom-border-color-navigation; }
+
+    &.mi-grid-top-border-color-caution        { @extend %top-border-color-caution; }
+    &.mi-grid-left-border-color-caution       { @extend %left-border-color-caution; }
+    &.mi-grid-right-border-color-caution      { @extend %right-border-color-caution; }
+    &.mi-grid-bottom-border-color-caution     { @extend %bottom-border-color-caution; }
+
+    &.mi-grid-top-border-color-success        { @extend %top-border-color-success; }
+    &.mi-grid-left-border-color-success       { @extend %left-border-color-success; }
+    &.mi-grid-right-border-color-success      { @extend %right-border-color-success; }
+    &.mi-grid-bottom-border-color-success     { @extend %bottom-border-color-success; }
+
+    &.mi-grid-top-border-color-darkgrey       { @extend %top-border-color-darkgrey; }
+    &.mi-grid-left-border-color-darkgrey      { @extend %left-border-color-darkgrey; }
+    &.mi-grid-right-border-color-darkgrey     { @extend %right-border-color-darkgrey; }   
+    &.mi-grid-bottom-border-color-darkgrey    { @extend %bottom-border-color-darkgrey; }
+
+    &.mi-grid-top-border-color-silver         { @extend %top-border-color-silver; }
+    &.mi-grid-left-border-color-silver        { @extend %left-border-color-silver; }
+    &.mi-grid-right-border-color-silver       { @extend %right-border-color-silver; }
+    &.mi-grid-bottom-border-color-silver      { @extend %bottom-border-color-silver; }
+
+    &.mi-grid-top-border-color-none           { @extend %top-border-color-none; }
+    &.mi-grid-left-border-color-none          { @extend %top-border-color-none; }
+    &.mi-grid-right-border-color-none         { @extend %top-border-color-none; }
+    &.mi-grid-bottom-border-color-none        { @extend %top-border-color-none; }
+
+    //  Font Colors
+
+    // &.mi-grid-font-alert {
+    //     table {
+    //         color: $pink !important;
+    //     }
+    // }
+    // &.mi-grid-font-primary {
+    //     table {
+    //         color: $blue !important;
+    //     }
+    // }
+    // &.mi-grid-font-secondary {
+    //     table {
+    //         color: $silver !important;
+    //     }
+    // }    
+    // &.mi-grid-font-navigation {
+    //     table {
+    //         color: $grey !important;
+    //     }
+    // }
+    // &.mi-grid-font-caution {
+    //     table {
+    //         color: $yellow !important;
+    //     }
+    // }    
+    // &.mi-grid-font-success {
+    //     table {
+    //         color: $green !important;
+    //     }
+    // }
+    // &.mi-grid-font-dark-grey {
+    //     table {
+    //         color: $gunmetal !important;
+    //     }
+    // }
+    // &.mi-grid-font-grey {
+    //     table {
+    //         color: $silver !important;
+    //     }
+    // }
+    // &.mi-grid-font-white {
+    //     table {
+    //         color: $white !important;
+    //     }
+    // }
+    // &.mi-grid-font-black {
+    //     table {
+    //         color: $black !important;
+    //     }
+    // }
+
+    //  Even row background colors
+    
+    // &.mi-grid-row-even-alert {
+    //     .mi-grid-table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $pink !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-primary {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $blue !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-secondary {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $silver !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-navigation {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $grey !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-caution {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $yellow !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-success {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $green !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-dark-grey {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $gunmetal !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-grey {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $silver !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-white {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: $white !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-even-none {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: transparent !important;
+    //             }
+    //         }
+    //     }
+    // }
+
+
+    //  Odd row background colors
+
+    // &.mi-grid-row-odd-alert {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $pink !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-primary {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $blue !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-secondary {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $silver !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-navigation {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $grey !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-caution {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $yellow !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-success {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $green !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-dark-grey {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $gunmetal !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-grey {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $silver !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-white {
+    //     table {
+    //         tr {
+    //             &:nth-child(odd) {
+    //                 background: $white !important;
+    //             }
+    //         }
+    //     }
+    // }
+    // &.mi-grid-row-odd-none {
+    //     table {
+    //         tr {
+    //             &:nth-child(even) {
+    //                 background: transparent !important;
+    //             }
+    //         }
+    //     }
+    // }
+    //  Grid Table Body Font Sizes
+
+    &.mi-grid-font-xxxlarge     { 
+        .mi-grid-body {font-size: $h1-size !important;} 
+    }   
+    &.mi-grid-font-xxlarge      { 
+        .mi-grid-body {font-size: $h2-size !important; }
+    }
+    &.mi-grid-font-xlarge       { 
+        .mi-grid-body {font-size: $h3-size !important; }
+    }
+    &.mi-grid-font-large        { 
+        .mi-grid-body {font-size: $h4-size !important; }
+    }
+    &.mi-grid-font-normal       { 
+        .mi-grid-body {font-size: $base-font-size !important; }
+    }
+    &.mi-grid-font-small        { 
+        .mi-grid-body {font-size: 12px !important; }
+    }
+    &.mi-grid-font-xsmall       { 
+        .mi-grid-body {font-size: 10px !important; }
+    }
+    &.mi-grid-font-xxsmall      { 
+        .mi-grid-body {font-size: 8px !important; }
+    }
+    &.mi-grid-font-xxxsmall     { 
+        .mi-grid-body {font-size: 6px !important; }
+    }
+
+
+
+    // Grid Table
+
+    .mi-grid-table {
+        width: 100%;
+        //  commenting out because border-collapse causing issues.
+        // border-collapse: separate;
+        // border-spacing: 0;
+        // empty-cells: show;
+
+        .header-wrapper {
+    
+            @include boxSizing;
+            @include flexbox;
+            @include flexjustify(space-between);
+            @include flexalignitems(center);
+            padding: 20px 0;
+            border-collapse: collapse;
+            background: none;
+
+            .th {
+                
+                padding: 5px;
+                cursor: pointer;
+                /*display: none; hide table headers for contacts screen */
+
+                &.mi-grid-column {
+                    background: $grey;
+                    // text-align: center;
+                }
+
+                .mi-input-label {
+                    display: none;
+                }
+                
+                .link-search {
+                    &.mi-button {
+                        background:lighten($grey, 40%);
+                    }
+                }
+
+                &.grid-cell-right {
+                    text-align: right;
+                }
+
+                &.grid-cell-center {
+                    text-align: center;
+                }
+
+                &.grid-cell-left {
+                    text-align: left;
+                }
+
+                #advancedSearchPanel {
+                    float:left;
+                    clear:both;
+                    .critTable {
+                        float:left;
+                        clear:both;
+                        margin:0.5em 0;
+                        input[type="text"]{
+                            &.actionArea {
+                                @extend .mi-textbox;
+                            }
+                        }
+                       
+                        &:nth-child(even) {
+                            background: lighten($grey, 40%);
+                        }
+                        
+                        
+                    }
+
+                }
+                
+                .condAndDiv {
+                    float: left;
+                    clear: both;
+                    margin:1em 0;
+                    .condAnd {
+                        &.mi-button {
+                            background: $white;
+                            color: $grey;
+                            i {
+                                color: $grey;
+                            }
+                        }   
+                    }
+                }
+
+                .grid-button-container {
+                    float:left;
+                    clear:both;
+                    margin:0.5em;
+
+                    .mi-button {
+                        background: $grey;
+                        color:$white;
+                    }
+                }
+
+            }
+
+            a {    
+                text-decoration:none; 
+                color:inherit !important;
+
+                &:visited {
+                    color:inherit;
+                }
+            }
+
+            // i {
+            //     font-size:20px; 
+            //     color:$grey;
+
+            //     &:hover {
+            //         color: lighten($card-border, 10%) !important;
+            //     }
+            // }
+
+            .grid-filter-container,
+            .grid-search-box {
+                display:inline-block !important;
+                margin:0.25em;
+                @include breakpoint(small only) {
+                    margin: 0;
+                }
+                .mobilePreview & {
+                    margin: 0;
+                }
+            }
+
+            .grid-filter-container {
+                width: 100%;
+
+                .mi-autocomplete {
+                    max-width: 300px;
+                    top: 7px;
+
+                    input {
+                        height: 38px !important;
+                    }
+
+                    i:before {
+                        top: 14px;
+                    }
+                }
+                .mi-dropdown {
+                    @include breakpoint(medium) {
+                        margin:0 0 0 0.5em !important;
+                    }
+                }
+            }
+
+            .grid-search-box {
+                margin-left: 0.5em;
+            }
+
+            .search-panel {
+                position:relative;
+                display: block;
+                
+                .inputWrapper {
+                    display: block;
+                    margin-left: 0.5em;
+                    input {
+                        width:15.625em;
+                        display:inline-block;
+                    }
+
+                    i {
+                        display: inline-block;
+                        margin-left: 0.5em;
+                    }
+                }
+
+                a {
+                    float: left;
+                    position:relative;
+                    margin:0.5em 0 1em 0.5em;
+                    color: $grey !important;
+                }
+
+            }
+        }
+
+        .mi-grid-body {
+                    
+            float: left;
+            position: relative;
+            width:100%;
+
+
+            .mobile-hidden {
+                @include breakpoint(small_ls down) {
+                    display:none !important;
+                }
+            }
+
+            @media only screen and (max-device-width: 736px) and (orientation: landscape) {
+                .mobile-hidden {
+                    display:none !important;
+                }
+            }
+
+            table {
+                width:100%;
+                margin: 1em 0 0 0;
+                border-collapse: separate;
+                border-spacing: 0;
+                empty-cells: show;
+                color: $grey;
+                border-bottom:none;
+                // @include breakpoint(small only) {
+                //     margin:0.25em 0 0 0;
+                //     //table-layout: fixed;
+                // }
+
+                th {
+
+                    @include boxSizing;
+                    padding:20px 10px;
+                    background: $app-header;
+                    color: $blue;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    border-bottom: 1px solid $card-border;
+
+                    // &:not(.mi-grid-no-break) {
+                    //     @include breakpoint(small only) {
+                    //         position:absolute;
+                    //         top:-9999px;
+                    //         left:-9999px;
+                    //     }
+                    // }
+
+                    &.grid-cell-right {
+                        text-align: right;
+                    }
+
+                    &.grid-cell-center {
+                        text-align: center;
+                    }
+
+                    &.grid-cell-left {
+                        text-align: left;
+                    }
+
+                    span.mi-grid-column-icon {
+                        display: inline-block;
+                        float: right;
+                        font-size: 9px;
+                        margin-left: 3px;
+                        margin-top: 3px;
+                    }
+
+                    &.subscription-table-header {
+                        cursor: default !important;
+                    }
+                }
+
+                //  Cell Alignments
+
+                td {
+                        
+                    @include boxSizing;
+                    padding: 10px;
+                    line-height: normal;
+                    // -webkit-background-clip: padding-box;
+                    // background-clip: padding-box;
+                    border-collapse: inherit;
+                    &.grid-cell-left {
+                        text-align: left;
+                    }
+                    &.grid-cell-right {
+                        text-align: right;
+                    }
+                    &.grid-cell-center {
+                        text-align: center;
+                    }
+                    &:not(.mi-grid-no-break) {
+                        position:relative;
+                        &.desktop-hidden {
+                            display: none;
+                        } 
+
+                        // @include breakpoint(small only) {
+                        //     border:none;
+                        //     //border-bottom: 1px solid $card-border;
+                        //     position: relative;
+                        //     padding-left:35%;
+                        //     width:auto;
+                        //     min-height:1em;
+                        //     font-size:12px;
+                            
+                        // }
+
+
+                        &.no-padding-left,
+                        &.mi-grid-data-selector {
+                            @include breakpoint(small only) {
+                                padding-left: 10px !important;
+                            }
+                            .mobilePreview & {
+                                padding-left: 10px !important;
+                            }
+                        }
+
+
+                        &:before {
+                            @include breakpoint(small only) {
+                                position:absolute;
+                                top:6px;
+                                left:6px;
+                               
+                                padding-right:10px;
+                                white-space: nowrap;
+                                vertical-align: middle;
+
+                            }
+                            .mobilePreview & {
+                                position:absolute;
+                                top:6px;
+                                left:6px;
+                               
+                                padding-right:10px;
+                                white-space: nowrap;
+                                vertical-align: middle;
+
+                            }
+                        }
+
+                        &:nth-of-type(n){
+                        //&:not(.chevron-right){
+                            &:before {
+                                // @include breakpoint(small only) {
+                                //     content:attr(data-caption);
+                                //     vertical-align: middle;
+                                //     padding-top:2px;
+                                //     font-size: 12px;
+                                //     width:25%;
+                                //     overflow:hidden;
+                                //     text-overflow: ellipsis;
+                                //     @include borderRadius();
+                                //     background: lighten($grey, 10%);
+                                //     color: $white;
+                                //     padding:0.35em;
+                                //     //margin-top:0.2em;
+
+                                // }
+                            }
+                        //}
+                        }
+
+                        &:nth-of-type(n){
+                            &:empty{
+                                // @include breakpoint(small only) {
+                                //     //&:not(.chevron-right){
+                                //         display: none !important;
+
+                                //         &:before {
+                                //             @include breakpoint(small only) {
+                                //                 content:" " !important;
+                                //                 display: none !important;
+                                //             }
+                                //         }
+                                //     //}
+                                // }
+                            }
+                        }
+                        &.mi-grid-data-selector {
+                            &:before {
+                                // @include breakpoint(small only) {
+                                //     display: none !important;
+                                // }
+                            }
+
+                            width:1em;
+                            vertical-align:middle;
+                            text-align: left;
+
+                            label {
+                                margin: 0 !important;
+                                float: left;
+                            }
+                        }
+                    }
+                    
+                    span {
+                        display: initial;
+
+                        &.picWrap {
+                            //display: inline;
+                            min-width: 64px;
+                            width: 100%;
+                            display: block;
+
+                            img {
+                                 max-width: 64px !important;
+                            }
+                        }
+                        
+                        &.child-field {
+                            display: inline-block;
+                            margin-left: 1em;
+                        }
+                    }
+
+                    a {
+                        color: $blue;
+                        &:visited {
+                            color: lighten($blue,20%);
+                        }
+                    }
+                }
+         
+                tr {
+                    &:nth-child(even){
+                        background: $grey;
+
+                        &.selected {
+                            background:$app-header;
+                        }
+                    }
+
+                    &.mi-grid-th-row {
+                        border-bottom: 1px solid $card-border;
+
+                        //  Subscription table #users col width
+                        .sub-user-num {
+                            @include breakpoint(medium only) {
+                                width: 13%;
+                            }
+                        }
+
+                    }
+
+                    &:hover {
+                        cursor: default;
+                    }
+                    @include breakpoint(small only) {
+                        border:none;
+                        border-bottom: 1px solid $card-border;
+                    }
+                    .mobilePreview & {
+                        border:none;
+                        border-bottom: 1px solid $card-border;
+                    }
+                    //  Chevron right >
+                    &.mi-grid-row-click {
+                        
+                        &:hover {
+                            cursor: pointer;
+                            background: #F6FAFE;
+                            @include boxSizing;
+                        }
+                        td {
+                            font-size: $base-font-size;
+                            color: $dark-grey;
+                            @include boxSizing;
+
+                            &[data-caption="User"] {
+                                @include breakpoint(portrait) {
+                                    &:after{
+                                        font-family: 'method-icon';
+                                        content: "\e718";
+                                        position: absolute;
+                                        right: 0px;
+                                        top: 50%;
+                                        margin-top: -8px;
+                                        padding-left: 1em;
+                                        padding-right: 1em;
+                                    }
+                                }
+
+                                @include breakpoint(medium) {
+                                    &:after {
+                                        content: " ";
+                                    }
+                                }
+                            }
+
+    					
+                            /* Table Chevron stuff */
+                            // possible last column is either
+                            // a) lvdesktop, b) lvmobile c) lvdesktop + lvmobile
+
+                            &.lastvisible-desktop {
+
+                                &:after{
+                                    font-family: 'method-icon';
+                                    content: "\e718";
+                                    position: absolute;
+                                    right: 0px;
+                                    top: 50%;
+                                    margin-top: -8px;
+                                    padding-left: 1em;
+                                    padding-right: 1em;
+                                }
+
+                                // &:not(:last-child) {
+                                //     &:after {
+                                //         content:"";
+                                //     }
+                                // }
+
+                                padding-right: 2.5em !important;
+                            }
+
+                            @include breakpoint(medium only) {
+                                &.lastvisible-desktop:after{
+                                    font-size: 1em;
+                                }
+                                &.lastvisible-desktop{
+                                    padding-right: 3em !important;
+                                }
+                            }
+
+                            // @include breakpoint(small portrait) {
+                            //     &.mi-grid-no-break{
+
+                            //         &.lastvisible-desktop{
+                            //             padding-right: inherit;
+                            //         }
+                            //         &.lastvisible-desktop:after{
+                            //             content: "";
+                            //         }   
+                            //         &.lastvisible-mobile {
+                            //             padding-right: 2.5em !important;
+                            //             &:after{
+                            //                 font-family: "method-icon";
+                            //                 content: "\e718";
+                            //                 position: absolute;
+                            //                 right: 0px;
+                            //                 top: 50%;
+                            //                 margin-top: -6px;
+                            //                 padding-left: .5em;
+                            //                 padding-right: .5em;
+                            //                 font-size: 14px;
+                            //             }
+                            //         }
+                            //     }
+
+                            //     // //collapsing grids only
+                            //     // .mi-grid-responsive{
+                                    
+                            //     //     .mi-grid-row-click{
+                            //     //         float: left;
+                            //     //         clear: both;
+                            //     //         width: 100%;
+                            //     //         position:relative;
+                            //     //         padding-right: 2.5em;
+                            //     //         @include boxSizing;
+                            //     //     }
+                            //     //     .mi-grid-row-click:after{
+                            //     //         font-family: "method-icon";
+                            //     //         content: "\e718";
+                            //     //         position: absolute;
+                            //     //         right: 0px;
+                            //     //         top: 50%;
+                            //     //         margin-top: -8px;
+                            //     //         padding-right: .5em;
+                            //     //         font-size:1.9em;
+                            //     //     }
+                            //     // }
+                            // }
+
+                            // @include breakpoint(landscape) {
+                            //     &.lastvisible-mobile {
+                            //         &:after{
+                            //             content: " ";
+                            //         }
+                            //     }
+                            // }
+
+
+
+                            // &:not(.lastvisible-desktop) {
+                            //     &:last-child {
+
+                            //         &:after {
+                            //             font-family: 'method-font' !important;
+                            //             content: "\e63b" !important;
+                            //             position: absolute;
+                            //             right: 0px;
+                            //             top: 50%;
+                            //             margin-top: -8px;
+                            //             padding-left: 1em;
+                            //             padding-right: 1em;
+                            //         }
+                            //     }
+                            // }
+
+                        } 
+                    }
+                    //  Grid Row > TH -- This style is to keep the 
+                    //  borders consistent between grid header and table body
+
+                    &.mi-grid-th-row-click {
+                        &:after {
+                            // @include breakpoint(small only) {
+                            //     margin-right:0;
+                            // }   
+                        } 
+                    }
+                }
+            } 
+        }
+    
+    }
+
+    &.mi-grid-header-hide {
+        .mi-grid-table {
+            .mi-grid-body {
+                table {
+                    td {
+                        //padding-left:2%;
+                        &:nth-of-type(n){
+                            &:before {
+                                // @include breakpoint(small only) {
+                                //     content:attr(data-caption);
+                                //     display:none !important;
+                                // }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //  Grid table footer
+
+    .mi-grid-footer {
+
+        float:left;
+        width:100%;
+        margin:0;
+        padding: 20px 0;
+        background: none;
+        @include borderRadius;
+
+        //  Pagination
+
+        .mi-grid-navigation {
+            @include boxSizing;
+            @include flexbox;
+            @include flexjustify(space-between);
+            @include flexalignitems(center);
+            @include flexflow(wrap);
+            position:relative;
+            // width:75%;
+            width:auto;
+            padding:0;
+            margin-left: 0.5rem;
+            //text-align:center;
+            @include breakpoint(medium_ls down) {
+                width:100%;
+            }
+            color:$grey;
+
+            &.ui-body-c {
+                background: transparent !important;
+            }
+
+            .grid-footer-navigation,
+            .mi-grid-display-items,
+            .mi-grid-items-per-page,
+            .setting-toggle {
+                float: left;
+                display: inline-block;
+                position: relative;
+                //width:30%;
+                width: auto;
+                //@include tablet-portrait-and-below {
+                //    width:100%;
+                //    text-align: center !important;
+                //}
+
+            }
+
+            .grid-footer-navigation {
+
+                @include boxSizing;
+                @include flexbox;
+                @include flexjustify(flex-start);
+                @include flexalignitems(stretch);
+
+				@include breakpoint(medium_ls down) {
+					@include flex(1 1 auto);
+				}
+
+                white-space: nowrap;
+                    
+                button {
+
+                    padding: 10px 20px;
+                    min-width: 0;
+                    margin:0;
+                    
+                    &.ghost {
+                        border: 1px solid darken($card-border,10%);
+                        background: $white;
+                        color: $grey;
+                        
+                        i {
+                            font-weight: 600;
+                        }
+
+                        &:hover {
+                            background: light($card-border, 10%);
+                            color: $dark-grey
+                        }
+                    }
+                    &.mi-grid-previous-page {
+                        border-right: none;
+                        @include borderRadius(1px 0 0 1px);
+                    }  
+                    &.mi-grid-next-page {
+                        border-left: none;
+                        @include borderRadius(0 1px 1px 0);
+                    }
+                }
+
+                input {
+                    &.mi-grid-page-input {
+                        padding:10px;
+                        margin: 0 !important;
+                        @include borderRadius(0);
+                        border: 1px solid darken($card-border, 10%);
+                    }
+                }
+
+                .mi-grid-page-total {
+                    margin:0;
+                    font-size: $base-font-size;
+                    color: $grey;
+                }
+
+                .mi-grid-page-size {
+                    margin-left: 2em;
+                }
+
+            }
+
+            .mi-grid-display-items {
+                @include flex(1);
+                text-align:left;
+                padding: 20px;
+                line-height: $base-line-height;
+                white-space: nowrap;
+
+                @include breakpoint(medium_ls down) {
+                    @include flex(1 1 auto);
+                }
+                
+
+                // @include breakpoint(small only) {
+                //     text-align: center;
+                //     padding:0.5em 0 0.5em 0.5em;
+                //     line-height: 1.5em;
+                //     white-space: nowrap;
+                // }
+
+                span {
+                    display: inline-block;
+                    margin-right: 0.5em;
+                    
+                }
+            }
+        }
+
+        //  Settings
+
+        .mi-grid-settings {
+           
+            @include boxSizing;
+            @include flexbox;
+            @include flexjustify(space-between);
+            @include flexalignitems(center);
+
+            @include breakpoint(medium_ls down) {
+                margin-right:1.5em;
+            }
+			@include breakpoint(small only) {
+				margin-right:0.005em;
+			}
+            .mobilePreview & {
+                margin-right:0.005em;
+            }
+
+            button {
+                font-weight: 600;
+
+                &:before {
+                    margin-right: 5px;
+                }
+                &:first-of-type {
+                    margin-right: 10px;
+                }
+                &:last-of-type {
+                    margin-left: 10px;
+                }
+            }
+
+            //@include breakpoint(small only) {
+            //    text-align:center !important;
+            //    margin-right:0;
+            //    width:100%;
+            //}
+
+            .mi-grid-settings-table {
+                width:100%;
+                margin-right: 20px;
+
+                .setting-toggle {
+                    a { 
+                        display: inline-block;
+                        line-height:1.5em;
+                        margin:0.55em 0.5em;
+                        color: $grey;
+                        font-size: $base-font-size;
+                        background:$card-border;
+
+                        // @include breakpoint(small only) {
+                        //     margin:0 0.25em 0 0;
+                        // }
+
+                        &:hover,
+                        &.active {
+                            background:lighten($card-border, 10%);
+                            color:$grey;
+                        }
+
+                        &.settings-list-open {
+                            background: $card-border;
+                            color: $grey;
+                            @include borderRadius(3px 3px 0 0 !important);
+                            &:hover {
+                                background: $card-border;
+                                color: $grey;
+                            }
+                        }
+
+                        
+                    }
+                }
+
+                .mi-grid-settings-table-toggle {
+
+
+                    width:8.1em;
+                    position:absolute;
+                    right: 6.9em;
+                    background: $card-border;
+                    color: $grey !important;
+                    z-index:7777;
+                    padding:0.5em;
+
+                    @include borderRadius(3px 0 3px 3px);
+                    top:2.4em;
+
+                    &[style="display: none;"] {
+                        @include transition(top,0.3s,ease-in);
+                    }
+                    &[style="display: block;"] {
+                        @include transition(bottom,0.3s,ease-in);
+                    }
+
+                    ul {
+                        float:left;
+                        margin:0 !important;
+                        width:100%;
+                        list-style:none;
+                        padding:0;
+                        margin:0;
+						overflow:hidden;
+
+                        li {
+                            width:100%;
+                            float:left;
+                            text-align:left;
+                            clear:both;
+                            margin:0.15em 0 !important;
+                            background: $grey;
+                            @include borderRadius;
+                            padding: 0.25em 0 0.25em;
+                            label {
+                                margin: 0 0 0 0.25em !important;
+                                color:$grey;
+
+                                 &:empty {
+                                    display: none !important;
+                                }
+
+                            }
+
+                            @include breakpoint(small only) {
+                                padding: 0.5em 0 !important;
+                            }
+                            .mobilePreview & {
+                                padding: 0.5em 0 !important;
+                            }
+                           
+                        }
+                    }
+
+                    @include breakpoint(small only) {
+                        right:7.45em;
+                        top:2.4em;
+                    }
+                    .mobilePreview & {
+                        right:7.45em;
+                        top:2.4em;
+                    }
+                }
+            }
+        }
+    }
+
+    // &.mi-grid-footer-color-alert {
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $pink !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-primary{
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $blue !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-secondary {
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $grey !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-navigation {
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $grey !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-caution {
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $yellow !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-success {
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $green !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-dark-grey {
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $dark-grey !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-silver {
+    //    >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $card-border !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-black {
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $black !important;
+    //         }
+    //     }
+    // }
+    // &.mi-grid-footer-color-white {
+    //     >.mi-grid-table {
+    //         .mi-grid-footer {
+    //             background: $white !important;
+    //         }
+    //     }
+    // }
+
+}
+
+
+
+
+
+//  OLD GRID STYLES
+
+/* Header bg */
+// .mi-header {
+
+//     padding: 0;
+//     margin: 0;
+//     width: 100%;
+//     position: fixed;
+//     border-bottom: 1px solid #eee;
+//     @include gradient(#515451,#424341);
+//     @include box-shadow(0px, 1px, 1px, rgba(0,0,0,0.25),inset);
+
+//     h1 {
+//         margin: auto;
+//         padding-top: 0.5em;
+//         padding-bottom: 0.5em;
+//         text-align: center; 
+//     }
+
+// }
+
+/* Header Title Font Size */
+
+a.mi-btn-left {
+    color: #666;
+}
+
+a.mi-btn-left:hover {
+    color: #333;
+    text-decoration:none;
+}
+
+/* Add New Contact Button */
+.mi-btn-right {
+    margin-top: 0.6em;
+    margin-right: 1em;
+    font-size: 1.1em;
+}
+
+a.mi-btn-right {
+    color: #3892E3;
+}
+a.mi-btn-right:hover {
+    color: #165a96;
+    text-decoration: none;
+}
+
+.mi-grid .selected {
+    background: #E7E7E7;
+}
+
+.mi-screen-content {
+    /*margin-top: 5.73em;  */
+}
+/* Grid Caption */
+.mi-grid-caption {
+    font-size: 2em;
+    padding-top: 0.3em;
+    padding-left: 10px;
+    border-bottom: #ededed 1px solid;
+    padding-bottom: 0.4em;
+}
+
+/* Top Icon Nav */
+.mi-icon-blue {
+    color: #3892e3;
+}
+.mi-icon-purple {
+    color: #c000e1;
+}
+.mi-icon-orange {
+    color: #fba617;
+}
+.mi-icon-yellow {
+    color: #f1d52f;
+}
+.mi-icon-turquoise {
+    color: #34e0c2;
+}
+.mi-icon-green {
+    color: #79cf19;
+}
+
+.mi-top-icon-nav {
+    background: #F3F3F3;
+}
+.mi-top-nav-icons {
+    font-size: 3.25em;   
+}
+
+.mi-top-nav-icons div.control {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: #E9E9E9 1px solid;
+    width: 20%;
+    text-align: center;
+    margin: 0;
+    float:left;
+}
+.mi-top-nav-icons div.control:hover {
+    background: #E9E9E9;
+    cursor: pointer;
+}
+
+/* Contact Card */
+.mi-contact-card {
+    border-bottom: #E9E9E9 1px solid;
+    padding-bottom: 2em;
+    margin-top: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.mi-contact-card .mi-textbox {
+    border: 0;
+    background: none;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+}
+.mi-contact-card .control, .mi-contact-card-items .control {
+    display: inline;
+}
+.mi-contact-card-photo {
+    width: 140px;
+}
+.mi-contact-card-edit {
+    width: 20px;
+}
+.mi-contact-card-edit a{
+    color: #EDEDED;
+    text-decoration: none;
+}
+.mi-contact-card-edit a:hover {
+    color: #666;
+}
+.mi-contact-card img {
+    width: 125px;
+    /* rounded corners */
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    /* shadow */
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+}
+.mi-contact-card-name input{
+    font-size: 2em;
+    color: #000;
+}
+.mi-contact-card-title input {
+    font-size: 1.5em;
+    color: #000;
+    font-style: italic;
+}
+.mi-contact-card-company input {
+    font-size: 1.5em;
+    color: #000;
+}
+
+/* Contact Card */
+.mi-contact-card-items {
+    margin-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-bottom: #E9E9E9 1px solid;
+}
+.mi-contact-card-items .mi-textbox {
+    border: 0;
+    background: none;
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 0.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+}
+.mi-contact-card-icons {
+    width: 4.5em;
+    line-height: 3.5em;
+}
+.mi-external-links-add label{
+    color:#3892e3;
+    font-size: 1.25em;
+    font-weight: normal!important;
+    cursor: pointer;
+}
+.mi-external-links-add i{
+    font-size: 1.5em!important;
+    color:#3892e3!important;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.mi-external-links-add label a{
+    color:#3892e3;
+    font-size: 1.25em;
+    font-weight: normal!important;
+    text-decoration: none;
+}
+.mi-external-links-add a{
+    font-size: 1.5em!important;
+    color:#3892e3!important;
+    text-decoration: none;
+}
+.mi-external-links .control {
+    display: block;
+}
+/* Grid Table */
+.mi-grid-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mi-grid-table th {
+    border-bottom:#eee;
+    padding: 5px 5px 5px 10px;
+    cursor: pointer;
+    /*display: none; hide table headers for contacts screen */
+}
+
+.mi-grid-table td {
+    padding: 10px;
+    line-height: 1em; 
+	//Ticket #1506, needed for chevron
+	position:relative;
+}
+.mi-grid-table tr td{
+    
+}
+
+.mi-grid .selected
+{
+    background-color: lighten($app-header,10%);
+}
+.mi-grid-table td.col-1 {
+    /*width: 110px;*/
+}
+
+td.col-1 div { border-collapse: separate; }
+
+.mi-grid-table a 
+{
+    text-decoration:none; 
+}
+
+.mi-grid-table a:visited
+{
+    color:inherit; 
+}
+
+.mi-grid-table i.icon-search 
+{
+    font-size:20px; 
+}
+
+// .mi-grid-table tr {
+//     Rp - dynamic picture widget uses background image
+//        background: #fff;
+//     border-bottom: #EDEDED solid 1px;
+// }
+
+.mi-grid-table tr {
+    cursor: pointer;
+
+    &.mi-grid-th-row {
+        cursor:default;
+    }
+}
+.mi-grid-table tr:hover {
+    /*background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+    
+    Commented out by Craig / Not sure why a gradient is used in a flat design...
+    
+    */
+}
+
+.mi-grid-table tr:hover a {
+    color:#3892E6 !important;
+}
+.mi-grid-table tr:hover .icon-chevron-right {
+    color: #666;
+}
+
+
+/* Table Icons */
+.mi-grid-table .icon-chevron-right {
+    color: #ccc;
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+
+.mi-grid-table .icon-ms-word 
+{
+    color:#00008B; 
+}
+
+.mi-grid-table .icon-adobe-pdf 
+{
+    color:#FF0000; 
+}
+
+.mi-grid-table .icon-ms-excel 
+{
+    color:#228B22; 
+}
+
+.mi-contact-card-icons i {
+    font-size: 2em!important;
+    margin: 20px;
+}
+
+.mi-external-links td.col-1 i{
+    font-size: 100%;
+    margin-left: 20px;
+}
+.mi-external-links .mi-grid-table td.col-1 {
+    width: 80px;
+}
+.mi-external-links .mi-grid-table td.col-2 {
+    font-size: 2em;
+    color: #666;
+}
+
+
+.mi-contact-photo img {
+    margin: 0.5em;
+    width: 128px; 
+    /* rounded corners */
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    /* shadow */
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);   
+}
+/*RP - using Picture widget*/
+/*.mi-grid-table img
+{
+    margin: 0.25em;
+    width: 80px; 
+    // rounded corners //
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    // shadow //
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+}*/
+
+.mi-grid-column-icon {
+    float: right;
+}
+
+.mi-grid-column-edit {
+    width:125px;
+}
+.mi-grid-navigation {
+    padding: 10px;
+    @include breakpoint(small only) {
+        padding:0;
+    }
+    .mobilePreview & {
+        padding:0;
+    }
+}
+
+.mi-grid-navigation-table {
+    width: 100%;
+    font-size: 1.1em;
+}
+
+.mi-grid-navigation-table a{
+    color: #666;
+    font-weight: bold;
+}
+.mi-grid-navigation-table tr td {
+    line-height: 2.5em;
+    vertical-align: top;
+    color: #666;
+    overflow: ellipsis;
+}
+.mi-grid-navigation-table a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.mi-grid-navigation-table tr td.mi-grid-display-items {
+    line-height: 1.5em;
+}
+
+.mi-grid-column-checkboxes{
+	padding:1em;
+    max-height: 300px;
+}
+
+.mi-grid-row-information {
+    white-space: nowrap;
+	    @include breakpoint(small only) {
+			font-size:smaller;
+		}
+        .mobilePreview & {
+            font-size:smaller;
+        }
+}
+.mi-grid-page {
+    padding: 5px;
+    margin: 2px;
+    text-decoration: none;
+}
+
+.mi-grid-page-size {
+    margin: 2px;
+}
+
+.mi-edit-button, .mi-save-button, .mi-cancel-button {
+    padding: 2px 5px;
+    margin: 0 3px;
+}
+
+td.mi-grid-selectable {
+    padding-left: 20px;
+    width: 40px;
+}
+
+th.mi-grid-selectable {
+    padding-left: 6px;
+    width: 50px;
+}
+
+.mi-grid-settings-table {
+    width: 100%;
+}
+@include breakpoint(medium) {
+	.mi-grid-table .desktop-hidden {
+		display: none;
+	}
+}
+@include breakpoint(small_ls only) {
+    .mi-grid-table .desktop-hidden {
+        display: none;
+    }
+}
+span.mi-grid-page-item {
+    font-size: 1em;
+    color: #333;
+}
+
+select.mi-grid-page-size {
+    width: 5em;
+    font-size: 1em;
+    padding: 0!important;
+    margin: 0;
+}
+
+.mi-grid-settings-table label {
+    margin-left: 1em; 
+    font-weight: normal;
+}
+
+.mi-grid-settings-table .setting-toggle a {
+    padding: 2px 5px;
+    margin: 0 3px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.mi-grid-settings-table .setting-toggle a:hover {
+    color: #333;
+}
+
+.mi-grid-settings-table-toggle td{
+    padding-top: 20px;
+}
+
+.mi-grid-settings-table-toggle div
+{
+    display: inline;
+    padding: 2px 5px;
+    margin: 0 3px;
+}
+
+// .mi-grid-page-input{
+//     width:50px;
+//     margin: 0 10px;    
+// }
+
+.mi-grid-page-total{
+    margin-right:5px;
+}
+
+
+/* Responsive Stuff */
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    /* header font */
+    // .ui-content {
+    //     padding: 0;
+    //     padding-top: 5.1em;
+    // }
+
+    .mi-header h1 {
+        margin: auto;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        text-align: center;
+        font-size: 1.8em;
+    }
+
+    /* Add New Contact Button */
+    .mi-btn-right {
+        margin-top: 1.5em;
+        margin-right: 1em;
+        font-size: 1em;
+    }
+    .mi-screen-content {
+        /*margin-top: 4.7em;*/
+    }
+    /* Grid Caption */
+    .mi-grid-caption {
+        font-size: 1.5em;
+        padding-top: 0.1em;
+        padding-left: 10px;
+        border-bottom: #ededed 1px solid;
+        padding-bottom: 0.4em;
+    }
+    /* Grid Table Font Size */
+    .mi-grid-table td {
+        padding: 10px;
+        /*font-size:1.3em;*/
+    }
+    /* Grid Table Image Size */
+    .mi-grid-table td.col-1 {
+        width: 70px;
+    }
+    /* RP Using Picture Widget*/
+    /*.mi-grid-table img
+    {
+        margin: 0.25em;
+        width: 50px; 
+        /* rounded corners /
+        border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        /* shadow /
+        -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+        box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    }*/
+    .mi-grid-navigation-table tr td {
+        font-size: 0.8em;
+        line-height: 1.5em;
+        padding-top: 0.55em;
+    }
+    select.mi-grid-page-size {
+        width: 3.8em;
+        font-size: 1em;
+        padding: 0;
+        margin: 0;
+        height: 2em;
+    }
+    .mi-grid-settings-table label {
+        margin-left: 0.25em; 
+        font-weight: normal;
+    }
+    .mi-grid-navigation-table tr td.mi-grid-display-items {
+        line-height: 1.5em;
+        padding-top: 0.55em;
+    }
+    .mi-grid-settings-table {
+        font-size: 1em;
+    }
+    .mi-grid-settings-table-toggle {
+        font-size: 0.8em;
+        color: #666;
+    }
+    .mi-grid-settings-table-toggle td {
+        padding-top: 5px;
+    }
+    .mi-grid-settings-table-toggle td div {
+        padding: 0;
+    }
+    /*Contact Item*/
+    .mi-contact-card {
+        border-bottom: #E9E9E9 1px solid;
+        padding-bottom: 1em;
+        margin-top: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }    
+    .mi-contact-card-photo {
+        width: 70px;
+    }
+    .mi-contact-card img {
+        width: 60px;
+        /* rounded corners */
+        border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        /* shadow */
+        -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+        box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    }
+    .mi-top-nav-icons {
+        font-size: 1.5em;   
+    }
+    .mi-top-nav-icons div.control {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: #E9E9E9 1px solid;
+        width: 20%;
+        text-align: center;
+        margin: 0;
+        float:left;
+    }
+    .mi-contact-card-name input{
+        font-size: 1.2em;
+        color: #000;
+    }
+    .mi-contact-card-title input {
+        font-size: 1em;
+        color: #000;
+        font-style: italic;
+    }
+    .mi-contact-card-company input {
+        font-size: 1em;
+        color: #000;
+    }
+    .mi-contact-card-icons i {
+        font-size: 1.3em!important;
+        margin: 0px;
+    }
+    .mi-contact-card input.mi-textbox {
+        border: 0;
+        background: none;
+        width: 100%;
+        padding:0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+    }
+    .mi-contact-card-items {
+        margin-top: 1em;
+        padding-bottom: 1em;
+    }
+    input[type="text"].mi-textbox {
+        min-height: 20px;
+    }
+    .mi-contact-card-items input[type="text"].mi-textbox{
+        font-size: 1em;
+        vertical-align: middle;
+        min-height: 25px;
+        padding: 0;
+    }
+    .mi-contact-card-items .mi-textbox {
+        margin-top: 0;
+    }
+    .mi-contact-card-icons {
+        width: 2em;
+        line-height: 28px;
+    }
+    .mi-external-links td.col-1 i {
+        font-size: 100%;
+        margin-left: 5px;
+    }
+    .mi-external-links .mi-grid-table td.col-1 {
+        width: 35px;
+    }
+    .mi-external-links .mi-grid-table td.col-2 {
+        font-size: 1em;
+        font-weight: bold;
+        color: #666;
+    }
+    .mi-external-links-add label{
+        color:#3892e3;
+        font-size: 1em;
+        font-weight: normal!important;
+        cursor: pointer;
+    }
+    .mi-external-links-add i{
+        font-size: 1em!important;
+        color:#3892e3!important;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .mi-external-links-add label a{
+        color:#3892e3;
+        font-size: 1em;
+        font-weight: normal!important;
+        text-decoration: none;
+    }
+    .mi-external-links-add a{
+        font-size: 1em!important;
+        color:#3892e3!important;
+        text-decoration: none;
+    }
+}
+ 
+// /* Landscape phone to portrait tablet */
+// @media (max-width: 768px) {
+
+// }
+ 
+// /* Portrait tablet to landscape and desktop */
+// @media (min-width: 768px) and (max-width: 940px) {
+
+// }
+ 
+// /* Default: 940px and up  */
+ 
+// /* Large desktop */
+// @media (min-width: 1210px) {
+
+// }
+
+
+//RP adding grid column alignment
+.grid-cell-top-left{
+	text-align:left;
+	vertical-align:top;
+} 
+.grid-cell-top{
+	text-align:center;
+	vertical-align:top;
+} 
+.grid-cell-top-right{
+	text-align:right;
+	vertical-align:top;
+} 
+.grid-cell-mid-left{
+	text-align:left;
+	vertical-align:middle;
+} 
+.grid-cell-mid{
+	text-align:center;
+	vertical-align:middle;
+} 
+.grid-cell-mid-right{
+	text-align:right;
+	vertical-align:middle;
+} 
+.grid-cell-bot-left{
+	text-align:left;
+	vertical-align:bottom;
+} 
+.grid-cell-bot{
+	text-align:center;
+	vertical-align:bottom;
+} 
+.grid-cell-bot-right{
+	text-align:right;
+	vertical-align:bottom;
+} 
+
+.no-select {
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select:none; 
+	user-select:none;
+}
+
+// //Ticket #1518 - hide first dropdown (its always field)
+// .mi-grid-lookup-container .types{
+// 	display:none;
+// }
+
+#gridColProps {
+    @include breakpoint(medium only) {
+        width:56% !important;
+    }
+}

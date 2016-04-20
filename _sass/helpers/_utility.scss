@@ -1,0 +1,7 @@
+// Flex box classes
+.align-self-center {
+	@include flexalignself(center);
+}
+.align-self-flex-start {
+	@include flexalignself(flex-start);
+}
