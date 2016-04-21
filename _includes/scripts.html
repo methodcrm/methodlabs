@@ -1,13 +1,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script src="/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/js/mustache.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/js/date.format.js" type="text/javascript" charset="utf-8"></script>
-<script src="/js/URI.js" type="text/javascript" charset="utf-8"></script>
-<script src="/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/js/mustache.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/js/date.format.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/js/URI.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
   $(function() {
     $('#search-query').lunrSearch({
-      indexUrl  : '/js/index.json',           // url for the .json file containing search index data
+      indexUrl  : '{{site.baseurl}}/js/index.json',           // url for the .json file containing search index data
       results   : '#search-results',          // selector for containing search results element
       template  : '#search-results', // selector for Mustache.js template
       titleMsg  : '',   // message attached in front of results (can be empty)
