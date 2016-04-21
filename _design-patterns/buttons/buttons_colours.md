@@ -1,6 +1,6 @@
 ---
 title: Button Colours
-scss: '_sass/components/m-buttons.scss'
+scss: '/methodlabs/_sass/components/m-buttons.scss'
 type: buttons
 exclude_from_search: true
 ---

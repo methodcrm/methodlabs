@@ -1,6 +1,6 @@
 ---
 title: button sizes
-scss: '/_scss/components/buttons.scss'
+scss: '/methodlabs/_sass/components/buttons.scss'
 type: buttons
 exclude_from_search: true
 ---
