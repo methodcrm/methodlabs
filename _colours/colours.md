@@ -1,6 +1,6 @@
 ---
 title: Colour Pallette
-scss: '_sass/helpers/global.scss'
+scss: '/metodlabs/_sass/helpers/global.scss'
 type: color
 exclude_from_search: true
 ---
