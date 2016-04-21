@@ -1,15 +1,15 @@
 - text:
-  url: /methodlabs/
+  url: /
 - text: Colours
-  url: /methodlabs/colours/
+  url: /colours/
 - text: Design Patterns
-  url: /methodlabs/design-patterns/
+  url: /design-patterns/
   subitems:
     - text: Buttons
-      url: /methodlabs/design-patterns/buttons/
+      url: /design-patterns/buttons/
     - text: Grids
-      url: /methodlabs/design-patterns/grids/
+      url: /design-patterns/grids/
     - text: Messaging
-      url: /methodlabs/design-patterns/messaging/
+      url: /design-patterns/messaging/
 - text: Typography
-  url: /methodlabs/typography/
+  url: /typography/

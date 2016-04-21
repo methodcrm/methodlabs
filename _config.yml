@@ -2,7 +2,7 @@
 title: Style guide template
 email: jerome.coupe@webstoemp.com
 description: Style guide boilerplate with Jekyll
-baseurl: "/methodlabs/site/"
+baseurl: ""
 url: "http://www.webstoemp.com/jekyllstyleguide" # the base hostname & protocol for your site
 twitter_username: jeromecoupe
 github_username:  jeromecoupe
@@ -21,7 +21,7 @@ collections:
 # Front Matter Defaults
 
 # General settings
-highlighter: rouge
+highlighter: pygments
 markdown: kramdown
 kramdown:
   input: GFM
