@@ -1,0 +1,177 @@
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Typography - Style guide template</title>
+        <meta name="description" content="Style guide boilerplate with Jekyll">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon.ico and apple-touch-icon.png in root directory -->
+        <link rel="stylesheet" href="/methodlabs/css/foundation.css" media="screen">
+    </head>
+    <body>
+        <div class="grid-frame">
+            <div class="grid-block large-16">
+                <aside class="grid-content nav-bar medium-2">
+                    
+<ul>
+
+    <li>
+    
+        <a class="m-labs" href="/">
+    
+            
+                
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/colours/">
+    
+            
+                Colours
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/design-patterns/">
+    
+            
+                Design Patterns
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/typography/">
+    
+            
+                <b>Typography</b>
+            
+        </a>
+    </li>
+    
+
+</ul>
+                </aside>
+                <section class="grid-content medium-14">
+                    <header class="small-16 medium-16 large-16 style-header">
+                        
+<form action="/search" method="get">
+    <input type="text" id="search-query" class="search-box" name="q" placeholder="Search" autocomplete="off">
+</form>
+<!-- Search Form END ^^ -->
+
+<section id="search-results" class="search-results" style="display: none;"> 
+	
+		<script id="search-results-template" type="text/mustache">
+			{{#entries}}
+				
+			    <article>
+			    	<h3>
+			        	<a href="{{url}}">{{title}}</a>
+			      	</h3>
+			      	{{#is_post}}
+			      		<ul class="tag-list">
+			        		{{#tags}}<li>{{.}} </li>{{/tags}}
+			      		</ul>
+			      	{{/is_post}}
+			    </article>
+			   
+		  	{{/entries}}
+		</script>
+	
+</section>
+<!-- Search results container END ^^ --> 
+                    </header>
+                    <h1>Typography</h1>
+
+
+
+  <article class="sg-component">
+
+  <header class="sg-component__header">
+    <h2 class="sg-component__title">Headings</h2>
+    <p class="sg-component__sass">Sass file: /_scss/base/m-typography.scss</p>
+  </header>
+  <div class="sg-component__body">
+    <div class="sg-component__display">
+      <h1>This is a level one heading</h1>
+<h2>This is a level two heading</h2>
+<h3>This is a level three heading</h3>
+<h4>This is a level four heading</h4>
+<h5>This is a level five heading</h5>
+<h6>This is a level six heading</h6>
+
+    </div>
+  </div>
+
+</article>
+
+
+  <article class="sg-component">
+
+  <header class="sg-component__header">
+    <h2 class="sg-component__title">Texts</h2>
+    <p class="sg-component__sass">Sass file: /_scss/base/typography.scss</p>
+  </header>
+  <div class="sg-component__body">
+    <div class="sg-component__display">
+      <h1>Level one title</h1>
+<div class="text-big">
+  <p>Large text (21px) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt veritatis sequi nobis earum dicta vero impedit esse at, debitis doloremque eius inventore qui, et dolores eaque eos iste repellendus non.</p>
+</div>
+<h2>Level two title</h2>
+<p>Default text (16px) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<ul>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
+</ul>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<ol>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
+</ol>
+<p class="text-small">Small text (14px) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    </div>
+  </div>
+
+</article>
+
+
+
+                </section>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="/methodlabs/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/mustache.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/date.format.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/URI.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl  : '/methodlabs/js/index.json',           // url for the .json file containing search index data
+      results   : '#search-results',          // selector for containing search results element
+      template  : '#search-results', // selector for Mustache.js template
+      titleMsg  : '',   // message attached in front of results (can be empty)
+      emptyMsg  : '<p>Nothing found.</p>'     // shown message if search returns no results
+    });
+  });
+</script>
+
+    </body>
+</html>

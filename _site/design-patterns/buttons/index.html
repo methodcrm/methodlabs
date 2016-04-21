@@ -1,0 +1,310 @@
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Button Design Patterns - Style guide template</title>
+        <meta name="description" content="Style guide boilerplate with Jekyll">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon.ico and apple-touch-icon.png in root directory -->
+        <link rel="stylesheet" href="/methodlabs/css/foundation.css" media="screen">
+    </head>
+    <body>
+        <div class="grid-frame">
+            <div class="grid-block large-16">
+                <aside class="grid-content nav-bar medium-2">
+                    
+<ul>
+
+    <li>
+    
+        <a class="m-labs" href="/">
+    
+            
+                
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/colours/">
+    
+            
+                Colours
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/design-patterns/">
+    
+            
+                Design Patterns
+            
+        </a>
+    </li>
+    
+        
+<ul>
+
+    <li>
+    
+        <a href="/design-patterns/buttons/">
+    
+            
+                <b>Buttons</b>
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/design-patterns/grids/">
+    
+            
+                Grids
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/design-patterns/messaging/">
+    
+            
+                Messaging
+            
+        </a>
+    </li>
+    
+
+</ul>
+    
+
+    <li>
+    
+        <a href="/typography/">
+    
+            
+                Typography
+            
+        </a>
+    </li>
+    
+
+</ul>
+                </aside>
+                <section class="grid-content medium-14">
+                    <header class="small-16 medium-16 large-16 style-header">
+                        
+<form action="/search" method="get">
+    <input type="text" id="search-query" class="search-box" name="q" placeholder="Search" autocomplete="off">
+</form>
+<!-- Search Form END ^^ -->
+
+<section id="search-results" class="search-results" style="display: none;"> 
+	
+		<script id="search-results-template" type="text/mustache">
+			{{#entries}}
+				
+			    <article>
+			    	<h3>
+			        	<a href="{{url}}">{{title}}</a>
+			      	</h3>
+			      	{{#is_post}}
+			      		<ul class="tag-list">
+			        		{{#tags}}<li>{{.}} </li>{{/tags}}
+			      		</ul>
+			      	{{/is_post}}
+			    </article>
+			   
+		  	{{/entries}}
+		</script>
+	
+</section>
+<!-- Search results container END ^^ --> 
+                    </header>
+                    <h1>Button Design Patterns</h1>
+
+
+
+  <article class="sg-component">
+
+  <header class="sg-component__header">
+    <h2 class="sg-component__title">Button Styles</h2>
+    <p class="sg-component__sass">Sass file: /_sass/components/m-buttons.scss</p>
+  </header>
+  <div class="sg-component__body">
+    <div class="sg-component__display">
+      <p>This is the intro paragraph - or any other information for that matter.</p>
+
+<hr />
+
+<!-- 
+	* THIS IS THE LIVE CODE SAMPLE 
+	* ANY CODE USED HERE WILL DISPLAY AS IT WOULD ON A WEBSITE
+-->
+
+<p><button class="mi-button blank">Button Blank</button>
+<button class="mi-button button-primary">Button Solid</button>
+<button class="mi-button ghost">Button Ghost</button></p>
+
+<!-- THIS IS THE HTML CODE EXAMPLE -->
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button blank"</span><span class="nt">&gt;</span>Button Blank<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-primary"</span><span class="nt">&gt;</span>Button Solid<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button ghost"</span><span class="nt">&gt;</span>Button Ghost<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+
+    </div>
+  </div>
+
+</article>
+
+
+  <article class="sg-component">
+
+  <header class="sg-component__header">
+    <h2 class="sg-component__title">Button Colours</h2>
+    <p class="sg-component__sass">Sass file: /_sass/components/m-buttons.scss</p>
+  </header>
+  <div class="sg-component__body">
+    <div class="sg-component__display">
+      <h2 id="backgrounds">Backgrounds</h2>
+<p>This is the intro paragraph - or any other information for that matter.</p>
+
+<hr />
+<!-- 
+	* THIS IS THE LIVE CODE SAMPLE 
+	* ANY CODE USED HERE WILL DISPLAY AS IT WOULD ON A WEBSITE
+-->
+
+<p><button class="mi-button button-primary">Button Primary</button>
+<button class="mi-button button-alert">Button Alert</button>
+<button class="mi-button button-grey">Button Grey</button>
+<button class="mi-button button-silver">Button Silver</button>
+<button class="mi-button button-dark-blue">Button Dark Blue</button>
+<button class="mi-button button-caution">Button Caution</button>
+<button class="mi-button button-success">Button Success</button>
+<button class="mi-button button-gunmetal">Button Gunmetal</button>
+<button class="mi-button button-black">Button Black</button></p>
+
+<!-- THIS IS THE HTML CODE EXAMPLE -->
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-primary"</span><span class="nt">&gt;</span>Button Primary<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-alert"</span><span class="nt">&gt;</span>Button Alert<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-grey"</span><span class="nt">&gt;</span>Button Grey<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-silver"</span><span class="nt">&gt;</span>Button Silver<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-dark-blue"</span><span class="nt">&gt;</span>Button Dark Blue<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-caution"</span><span class="nt">&gt;</span>Button Caution<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-success"</span><span class="nt">&gt;</span>Button Success<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-gunmetal"</span><span class="nt">&gt;</span>Button Gunmetal<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button button-black"</span><span class="nt">&gt;</span>Button Black<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+<h2 id="text-colours">Text Colours</h2>
+<p>This is the intro paragraph - or any other information for that matter.</p>
+
+<hr />
+<!-- 
+	* THIS IS THE LIVE CODE SAMPLE 
+	* ANY CODE USED HERE WILL DISPLAY AS IT WOULD ON A WEBSITE
+-->
+
+<p><button class="mi-button mi-color-alert button-primary">Alert Text Colour</button>
+<button class="mi-button mi-color-primary button-alert">Primary Text Colour</button>
+<button class="mi-button mi-color-caution button-grey">Caution Text Colour</button>
+<button class="mi-button mi-color-gunmetal button-silver">Gunmetal Text Colour</button>
+<button class="mi-button mi-color-success button-dark-blue">Success Text Colour</button>
+<button class="mi-button mi-color-navigation button-caution">Navigation Text Colour</button>
+<button class="mi-button mi-color-black button-success">Black Text Colour</button>
+<button class="mi-button mi-color-silver button-gunmetal">Silver Text Colour</button>
+<button class="mi-button mi-color-white button-black">White Text Colour</button></p>
+
+<!-- THIS IS THE HTML CODE EXAMPLE -->
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-alert button-primary"</span><span class="nt">&gt;</span>Alert Text Colour<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-primary button-alert"</span><span class="nt">&gt;</span>Primary Text Colour<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-caution button-grey"</span><span class="nt">&gt;</span>Caution Text Colour<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-gunmetal button-silver"</span><span class="nt">&gt;</span>Gunmetal Text Colour<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-success button-dark-blue"</span><span class="nt">&gt;</span>Success Text Colour<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-navigation button-caution"</span><span class="nt">&gt;</span>Navigation Text Colour<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-black button-success"</span><span class="nt">&gt;</span>Black Text Colour<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-silver button-gunmetal"</span><span class="nt">&gt;</span>Silver Text Colour<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-color-white button-black"</span><span class="nt">&gt;</span>White Text Colour<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+
+    </div>
+  </div>
+
+</article>
+
+
+  <article class="sg-component">
+
+  <header class="sg-component__header">
+    <h2 class="sg-component__title">button sizes</h2>
+    <p class="sg-component__sass">Sass file: /_sass/components/buttons.scss</p>
+  </header>
+  <div class="sg-component__body">
+    <div class="sg-component__display">
+      <p>This is the intro paragraph - or any other information for that matter.</p>
+
+<hr />
+<!-- 
+	* THIS IS THE LIVE CODE SAMPLE 
+	* ANY CODE USED HERE WILL DISPLAY AS IT WOULD ON A WEBSITE
+-->
+
+<p><button class="mi-button mi-button-small button-primary">Button Small</button>
+<button class="mi-button mi-button-normal button-primary">Button Normal</button>
+<button class="mi-button mi-button-large button-primary">Button Large </button>
+<button class="mi-button mi-button-xlarge button-primary">Button XLarge</button>
+<button class="mi-button mi-button-xxlarge button-primary">Button XXLarge</button>
+<button class="mi-button mi-button-xxxlarge button-primary">Button XXXLarge</button></p>
+
+<!-- THIS IS THE HTML CODE EXAMPLE -->
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-button-small button-primary"</span><span class="nt">&gt;</span>Button Small<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-button-normal button-primary"</span><span class="nt">&gt;</span>Button Normal<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-button-large button-primary"</span><span class="nt">&gt;</span>Button Large <span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-button-xlarge button-primary"</span><span class="nt">&gt;</span>Button XLarge<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-button-xxlarge button-primary"</span><span class="nt">&gt;</span>Button XXLarge<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"mi-button mi-button-xxxlarge button-primary"</span><span class="nt">&gt;</span>Button XXXLarge<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+
+    </div>
+  </div>
+
+</article>
+
+
+                </section>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="/methodlabs/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/mustache.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/date.format.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/URI.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl  : '/methodlabs/js/index.json',           // url for the .json file containing search index data
+      results   : '#search-results',          // selector for containing search results element
+      template  : '#search-results', // selector for Mustache.js template
+      titleMsg  : '',   // message attached in front of results (can be empty)
+      emptyMsg  : '<p>Nothing found.</p>'     // shown message if search returns no results
+    });
+  });
+</script>
+
+    </body>
+</html>

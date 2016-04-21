@@ -1,0 +1,159 @@
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Design Patterns - Style guide template</title>
+        <meta name="description" content="Style guide boilerplate with Jekyll">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon.ico and apple-touch-icon.png in root directory -->
+        <link rel="stylesheet" href="/methodlabs/css/foundation.css" media="screen">
+    </head>
+    <body>
+        <div class="grid-frame">
+            <div class="grid-block large-16">
+                <aside class="grid-content nav-bar medium-2">
+                    
+<ul>
+
+    <li>
+    
+        <a class="m-labs" href="/">
+    
+            
+                
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/colours/">
+    
+            
+                Colours
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/design-patterns/">
+    
+            
+                <b>Design Patterns</b>
+            
+        </a>
+    </li>
+    
+        
+<ul>
+
+    <li>
+    
+        <a href="/design-patterns/buttons/">
+    
+            
+                Buttons
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/design-patterns/grids/">
+    
+            
+                Grids
+            
+        </a>
+    </li>
+    
+
+    <li>
+    
+        <a href="/design-patterns/messaging/">
+    
+            
+                Messaging
+            
+        </a>
+    </li>
+    
+
+</ul>
+    
+
+    <li>
+    
+        <a href="/typography/">
+    
+            
+                Typography
+            
+        </a>
+    </li>
+    
+
+</ul>
+                </aside>
+                <section class="grid-content medium-14">
+                    <header class="small-16 medium-16 large-16 style-header">
+                        
+<form action="/search" method="get">
+    <input type="text" id="search-query" class="search-box" name="q" placeholder="Search" autocomplete="off">
+</form>
+<!-- Search Form END ^^ -->
+
+<section id="search-results" class="search-results" style="display: none;"> 
+	
+		<script id="search-results-template" type="text/mustache">
+			{{#entries}}
+				
+			    <article>
+			    	<h3>
+			        	<a href="{{url}}">{{title}}</a>
+			      	</h3>
+			      	{{#is_post}}
+			      		<ul class="tag-list">
+			        		{{#tags}}<li>{{.}} </li>{{/tags}}
+			      		</ul>
+			      	{{/is_post}}
+			    </article>
+			   
+		  	{{/entries}}
+		</script>
+	
+</section>
+<!-- Search results container END ^^ --> 
+                    </header>
+                    <h1>Design Patterns</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur animi, sed. Molestias modi harum ab porro sit dignissimos adipisci facere, odio quos in, blanditiis nesciunt. Ullam maxime vitae minus aperiam.</p>
+                </section>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="/methodlabs/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/mustache.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/date.format.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/URI.js" type="text/javascript" charset="utf-8"></script>
+<script src="/methodlabs/js/jquery.lunr.search.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#search-query').lunrSearch({
+      indexUrl  : '/methodlabs/js/index.json',           // url for the .json file containing search index data
+      results   : '#search-results',          // selector for containing search results element
+      template  : '#search-results', // selector for Mustache.js template
+      titleMsg  : '',   // message attached in front of results (can be empty)
+      emptyMsg  : '<p>Nothing found.</p>'     // shown message if search returns no results
+    });
+  });
+</script>
+
+    </body>
+</html>

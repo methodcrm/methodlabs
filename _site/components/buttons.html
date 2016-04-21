@@ -1,0 +1,4 @@
+{% assign entries = site.components | where:"type","buttons" %}
+{% for entry in entries %}
+  {% include component.html %}
+{% endfor %}
