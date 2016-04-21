@@ -75,8 +75,7 @@ module Jekyll
             "categories" => entry.categories,
             "tags" => entry.tags,
             "is_post" => entry.is_post,
-            "body" => entry.body,
-            "baseurl" => site.config['baseurl']
+            "body" => entry.body
           }
 
           @index.add(doc)
