@@ -1,8 +1,8 @@
-{% assign navurl = page.url | remove: 'index.html' %}
+{% assign navurl = page.baseurl | remove: 'index.html' %}
 <ul>
 {% for item in include.nav %}
     <li>
-    {% if item.url == "/" %}
+    {% if item.url == "/methodlabs/site/" %}
         <a class="m-labs" href="{{ item.url }}">
     {% else %}
         <a href="{{ item.url }}">
