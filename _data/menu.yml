@@ -1,9 +1,9 @@
 - text:
-  url: /methodlabs/
+  url: /
 - text: Colours
-  url: /methodlabs/colours/
+  url: /colours/
 - text: Design Patterns
-  url: /methodlabs/design-patterns/
+  url: /design-patterns/
   subitems:
     - text: Buttons
       url: /design-patterns/buttons/
@@ -12,4 +12,4 @@
     - text: Messaging
       url: /design-patterns/messaging/
 - text: Typography
-  url: /methodlabs/typography/
+  url: /typography/
