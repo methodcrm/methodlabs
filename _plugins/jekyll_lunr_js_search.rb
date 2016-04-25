@@ -17,6 +17,7 @@ module Jekyll
           'stopwords' => 'stopwords.txt',
           'fields' => {
             'title' => 10,
+            'description' => 10,
             'categories' => 20,
             'tags' => 20,
             'body' => 1
@@ -72,6 +73,7 @@ module Jekyll
             "title" => entry.title,
             "url" => entry.url,
             "date" => entry.date,
+            "description" => entry.description,
             "categories" => entry.categories,
             "tags" => entry.tags,
             "is_post" => entry.is_post,
@@ -207,13 +209,14 @@ module Jekyll
           else
             date = nil
           end
+          description = site.data['description']
           categories = site.data['categories']
           tags = site.data['tags']
           title, url = extract_title_and_url(site)
           is_post = site.is_a?(Jekyll::Document)
           body = renderer.render(site)
 
-          SearchEntry.new(title, url, date, categories, tags, is_post, body, renderer)
+          SearchEntry.new(title, description, url, date, categories, tags, is_post, body, renderer)
         else
           raise 'Not supported'
         end
@@ -224,10 +227,10 @@ module Jekyll
         [ data['title'], data['url'] ]
       end
 
-      attr_reader :title, :url, :date, :categories, :tags, :is_post, :body, :collection
+      attr_reader :title, :description, :url, :date, :categories, :tags, :is_post, :body, :collection
 
-      def initialize(title, url, date, categories, tags, is_post, body, collection)
-        @title, @url, @date, @categories, @tags, @is_post, @body, @collection = title, url, date, categories, tags, is_post, body, collection
+      def initialize(title, description, url, date, categories, tags, is_post, body, collection)
+        @title, @description, @url, @date, @categories, @tags, @is_post, @body, @collection = title, description, url, date, categories, tags, is_post, body, collection
       end
 
       def strip_index_suffix_from_url!

@@ -2,7 +2,6 @@
 title: Button Styles
 scss: '_sass/components/m-buttons.scss'
 type: buttons
-category: Design Patterns
 exclude_from_search: true
 ---
 

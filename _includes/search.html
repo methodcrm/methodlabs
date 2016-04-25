@@ -1,5 +1,5 @@
 
-<form action="/search" method="get">
+<form action="#" method="get">
     <input type="text" id="search-query" class="search-box" name="q" placeholder="Search" autocomplete="off">
 </form>
 <!-- Search Form END ^^ -->
@@ -11,14 +11,13 @@
 				
 			    <article>
 			    	<h3>
-			        	<a href="/methodlabs/{{url}}">{{title}}</a>
+			        	<a href="/methodlabs/{{url}}">{{title}}</a></h3>
 			      	</h3>
-			      	{{#categories}}<p>{{.}} </p>{{/categories}}
-			      	{{#is_post}}
-			      		<ul class="tag-list">
-			        		{{#tags}}<li>{{.}} </li>{{/tags}}
-			      		</ul>
-			      	{{/is_post}}
+			      	<p>{{description}}</p>
+			      	<p class="page-path">{{site.baseurl}}{{url}}</p>
+			      	{{#categories}}<span class="category-item">{{.}}</span>{{/categories}}
+			      	{{#tags}}<span class='tag-item'>{{.}} </span>{{/tags}}
+
 			    </article>
 			   
 		  	{{/entries}}
