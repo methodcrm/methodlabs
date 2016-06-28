@@ -1,13 +1,20 @@
-- text: Colours
-  url: /colours/
 - text: Design Patterns
   url: /design-patterns/
   subitems:
+    - text: Views
+      url: /design-patterns/views/
+    - text: Mobile Adaptable
+      url: /design-patterns/mobile-adaptable/
+    - text: Solve Problems For Customers
+      url: /design-patterns/solve-problems/
+- text: Components
+  url: /components/
+  subitems:
     - text: Buttons
-      url: /design-patterns/buttons/
+      url: /components/buttons/
     - text: Grids
-      url: /design-patterns/grids/
-    - text: Messaging
-      url: /design-patterns/messaging/
+      url: /components/grids/
+- text: Colours
+  url: /colours/
 - text: Typography
   url: /typography/

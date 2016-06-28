@@ -1,9 +1,26 @@
 ---
 layout: default
-title: Design Patterns
+title: Modular Design Structure
+subtitle: DESIGN PATTERNS
+summary: We can make things quickly without worrying about anything breaking.
 ---
 
-<h1>{{page.title}}</h1>
+<h1>Modular Design Patterns</h1>
+<h6>An example of 12 groups of elements randomly composed through methods design library</h6>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur animi, sed. Molestias modi harum ab porro sit dignissimos adipisci facere, odio quos in, blanditiis nesciunt. Ullam maxime vitae minus aperiam.</p>
+<img src="../img/modular-design-pattern.png" alt="An example of 12 groups of elements randomly composed through methods design library">
 
+
+<dl>
+	<dt>1. Individual elements in a single group are well defined to work well independantly</dt>
+	<dd>Any of methods elements should be able to independatly be pieced together to form a group that works well by itself. An example is a widget, or a card, a sidebar, or a form.</dd>
+
+	<dt>2. Individual groups are well defined to work well together when mixed</dt>
+	<dd>These indivual groups should be able to combine together in a modular fashion without alteration to create new views, pages, and even apps. ex: the subheader, or width of one element in a group should not throw off another group.</dd>
+
+	<dt>3. The mixing of individual and groups of elements is thoroughly thought through</dt>
+	<dd>When deciding to add a new type of subheader, or grouping of items (dropdown, card list), we need to think through it’s possible application and combination throughout the entire style guide to adhere to #1 and #2.</dd>
+
+	<dt>4. It’s hard to break the system.</dt>
+	<dd>In adhering to #1-#3, it should be difficult for someone to piece together a view that’s difficult to navigate, and who’s UI is inconsistant throughout the style guide. If the design system is breaking, it will be very evident.</dd>
+</dl>

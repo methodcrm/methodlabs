@@ -1,5 +1,5 @@
 ---
-title: button sizes
+title: Button Sizes
 scss: '/_scss/components/buttons.scss'
 type: buttons
 exclude_from_search: true

@@ -17,7 +17,7 @@ This is the intro paragraph - or any other information for that matter.
             </span>
             <footer>
                 <p><b>Hex:</b> #2B3E51</p>
-                <p><b>Sass variable:</b> $darkest-blue</p>
+                <p><b>Sass:</b> $darkest-blue</p>
             </footer>
         </span>
     </div>
@@ -29,7 +29,7 @@ This is the intro paragraph - or any other information for that matter.
             </span>
             <footer>
                 <p><b>Hex:</b> #58595B</p>
-                <p><b>Sass variable:</b> $dark-grey</p>
+                <p><b>Sass:</b> $dark-grey</p>
             </footer>
         </span>
     </div>

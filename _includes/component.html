@@ -1,13 +1,14 @@
-<article class="sg-component">
+<article class="article-style">
 
-  <header class="sg-component__header">
-    <h2 class="sg-component__title">{{ entry.title }}</h2>
-    <p class="sg-component__sass">Sass file: {{ entry.scss }}</p>
-  </header>
-  <div class="sg-component__body">
-    <div class="sg-component__display">
-      {{ entry.content }}
-    </div>
-  </div>
+	<header >
+		<h2>{{ entry.title }}</h2>
+		<span></span>
+		<p>Sass file: {{ entry.scss }}</p>
+	</header>
+	
+	<div class="component-body">
+	  {{ entry.content | markdownify }}
+	</div>
+	
 
 </article>

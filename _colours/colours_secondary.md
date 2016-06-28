@@ -17,7 +17,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #955BA5</p>
-                <p><b>Sass variable:</b> $purple</p>
+                <p><b>Sass:</b> $purple</p>
             </footer>
         </span>
     </div>
@@ -29,7 +29,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #4FBA6F</p>
-                <p><b>Sass variable:</b> $green</p>
+                <p><b>Sass:</b> $green</p>
             </footer>
         </span>
     </div>
@@ -41,7 +41,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #E43C38</p>
-                <p><b>Sass variable:</b> $red</p>
+                <p><b>Sass:</b> $red</p>
             </footer>
         </span>
     </div>
@@ -53,7 +53,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #FED204</p>
-                <p><b>Sass variable:</b> $yellow</p>
+                <p><b>Sass:</b> $yellow</p>
             </footer>
         </span>
     </div>
@@ -65,7 +65,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #F99C23</p>
-                <p><b>Sass variable:</b> $orange</p>
+                <p><b>Sass:</b> $orange</p>
             </footer>
         </span>
     </div>
@@ -77,7 +77,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #5C98C6</p>
-                <p><b>Sass variable:</b> $nav-hover</p>
+                <p><b>Sass:</b> $nav-hover</p>
             </footer>
         </span>
     </div>
@@ -89,7 +89,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #EB8275</p>
-                <p><b>Sass variable:</b> $alert</p>
+                <p><b>Sass:</b> $alert</p>
             </footer>
         </span>
     </div>
@@ -101,7 +101,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #787779</p>
-                <p><b>Sass variable:</b> $darkGrey</p>
+                <p><b>Sass:</b> $darkGrey</p>
             </footer>
         </span>
     </div>
@@ -113,7 +113,7 @@ This is a paragraph.
             </span>
             <footer>
                 <p><b>Hex:</b> #000</p>
-                <p><b>Sass variable:</b> $black</p>
+                <p><b>Sass:</b> $black</p>
             </footer>
         </span>
     </div>

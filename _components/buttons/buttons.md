@@ -1,13 +1,11 @@
 ---
-title: Button Styles
+title: Button Types
 scss: '_sass/components/m-buttons.scss'
 type: buttons
 exclude_from_search: true
 ---
 
 This is the intro paragraph - or any other information for that matter.
-
-- - -
 
 <!-- 
 	* THIS IS THE LIVE CODE SAMPLE 

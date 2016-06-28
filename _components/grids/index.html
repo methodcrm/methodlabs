@@ -3,9 +3,7 @@ layout: default
 title: Grids
 ---
 
-<h1>{{page.title}}</h1>
-
-{% assign entries = site.design-patterns | where:"type","grids" %}
+{% assign entries = site.components | where:"type","grids" %}
 {% for entry in entries %}
   {% include component.html %}
 {% endfor %}
